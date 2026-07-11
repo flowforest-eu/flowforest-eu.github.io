@@ -691,17 +691,15 @@ REDIRECTIONS = []
 # For more details, read the manual:
 # https://getnikola.com/handbook.html#deploying-to-github
 # You will need to configure the deployment branch on GitHub.
-GITHUB_SOURCE_BRANCH = 'main'
+GITHUB_SOURCE_BRANCH = 'src'
 GITHUB_DEPLOY_BRANCH = 'main'
 
 # The name of the remote where you wish to push to, using github_deploy.
-GITHUB_REMOTE_NAME = 'https://github.com/flowforest-eu/flowforest-eu.github.io.git'
+GITHUB_REMOTE_NAME = 'origin'
 
 # Whether or not github_deploy should commit to the source branch automatically
 # before deploying.
 GITHUB_COMMIT_SOURCE = False
-
-GITHUB_DEPLOY_FORCE = True
 
 # Where the output site should be located
 # If you don't use an absolute path, it will be considered as relative
