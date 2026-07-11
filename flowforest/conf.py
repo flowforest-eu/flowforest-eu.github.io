@@ -25,7 +25,7 @@ SITE_URL = "https://example.com/"
 # If not set, defaults to SITE_URL
 # BASE_URL = "https://example.com/"
 BLOG_EMAIL = "rauni.lillemets@gmail.com"
-BLOG_DESCRIPTION = "A journey for knowledge"  # (translatable)
+BLOG_DESCRIPTION = { "en": "A journey for knowledge", "et": "Teadmiste otsingul" }  # (translatable)
 
 # Nikola is multilingual!
 #
@@ -451,12 +451,16 @@ HIDDEN_TAGS = ['mathjax']
 #     {'en': 'private', 'de': 'Privat'},
 #     {'en': 'work', 'fr': 'travail', 'de': 'Arbeit'},
 #   ]
-# TAG_TRANSLATIONS = []
+TAG_TRANSLATIONS = [
+    {'en': 'Intro', 'et': 'Intro'},
+    {'en': 'AI', 'et': 'AI'},
+    {'en': 'AI-safety', 'et': 'AI-turvalisus'},
+]
 
 # If set to True, a tag in a language will be treated as a translation
 # of the literally same tag in all other languages. Enable this if you
 # do not translate tags, for example.
-# TAG_TRANSLATIONS_ADD_DEFAULTS = True
+TAG_TRANSLATIONS_ADD_DEFAULTS = True
 
 # Final locations are:
 # output / TRANSLATION[lang] / CATEGORY_PATH / index.html (list of categories)
@@ -578,7 +582,6 @@ ENABLE_AUTHOR_PAGES = False
 #        "Roberto Alsina": "Nikola father."
 #    },
 # }
-
 
 # If you do not want to display an author publicly, you can mark it as hidden.
 # The author will not be displayed on the author list page.
@@ -994,7 +997,10 @@ LICENSE = ""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
-CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{author}</a> - Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> blog engine         {license}'
+CONTENT_FOOTER = {
+    "en": 'Contents by <a href="mailto:{email}">{author}</a> – <span id="footer_nikola">Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> blog engine</span>         {license}',
+    "et": 'Autor: <a href="mailto:{email}">{author}</a> – <span id="footer_nikola">Jookseb         <a href="https://getnikola.com" rel="nofollow">Nikola</a> blogimootoril</span>         {license}',
+}
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
 # for translatability, as dicts are not formattable.  Nikola will
@@ -1009,22 +1015,32 @@ CONTENT_FOOTER = 'Contents &copy; {date}         <a href="mailto:{email}">{autho
 #          still needs to be a dict of this format.  (it can be empty if you
 #          do not need formatting)
 # (translatable)
+
+CONTENT_FOOTER_FORMATS_SHARED = (
+    (),
+    {
+        "email": BLOG_EMAIL,
+        "author": BLOG_AUTHOR,
+        "license": LICENSE
+    }
+)
+
 CONTENT_FOOTER_FORMATS = {
-    DEFAULT_LANG: (
-        (),
-        {
-            "email": BLOG_EMAIL,
-            "author": BLOG_AUTHOR,
-            "date": time.gmtime().tm_year,
-            "license": LICENSE
-        }
-    )
+    "en": CONTENT_FOOTER_FORMATS_SHARED,
+    "et": CONTENT_FOOTER_FORMATS_SHARED
 }
 
 # A simple copyright tag for inclusion in RSS feeds that works just
 # like CONTENT_FOOTER and CONTENT_FOOTER_FORMATS
-RSS_COPYRIGHT = 'Contents © {date} <a href="mailto:{email}">{author}</a> {license}'
-RSS_COPYRIGHT_PLAIN = 'Contents © {date} {author} {license}'
+RSS_COPYRIGHT = {
+    "en": 'Contents by <a href="mailto:{email}">{author}</a> {license}',
+    "et": 'Autor: <a href="mailto:{email}">{author}</a> {license}',
+}
+
+RSS_COPYRIGHT_PLAIN = {
+    "en": 'Contents by {author} {license}',
+    "et": 'Autor: {author} {license}',
+}
 RSS_COPYRIGHT_FORMATS = CONTENT_FOOTER_FORMATS
 
 # To use comments, you can choose between different third party comment
@@ -1193,7 +1209,7 @@ SHOW_SOURCELINK = False
 
 # By default, Nikola generates RSS files for the website and for tags, and
 # links to it.  Set this to False to disable everything RSS-related.
-# GENERATE_RSS = True
+GENERATE_RSS = True
 
 # By default, Nikola does not generates Atom files for indexes and links to
 # them. Generate Atom for tags by setting TAG_PAGES_ARE_INDEXES to True.

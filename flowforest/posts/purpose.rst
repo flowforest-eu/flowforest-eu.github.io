@@ -6,7 +6,7 @@
 .. link: 
 .. description: 
 .. type: text
-.. tags: intro, ai, ai-safety
+.. tags: intro, AI, AI-safety
 
 AI is a rapidly advancing field. My gut feeling is that in the next decade, it will bring about changes to the 
 society that we cannot fully fathom yet. Because the changes can be potentially transformational, I think that 
