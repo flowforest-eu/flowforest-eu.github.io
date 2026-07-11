@@ -18,20 +18,16 @@
   <lastmod>2026-07-11T20:06:00Z</lastmod>
  </sitemap>
  <sitemap>
-  <loc>https://example.com/et/categories/ai-safety.xml</loc>
-  <lastmod>2026-07-11T20:06:00Z</lastmod>
- </sitemap>
- <sitemap>
   <loc>https://example.com/et/categories/ai-turvalisus.xml</loc>
-  <lastmod>2026-07-11T20:23:00Z</lastmod>
+  <lastmod>2026-07-11T23:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/et/categories/ai.xml</loc>
-  <lastmod>2026-07-11T20:23:00Z</lastmod>
+  <lastmod>2026-07-11T23:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/et/categories/intro.xml</loc>
-  <lastmod>2026-07-11T20:23:00Z</lastmod>
+  <lastmod>2026-07-11T23:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/et/galleries/rss.xml</loc>
@@ -39,7 +35,7 @@
  </sitemap>
  <sitemap>
   <loc>https://example.com/et/rss.xml</loc>
-  <lastmod>2026-07-11T20:23:00Z</lastmod>
+  <lastmod>2026-07-11T23:22:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/galleries/rss.xml</loc>
@@ -51,6 +47,6 @@
  </sitemap>
  <sitemap>
   <loc>https://example.com/sitemap.xml</loc>
-  <lastmod>2026-07-11T20:23:00Z</lastmod>
+  <lastmod>2026-07-11T23:22:00Z</lastmod>
  </sitemap>
 </sitemapindex>

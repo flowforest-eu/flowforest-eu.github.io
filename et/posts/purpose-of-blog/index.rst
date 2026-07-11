@@ -1,4 +1,4 @@
-.. title: Why another blog?
+.. title: Mis on asja eesmärk?
 .. slug: purpose-of-blog
 .. date: 2026-07-11 05:00:00 UTC-03:00
 .. tags: 
@@ -11,9 +11,10 @@
 AI on tohutu kiirusega arenev valdkond. Ma ei tea, mis ootab meid järgmise 5 või 10 aasta pärast - kuid mulle tundub,
 et võib üsna kindlalt öelda, et muutused saavad olema väga põhjapanevad nii ühiskonna kui üksikisiku tasemel.
 
-Teades, et muutused on tulemas, tahaks nende jaoks mingil viisil ette valmistuda - nii enda kui oma pere tarbeks. 
+Teades, et muutused on tulemas, tahaks nende jaoks mingil viisil ette valmistuda - nii enda kui oma pere tarbeks. Ja 
+kui suudan selle käigus aidata ka sama teha enda sõpradel ja inimestel mu ümber, siis seda parem.
 
-*Aga kuidas valmistuda selleks, mida ei mõista?*
+*Aga kuidas valmistuda selleks, mida sa ei mõista?*
 
 See on põhjus, miks ma olen otsustanud sellesse teemasse sügavamalt sisse sukelduda. Olles seda nüüd mõnda aega 
 teinud, taipasin ma, et infot on liiga palju, et seda proovida ainult oma peas hoida. Loodan, et läbi asjade 
