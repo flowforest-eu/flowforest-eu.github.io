@@ -1,4 +1,4 @@
-.. title: Mis on eesmärk?
+.. title: Mis on asja eesmärk?
 .. slug: purpose-of-blog
 .. date: 2026-07-11 05:00:00 UTC-03:00
 .. tags: 
