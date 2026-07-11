@@ -8,21 +8,21 @@
 .. type: text
 .. tags: intro, ai, ai-safety
 
-AI is a rapidly advancing field. My gut feeling is that in the next decade, it will bring about changes to the 
-society that we cannot fully fathom yet. Because the changes can be potentially transformational, I think that 
-we all should try to prepare for that.
+AI on tohutu kiirusega arenev valdkond. Ma ei tea, mis ootab meid järgmise 5 või 10 aasta pärast - kuid mulle tundub,
+et võib üsna kindlalt öelda, et muutused saavad olema väga põhjapanevad nii ühiskonna kui üksikisiku tasemel.
 
-*But how do you prepare for something that you don't understand?*
+Teades, et muutused on tulemas, tahaks nende jaoks mingil viisil ette valmistuda - nii enda kui oma pere tarbeks. 
 
-Because of this, I have started this journey of discovery to this vast field. After doing this for a while,
-I realized that I won't be able to keep this information all in my own head - it would be vastly better to organize
-this into a sort of knowledge base. And perhaps other people will find these thoughts interesting and might be able
-to point me to even more useful resources.
+*Aga kuidas valmistuda selleks, mida ei mõista?*
 
-Also, there is a mathematical angle here that I would like to try out. There is a lot of talk about using *Bayesian 
-probabilities* as a mathematical tool for AI agents for building better mental models of the world. This is an area
-that I myself would also like to learn to apply more. 
+See on põhjus, miks ma olen otsustanud sellesse teemasse sügavamalt sisse sukelduda. Olles seda nüüd mõnda aega 
+teinud, taipasin ma, et infot on liiga palju, et seda proovida ainult oma peas hoida. Loodan, et läbi asjade 
+kirjapanemise saavad ka teised leida kasulikku infot.
 
-I also hope that I will be able to take this concept of Bayesian probabilities and de-mystify it a bit for the 
-readers - so that everyone can see that, in some intuitive level, *we all do* something a bit similar to Bayesian 
-learning in our everyday life. But that will be the subject of a future post.
+Lisaks on üks matemaatiline perspektiiv, mida ma tahaksin läbi katsetada. Palju räägitakse AI agentide kontekstis 
+*Bayes'i statistika* rakendamisest - selleks, et aidata AI agentidel luua paremaid mentaalseid mudeleid maailmast.
+See on ala, mida ma tahaks õppida praktikas paremini rakendama.
+
+Ma loodan, et mul õnnestub ka matemaatikast kaugematele inimestele teha *Bayes'i statistika* vähemalt intuitiivselt 
+arusaadavamaks. Laias laastus võib öelda, et tegelikult rakendame me kõik midagi sarnast enda igapäevaelus ilma 
+seda teadvustamata - aga sellest räägime lähemalt juba ühes tulevases postituses.
