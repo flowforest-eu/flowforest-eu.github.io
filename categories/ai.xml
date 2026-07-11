@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FlowForest (Posts about ai)</title><link>https://example.com/</link><description></description><atom:link href="https://example.com/categories/ai.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2026 &lt;a href="mailto:rauni.lillemets@gmail.com"&gt;FlowForest&lt;/a&gt; </copyright><lastBuildDate>Sat, 11 Jul 2026 17:08:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Why another blog?</title><link>https://example.com/posts/purpose-of-blog/</link><dc:creator>FlowForest</dc:creator><description>&lt;p&gt;AI is a rapidly advancing field. My gut feeling is that in the next decade, it will bring about changes to the
+society that we cannot fully fathom yet. Because the changes can be potentially transformational, I think that
+we all should try to prepare for that.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;But how do you prepare for something that you don't understand?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Because of this, I have started this journey of discovery to this vast field. After doing this for a while,
+I realized that I won't be able to keep this information all in my own head - it would be vastly better to organize
+this into a sort of knowledge base. And perhaps other people will find these thoughts interesting and might be able
+to point me to even more useful resources.&lt;/p&gt;
+&lt;p&gt;Also, there is a mathematical angle here that I would like to try out. There is a lot of talk about using &lt;em&gt;Bayesian
+probabilities&lt;/em&gt; as a mathematical tool for AI agents for building better mental models of the world. This is an area
+that I myself would also like to learn to apply more.&lt;/p&gt;
+&lt;p&gt;I also hope that I will be able to take this concept of Bayesian probabilities and de-mystify it a bit for the
+readers - so that everyone can see that, in some intuitive level, &lt;em&gt;we all do&lt;/em&gt; something a bit similar to Bayesian
+learning in our everyday life. But that will be the subject of a future post.&lt;/p&gt;</description><category>ai</category><category>ai-safety</category><category>intro</category><guid>https://example.com/posts/purpose-of-blog/</guid><pubDate>Sat, 11 Jul 2026 08:00:00 GMT</pubDate></item></channel></rss>
