@@ -77,42 +77,34 @@
  <url>
   <loc>https://example.com/et/pages/bootstrap-demo/</loc>
   <lastmod>2026-07-11T17:08:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="https://example.com/pages/bootstrap-demo/" />
  </url>
  <url>
   <loc>https://example.com/et/pages/charts/</loc>
   <lastmod>2026-07-11T17:08:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="https://example.com/pages/charts/" />
  </url>
  <url>
   <loc>https://example.com/et/pages/creating-a-theme/</loc>
   <lastmod>2026-07-11T17:08:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="https://example.com/pages/creating-a-theme/" />
  </url>
  <url>
   <loc>https://example.com/et/pages/dr-nikolas-vendetta/</loc>
   <lastmod>2026-07-11T17:08:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="https://example.com/pages/dr-nikolas-vendetta/" />
  </url>
  <url>
   <loc>https://example.com/et/pages/extending/</loc>
   <lastmod>2026-07-11T17:08:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="https://example.com/pages/extending/" />
  </url>
  <url>
   <loc>https://example.com/et/pages/handbook/</loc>
   <lastmod>2026-07-11T17:08:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="https://example.com/pages/handbook/" />
  </url>
  <url>
   <loc>https://example.com/et/pages/internals/</loc>
   <lastmod>2026-07-11T17:08:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="https://example.com/pages/internals/" />
  </url>
  <url>
   <loc>https://example.com/et/pages/listings-demo/</loc>
   <lastmod>2026-07-11T17:08:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="https://example.com/pages/listings-demo/" />
  </url>
  <url>
   <loc>https://example.com/et/pages/path-handlers/</loc>
@@ -122,12 +114,10 @@
  <url>
   <loc>https://example.com/et/pages/quickref/</loc>
   <lastmod>2026-07-11T17:08:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="https://example.com/pages/quickref/" />
  </url>
  <url>
   <loc>https://example.com/et/pages/quickstart/</loc>
   <lastmod>2026-07-11T17:08:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="https://example.com/pages/quickstart/" />
  </url>
  <url>
   <loc>https://example.com/et/pages/social_buttons/</loc>
