@@ -934,6 +934,10 @@ html[dir="rtl"] body {
 }
 
 
-.tags {
+.postpromonav .tags {
     text-align: left !important;
+}
+
+#footer_nikola {
+    font-size: 13px;
 }

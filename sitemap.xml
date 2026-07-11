@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>https://example.com/archive.html</loc>
-  <lastmod>2026-07-11T19:37:00Z</lastmod>
+  <lastmod>2026-07-11T20:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/</loc>
@@ -43,15 +43,19 @@
  </url>
  <url>
   <loc>https://example.com/et/archive.html</loc>
-  <lastmod>2026-07-11T19:37:00Z</lastmod>
+  <lastmod>2026-07-11T20:20:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/et/categories/</loc>
-  <lastmod>2026-07-11T19:18:00Z</lastmod>
+  <lastmod>2026-07-11T20:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/et/categories/ai-safety/</loc>
   <lastmod>2026-07-11T19:18:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://example.com/et/categories/ai-turvalisus/</loc>
+  <lastmod>2026-07-11T20:23:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/et/categories/ai/</loc>

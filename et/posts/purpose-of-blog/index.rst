@@ -6,7 +6,7 @@
 .. link: 
 .. description: 
 .. type: text
-.. tags: intro, ai, ai-safety
+.. tags: intro, AI, AI-turvalisus
 
 AI on tohutu kiirusega arenev valdkond. Ma ei tea, mis ootab meid järgmise 5 või 10 aasta pärast - kuid mulle tundub,
 et võib üsna kindlalt öelda, et muutused saavad olema väga põhjapanevad nii ühiskonna kui üksikisiku tasemel.
@@ -23,6 +23,6 @@ Lisaks on üks matemaatiline perspektiiv, mida ma tahaksin läbi katsetada. Palj
 *Bayes'i statistika* rakendamisest - selleks, et aidata AI agentidel luua paremaid mentaalseid mudeleid maailmast.
 See on ala, mida ma tahaks õppida praktikas paremini rakendama.
 
-Ma loodan, et mul õnnestub ka matemaatikast kaugematele inimestele teha *Bayes'i statistika* vähemalt intuitiivselt 
+Ma loodan, et mul õnnestub ka matemaatikast kaugematele inimestele teha Bayes'i statistika vähemalt intuitiivselt 
 arusaadavamaks. Laias laastus võib öelda, et tegelikult rakendame me kõik midagi sarnast enda igapäevaelus ilma 
-seda teadvustamata - aga sellest räägime lähemalt juba ühes tulevases postituses.
+seda teadvustamata - aga sellest, mida see tähendab, räägime lähemalt juba ühes tulevases postituses.
