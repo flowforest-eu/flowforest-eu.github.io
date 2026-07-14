@@ -6,3 +6,19 @@
 #footer_nikola {
     font-size: 13px;
 }
+
+body {
+    background-color: rgb(235, 252, 218) !important;
+}
+
+h1 > a {
+    color: rgb(60, 102, 19) !important;
+}
+
+a {
+    color: rgb(0, 159, 200);
+}
+
+.navbar {
+    background-color: rgb(60, 128, 28) !important;
+}
