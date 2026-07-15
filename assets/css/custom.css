@@ -6,3 +6,108 @@
 #footer_nikola {
     font-size: 13px;
 }
+
+/*
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Merriweather:wght@700&display=swap');
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;1,400&family=Merriweather:wght@700&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;1,400&family=Merriweather:wght@700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,500;1,400&family=Merriweather:wght@700&display=swap');
+
+body {
+    background-color: #1a241b !important;
+    color: #c2beb2 !important;
+
+    font-family: 'Literata', serif;
+    font-size: 19px;
+    line-height: 1.7;
+    /* -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; */
+}
+
+h1 > a, h1, h2, h3 {
+    color: #a3b899 !important;
+    font-family: 'Lora', Georgia, serif;
+    letter-spacing: -0.02em; /* Tightens up headers nicely */
+}
+
+a {
+    color: #7fa973;
+    text-decoration: underline;
+    text-decoration-color: rgba(127, 169, 115, 0.4);
+    text-underline-offset: 3px;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: #d1a153 !important; 
+    text-decoration-color: rgba(209, 161, 83, 0.6);
+}
+
+.navbar {
+    background-color: #111812 !important;
+    color: #a3b899 !important;
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 700;
+    text-decoration: none !important;
+}
+
+.navbar-nav a {
+    color: #8fa08b !important; 
+    font-family: 'Inter', sans-serif;
+    transition: color 0.2s ease;
+}
+
+.navbar-nav a:hover {
+    color: #d1a153 !important;
+}
+
+.tag, .badge, .post-tag {
+    background-color: rgba(209, 161, 83, 0.08) !important;
+    color: #cca462 !important;
+    border: 1px solid rgba(209, 161, 83, 0.25) !important;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 0.85em;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none !important;
+    transition: all 0.25s ease;
+}
+
+.tag:hover, .badge:hover {
+    background-color: rgba(209, 161, 83, 0.15) !important;
+    color: #e5be82 !important; /* Brightens up on hover */
+    border-color: rgba(209, 161, 83, 0.5) !important;
+}
+
+blockquote {
+    background-color: #202c21 !important; 
+    border-left: 4px solid #d1a153 !important; 
+    border-radius: 0 6px 6px 0;
+    margin: 2rem 0;
+    padding: 1.25rem 1.75rem;
+}
+
+blockquote p {
+    /* Flowing, book-style italic text */
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #cbd5c5 !important; 
+    margin-bottom: 0;
+}
+
+blockquote footer, 
+blockquote cite {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85em;
+    font-style: normal;
+    font-weight: 500;
+    color: #7d8c79 !important; /* Muted sage-grey */
+    letter-spacing: 0.03em;
+}
