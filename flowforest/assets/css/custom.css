@@ -63,3 +63,51 @@ a:hover {
 .navbar-nav a:hover {
     color: #d1a153 !important;
 }
+
+.tag, .badge, .post-tag {
+    background-color: rgba(209, 161, 83, 0.08) !important;
+    color: #cca462 !important;
+    border: 1px solid rgba(209, 161, 83, 0.25) !important;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 0.85em;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none !important;
+    transition: all 0.25s ease;
+}
+
+.tag:hover, .badge:hover {
+    background-color: rgba(209, 161, 83, 0.15) !important;
+    color: #e5be82 !important; /* Brightens up on hover */
+    border-color: rgba(209, 161, 83, 0.5) !important;
+}
+
+blockquote {
+    background-color: #202c21 !important; 
+    border-left: 4px solid #d1a153 !important; 
+    border-radius: 0 6px 6px 0;
+    margin: 2rem 0;
+    padding: 1.25rem 1.75rem;
+}
+
+blockquote p {
+    /* Flowing, book-style italic text */
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #cbd5c5 !important; 
+    margin-bottom: 0;
+}
+
+blockquote footer, 
+blockquote cite {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85em;
+    font-style: normal;
+    font-weight: 500;
+    color: #7d8c79 !important; /* Muted sage-grey */
+    letter-spacing: 0.03em;
+}
