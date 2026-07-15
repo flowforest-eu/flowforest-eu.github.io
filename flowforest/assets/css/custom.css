@@ -7,18 +7,33 @@
     font-size: 13px;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Merriweather:wght@700&display=swap');
+
+
+
 body {
-    background-color: rgb(235, 252, 218) !important;
+    background-color: #1a241b !important;
+    color: #c2beb2 !important;
+
+    font-family: 'Inter', serif;
+    font-size: 18px; 
+    line-height: 1.6;
 }
 
-h1 > a {
-    color: rgb(60, 102, 19) !important;
+h1 > a, h1, h2, h3 {
+    color: #a3b899 !important;
+    font-family: 'Lora', Georgia, serif;
+    letter-spacing: -0.02em; /* Tightens up headers nicely */
 }
 
 a {
-    color: rgb(0, 159, 200);
+    color: #7fa973;
+}
+
+a:hover {
+    color: #a3cfa4;
 }
 
 .navbar {
-    background-color: rgb(60, 128, 28) !important;
+    background-color: #111812 !important;
 }
