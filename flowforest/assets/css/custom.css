@@ -11,10 +11,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Merriweather:wght@700&display=swap');
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@700&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;1,400&family=Merriweather:wght@700&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;1,400&family=Merriweather:wght@700&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,500;1,400&family=Merriweather:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=Merriweather:wght@700&display=swap');
 
 body {
     background-color: #1a241b !important;
@@ -23,14 +20,14 @@ body {
     font-family: 'Literata', serif;
     font-size: 19px;
     line-height: 1.7;
-    /* -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1 > a, h1, h2, h3 {
     color: #a3b899 !important;
     font-family: 'Lora', Georgia, serif;
-    letter-spacing: -0.02em; /* Tightens up headers nicely */
+    letter-spacing: -0.02em;
 }
 
 a {
@@ -108,6 +105,6 @@ blockquote cite {
     font-size: 0.85em;
     font-style: normal;
     font-weight: 500;
-    color: #7d8c79 !important; /* Muted sage-grey */
+    color: #7d8c79 !important; 
     letter-spacing: 0.03em;
 }
