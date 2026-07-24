@@ -9,27 +9,22 @@
 .. status: draft
 .. tags: AI, AI-progress
 
-AI seems to be dominating the news a lot lately. There is a lot of talk about AI capabilities, fears about job 
-replacement caused by AI, and leaders of AI companies are claiming that after a few years, AI will be as powerful 
-as a "country of geniuses". At the same time, AIs sometimes still fail at seemingly trivial tasks. 
+AI seems to be dominating the news a lot lately - every week there seems to be a new eye-catching headline. But what 
+has genuinely surprised me is how polarizing the news coverage is. Just a look at this selection of headlines one 
+may see when searching for "AI":
+- This New Model Has Big AI Labs Panicking!
+- Humans will no longer be in control in ten years
+- AI Will Hit a Wall in 2026, if nothing changes
+- It begins: An AI tried to escape the lab
+- AI is about to crash. Here's why.
 
-*!? Do I want to focus on those limitations? On the one hand, it is a natural rhetoric device; on the other hand, I would 
-like to get to the AI Futures part quicker. I think I must do it first. And the superintelligence post.*
+Now add to this the fact that there are news about AIs making breakthroughs in proving mathematical theorems; but at the 
+same time they still fail at seemingly random trivial tasks - just a month ago there was a viral post of various AIs answering 
+the question "I want to wash my car. The car wash is 50 meters away. Should I walk or drive?" with "50 meters is so close, go 
+there by foot!".
 
-Recently, when browsing YouTube and seeing various AI-related videos popping up, I noticed the polarity. All of the 
-headlines are extremely polarized (ülepaisutatud): "AI is going to kill us all"; next video "AI is a bubble". Of course, 
-sensationalism sells, and with AI both the polar opposites sell, cause people are concerned and uncertain.
-
-So when I look at this stream of information, I think - how can one make sense of it all? 
-
-Well, after a few months of research I feel that I have something that might help to set the foundation so that 
-one can (omandama) to not quaver. [better buildup]. This will be a three-part blog post which aims to give you the 
-basics so that will hopefully help you see through the hype and think for yourself. Here is the plan: [+++]
-
-- Part 1: measuring AI progress
-- Part 2: why is AI already super-human in some aspects, and embarassingly weak in others? How is that going to change in 
-  the future?
-- Part 3: if AI will start training itself, how will that change the formula?
+So what is the truth and what is marketing? Is it even possible for non-specialists to navigate this sea of information?
+How to make sense of it all?
 
 =====================
 Measuring AI progress
