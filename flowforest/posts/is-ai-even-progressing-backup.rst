@@ -1,4 +1,4 @@
-.. title: Is AI even progressing?
+.. title: Where is AI heading - Part 1
 .. slug: is-ai-even-progressing
 .. date: 2026-07-27 08:22:32 UTC+03:00
 .. tags: 
@@ -12,16 +12,15 @@
 AI seems to be dominating the news a lot lately - every week there seems to be a new eye-catching headline. But what 
 has genuinely surprised me is how polarizing the news coverage is. Just a look at this selection of headlines one 
 may see when searching for "AI":
-- This New Model Has Big AI Labs Panicking!
-- Humans will no longer be in control in ten years
-- AI Will Hit a Wall in 2026, if nothing changes
-- It begins: An AI tried to escape the lab
-- AI is about to crash. Here's why.
 
-Now add to this the fact that there are news about AIs making breakthroughs in proving mathematical theorems; but at the 
-same time they still fail at seemingly random trivial tasks - just a month ago there was a viral post of various AIs answering 
-the question "I want to wash my car. The car wash is 50 meters away. Should I walk or drive?" with "50 meters is so close, go 
-there by foot!".
+* This New Model Has Big AI Labs Panicking!
+* Humans will no longer be in control in ten years
+* AI Will Hit a Wall in 2026, if nothing changes
+* It begins: An AI tried to escape the lab
+* AI is about to crash. Here's why.
+
+Now add to this the fact that there are news about AIs making breakthroughs in proving mathematical theorems and finding critical
+security issues in software; but at the same time, they often still fail at seemingly trivial tasks.
 
 So what is the truth and what is marketing? Is it even possible for non-specialists to navigate this sea of information?
 How to make sense of it all?
@@ -29,6 +28,9 @@ How to make sense of it all?
 =====================
 Measuring AI progress
 =====================
+
+..
+    Improve next section. Keep just the zooming out part?
 
 If you zoom in to AI progress happening daily or monthly, the progress is jagged. One is bombarded with news of new models
 coming out from frontier labs, open source models being released in China, new evaluations being created and AIs reaching
@@ -54,4 +56,4 @@ Disclaimers
 ===========
 
 No affiliation with any of the linked sources.
-AI usage disclaimer: AI was not used for creation of this post.
+**AI usage disclaimer**: AI was not used in the creation of this post.
