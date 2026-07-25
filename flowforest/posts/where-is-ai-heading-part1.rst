@@ -14,33 +14,29 @@ about the AI topic.
 For example, you might see videos with titles "AI will replace all jobs in next 2 years" next to a video titled "AI progress has hit a wall". 
 Of course, clickbait sells, and so do extreme titles - in either direction. 
 
-And even from a perspective of a specialist the progress can look very jagged - periods of rapid improvements alternating with periods of 
-relative stagnation. In order to get a clearer view, one must zoom out and look at the longer perspective. This is exactly what 
-METR (a non-profit research institute in California) did. 
+And even from a perspective of an AI expert the progress can look very jagged - periods of rapid improvement alternate with periods of 
+relative stagnation. In order to get a clearer view, one must zoom out and look at the progress trends over a longer timeframe. 
+This is exactly what was done by METR (a non-profit research institute in California). 
 
 =====================
 Measuring AI progress
 =====================
 
-METR noted that existing AI benchmarks had several fundamental problems: 
+.. 
+    METR noted that existing AI benchmarks have several fundamental problems: 
+    * They often consist of artificial tasks (rather than economically valuable tasks);
+    * Individual benchmarks tend to become aced by models relatively quickly and so drawing long-term trends becomes meaningless;
+    * It is not clear how to compare or combine results from different benchmarks.
 
-* They often consisted of artificial tasks (rather than economically valuable tasks);
-* Individual benchmarks tend to become aced by models relatively quickly;
-* Comparing results from different benchmarks is usually not very meaningful.
+METR noticed that one of the issues that AI models have is losing coherence - it can be difficult for them to focus and complete a task 
+without losing track. This means that there is a natural metric: if you list tasks that take human experts various time to complete
+(from mere seconds to several days) and group them by completion time, then how long tasks can the AI system complete with a certain 
+reliability (e.g. 50% or 80%)? They named this metric **task completion time horizon**.
 
-So METR proposed to do something different. They started focusing on **task completion time horizon** of 
-real-life tasks by real humans. For this, they came up with 228 different tasks (from the fields of 
-software engineering, cybersecurity, general reasoning, and machine learning tasks) that range from trivial (can be completed in seconds) to tasks 
-that take a professional in that field a full day to complete (they verified this by letting several people
-complete a task and took the average).
+METR compiled a list of total 228 tasks (from the fields of software engineering, cybersecurity, general reasoning, and machine learning tasks)
+that range from trivial (can be completed in seconds) to tasks that take a professional in that field a full day to complete.
 
-Note that they are **not** measuring how long does it take for the model to solve it (or how many tokens it uses, etc.). They are purely focusing
-on whether the model **can** do it. They do comment that AIs typically solve the tasks several times faster than humans would.
-
-They are looking separately at two success rates: 50% success rate and 80% success rate. This allows the model to succeed at some tasks and fail at others;
-and fairly accounts for tasks that the model can only sometimes complete.
-
-Here are some examples from their experiment for various lengths of task completion time for the software engineering field:
+Here are some examples of the tasks from the software engineering field:
 
 * ``find_shell_script`` (3 seconds) - “Which of those files is a shell script?” Choices: “run.sh”, “run.txt”, “run.py”, “run.md”
 * ``wikipedia_research`` (1 minute) - Research simple factual information from Wikipedia
@@ -50,13 +46,21 @@ Here are some examples from their experiment for various lengths of task complet
   all functionality, aiming for a 30x performance improvement
 
 The strength of this approach is that it allows to have one test that scales all the way from early days of GPT-2 (that could reliably solve tasks taking 
-experts a few seconds) to current frontier models (that have 50% success level at 4-12 hour tasks, and 80% success level at 1-2 hour tasks). Curiously,
-Claude Mythos Preview (which only has preliminary results available) succeeds at 80% level for 3 hour tasks, and at 50% level for 16 hours tasks or more -
-METR does not have enough long-term tasks available to measure that yet reliably. They are currently actively working to incorporate longer tests 
-to their data set to be able to measure model capabilities for longer time horizons (even week-long and month-long horizons). 
+experts a few seconds) to current frontier models (with time horizons in hours) and all the way to future models that could potentially have time horizons 
+in weeks or months. The only limitation is collecting sufficient data about tasks that take humans a specific time to complete.
+
+At **50% success level**:
+
+* most advanced models of Claude, Gemini, and GPT currently (July 2026) that have been measured have time horizons of 3-6 hours. 
+* Exceptions are Claude Opus 4.6 (time horizon 12 hours) and Claude Mythos Preview (time horizon likely at least 16 hours, new tasks need to be created to properly measure).
+
+**At 80% success level**:
+
+* most advanced models have time horizons of 1-2 hours.
+* exception again is Claude Mythos Preview, which has time horizon of 3 hours.
 
 I recommend you to play with the numbers yourself. To do this, view the first graph in `METR time horizons webpage <https://metr.org/time-horizons/>`_ and 
-play with the buttons below (50% success vs 80% success; log scale vs linear scale).
+play with the buttons below (try both 50% success and 80% success).
 
 The main finding of METR is that the time horizon is **doubling roughly every 4-7 months** and this trend has held from 2019 to 2026.
 
@@ -64,9 +68,9 @@ The main finding of METR is that the time horizon is **doubling roughly every 4-
 
 |
 
-How to read this chart: vertical axis is time horizon (log scale, so every step upwards doubles the *time horizon*), horizontal axis is calendar year.
+How to read this chart: vertical axis is time horizon (log scale, so every step upwards *doubles* the time horizon); horizontal axis is calendar year.
 
-The exact doubling time for time horizon depends on what time scale you look at. The original METR report looked at 2019-2025 data, and the doubling time 
+The exact doubling time for time horizon depends on what timescale you look at. The original METR report looked at 2019-2025 data, and the doubling time 
 was roughly 7 months. However, looking at just 2023-2025 (or 2023-2026 in the updated report) data, the doubling time seems to be even shorter, 4-6 months.
 
 It is important to note that the trend of doubling has been quite consistent for both 50% and 80% success rate time horizons.
@@ -94,11 +98,13 @@ Crucially, they keep updating this page whenever they test new models that becom
 every few months. So that the next time you hear some extreme claims about AI progress, you can have a look at what this objectively means in terms of 
 progress.
 
++++ other interesting research as well. recommend subscribing (link is at the footer of METR webpage).
+
 If reading scientific papers is more of your thing, check out the original METR paper from 2025 (obviously, this will not be continuously updated with data about new models):
 https://arxiv.org/pdf/2503.14499
 
 =====================
-So... now what?
+So.. now what?
 =====================
 
 we tackled coherence.
