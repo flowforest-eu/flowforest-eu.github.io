@@ -29,7 +29,7 @@ body::before {
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, #1b291d 0%, #d9a74a 50%, #8ca336 100%);
+    background: linear-gradient(90deg, #1b291d 0%, #d9a74a 50%, #1b291d 100%);
     z-index: 1030;
 }
 
@@ -61,18 +61,22 @@ a:hover {
     text-decoration-color: rgba(184, 130, 40, 0.6);
 }
 
-
 .navbar {
-    background: linear-gradient(180deg, #0e1710 0%, #17261a 100%) !important; /* Deep tree shadow gradient */
-    border-bottom: 1px solid #283a2c;
-    padding: 0.9rem 1.2rem !important;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(180deg, #0e1710 0%, #17261a 100%) !important;
+    border-bottom: 1px solid #253828;
+    padding: 0.75rem 1.2rem !important;
+    box-shadow: none !important; /* Removes the heavy artificial drop shadow */
 }
 
-/* Site Brand: FlowForest (Golden Sunbeam Glow) */
+/* Force all links inside navbar to drop standard underlines */
+.navbar a {
+    text-decoration: none !important;
+}
+
+/* Site Brand: FlowForest */
 .navbar-brand {
     font-family: 'Lora', Georgia, serif !important;
-    color: #e2b85c !important; /* Golden sunlight tone */
+    color: #e2b85c !important; /* Sunbeam gold */
     font-weight: 700;
     font-size: 1.3rem;
     letter-spacing: -0.01em;
@@ -81,12 +85,12 @@ a:hover {
 
 .navbar-brand:hover {
     color: #ffd875 !important;
-    text-shadow: 0 0 12px rgba(240, 194, 101, 0.5); /* Soft sunbeam bloom */
+    text-shadow: 0 0 10px rgba(240, 194, 101, 0.4);
 }
 
-/* Nav Links: Archive, Tags, RSS (Muted Lichen to Sunlit Moss) */
+/* Navigation Links (Archive, Tags, RSS) */
 .navbar-nav a {
-    color: #b0c4ad !important; /* Cool lichen gray-green */
+    color: #b0c4ad !important; /* Pale lichen sage */
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 0.95em;
@@ -96,12 +100,12 @@ a:hover {
 }
 
 .navbar-nav a:hover {
-    color: #e1f57a !important; /* Vibrant mossy leaf highlight */
-    background-color: rgba(140, 163, 54, 0.15); /* Soft sunlit canopy filter */
+    color: #e1f57a !important; /* Sunlit moss hover */
+    background-color: rgba(217, 167, 74, 0.12) !important;
     text-shadow: 0 0 8px rgba(225, 245, 122, 0.3);
 }
 
-/* Active Page Highlight */
+/* Active Page Indicator */
 .navbar-nav .active > a,
 .navbar-nav a.active {
     color: #ffd875 !important;
