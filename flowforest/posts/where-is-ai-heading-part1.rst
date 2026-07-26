@@ -1,6 +1,6 @@
 .. title: Where is AI heading - Part 1
 .. slug: where-is-ai-heading-part1
-.. date: 2026-07-27 08:22:32 UTC+03:00
+.. date: 2026-07-26 08:22:32 UTC+03:00
 .. tags: 
 .. category: 
 .. link: 
