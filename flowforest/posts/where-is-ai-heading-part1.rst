@@ -92,7 +92,7 @@ tasks also seem to follow exponential trends, but the doubling time (and the cur
 
 Although experts are not pointing out to any reasons the progress would be slowing down, there might be factors that they cannot foresee 
 (scientific limitations, physical bottlenecks, or financial reasons). However, I would argue that those would likely just make the doubling 
-time slower, while the underlying exponential trend would continue.
+time slower, while the underlying exponential trend would continue (unless some more extreme event or limitation occurs).
 
 ==========================
 If you want to learn more
