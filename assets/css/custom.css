@@ -1,102 +1,162 @@
-
 .postpromonav .tags {
     text-align: left !important;
 }
 
 #footer_nikola {
     font-size: 13px;
+    color: #636057 !important;
 }
 
-/*
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Merriweather:wght@700&display=swap');
-*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@700&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,500;1,400&family=Merriweather:wght@700&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;1,400&family=Merriweather:wght@700&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Literata:ital,wght@0,400;0,500;1,400&family=Merriweather:wght@700&display=swap');
-
+/* Base page style */
 body {
-    background-color: #1a241b !important;
-    color: #c2beb2 !important;
+    background-color: #fbf9f5 !important;
+    color: #273328 !important;
 
-    font-family: 'Literata', serif;
-    font-size: 19px;
-    line-height: 1.7;
-    /* -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale; */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 18px;
+    line-height: 1.75;
+    letter-spacing: -0.011em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-h1 > a, h1, h2, h3 {
-    color: #a3b899 !important;
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1b291d 0%, #d9a74a 50%, #1b291d 100%);
+    z-index: 1030;
+}
+
+h1 > a, h1, h2, h3, h4 {
+    color: #3b6329 !important;
     font-family: 'Lora', Georgia, serif;
-    letter-spacing: -0.02em; /* Tightens up headers nicely */
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-top: 1.5em;
 }
 
+strong {
+    color: #3b6329 !important;
+}
+
+/* Code & Math variables */
+code, pre, kbd, samp {
+    font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+    font-size: 0.9em;
+}
+
+/* Links */
 a {
-    color: #7fa973;
+    color: #3d6939;
     text-decoration: underline;
-    text-decoration-color: rgba(127, 169, 115, 0.4);
+    text-decoration-color: rgba(61, 105, 57, 0.3);
     text-underline-offset: 3px;
     transition: all 0.2s ease;
 }
 
 a:hover {
-    color: #d1a153 !important; 
-    text-decoration-color: rgba(209, 161, 83, 0.6);
+    color: #b88228 !important; 
+    text-decoration-color: rgba(184, 130, 40, 0.6);
 }
 
+nav.navbar,
 .navbar {
-    background-color: #111812 !important;
-    color: #a3b899 !important;
-    font-family: 'Lora', Georgia, serif;
-    font-weight: 700;
+    background: linear-gradient(135deg, #233a28 0%, #17261a 70%, #0a120b 100%);
+    border-bottom: 1px solid #2e4a34;
+    box-shadow: none;
+}
+
+/* Force all links inside navbar to drop standard underlines */
+.navbar a {
     text-decoration: none !important;
 }
 
-.navbar-nav a {
-    color: #8fa08b !important; 
+.navbar a.navbar-brand,
+.navbar a.navbar-brand span,
+#blog-title {
+    color: #e2b85c;
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+.navbar a.navbar-brand:hover,
+.navbar a.navbar-brand:hover span {
+    color: #ffd875;
+    text-shadow: 0 0 10px rgba(240, 194, 101, 0.4);
+    text-decoration: none;
+}
+
+.navbar .navbar-nav .nav-link,
+.navbar .navbar-nav a {
+    color: #b0c4ad;
     font-family: 'Inter', sans-serif;
-    transition: color 0.2s ease;
+    font-weight: 500;
+    font-size: 0.95em;
+    padding: 0.4rem 0.85rem;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.25s ease;
 }
 
-.navbar-nav a:hover {
-    color: #d1a153 !important;
+/* Navigation Link Hover State */
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav a:hover {
+    color: #e1f57a;
+    background-color: rgba(217, 167, 74, 0.12);
+    text-shadow: 0 0 8px rgba(225, 245, 122, 0.3);
+    text-decoration: none;
 }
 
+/* Active Page Indicator */
+.navbar-nav .active > a,
+.navbar-nav a.active {
+    color: #ffd875 !important;
+    font-weight: 600;
+}
+
+/* Tags & Badges - Kept your preferred style */
 .tag, .badge, .post-tag {
-    background-color: rgba(209, 161, 83, 0.08) !important;
-    color: #cca462 !important;
-    border: 1px solid rgba(209, 161, 83, 0.25) !important;
+    background-color: rgba(184, 130, 40, 0.1) !important;
+    color: #8c5e11 !important;
+    border: 1px solid rgba(184, 130, 40, 0.3) !important;
     border-radius: 4px;
-    padding: 4px 10px;
-    font-size: 0.85em;
+    padding: 3px 8px;
+    font-size: 0.82em;
     font-family: 'Inter', sans-serif;
+    font-weight: 500;
     text-decoration: none !important;
     transition: all 0.25s ease;
 }
 
 .tag:hover, .badge:hover {
-    background-color: rgba(209, 161, 83, 0.15) !important;
-    color: #e5be82 !important; /* Brightens up on hover */
-    border-color: rgba(209, 161, 83, 0.5) !important;
+    background-color: rgba(184, 130, 40, 0.2) !important;
+    color: #6d480a !important;
+    border-color: rgba(184, 130, 40, 0.6) !important;
 }
 
+/* Blockquotes */
 blockquote {
-    background-color: #202c21 !important; 
-    border-left: 4px solid #d1a153 !important; 
+    background-color: #f2efe4 !important; 
+    border-left: 4px solid #b88228 !important; 
     border-radius: 0 6px 6px 0;
     margin: 2rem 0;
     padding: 1.25rem 1.75rem;
 }
 
 blockquote p {
-    /* Flowing, book-style italic text */
     font-family: 'Lora', Georgia, serif;
     font-style: italic;
     font-size: 1.05rem;
     line-height: 1.75;
-    color: #cbd5c5 !important; 
+    color: #384639 !important; 
     margin-bottom: 0;
 }
 
@@ -108,6 +168,20 @@ blockquote cite {
     font-size: 0.85em;
     font-style: normal;
     font-weight: 500;
-    color: #7d8c79 !important; /* Muted sage-grey */
+    color: #647062 !important; 
     letter-spacing: 0.03em;
+}
+
+/* AI Disclaimer box - Kept your preferred style */
+p.ai-disclaimer {
+    border: 1px solid #d4caaf;
+    background-color: #f6f3e8;
+    border-radius: 5px !important;
+    font-size: 15px;
+    padding: 8px 12px;
+    color: #8c5e11;
+}
+
+code.literal {
+    color: #5670d4 !important;
 }
