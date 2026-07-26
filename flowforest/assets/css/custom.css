@@ -181,3 +181,7 @@ p.ai-disclaimer {
     padding: 8px 12px;
     color: #8c5e11;
 }
+
+code.literal {
+    color: #5670d4 !important;
+}

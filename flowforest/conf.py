@@ -943,7 +943,7 @@ IMAGE_FOLDERS = {'images': 'images'}
 # This list MAY be incomplete since pygments adds styles every now and then.
 # Check with list(pygments.styles.get_all_styles()) in an interpreter.
 #
-# CODE_COLOR_SCHEME = 'default'
+CODE_COLOR_SCHEME = 'autumn'
 
 # FAVICONS contains (name, file, size) tuples.
 # Used to create favicon link like this:
@@ -1294,6 +1294,7 @@ GENERATE_RSS = True
 # (translatable)
 EXTRA_HEAD_DATA = """
 <link href="/assets/css/custom.css" rel="stylesheet" type="text/css">
+<link href="/assets/css/code.css" rel="stylesheet" type="text/css">
 """
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
