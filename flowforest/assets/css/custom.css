@@ -108,3 +108,10 @@ blockquote cite {
     color: #7d8c79 !important; 
     letter-spacing: 0.03em;
 }
+
+p.ai-disclaimer {
+    border: 1px solid #c5b490 ;
+    border-radius: 5px !important;
+    font-size: 17px;
+    padding: 5px 10px;
+}

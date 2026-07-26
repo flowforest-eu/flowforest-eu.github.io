@@ -22,12 +22,6 @@ This is exactly what was done by METR (a non-profit research institute in Califo
 Measuring AI progress
 =====================
 
-.. 
-    METR noted that existing AI benchmarks have several fundamental problems: 
-    * They often consist of artificial tasks (rather than economically valuable tasks);
-    * Individual benchmarks tend to become aced by models relatively quickly and so drawing long-term trends becomes meaningless;
-    * It is not clear how to compare or combine results from different benchmarks.
-
 METR noticed that one of the issues that AI models have is losing coherence - it can be difficult for them to focus and complete a task 
 without losing track. This means that there is a natural metric: if you list various tasks that take human experts different time to complete
 (from mere seconds to several days) and group them by completion time, then how long tasks of those can the AI system complete with a certain 
@@ -51,36 +45,30 @@ in weeks or months. Here is what they found:
 
 At **50% success level**:
 
-* most advanced models of Claude, Gemini, and GPT currently (July 2026) have time horizons of 3-6 hours;
+* most advanced models of Claude, Gemini, and GPT currently (July 2026) have time horizons of 3–6 hours;
 * exceptions are Claude Opus 4.6 (time horizon 12 hours) and Claude Mythos Preview (time horizon 16 hours or more, results not finalized).
 
 At **80% success level**:
 
-* most advanced models have time horizons of 1-2 hours;
+* most advanced models have time horizons of 1–2 hours;
 * exception again is Claude Mythos Preview, which has time horizon of 3 hours.
 
-The following diagram shows the long-time trend of time horizon lengthening over time:
-
-..
-    "lengthening"?
+The following diagram shows the long-time trend of time horizon expanding over time:
 
 .. image:: /images/task-length-log.png
 
 |
 
-..
-    which diagram to keep?
-
 I recommend you to play with the numbers yourself. To do this, go to `METR time horizons webpage <https://metr.org/time-horizons/>`_ and have a look
 at the first graph there. Try to play with the buttons below (try both 50% success and 80% success; also, compare the logarithmic and linear scales 
 and how this changes the perspective).
 
-The main finding of METR is that the time horizon has been **doubling roughly every 4-7 months** and this trend has held from 2019 to 2026 (if anything,
+The main finding of METR is that the time horizon has been **doubling roughly every 4–7 months** and this trend has held from 2019 to 2026 (if anything,
 progress speed has even increased from 2023 onwards).  
 
 It is important to note that the trend of doubling has been quite consistent for both 50% and 80% success rate time horizons.
 
-Now, what does this mean? Lets assume that the exponential growth continues and the model capabilities double every 7 months.
+Now, what does this mean? Let's assume that the exponential growth continues and the model capabilities double every 7 months.
 This now means that after 28 months (four doublings, so 16x growth), in November 2028, we would be facing:
 
 * Models succeeding 50% for 8-24 day tasks
@@ -91,59 +79,63 @@ took humans specialists a whole month.
 
 Statistics like this are what have caused the leading AI experts to warn us that we are heading head-first into a world that we are not ready for.
 
-Of course, real life is more complicated. There are a few categories of reasons why the current exponential growth may be unsustainable:
+===================================
+How sure are the experts of this?
+===================================
 
-* scientific limitations;
-* physical bottlenecks;
-* financial reasons (regarding investment and profitability).
+METR benchmark is one of the most cited benchmarks in the industry. There is a lot of disagreement about what the exact doubling time 
+is currently (whether 4 months or 7 months) - people tend to point out that it is probably more in the range of 4-6 months.
 
-In terms of scientific limitations, I am not aware of any considerations why the current growth rate would be unsustainable (but I am not an expert in 
-Machine Learning domain). 
-In terms of physical bottlenecks, the following should be at least considered: constraints on total available computing power (including memory chips),
-total amount of available data centers, constraints regarding available amounts of energy on the grid, etc. There are questions of whether any of those
-will become a bottleneck slowing down the current trends, and by what amount. My gut feeling is that if those limiting factors become bottlenecks,
-they will eventually be resolved, but this will result in the progress being slower and the doubling time being longer. However, in that case the
-growth would still be exponential (albeit slower).
+Critics also point out that the benchmark focuses a lot on coding; other real-world tasks, which are messier, might not follow the exact same 
+trend. METR `looked into this as well <https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains>` and concluded that other 
+tasks also seem to follow exponential trends, but the doubling time (and the current state) varies by the field.
 
-My recommendation is to keep an idea of the field and the models progressing. And to come back to this METR graph after every few months and see how 
-big step forward each new model has proven to be.
+Although experts are not pointing out to any reasons the progress would be slowing down, there might be factors that they cannot foresee 
+(scientific limitations, physical bottlenecks, or financial reasons). However, I would argue that those would likely just make the doubling 
+time slower, while the underlying exponential trend would continue.
 
 ==========================
 If you want to learn more
 ==========================
 
-I highly recommend everyone to have a look at the METR time horizons page, since it explains a lot of things in more detail and clarifies multiple '
-important aspects that I skimmed over (I especially recommend to read the "Frequently Asked Questions" part, since it is very clearly written and 
-covers a lot of valuable points):
-https://metr.org/time-horizons/
+My recommendation to everyone is to book the `METR time horizons page <https://metr.org/time-horizons/>` - they will keep updating it
+whenever new models are released and they have tested them. Just reviewing the state of the models once every 3 months will keep you
+informed based on actual data.
 
-Crucially, they keep updating this page whenever they test new models that become available, so I recommend to bookmark this page and have a look at it
-every few months. So that the next time you hear some extreme claims about new AI models, you can have a look at what this objectively means in terms of 
-progress for time horizons.
+Another reason to read the METR time horizons page now is that I skipped over many important caveats to keep the length of this blog post reasonable.
+So I recommend scrolling to the "Frequently Asked Questions" section in their page and read their answers to questions such as:
 
-.. 
-    this part repeats now.
+* Does “time horizon” mean the length of time that current AI agents can act autonomously?
+* Does an 8-hour time horizon mean that AI can automate all jobs?
+* Why not report the time horizon at a higher reliability level (e.g. time horizon at 99% success rate)?
+* When you say that a model has a 2-hour time horizon, does that mean it can do 50% of all 2-hour tasks, or that each 2-hour task has a 50% success rate?
 
 METR also has tons of other research as well on their webpage; additionally, they also have a newsletter that you can subscribe to 
-(that you can find by scrolling to the bottom of their webpage).
+(to do that, scroll to the footer of their webpage).
 
-If reading scientific papers is more of your thing, check out the original METR paper from 2025 (obviously, this is not being continuously updated):
+If you prefer reading information in the form of a scientific paper, check out the original METR paper from 2025 instead 
+(obviously, this is not being updated with statistics about the latest models):
 https://arxiv.org/pdf/2503.14499
 
 =====================
 So.. now what?
 =====================
 
-You may have noticed that the title of this post was "Where is AI heading - Part 1". This is because we have investigated one important aspect or 
-short-coming of LLMs: coherence. In my opinion, there are two other fundamental shortcomings to LLMs that need to be explored:
+You may have noticed that the title of this post was "Where is AI heading - Part 1". This is because while we focused on how coherence of LLMs
+is increasing over time, there are other fundamental shortcomings of LLMs that need to be explored as well:
 
-* even after all of the progress, often failing at tasks that are trivial to humans;
-* hallucinations - and being confidently wrong, and failing to admit mistakes.
+* even after all the progress, LLMs often fail in surprising ways at tasks that are trivial to humans;
+* LLMs have hallucinations - and they are often confidently wrong, and fail to admit mistakes.
 
-There will be upcoming posts where we two deep dives into those topics.
+There will be upcoming posts where we two deep dives into those two shortcomings and the reasons behind them. 
+
 After that, we will look at where this all could take the humankind as a whole - and whether all this is inevitable or do we have some agency in 
 shaping the future.
 
 And finally, because I believe that transparency about AI usage is important:
 
-**Disclaimer of AI usage**: AI was not used in writing this blog post.
+.. raw:: html
+
+    <embed>
+        <p class="ai-disclaimer"><b>Disclaimer of AI usage</b>: AI was not used in writing this blog post.</p>
+    </embed>
