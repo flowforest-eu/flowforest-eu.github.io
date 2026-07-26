@@ -6,7 +6,6 @@
 .. link: 
 .. description: 
 .. type: text
-.. status: draft
 .. tags: AI, AI-progress
 
 Lately, AI seems to dominate the news. But how to discern truth from exaggerations? The news coverage is confusing and extremely polarized 

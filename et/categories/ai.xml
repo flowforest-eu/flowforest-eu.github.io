@@ -1,5 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FlowForest (Postitused AI kohta)</title><link>https://example.com/</link><description></description><atom:link href="https://example.com/et/categories/ai.xml" rel="self" type="application/rss+xml"></atom:link><language>et</language><copyright>Autor: &lt;a href="mailto:rauni.lillemets@gmail.com"&gt;FlowForest&lt;/a&gt; </copyright><lastBuildDate>Sun, 26 Jul 2026 14:08:31 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Mis on asja eesmärk?</title><link>https://example.com/et/posts/purpose-of-blog/</link><dc:creator>FlowForest</dc:creator><description>&lt;p&gt;AI on tohutu kiirusega arenev valdkond. Ma ei tea, mis ootab meid järgmise 5 või 10 aasta pärast - kuid mulle tundub,
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FlowForest (Postitused AI kohta)</title><link>https://example.com/</link><description></description><atom:link href="https://example.com/et/categories/ai.xml" rel="self" type="application/rss+xml"></atom:link><language>et</language><copyright>Autor: &lt;a href="mailto:rauni.lillemets@gmail.com"&gt;FlowForest&lt;/a&gt; </copyright><lastBuildDate>Sun, 26 Jul 2026 14:13:48 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Where is AI heading - Part 1</title><link>https://example.com/et/posts/where-is-ai-heading-part1/</link><dc:creator>FlowForest</dc:creator><description>&lt;p&gt;Lately, AI seems to dominate the news. But how to discern truth from exaggerations? The news coverage is confusing and extremely polarized
+about the AI topic.
+For example, you might see videos with titles "AI will replace all jobs in next 2 years" next to a video titled "AI progress has hit a wall".
+Of course, clickbait sells, and so do extreme titles - in either direction.&lt;/p&gt;
+&lt;p&gt;And even from a perspective of an AI expert the progress can look very jagged - periods of rapid improvement alternate with periods of
+relative stagnation. In order to get a clearer view, one must zoom out and look at the progress trends over a longer timeframe.
+This is exactly what was done by METR (a non-profit research institute in California).&lt;/p&gt;
+&lt;section id="measuring-ai-progress"&gt;
+&lt;h2&gt;Measuring AI progress&lt;/h2&gt;
+&lt;p&gt;METR noticed that one of the issues that AI models have is losing coherence - it can be difficult for them to focus and complete a task
+without losing track. This means that there is a natural metric: if you list various tasks that take human experts different time to complete
+(from mere seconds to several days) and group them by completion time, then how long tasks of those can the AI system complete with a certain
+reliability (e.g. 50% or 80%)? They named this metric &lt;strong&gt;task completion time horizon&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;METR compiled a list of total 228 tasks (from the fields of software engineering, cybersecurity, general reasoning, and machine learning tasks)
+that range from trivial (can be completed in seconds) to tasks that take a professional in that field a full day to complete.&lt;/p&gt;
+&lt;p&gt;Here are some examples of the tasks from the software engineering field:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;&lt;code class="docutils literal"&gt;find_shell_script&lt;/code&gt; (3 seconds) - &lt;em&gt;“Which of those files is a shell script?” Choices: “run.sh”, “run.txt”, “run.py”, “run.md”&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code class="docutils literal"&gt;wikipedia_research&lt;/code&gt; (1 minute) - &lt;em&gt;Research simple factual information from Wikipedia&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code class="docutils literal"&gt;oxdna_simple&lt;/code&gt; (9 minutes) - &lt;em&gt;Detect and fix a bug in the input files for a molecular dynamics simulation using the oxDNA package&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code class="docutils literal"&gt;munge_data&lt;/code&gt; (56 minutes) - &lt;em&gt;Write a Python script to transform JSON data from one format to another using example files&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code class="docutils literal"&gt;cuda_backtesting&lt;/code&gt; (8 hours) - &lt;em&gt;Speed up a Python backtesting tool for trade executions by implementing custom CUDA kernels while preserving
+all functionality, aiming for a 30x performance improvement&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The strength of this approach is that it allows to have one test that scales all the way from early days of GPT-2 (that could reliably solve tasks taking
+experts a few seconds) to current frontier models (with time horizons in hours) and all the way to future models that could potentially have time horizons
+in weeks or months. Here is what they found:&lt;/p&gt;
+&lt;p&gt;At &lt;strong&gt;50% success level&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;most advanced models of Claude, Gemini, and GPT currently (July 2026) have time horizons of 3–6 hours;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;exceptions are Claude Opus 4.6 (time horizon 12 hours) and Claude Mythos Preview (time horizon 16 hours or more, results not finalized).&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;At &lt;strong&gt;80% success level&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;most advanced models have time horizons of 1–2 hours;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;exception again is Claude Mythos Preview, which has time horizon of 3 hours.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The following diagram shows the long-time trend of time horizon expanding over time:&lt;/p&gt;
+&lt;img alt="/images/task-length-log.png" src="https://example.com/images/task-length-log.png"&gt;
+&lt;div class="line-block"&gt;
+&lt;div class="line"&gt;&lt;br&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;p&gt;I recommend you to play with the numbers yourself. To do this, go to &lt;a class="reference external" href="https://metr.org/time-horizons/"&gt;METR time horizons webpage&lt;/a&gt; and have a look
+at the first graph there. Try to play with the buttons below (try both 50% success and 80% success; also, compare the logarithmic and linear scales
+and how this changes the perspective).&lt;/p&gt;
+&lt;p&gt;The main finding of METR is that the time horizon has been &lt;strong&gt;doubling roughly every 4–7 months&lt;/strong&gt; and this trend has held from 2019 to 2026 (if anything,
+progress speed has even increased from 2023 onwards).&lt;/p&gt;
+&lt;p&gt;It is important to note that the trend of doubling has been quite consistent for both 50% and 80% success rate time horizons.&lt;/p&gt;
+&lt;p&gt;Now, what does this mean? Let's assume that the exponential growth continues and the model capabilities double every 7 months.
+This now means that after 28 months (four doublings, so 16x growth), in November 2028, we would be facing:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Models succeeding 50% for 8-24 day tasks&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Models succeeding 80% for 2-4 day tasks&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;And just 7 months later, in summer 2029, we could expect AI models to be able to complete tasks (with a 50% success rate) that previously
+took humans specialists a whole month.&lt;/p&gt;
+&lt;p&gt;Statistics like this are what have caused the leading AI experts to warn us that we are heading head-first into a world that we are not ready for.&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="how-sure-are-the-experts-of-this"&gt;
+&lt;h2&gt;How sure are the experts of this?&lt;/h2&gt;
+&lt;p&gt;METR benchmark is one of the most cited benchmarks in the industry. There is a lot of disagreement about what the exact doubling time
+is currently (whether 4 months or 7 months) - people tend to point out that it is probably more in the range of 4-6 months.&lt;/p&gt;
+&lt;p&gt;Critics also point out that the benchmark focuses a lot on coding; other real-world tasks, which are messier, might not follow the exact same
+trend. METR &lt;a class="reference external" href="https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains"&gt;looked into this as well&lt;/a&gt; and concluded that other
+tasks also seem to follow exponential trends, but the doubling time (and the current state) varies by the field.&lt;/p&gt;
+&lt;p&gt;Although experts are not pointing out to any reasons the progress would be slowing down, there might be factors that they cannot foresee
+(scientific limitations, physical bottlenecks, or financial reasons). However, I would argue that those would likely just make the doubling
+time slower, while the underlying exponential trend would continue (unless some more extreme event or limitation occurs).&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="if-you-want-to-learn-more"&gt;
+&lt;h2&gt;If you want to learn more&lt;/h2&gt;
+&lt;p&gt;My recommendation to everyone is to bookmark the &lt;a class="reference external" href="https://metr.org/time-horizons/"&gt;METR time horizons page&lt;/a&gt; - they will keep updating it
+whenever new models are released and they have tested them. Just reviewing the state of the models once every 3 months will keep you
+informed based on actual data.&lt;/p&gt;
+&lt;p&gt;Another reason to read the METR time horizons page now is that I skipped over many important caveats to keep the length of this blog post reasonable.
+So I recommend scrolling to the "Frequently Asked Questions" section in their page and read their answers to questions such as:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;Does “time horizon” mean the length of time that current AI agents can act autonomously?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Does an 8-hour time horizon mean that AI can automate all jobs?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Why not report the time horizon at a higher reliability level (e.g. time horizon at 99% success rate)?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;When you say that a model has a 2-hour time horizon, does that mean it can do 50% of all 2-hour tasks, or that each 2-hour task has a 50% success rate?&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;METR also has tons of other research as well on their webpage; additionally, they also have a newsletter that you can subscribe to
+(to do that, scroll to the footer of their webpage).&lt;/p&gt;
+&lt;p&gt;If you prefer reading information in the form of a scientific paper, check out the original METR paper from 2025 instead
+(obviously, this is not being updated with statistics about the latest models):
+&lt;a class="reference external" href="https://arxiv.org/pdf/2503.14499"&gt;https://arxiv.org/pdf/2503.14499&lt;/a&gt;&lt;/p&gt;
+&lt;/section&gt;
+&lt;section id="so-now-what"&gt;
+&lt;h2&gt;So.. now what?&lt;/h2&gt;
+&lt;p&gt;You may have noticed that the title of this post was "Where is AI heading - Part 1". This is because while we focused on how coherence of LLMs
+is increasing over time, there are other fundamental shortcomings of LLMs that need to be explored as well:&lt;/p&gt;
+&lt;ul class="simple"&gt;
+&lt;li&gt;&lt;p&gt;even after all the progress, LLMs often fail in surprising ways at tasks that are trivial to humans;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;LLMs have hallucinations - and they are often confidently wrong, and fail to admit mistakes.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There will be upcoming posts where we two deep dives into those two shortcomings and the reasons behind them.&lt;/p&gt;
+&lt;p&gt;After that, we will look at where this all could take the humankind as a whole - and whether all this is inevitable or do we have some agency in
+shaping the future.&lt;/p&gt;
+&lt;p&gt;And finally, because I believe that transparency about AI usage is important:&lt;/p&gt;
+&lt;embed&gt;
+    &lt;p class="ai-disclaimer"&gt;&lt;b&gt;Disclaimer of AI usage&lt;/b&gt;: AI was not used in writing this blog post.&lt;/p&gt;
+&lt;/embed&gt;&lt;/section&gt;</description><guid>https://example.com/et/posts/where-is-ai-heading-part1/</guid><pubDate>Sun, 26 Jul 2026 05:22:32 GMT</pubDate></item><item><title>Mis on asja eesmärk?</title><link>https://example.com/et/posts/purpose-of-blog/</link><dc:creator>FlowForest</dc:creator><description>&lt;p&gt;AI on tohutu kiirusega arenev valdkond. Ma ei tea, mis ootab meid järgmise 5 või 10 aasta pärast - kuid mulle tundub,
 et võib üsna kindlalt öelda, et muutused saavad olema väga põhjapanevad nii ühiskonna kui üksikisiku tasemel.&lt;/p&gt;
 &lt;p&gt;Teades, et muutused on tulemas, tahaks nende jaoks mingil viisil ette valmistuda - nii enda kui oma pere tarbeks. Ja
 kui suudan selle käigus aidata ka sama teha enda sõpradel ja inimestel mu ümber, siis seda parem.&lt;/p&gt;

@@ -6,16 +6,24 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://example.com/categories/ai-progress.xml</loc>
+  <lastmod>2026-07-26T14:13:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://example.com/categories/ai-safety.xml</loc>
   <lastmod>2026-07-26T14:08:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/categories/ai.xml</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-07-26T14:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/categories/intro.xml</loc>
   <lastmod>2026-07-26T14:08:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://example.com/et/categories/ai-progress.xml</loc>
+  <lastmod>2026-07-26T14:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/et/categories/ai-turvalisus.xml</loc>
@@ -23,7 +31,7 @@
  </sitemap>
  <sitemap>
   <loc>https://example.com/et/categories/ai.xml</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-07-26T14:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/et/categories/intro.xml</loc>
@@ -31,14 +39,14 @@
  </sitemap>
  <sitemap>
   <loc>https://example.com/et/rss.xml</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-07-26T14:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/rss.xml</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-07-26T14:13:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/sitemap.xml</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-07-26T14:13:00Z</lastmod>
  </sitemap>
 </sitemapindex>
