@@ -47,8 +47,8 @@ strong {
 
 /* Code & Math variables */
 code, pre, kbd, samp {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.88em;
+    font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+    font-size: 0.9em;
 }
 
 /* Links */
@@ -179,5 +179,5 @@ p.ai-disclaimer {
     border-radius: 5px !important;
     font-size: 15px;
     padding: 8px 12px;
-    color: #485947;
+    color: #8c5e11;
 }
