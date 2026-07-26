@@ -98,7 +98,7 @@ time slower, while the underlying exponential trend would continue.
 If you want to learn more
 ==========================
 
-My recommendation to everyone is to book the `METR time horizons page <https://metr.org/time-horizons/>`_ - they will keep updating it
+My recommendation to everyone is to bookmark the `METR time horizons page <https://metr.org/time-horizons/>`_ - they will keep updating it
 whenever new models are released and they have tested them. Just reviewing the state of the models once every 3 months will keep you
 informed based on actual data.
 
