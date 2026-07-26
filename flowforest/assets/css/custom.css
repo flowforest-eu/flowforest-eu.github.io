@@ -34,11 +34,15 @@ body::before {
 }
 
 h1 > a, h1, h2, h3, h4 {
-    color: #1a281c !important; /* Deep pine-ink heading */
+    color: #3b6329 !important;
     font-family: 'Lora', Georgia, serif;
     font-weight: 700;
     letter-spacing: -0.02em;
     margin-top: 1.5em;
+}
+
+strong {
+    color: #3b6329 !important;
 }
 
 /* Code & Math variables */
@@ -61,11 +65,11 @@ a:hover {
     text-decoration-color: rgba(184, 130, 40, 0.6);
 }
 
+nav.navbar,
 .navbar {
-    background: linear-gradient(180deg, #0e1710 0%, #17261a 100%) !important;
-    border-bottom: 1px solid #253828;
-    padding: 0.75rem 1.2rem !important;
-    box-shadow: none !important; /* Removes the heavy artificial drop shadow */
+    background: linear-gradient(135deg, #233a28 0%, #17261a 70%, #0a120b 100%);
+    border-bottom: 1px solid #2e4a34;
+    box-shadow: none;
 }
 
 /* Force all links inside navbar to drop standard underlines */
@@ -73,36 +77,42 @@ a:hover {
     text-decoration: none !important;
 }
 
-/* Site Brand: FlowForest */
-.navbar-brand {
-    font-family: 'Lora', Georgia, serif !important;
-    color: #e2b85c !important; /* Sunbeam gold */
+.navbar a.navbar-brand,
+.navbar a.navbar-brand span,
+#blog-title {
+    color: #e2b85c;
+    font-family: 'Lora', Georgia, serif;
     font-weight: 700;
     font-size: 1.3rem;
-    letter-spacing: -0.01em;
-    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
-.navbar-brand:hover {
-    color: #ffd875 !important;
+.navbar a.navbar-brand:hover,
+.navbar a.navbar-brand:hover span {
+    color: #ffd875;
     text-shadow: 0 0 10px rgba(240, 194, 101, 0.4);
+    text-decoration: none;
 }
 
-/* Navigation Links (Archive, Tags, RSS) */
-.navbar-nav a {
-    color: #b0c4ad !important; /* Pale lichen sage */
+.navbar .navbar-nav .nav-link,
+.navbar .navbar-nav a {
+    color: #b0c4ad;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 0.95em;
-    padding: 0.4rem 0.85rem !important;
+    padding: 0.4rem 0.85rem;
     border-radius: 6px;
+    text-decoration: none;
     transition: all 0.25s ease;
 }
 
-.navbar-nav a:hover {
-    color: #e1f57a !important; /* Sunlit moss hover */
-    background-color: rgba(217, 167, 74, 0.12) !important;
+/* Navigation Link Hover State */
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav a:hover {
+    color: #e1f57a;
+    background-color: rgba(217, 167, 74, 0.12);
     text-shadow: 0 0 8px rgba(225, 245, 122, 0.3);
+    text-decoration: none;
 }
 
 /* Active Page Indicator */
