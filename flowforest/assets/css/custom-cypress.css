@@ -1,0 +1,152 @@
+.postpromonav .tags {
+    text-align: left !important;
+}
+
+#footer_nikola {
+    font-size: 13px;
+    color: #5c6b5e !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Subtle forest canopy accent line at the top of the browser */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #2b4c38 0%, #52795d 50%, #8cae88 100%);
+    z-index: 1000;
+}
+
+/* Base page - Calming Sage Mist background */
+body {
+    background-color: #f3f5f2 !important;
+    color: #223326 !important; /* Rich dark pine body text */
+
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 18px;
+    line-height: 1.75;
+    letter-spacing: -0.011em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings - Deep Cypress */
+h1 > a, h1, h2, h3, h4 {
+    color: #173322 !important;
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-top: 1.5em; /* Includes your preferred top spacing */
+}
+
+/* Monospace / Code */
+code, pre, kbd, samp {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.88em;
+    background-color: #e8ebe5 !important;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/* Links - Botanical Green with Underline */
+a {
+    color: #2e633a;
+    text-decoration: underline;
+    text-decoration-color: rgba(46, 99, 58, 0.35);
+    text-underline-offset: 3px;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    color: #a86c1d !important; /* Warm Amber/Autumn highlight on hover */
+    text-decoration-color: rgba(168, 108, 29, 0.6);
+}
+
+/* Navigation bar - Forest Floor Shade */
+.navbar {
+    background-color: #e5e9e2 !important;
+    border-bottom: 1px solid #d2d8cb;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}
+
+.navbar-brand {
+    font-family: 'Lora', Georgia, serif !important;
+    color: #173322 !important;
+    font-weight: 700;
+}
+
+.navbar-nav a {
+    color: #405244 !important; 
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95em;
+    transition: color 0.2s ease;
+}
+
+.navbar-nav a:hover {
+    color: #a86c1d !important;
+}
+
+/* Tags & Badges - Moss & Soft Gold */
+.tag, .badge, .post-tag {
+    background-color: #e2e8df !important;
+    color: #2b4c38 !important;
+    border: 1px solid #b8c4b3 !important;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 0.82em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    text-decoration: none !important;
+    transition: all 0.25s ease;
+}
+
+.tag:hover, .badge:hover {
+    background-color: #d2ddd0 !important;
+    color: #173322 !important;
+    border-color: #8cae88 !important;
+}
+
+/* Blockquotes - Soft Grove Accent */
+blockquote {
+    background-color: #eaede7 !important; 
+    border-left: 4px solid #52795d !important; 
+    border-radius: 0 6px 6px 0;
+    margin: 2rem 0;
+    padding: 1.25rem 1.75rem;
+}
+
+blockquote p {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #27382b !important; 
+    margin-bottom: 0;
+}
+
+blockquote footer, 
+blockquote cite {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85em;
+    font-style: normal;
+    font-weight: 500;
+    color: #5c6b5e !important; 
+    letter-spacing: 0.03em;
+}
+
+/* AI Disclaimer box - Warm Birch/Earthy callout */
+p.ai-disclaimer {
+    border: 1px solid #ccd4c7;
+    background-color: #e8ebe5;
+    border-radius: 6px !important;
+    font-size: 15px;
+    padding: 10px 14px;
+    color: #314234;
+}
