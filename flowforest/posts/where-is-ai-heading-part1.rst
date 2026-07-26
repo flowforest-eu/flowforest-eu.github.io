@@ -32,12 +32,12 @@ that range from trivial (can be completed in seconds) to tasks that take a profe
 
 Here are some examples of the tasks from the software engineering field:
 
-* ``find_shell_script`` (3 seconds) - “Which of those files is a shell script?” Choices: “run.sh”, “run.txt”, “run.py”, “run.md”
-* ``wikipedia_research`` (1 minute) - Research simple factual information from Wikipedia
-* ``oxdna_simple`` (9 minutes) - Detect and fix a bug in the input files for a molecular dynamics simulation using the oxDNA package
-* ``munge_data`` (56 minutes) - Write a Python script to transform JSON data from one format to another using example files
-* ``cuda_backtesting`` (8 hours) - Speed up a Python backtesting tool for trade executions by implementing custom CUDA kernels while preserving 
-  all functionality, aiming for a 30x performance improvement
+* ``find_shell_script`` (3 seconds) - *“Which of those files is a shell script?” Choices: “run.sh”, “run.txt”, “run.py”, “run.md”*
+* ``wikipedia_research`` (1 minute) - *Research simple factual information from Wikipedia*
+* ``oxdna_simple`` (9 minutes) - *Detect and fix a bug in the input files for a molecular dynamics simulation using the oxDNA package*
+* ``munge_data`` (56 minutes) - *Write a Python script to transform JSON data from one format to another using example files*
+* ``cuda_backtesting`` (8 hours) - *Speed up a Python backtesting tool for trade executions by implementing custom CUDA kernels while preserving 
+  all functionality, aiming for a 30x performance improvement*
 
 The strength of this approach is that it allows to have one test that scales all the way from early days of GPT-2 (that could reliably solve tasks taking 
 experts a few seconds) to current frontier models (with time horizons in hours) and all the way to future models that could potentially have time horizons 
@@ -87,7 +87,7 @@ METR benchmark is one of the most cited benchmarks in the industry. There is a l
 is currently (whether 4 months or 7 months) - people tend to point out that it is probably more in the range of 4-6 months.
 
 Critics also point out that the benchmark focuses a lot on coding; other real-world tasks, which are messier, might not follow the exact same 
-trend. METR `looked into this as well <https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains>` and concluded that other 
+trend. METR `looked into this as well <https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains>`_ and concluded that other 
 tasks also seem to follow exponential trends, but the doubling time (and the current state) varies by the field.
 
 Although experts are not pointing out to any reasons the progress would be slowing down, there might be factors that they cannot foresee 
@@ -98,7 +98,7 @@ time slower, while the underlying exponential trend would continue.
 If you want to learn more
 ==========================
 
-My recommendation to everyone is to book the `METR time horizons page <https://metr.org/time-horizons/>` - they will keep updating it
+My recommendation to everyone is to book the `METR time horizons page <https://metr.org/time-horizons/>`_ - they will keep updating it
 whenever new models are released and they have tested them. Just reviewing the state of the models once every 3 months will keep you
 informed based on actual data.
 
