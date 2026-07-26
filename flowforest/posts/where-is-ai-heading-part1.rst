@@ -61,42 +61,71 @@ At **80% success level**:
 
 The following diagram shows the long-time trend of time horizon lengthening over time:
 
+..
+    "lengthening"?
+
 .. image:: /images/task-length-log.png
 
 |
 
+..
+    which diagram to keep?
+
 I recommend you to play with the numbers yourself. To do this, go to `METR time horizons webpage <https://metr.org/time-horizons/>`_ and have a look
-at the first graph there. Try to play with the buttons below (try both 50% success and 80% success).
+at the first graph there. Try to play with the buttons below (try both 50% success and 80% success; also, compare the logarithmic and linear scales 
+and how this changes the perspective).
 
 The main finding of METR is that the time horizon has been **doubling roughly every 4-7 months** and this trend has held from 2019 to 2026 (if anything,
 progress speed has even increased from 2023 onwards).  
 
 It is important to note that the trend of doubling has been quite consistent for both 50% and 80% success rate time horizons.
 
-Now, what does this mean? Lets take the conserative estimate of model capabilities doubling every 7 months and analyze it.
-This now means that after 28 months (four doublings, so 16x growth), in November 2028, we will be facing:
+Now, what does this mean? Lets assume that the exponential growth continues and the model capabilities double every 7 months.
+This now means that after 28 months (four doublings, so 16x growth), in November 2028, we would be facing:
 
 * Models succeeding 50% for 8-24 day tasks
 * Models succeeding 80% for 2-4 day tasks 
 
 And just 7 months later, in summer 2029, we could expect AI models to be able to complete tasks (with a 50% success rate) that previously 
-took humans specialists a whole month. This will undoubtedly cause a serious amount of disruption and potentially job replacement in the labour market.
+took humans specialists a whole month.
 
-These statistics are what have caused the leading AI experts to warn us that we are heading head-first into a world that we are not ready for.
+Statistics like this are what have caused the leading AI experts to warn us that we are heading head-first into a world that we are not ready for.
+
+Of course, real life is more complicated. There are a few categories of reasons why the current exponential growth may be unsustainable:
+
+* scientific limitations;
+* physical bottlenecks;
+* financial reasons (regarding investment and profitability).
+
+In terms of scientific limitations, I am not aware of any considerations why the current growth rate would be unsustainable (but I am not an expert in 
+Machine Learning domain). 
+In terms of physical bottlenecks, the following should be at least considered: constraints on total available computing power (including memory chips),
+total amount of available data centers, constraints regarding available amounts of energy on the grid, etc. There are questions of whether any of those
+will become a bottleneck slowing down the current trends, and by what amount. My gut feeling is that if those limiting factors become bottlenecks,
+they will eventually be resolved, but this will result in the progress being slower and the doubling time being longer. However, in that case the
+growth would still be exponential (albeit slower).
+
+My recommendation is to keep an idea of the field and the models progressing. And to come back to this METR graph after every few months and see how 
+big step forward each new model has proven to be.
 
 ==========================
 If you want to learn more
 ==========================
 
 I highly recommend everyone to have a look at the METR time horizons page, since it explains a lot of things in more detail and clarifies multiple '
-important aspects:
+important aspects that I skimmed over (I especially recommend to read the "Frequently Asked Questions" part, since it is very clearly written and 
+covers a lot of valuable points):
 https://metr.org/time-horizons/
 
 Crucially, they keep updating this page whenever they test new models that become available, so I recommend to bookmark this page and have a look at it
 every few months. So that the next time you hear some extreme claims about new AI models, you can have a look at what this objectively means in terms of 
 progress for time horizons.
 
-METR also has tons of other research as well on their webpage; they also have a newsletter that you can subscribe to (scroll to the bottom of the webpage).
+.. 
+    this part repeats now.
+
+METR also has tons of other research as well on their webpage; additionally, they also have a newsletter that you can subscribe to 
+(that you can find by scrolling to the bottom of their webpage).
 
 If reading scientific papers is more of your thing, check out the original METR paper from 2025 (obviously, this is not being continuously updated):
 https://arxiv.org/pdf/2503.14499
@@ -105,8 +134,16 @@ https://arxiv.org/pdf/2503.14499
 So.. now what?
 =====================
 
-we tackled coherence.
-we will look at trivial mistakes LLMs make. how they work.
-we will look at reliability.
+You may have noticed that the title of this post was "Where is AI heading - Part 1". This is because we have investigated one important aspect or 
+short-coming of LLMs: coherence. In my opinion, there are two other fundamental shortcomings to LLMs that need to be explored:
 
-we will look at where this all will head. and whether all this is inevitable or we have some agency in shaping the future.
+* even after all of the progress, often failing at tasks that are trivial to humans;
+* hallucinations - and being confidently wrong, and failing to admit mistakes.
+
+There will be upcoming posts where we two deep dives into those topics.
+After that, we will look at where this all could take the humankind as a whole - and whether all this is inevitable or do we have some agency in 
+shaping the future.
+
+And finally, because I believe that transparency about AI usage is important:
+
+**Disclaimer of AI usage**: AI was not used in writing this blog post.
