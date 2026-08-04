@@ -185,3 +185,11 @@ p.ai-disclaimer {
 code.literal {
     color: #5670d4 !important;
 }
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 2px;
+}
