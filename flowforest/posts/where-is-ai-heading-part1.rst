@@ -177,7 +177,7 @@ If you prefer reading information in the form of a scientific paper, check out t
 https://arxiv.org/pdf/2503.14499
 
 =====================
-So.. now what?
+What's next?
 =====================
 
 You may have noticed that the title of this post was "Where is AI heading - Part 1". This is because while we focused on how coherence of LLMs
