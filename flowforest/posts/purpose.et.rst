@@ -5,7 +5,7 @@
 .. link: 
 .. description: 
 .. type: text
-.. tags: intro, AI, AI-turvalisus
+.. tags: Intro, AI, AI-turvalisus
 
 AI on tohutu kiirusega arenev valdkond. Ma ei tea, mis ootab meid järgmise 5 või 10 aasta pärast - kuid mulle tundub,
 et võib üsna kindlalt öelda, et muutused saavad olema väga põhjapanevad nii ühiskonna kui üksikisiku tasemel.

@@ -5,7 +5,7 @@
 .. link: 
 .. description: 
 .. type: text
-.. tags: intro, AI, AI-safety
+.. tags: Intro, AI, AI-safety
 
 AI is a rapidly advancing field. The progress in the last decade has been enormous and sudden (++). For example, 
 imagine that one would travel back in time to 2010 and ask when will an AI systems be created that can autonomously do both of those:
