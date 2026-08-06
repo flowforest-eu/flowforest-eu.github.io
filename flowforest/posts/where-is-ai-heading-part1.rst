@@ -83,7 +83,7 @@ This now means that after 28 months (four doublings, so 16x growth), in November
 And just 7 months later, in summer 2029, we could expect AI models to be able to complete tasks (with a 50% success rate) that previously 
 took humans specialists a whole month.
 
-Statistics like this are what have caused some AI forecasters to warn us that we are heading head-first into a world that we are not fully ready for.
+Statistics like this are what have caused some AI forecasters to warn us that we are moving head-first into a world that we are not fully ready for.
 
 ===================================
 How sure are the experts of this?
@@ -102,13 +102,27 @@ However, the trend can only continue if the underlying assumptions continue to h
 What could cause the trend to change?
 =======================================
 
-There are several ways how the landscape could drastically change: scientific breakthroughs or limitations, physical/informational bottlenecks,  
- financial reasons, or policy reasons.
+There are several ways how the landscape could drastically change: scientific breakthroughs or limitations, physical/informational bottlenecks, 
+financial reasons, or policy reasons.
 
 **Scientific factors - reasons for acceleration**. If a new AI architecture is discovered that allows for reliable completion of tasks with longer time 
 horizons, the growth might further significantly accelarate. 
 
-**Scientific factors - reasons for slowdown**. The frontier labs have been training LLM models with increasing parameter sizes. ++++
+**Scientific factors - reasons for slowdown**. It is widely recognized that there are three dimensions for scaling capabalities: increasing model size, 
+increasing training time, and improving amount (or quality) of input data. All of those dimensions have been scaled quite aggressively:
+
+* Model sizes are now in trillions of parameters (Kimi K3 has parameter size of 2.8 trillions; OpenAI and Anthropic do not make their parameter sizes
+  public, but their top models likely exceed that). Just getting a single answer from a model as big as Kimi K3 requires a computer with 11.2 TB (!) of RAM. 
+  Bigger models also take more time and energy to produce answers; and they are already ridiculously expensive to train. This is one of the main reasons
+  that OpenAI and Anthropic need increasingly larger investments regularly.
+* For any given model, there is a certain amount of training that is optimal; continuing training indefinitely will produce smaller and smaller additional benefits.
+* Increasing amount of data is also not trivial. Already Chat-GPT 3 (2020) was trained on a large corpus of books and all internet content they could obtain (500 billion tokens).
+  Companies are now relying on synthetic data and data manually created by human experts. It is important to note that quality of data is also crucial.
+
+It should be obvious that it is not trivial to continue the scaling in those 3 dimensions. 
+Nevertheless, Dario Amodei (CEO of Anthropic) said that `he believes <https://www.youtube.com/watch?v=GrloGdp5wdc>`_ that the 
+current approach should still scale until at least we reach human-level intelligence. 
+Of course, one should take this with a grain of salt.
 
 **Physical bottlenecks**. Amount of compute available (data centers.. hyperscalers? chip shortage (RAM)); electricity grid. Frontier labs rely on ...
 However, these limitations would mainly have the effect of slowing down their ability to train new models.
@@ -186,7 +200,7 @@ is increasing over time, there are other fundamental shortcomings of LLMs that n
 * even after all the progress, LLMs often fail in surprising ways at tasks that are trivial to humans;
 * LLMs have hallucinations - and they are often confidently wrong, and fail to admit mistakes.
 
-There will be upcoming posts where we two deep dives into those two shortcomings and the reasons behind them. 
+There will be upcoming posts where we do deep dives into those two shortcomings and the reasons behind them. 
 
 After that, we will look at where this all could take the humankind as a whole - and whether all this is inevitable or do we have some agency in 
 shaping the future. +++!!

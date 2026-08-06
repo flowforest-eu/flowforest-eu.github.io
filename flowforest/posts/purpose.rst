@@ -1,6 +1,6 @@
 .. title: What should we be preparing for?
 .. slug: purpose-of-blog
-.. date: 2026-08-03 05:00:00 UTC-03:00
+.. date: 2026-08-03 01:00:00 UTC+03:00
 .. category: 
 .. link: 
 .. description: 
