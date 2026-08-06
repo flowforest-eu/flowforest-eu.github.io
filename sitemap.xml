@@ -7,112 +7,112 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://example.com/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/2026/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/archive.html</loc>
-  <lastmod>2026-07-26T14:13:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/</loc>
-  <lastmod>2026-07-26T14:13:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/ai-progress/</loc>
-  <lastmod>2026-07-26T14:13:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/ai-safety/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/ai/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/intro/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/et/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/et/2026/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/et/archive.html</loc>
-  <lastmod>2026-07-26T14:13:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/et/categories/</loc>
-  <lastmod>2026-07-26T14:13:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/et/categories/ai-progress/</loc>
-  <lastmod>2026-07-26T14:13:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/et/categories/ai-turvalisus/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/et/categories/ai/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/et/categories/intro/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/et/pages/path-handlers/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://example.com/pages/path-handlers/" />
  </url>
  <url>
   <loc>https://example.com/et/pages/social_buttons/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://example.com/pages/social_buttons/" />
  </url>
  <url>
   <loc>https://example.com/et/pages/theming/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://example.com/pages/theming/" />
  </url>
  <url>
   <loc>https://example.com/et/posts/purpose-of-blog/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://example.com/posts/purpose-of-blog/" />
  </url>
  <url>
   <loc>https://example.com/et/posts/where-is-ai-heading-part1/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://example.com/posts/where-is-ai-heading-part1/" />
  </url>
  <url>
   <loc>https://example.com/pages/path-handlers/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/pages/social_buttons/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/pages/theming/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/posts/purpose-of-blog/</loc>
-  <lastmod>2026-07-26T14:08:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="et" href="https://example.com/et/posts/purpose-of-blog/" />
  </url>
  <url>
   <loc>https://example.com/posts/where-is-ai-heading-part1/</loc>
-  <lastmod>2026-07-26T14:12:00Z</lastmod>
+  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
 </urlset>
