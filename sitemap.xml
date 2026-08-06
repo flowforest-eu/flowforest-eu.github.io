@@ -15,7 +15,7 @@
  </url>
  <url>
   <loc>https://example.com/archive.html</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-08-06T21:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/categories/</loc>
@@ -47,7 +47,7 @@
  </url>
  <url>
   <loc>https://example.com/et/archive.html</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-08-06T21:44:00Z</lastmod>
  </url>
  <url>
   <loc>https://example.com/et/categories/</loc>
@@ -90,11 +90,6 @@
   <xhtml:link rel="alternate" hreflang="en" href="https://example.com/posts/purpose-of-blog/" />
  </url>
  <url>
-  <loc>https://example.com/et/posts/where-is-ai-heading-part1/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
-  <xhtml:link rel="alternate" hreflang="en" href="https://example.com/posts/where-is-ai-heading-part1/" />
- </url>
- <url>
   <loc>https://example.com/pages/path-handlers/</loc>
   <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
@@ -110,9 +105,5 @@
   <loc>https://example.com/posts/purpose-of-blog/</loc>
   <lastmod>2026-08-06T21:42:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="et" href="https://example.com/et/posts/purpose-of-blog/" />
- </url>
- <url>
-  <loc>https://example.com/posts/where-is-ai-heading-part1/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
  </url>
 </urlset>

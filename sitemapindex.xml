@@ -15,7 +15,7 @@
  </sitemap>
  <sitemap>
   <loc>https://example.com/categories/ai.xml</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-08-06T21:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/categories/intro.xml</loc>
@@ -31,7 +31,7 @@
  </sitemap>
  <sitemap>
   <loc>https://example.com/et/categories/ai.xml</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-08-06T21:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/et/categories/intro.xml</loc>
@@ -39,14 +39,14 @@
  </sitemap>
  <sitemap>
   <loc>https://example.com/et/rss.xml</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-08-06T21:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/rss.xml</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-08-06T21:44:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://example.com/sitemap.xml</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-08-06T21:44:00Z</lastmod>
  </sitemap>
 </sitemapindex>
