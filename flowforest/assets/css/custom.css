@@ -189,3 +189,7 @@ table, th, td {
 th, td {
     padding: 2px;
 }
+
+article.postpage p.show_if_not_teaser {
+    display: block !important;
+}

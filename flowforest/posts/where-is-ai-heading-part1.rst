@@ -1,4 +1,4 @@
-.. title: Where is AI heading - Part 1
+.. title: Where is AI heading - part 1/3
 .. slug: where-is-ai-heading-part1
 .. date: 2026-08-03 08:22:32 UTC+03:00
 .. tags: 
@@ -7,6 +7,14 @@
 .. description: 
 .. type: text
 .. tags: AI, AI-progress
+
+.. raw:: html
+
+    <embed>
+      <p class="show_if_not_teaser"; style="display:none;"><em>This is the first part of a 3-post series. See end of this post for a peek into the topics we will be covering later.</em></p>
+      <p class="show_if_not_teaser"; style="display:none;"><strong>Note</strong>. <em>Most of the models we are discussing in this post are LLMs (Large Language Models). We will say 'LLM' when speaking about
+      them specifically, and 'AI models' when we are talking more broadly and including other (current or future) architectures as well.</em></p>
+    </embed>
 
 Lately, AI seems to dominate the news. But how to discern truth from exaggerations? The news coverage is confusing and extremely polarized 
 about the AI topic. 
@@ -19,9 +27,6 @@ relative stagnation. In order to get a clearer view, one must zoom out and look 
 This is exactly what was done by `METR <https://metr.org/>`_ (a non-profit research institute in California). 
 
 .. TEASER_END
-
-**Note**. *Most of the models we are discussing in this post are LLMs (Large Language Models). We will say 'LLM' when speaking about
-those specifically, and 'AI models' when we are including other current or future architectures as well.*
 
 =====================
 Measuring progress
@@ -77,8 +82,8 @@ It is important to note that the trend of doubling has been quite consistent for
 Now, what does this mean? Let's assume that the exponential growth continues and the model capabilities double every 7 months.
 This now means that after 28 months (four doublings, so 16x growth), in November 2028, we would be facing:
 
-* Models succeeding 50% for 8-24 day tasks
-* Models succeeding 80% for 2-4 day tasks 
+* models succeeding 50% for 8-24 day tasks;
+* models succeeding 80% for 2-4 day tasks.
 
 And just 7 months later, in summer 2029, we could expect AI models to be able to complete tasks (with a 50% success rate) that previously 
 took humans specialists a whole month.
@@ -119,7 +124,7 @@ increasing training time, and improving amount (or quality) of input data. All o
 * Increasing amount of data is also not trivial. Already Chat-GPT 3 (2020) was trained on a large corpus of books and all internet content they could obtain (500 billion tokens).
   Companies are now relying on synthetic data and data manually created by human experts. It is important to note that quality of data is also crucial.
 
-It should be obvious that it is not trivial to continue the scaling in those 3 dimensions. 
+It is clear that it is not trivial to continue the scaling in those 3 dimensions. 
 Nevertheless, Dario Amodei (CEO of Anthropic) said that `he believes <https://www.youtube.com/watch?v=GrloGdp5wdc>`_ that the 
 current approach should still scale until at least we reach human-level intelligence. 
 Of course, one should take this with a grain of salt.
