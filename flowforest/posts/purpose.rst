@@ -7,10 +7,10 @@
 .. type: text
 .. tags: Intro, AI, AI-safety
 
-AI is a rapidly advancing field. The progress in the last decade has been enormous and sudden (++). For example, 
-imagine that one would travel back in time to 2010 and ask when will an AI systems be created that can autonomously do both of those:
+AI is a rapidly advancing field. The progress in the last decade has been enormous and unexpected. 
+Just think what would people have answered in 2010 if asked when will an AI system be created that can both:
 
-* find security flaws in Linux kernel (see e.g. `here <https://cybersecuritynews.com/linux-patches-400-kernel-vulnerabilities/>`_);
+* find security flaws in Linux kernel (see e.g. `here <https://cybersecuritynews.com/linux-patches-400-kernel-vulnerabilities/>`_); and
 * solve famous mathematical theorems that have remained unsolved for 50+ years 
   (`example <https://theconversation.com/hello-there-the-jacobian-conjecture-is-false-thanx-why-a-tiny-social-media-post-has-mathematicians-rethinking-ai-283883>`_, 
   `comprehensive list <https://vibemathed.com/>`_).
@@ -18,8 +18,7 @@ imagine that one would travel back in time to 2010 and ask when will an AI syste
 At that time, the likely answers from specialists would have been in the range of 2040 to 2050 or later.
 For example, `this study from 2016 <https://aiimpacts.org/2016-expert-survey-on-progress-in-ai/>`_
 estimated that we were 30-50 years away from AI systems winning math tournaments and solving publishable 
-theorems. However, both in the fields of computer security and mathematics, the change has not just happened, 
-but these kinds of news are becoming increasingly commonplace.
+theorems. However, both in the fields of computer security and mathematics, the future has indeed arrived.
 
 .. TEASER_END
 
@@ -34,10 +33,7 @@ Because of this, I am trying to dive into this field to educate me and people ar
 reader, with me to this journey. I will try to keep the content simple and accessible to everyone without any prior specialized 
 knowledge about AI systems.
 
-I personally believe that to be prepared is our duty as parents and citizens. Because only by knowing what is ahead of us 
-will we be able to raise our voices and shape the future to align to our values. +++
-
-I would like to finish with a quote from TED talk of Yoshua Bengio (godfather of AI). +++
+I would like to finish with a quote from TED talk of Yoshua Bengio (who is often called a "godfather of AI").
 
 !+++ Yoshua Bengio:
 https://www.ted.com/talks/yoshua_bengio_the_catastrophic_risks_of_ai_and_a_safer_path

@@ -1,6 +1,6 @@
 .. title: Where is AI heading - part 1/3
 .. slug: where-is-ai-heading-part1
-.. date: 2026-08-03 08:22:32 UTC+03:00
+.. date: 2026-08-06 08:22:32 UTC+03:00
 .. tags: 
 .. category: 
 .. link: 
@@ -107,7 +107,7 @@ However, the trend can only continue if the underlying assumptions continue to h
 What could cause the trend to change?
 =======================================
 
-There are several ways how the landscape could drastically change: scientific breakthroughs or limitations, physical/informational bottlenecks, 
+There are several ways how the landscape could drastically change: scientific breakthroughs or limitations, physical bottlenecks, 
 financial reasons, or policy reasons.
 
 **Scientific factors - reasons for acceleration**. If a new AI architecture is discovered that allows for reliable completion of tasks with longer time 
@@ -121,67 +121,80 @@ increasing training time, and improving amount (or quality) of input data. All o
   Bigger models also take more time and energy to produce answers; and they are already ridiculously expensive to train. This is one of the main reasons
   that OpenAI and Anthropic need increasingly larger investments regularly.
 * For any given model, there is a certain amount of training that is optimal; continuing training indefinitely will produce smaller and smaller additional benefits.
-* Increasing amount of data is also not trivial. Already Chat-GPT 3 (2020) was trained on a large corpus of books and all internet content they could obtain (500 billion tokens).
-  Companies are now relying on synthetic data and data manually created by human experts. It is important to note that quality of data is also crucial.
+* Increasing amount of data is also not trivial. Already Chat-GPT 3 (2020) was trained on a large corpus of books and all internet content they could obtain 
+  (500 billion tokens). Companies are now relying on synthetic data and data manually created by human experts. It is important to note that quality of data 
+  is also crucial.
 
 It is clear that it is not trivial to continue the scaling in those 3 dimensions. 
-Nevertheless, Dario Amodei (CEO of Anthropic) said that `he believes <https://www.youtube.com/watch?v=GrloGdp5wdc>`_ that the 
-current approach should still scale until at least we reach human-level intelligence. 
-Of course, one should take this with a grain of salt.
+Nevertheless, Dario Amodei (CEO of Anthropic) has `presented some interesting arguments <https://www.youtube.com/watch?v=GrloGdp5wdc>`_ to  
+explain why he thinks that the current approach could still scale until at least we reach human-level intelligence. 
+Of course, one should take this with a grain of salt (since he has an incentive to not say anything that would lessen the interest of their investors).
 
-**Physical bottlenecks**. Amount of compute available (data centers.. hyperscalers? chip shortage (RAM)); electricity grid. Frontier labs rely on ...
-However, these limitations would mainly have the effect of slowing down their ability to train new models.
+**Physical bottlenecks**. There is increasing demand for compute power. This is causing RAM shortages and requires building of a lot of data centers.
+Also, there is `increasing public opposition <https://datacenteropposition.com/>`_ to data center buildout in USA.
 
-**Informational bottlenecks**. Capabilities of the models directly depend on the quality of the input data. In the pre-training step of LLMs, the 
-training data size is usually maximized as much as possible (+++verify). In later training steps, more exact data is used (+++). Continuously finding new 
-sources for reliable data is an on-going challenge for frontier labs.
+**Financial reasons**. Financial viability of the business model of AI companies is a complicated topic; some critics question the viability of 
+the business model. The business model (of training increasingly complex models) requires a continuous influx of capital. There are two problems with this: 
 
-**Financial reasons**. ++++ Investment; trust of investors; profitability vs expected future value. Complicated topic; critics (e.g. Ed Zitron) question the viability of 
-the business model. The business model (of training increasingly complex models) requires a continuous influx (?) of capital. There are two problems with this: 
-1) profitability is nowhere in sight; critics point out that for e.g. OpenAI and Anthropic there is a sizable discrepancy between the pricing of current LLM models 
-vs how much they would need to cost for break-even. Link to Ed Zitron+++. 
-2) For AI companies to come profitable, they would need to take a sizable portion of the labor market (link to Future of Life institute); there is growing sentiment 
-against large-size unemployment. +++analyze, write.
+1. Profitability is nowhere in sight; `critics point out <https://www.wheresyoured.at/the-openai-bubble/>`_ that for e.g. OpenAI there is a sizable discrepancy 
+   between the pricing of current LLM models vs how much they would need to cost for break-even.
+2. For AI companies to come profitable, they would need to conquer a sizable portion of the labor market; however, there is 
+   `growing sentiment <https://hai.stanford.edu/ai-index/2026-ai-index-report/public-opinion>`_ 
+   against the effects AI might have regarding the labor market.
 
-**Policy reasons**. Governemental or global policy changes could drastically alter the AI development tempo. Curiously, just recently (July 29, 2026) a statement 
-was released by 1300+ employees of frontier AI companies requesting a global slowdown of AI development. Of course, this is not the first time for scientists advocating
-for a slowdown/pause (see link +++ +++ +++) However, this letter stands out by the fact that many of the signees are from OpenAI and Anthropic, two of the companies 
-who have most advocated against any slowdown in the past. CEO of Anthropic, Dario Amodei himself has signed the letter. CEO of OpenAI, Sam Altman, has not signed the 
-letter, but has publicly commented that "we may have to pace the rate of AI development to give ourselves enough time for society to harden around these new capability 
-levels".
+**Policy reasons**. Governmental or global policy changes could drastically alter the AI development tempo. Curiously, just recently (July 29, 2026) a statement 
+`was released <https://www.pacingthefrontier.com/>`_ by 1300+ employees of frontier AI companies requesting a global slowdown of AI development. Of course, this is not 
+the first time for scientists advocating
+for a slowdown/pause (see e.g. `here <https://futureoflife.org/open-letter/pause-giant-ai-experiments/>`_). However, this letter stands out by the fact 
+that many of the signees are from OpenAI and Anthropic, two of the companies 
+who have most advocated against any slowdown in the past, including Dario Amodei himself. CEO of OpenAI, Sam Altman, has not signed the 
+letter, but has publicly made `similar comments <https://techcrunch.com/2026/07/28/sam-altman-is-ready-to-decelerate/>`_. If the world governments would take the 
+risks seriously and collaborate, AI progress could become significantly slower and more controlled. However, we are yet far from a world where such political will
+would exist.
 
-Lets have a look at how those diverse factors could affect the trends: whether they would speed up the growth (shorten the doubling time of time horizon), 
-slow down the growth (lengthen the doubling time of time horizon), or even stop the growth from being exponential (stop the doubling effect altogether)?
+.. |up_exp| image:: /images/up_exp.png
+.. |down_exp| image:: /images/down_exp.png
+.. |down_linear| image:: /images/down_linear.png
+.. |up_exp_framed| image:: /images/up_exp.png
+  :class: framed
+.. |down_exp_framed| image:: /images/down_exp.png
+  :class: framed
+.. |down_linear_framed| image:: /images/down_linear.png
+  :class: framed
+
+Lets have a look at how those diverse factors could affect the trends if the risks/possibilies realize. We use small pictograms for brevity:
+
+* The doubling time would decrease (faster growth) - |up_exp_framed|
+* The doubling time would increase (slower growth) - |down_exp_framed|
+* The growth would slow down to become linear - |down_linear_framed|
 
 ======================= =====================================================================
 Factor                  Potential consequence
 ======================= =====================================================================
-Scientific factors      Varies
-Physical bottlenecks    Slow-down (trend still exponential)
-Information bottlenecks Slow-down (trend still likely exponential)
-Financial reasons       Slow-down (still exponential or non-exponential) ++++
-Policy reasons          Slow-down (still exponential or non-exponential) ++++
+Scientific factors      Either: |up_exp| OR |down_exp|
+Physical bottlenecks    |down_exp|
+Information bottlenecks |down_exp|
+Financial reasons       |down_exp|
+Policy reasons          |down_exp| OR |down_linear|
 ======================= =====================================================================
 
-make "exponential" part more understandable +++
+.. raw:: html
 
-All of those factors may play a role in determining what the rate of the progress is; and reliably predicting them is a difficult tasks even for experts.
-However, this is why I think it is so useful to know of this research by METR into the time horizons. Suppose that after 3 or 6 months you are curious of
-whether the trend has continued, or has something fundamentally changed? Now consider this, what is easier - to navigate through tens of new AI model 
-announcements, news articles and benchmarks, or just open up `METR time horizons page <https://metr.org/time-horizons/>`_ and see the results on a single 
-graph? Of course, the reality is more nuanced; but I think that this graph is a valuable tool to have to obtain this type of "zoomed out" view of the big
-picture. Because of this, I recommend everyone to bookmark that page. !!!+++
+    <embed>
+        <p style="line-height: 10px;">&nbsp;</p>
+    </embed>
 
-My recommendation to everyone is to bookmark the  - they will keep updating it
-whenever new models are released and they have tested them. Just reviewing the state of the models once every 3 months will keep you
-informed based on actual data. ///+++
+It is evident that there are a lot of factors that may play a role in determining what the rate of the progress is; 
+and reliably predicting them is a difficult task even for experts.
+However, this is why I think the METR time horizon graph is such a good tool to have: one can `bookmark it <https://metr.org/time-horizons/>`_ and review
+it whenever some new model launches and is being hyped - METR will keep updating it when new notable models are released.
 
 ==========================
 If you want to learn more
 ==========================
 
-Another reason to read the METR time horizons page is that I skipped over many important caveats to keep the length of this blog post reasonable.
-So I recommend scrolling to the "Frequently Asked Questions" section in their page and read their answers to questions such as:
+Another reason to read the `METR time horizons page <https://metr.org/time-horizons/>`_ is that I skipped over many important caveats to keep the length of this blog post reasonable.
+So I recommend scrolling to the "Frequently Asked Questions" section in their page and read their answers to clarifying questions such as:
 
 * Does “time horizon” mean the length of time that current AI agents can act autonomously?
 * Does an 8-hour time horizon mean that AI can automate all jobs?
@@ -199,16 +212,15 @@ https://arxiv.org/pdf/2503.14499
 What's next?
 =====================
 
-You may have noticed that the title of this post was "Where is AI heading - Part 1". This is because while we focused on how coherence of LLMs
+The title of this post was "Where is AI heading - part 1/3". This is because while we focused on how coherence of LLMs
 is increasing over time, there are other fundamental shortcomings of LLMs that need to be explored as well:
 
 * even after all the progress, LLMs often fail in surprising ways at tasks that are trivial to humans;
 * LLMs have hallucinations - and they are often confidently wrong, and fail to admit mistakes.
 
 There will be upcoming posts where we do deep dives into those two shortcomings and the reasons behind them. 
-
-After that, we will look at where this all could take the humankind as a whole - and whether all this is inevitable or do we have some agency in 
-shaping the future. +++!!
+Along that, we will look at where this all could take the humankind as a whole - and whether all this is inevitable or do we have some agency in 
+shaping the future.
 
 And finally, because I believe that transparency about AI usage is important:
 
