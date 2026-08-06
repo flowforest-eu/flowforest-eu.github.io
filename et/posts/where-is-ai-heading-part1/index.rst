@@ -1,6 +1,6 @@
-.. title: Where is AI heading - Part 1
+.. title: Where is AI heading - part 1/3
 .. slug: where-is-ai-heading-part1
-.. date: 2026-07-26 08:22:32 UTC+03:00
+.. date: 2026-08-06 08:22:32 UTC+03:00
 .. tags: 
 .. category: 
 .. link: 
@@ -8,26 +8,38 @@
 .. type: text
 .. tags: AI, AI-progress
 
+.. raw:: html
+
+    <embed>
+      <p class="show_if_not_teaser"; style="display:none;"><em>This is the first part of a 3-post series. See end of this post for a peek into the topics we will be covering later.</em></p>
+      <p class="show_if_not_teaser"; style="display:none;"><strong>Note</strong>. <em>Most of the models we are discussing in this post are LLMs (Large Language Models). We will say 'LLM' when speaking about
+      them specifically, and 'AI models' when we are talking more broadly and including other (current or future) architectures as well.</em></p>
+    </embed>
+
 Lately, AI seems to dominate the news. But how to discern truth from exaggerations? The news coverage is confusing and extremely polarized 
 about the AI topic. 
-For example, you might see videos with titles "AI will replace all jobs in next 2 years" next to a video titled "AI progress has hit a wall". 
-Of course, clickbait sells, and so do extreme titles - in either direction. 
+For example, you might see videos with titles "AI will replace all jobs in next 2 years" next to a video titled "AI progress has hit a wall" or
+"AI bubble is about to pop". 
+Of course, clickbait sells, and so do extreme titles - in either direction.
 
-And even from a perspective of an AI expert the progress can look very jagged - periods of rapid improvement alternate with periods of 
+And even from a perspective of an expert the progress can look very jagged - periods of rapid improvement alternate with periods of 
 relative stagnation. In order to get a clearer view, one must zoom out and look at the progress trends over a longer timeframe. 
-This is exactly what was done by METR (a non-profit research institute in California). 
+This is exactly what was done by `METR <https://metr.org/>`_ (a non-profit research institute in California). 
+
+.. TEASER_END
 
 =====================
-Measuring AI progress
+Measuring progress
 =====================
 
-METR noticed that one of the issues that AI models have is losing coherence - it can be difficult for them to focus and complete a task 
-without losing track. This means that there is a natural metric: if you list various tasks that take human experts different time to complete
-(from mere seconds to several days) and group them by completion time, then how long tasks of those can the AI system complete with a certain 
+METR noticed that one of the issues that AI models (LLMs in particular) have is losing coherence - it can be difficult for them to 
+complete a multi-step task without losing track. This means that there is a natural metric: if you list various tasks that take 
+human experts different time to complete (from mere seconds to several days) and group them by completion time, then how long 
+tasks of those can the AI model complete with a certain 
 reliability (e.g. 50% or 80%)? They named this metric **task completion time horizon**.
 
 METR compiled a list of total 228 tasks (from the fields of software engineering, cybersecurity, general reasoning, and machine learning tasks)
-that range from trivial (can be completed in seconds) to tasks that take a professional in that field a full day to complete.
+that range from trivial (can be completed in seconds) to tasks that take a professional in that field several days to complete.
 
 Here are some examples of the tasks from the software engineering field:
 
@@ -44,7 +56,7 @@ in weeks or months. Here is what they found:
 
 At **50% success level**:
 
-* most advanced models of Claude, Gemini, and GPT currently (July 2026) have time horizons of 3–6 hours;
+* most advanced models of Claude, Gemini, and GPT currently (August 2026) have time horizons of 3–6 hours;
 * exceptions are Claude Opus 4.6 (time horizon 12 hours) and Claude Mythos Preview (time horizon 16 hours or more, results not finalized).
 
 At **80% success level**:
@@ -52,7 +64,7 @@ At **80% success level**:
 * most advanced models have time horizons of 1–2 hours;
 * exception again is Claude Mythos Preview, which has time horizon of 3 hours.
 
-The following diagram shows the long-time trend of time horizon expanding over time:
+The following diagram shows the long-time trend of time horizon expanding over time (as of August 2026):
 
 .. image:: /images/task-length-log.png
 
@@ -70,13 +82,13 @@ It is important to note that the trend of doubling has been quite consistent for
 Now, what does this mean? Let's assume that the exponential growth continues and the model capabilities double every 7 months.
 This now means that after 28 months (four doublings, so 16x growth), in November 2028, we would be facing:
 
-* Models succeeding 50% for 8-24 day tasks
-* Models succeeding 80% for 2-4 day tasks 
+* models succeeding 50% for 8-24 day tasks;
+* models succeeding 80% for 2-4 day tasks.
 
 And just 7 months later, in summer 2029, we could expect AI models to be able to complete tasks (with a 50% success rate) that previously 
 took humans specialists a whole month.
 
-Statistics like this are what have caused the leading AI experts to warn us that we are heading head-first into a world that we are not ready for.
+Statistics like this are what have caused some AI forecasters to warn us that we are moving head-first into a world that we are not fully ready for.
 
 ===================================
 How sure are the experts of this?
@@ -87,22 +99,102 @@ is currently (whether 4 months or 7 months) - people tend to point out that it i
 
 Critics also point out that the benchmark focuses a lot on coding; other real-world tasks, which are messier, might not follow the exact same 
 trend. METR `looked into this as well <https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains>`_ and concluded that other 
-tasks also seem to follow exponential trends, but the doubling time (and the current state) varies by the field.
+tasks also seem to follow similar trends, but the doubling time (and the current state) varies by the field.
 
-Although experts are not pointing out to any reasons the progress would be slowing down, there might be factors that they cannot foresee 
-(scientific limitations, physical bottlenecks, or financial reasons). However, I would argue that those would likely just make the doubling 
-time slower, while the underlying exponential trend would continue (unless some more extreme event or limitation occurs).
+However, the trend can only continue if the underlying assumptions continue to hold. Lets have a look of how it could cease to be.
+
+=======================================
+What could cause the trend to change?
+=======================================
+
+There are several ways how the landscape could drastically change: scientific breakthroughs or limitations, physical bottlenecks, 
+financial reasons, or policy reasons.
+
+**Scientific factors - reasons for acceleration**. If a new AI architecture is discovered that allows for reliable completion of tasks with longer time 
+horizons, the growth might further significantly accelarate. 
+
+**Scientific factors - reasons for slowdown**. It is widely recognized that there are three dimensions for scaling capabalities: increasing model size, 
+increasing training time, and improving amount (or quality) of input data. All of those dimensions have been scaled quite aggressively:
+
+* Model sizes are now in trillions of parameters (Kimi K3 has parameter size of 2.8 trillions; OpenAI and Anthropic do not make their parameter sizes
+  public, but their top models likely exceed that). Just getting a single answer from a model as big as Kimi K3 requires a computer with 11.2 TB (!) of RAM. 
+  Bigger models also take more time and energy to produce answers; and they are already ridiculously expensive to train. This is one of the main reasons
+  that OpenAI and Anthropic need increasingly larger investments regularly.
+* For any given model, there is a certain amount of training that is optimal; continuing training indefinitely will produce smaller and smaller additional benefits.
+* Increasing amount of data is also not trivial. Already Chat-GPT 3 (2020) was trained on a large corpus of books and all internet content they could obtain 
+  (500 billion tokens). Companies are now relying on synthetic data and data manually created by human experts. It is important to note that quality of data 
+  is also crucial.
+
+It is clear that it is not trivial to continue the scaling in those 3 dimensions. 
+Nevertheless, Dario Amodei (CEO of Anthropic) has `presented some interesting arguments <https://www.youtube.com/watch?v=GrloGdp5wdc>`_ to  
+explain why he thinks that the current approach could still scale until at least we reach human-level intelligence. 
+Of course, one should take this with a grain of salt (since he has an incentive to not say anything that would lessen the interest of their investors).
+
+**Physical bottlenecks**. There is increasing demand for compute power. This is causing RAM shortages and requires building of a lot of data centers.
+Also, there is `increasing public opposition <https://datacenteropposition.com/>`_ to data center buildout in USA.
+
+**Financial reasons**. Financial viability of the business model of AI companies is a complicated topic; some critics question the viability of 
+the business model. The business model (of training increasingly complex models) requires a continuous influx of capital. There are two problems with this: 
+
+1. Profitability is nowhere in sight; `critics point out <https://www.wheresyoured.at/the-openai-bubble/>`_ that for e.g. OpenAI there is a sizable discrepancy 
+   between the pricing of current LLM models vs how much they would need to cost for break-even.
+2. For AI companies to come profitable, they would need to conquer a sizable portion of the labor market; however, there is 
+   `growing sentiment <https://hai.stanford.edu/ai-index/2026-ai-index-report/public-opinion>`_ 
+   against the effects AI might have regarding the labor market.
+
+**Policy reasons**. Governmental or global policy changes could drastically alter the AI development tempo. Curiously, just recently (July 29, 2026) a statement 
+`was released <https://www.pacingthefrontier.com/>`_ by 1300+ employees of frontier AI companies requesting a global slowdown of AI development. Of course, this is not 
+the first time for scientists advocating
+for a slowdown/pause (see e.g. `here <https://futureoflife.org/open-letter/pause-giant-ai-experiments/>`_). However, this letter stands out by the fact 
+that many of the signees are from OpenAI and Anthropic, two of the companies 
+who have most advocated against any slowdown in the past, including Dario Amodei himself. CEO of OpenAI, Sam Altman, has not signed the 
+letter, but has publicly made `similar comments <https://techcrunch.com/2026/07/28/sam-altman-is-ready-to-decelerate/>`_. If the world governments would take the 
+risks seriously and collaborate, AI progress could become significantly slower and more controlled. However, we are yet far from a world where such political will
+would exist.
+
+.. |up_exp| image:: /images/up_exp.png
+.. |down_exp| image:: /images/down_exp.png
+.. |down_linear| image:: /images/down_linear.png
+.. |up_exp_framed| image:: /images/up_exp.png
+  :class: framed
+.. |down_exp_framed| image:: /images/down_exp.png
+  :class: framed
+.. |down_linear_framed| image:: /images/down_linear.png
+  :class: framed
+
+Lets have a look at how those diverse factors could affect the trends if the risks/possibilies realize. We use small pictograms for brevity:
+
+* The doubling time would decrease (faster growth) - |up_exp_framed|
+* The doubling time would increase (slower growth) - |down_exp_framed|
+* The growth would slow down to become linear - |down_linear_framed|
+
+======================= =====================================================================
+Factor                  Potential consequence
+======================= =====================================================================
+Scientific factors      Either: |up_exp| OR |down_exp|
+Physical bottlenecks    |down_exp|
+Information bottlenecks |down_exp|
+Financial reasons       |down_exp|
+Policy reasons          |down_exp| OR |down_linear|
+======================= =====================================================================
+
+.. raw:: html
+
+    <embed>
+        <p style="line-height: 10px;">&nbsp;</p>
+    </embed>
+
+It is evident that there are a lot of factors that may play a role in determining what the rate of the progress is; 
+and reliably predicting them is a difficult task even for experts.
+However, this is why I think the METR time horizon graph is such a good tool to have: one can `bookmark it <https://metr.org/time-horizons/>`_ and review
+it whenever some new model launches and is being hyped - METR will keep updating it when new notable models are released.
 
 ==========================
 If you want to learn more
 ==========================
 
-My recommendation to everyone is to bookmark the `METR time horizons page <https://metr.org/time-horizons/>`_ - they will keep updating it
-whenever new models are released and they have tested them. Just reviewing the state of the models once every 3 months will keep you
-informed based on actual data.
-
-Another reason to read the METR time horizons page now is that I skipped over many important caveats to keep the length of this blog post reasonable.
-So I recommend scrolling to the "Frequently Asked Questions" section in their page and read their answers to questions such as:
+Another reason to read the `METR time horizons page <https://metr.org/time-horizons/>`_ is that I skipped over many important caveats to keep the length of this blog post reasonable.
+So I recommend scrolling to the "Frequently Asked Questions" section in their page and read their answers to clarifying questions such as:
 
 * Does “time horizon” mean the length of time that current AI agents can act autonomously?
 * Does an 8-hour time horizon mean that AI can automate all jobs?
@@ -117,18 +209,17 @@ If you prefer reading information in the form of a scientific paper, check out t
 https://arxiv.org/pdf/2503.14499
 
 =====================
-So.. now what?
+What's next?
 =====================
 
-You may have noticed that the title of this post was "Where is AI heading - Part 1". This is because while we focused on how coherence of LLMs
+The title of this post was "Where is AI heading - part 1/3". This is because while we focused on how coherence of LLMs
 is increasing over time, there are other fundamental shortcomings of LLMs that need to be explored as well:
 
 * even after all the progress, LLMs often fail in surprising ways at tasks that are trivial to humans;
 * LLMs have hallucinations - and they are often confidently wrong, and fail to admit mistakes.
 
-There will be upcoming posts where we two deep dives into those two shortcomings and the reasons behind them. 
-
-After that, we will look at where this all could take the humankind as a whole - and whether all this is inevitable or do we have some agency in 
+There will be upcoming posts where we do deep dives into those two shortcomings and the reasons behind them. 
+Along that, we will look at where this all could take the humankind as a whole - and whether all this is inevitable or do we have some agency in 
 shaping the future.
 
 And finally, because I believe that transparency about AI usage is important:
