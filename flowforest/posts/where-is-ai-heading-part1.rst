@@ -66,7 +66,7 @@ At **80% success level**:
 
 The following diagram shows the long-time trend of time horizon expanding over time (as of August 2026):
 
-.. image:: /images/task-length-log.png
+.. image:: /images/task-length-linear.png
 
 |
 
