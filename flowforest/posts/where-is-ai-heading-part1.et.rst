@@ -1,6 +1,6 @@
-.. title: Where is AI heading - part 1/3
+.. title: Kuhu on AI arenemas - osa 1/3
 .. slug: where-is-ai-heading-part1
-.. date: 2026-08-06 08:22:32 UTC+03:00
+.. date: 2026-08-10 08:22:32 UTC+03:00
 .. tags: 
 .. category: 
 .. link: 
@@ -11,18 +11,20 @@
 .. raw:: html
 
     <embed>
-      <p class="show_if_not_teaser"; style="display:none;"><em>This is the first part of a 3-post series. See end of this post for a peek 
-      into the topics we will be covering later.</em></p>
-      <p class="show_if_not_teaser"; style="display:none;"><strong>Note</strong>. <em>Most of the models we are discussing in this post are 
-      LLMs (Large Language Models). We will say 'LLM' when speaking about
-      them specifically, and 'AI models' when we are talking more broadly and including other (current or future) architectures as well.</em></p>
+      <p class="show_if_not_teaser"; style="display:none;"><em>See postitus on esimene osa 3-osalisest seeriast. Postituse lõpus on vihjed selle kohta, millest
+      hakkavad rääkima järgmised osad.</em></p>
+      <p class="show_if_not_teaser"; style="display:none;"><strong>Märkus</strong>. <em>Enamus mudelitest, mida me siin postituses käsitleme, on 
+      LLM-d ("Large Language Model"). Kui me soovime rääkida spetsiifiliselt neist, kasutame me terminit "LLM"; terminit "AI" kasutame, et 
+      rääkida üleüldiselt võimalikest AI süsteemidest ja arhitektuuridest (s.h. neist, mida pole veel leiutatud).
     </embed>
 
-Lately, AI seems to dominate the news. But how to discern truth from exaggerations? The news coverage is confusing and extremely polarized 
-about the AI topic. 
-For example, you might see videos with titles "AI will replace all jobs in next 2 years" next to a video titled "AI progress has hit a wall" or
-"AI bubble is about to pop". 
-Of course, clickbait sells, and so do extreme titles - in either direction.
+Viimasel ajal tundub AI olevat täitnud kõik uudiskanalite pealkirjaread. Aga kuidas eristada tõde liialdustest? 
+Uudisteartiklid on tihti segased või kallutatud. 
+Kõrvuti võib leida artikleid pealkirjadega "AI asendab kõik tööd 2 aasta jooksul" ja "AI mull on kohe lõhkemas".
+On selge, et ekstreemsemad pealkirjad müüvad paremini - ükskõik, kuhu poole parajasti tõde kallutatud pole.
+
+Lisaks võib AI mudelite progress tunduda ebakorrapärane ka valdkonna eksperdile - kiire arengu perioodid vahelduvad hetkedega, kus ..
+
 
 And even from a perspective of an expert the progress can look very jagged - periods of rapid improvement alternate with periods of 
 relative stagnation. In order to get a clearer view, one must zoom out and look at the progress trends over a longer timeframe. 

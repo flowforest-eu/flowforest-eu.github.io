@@ -455,6 +455,7 @@ TAG_TRANSLATIONS = [
     {'en': 'Intro', 'et': 'Intro'},
     {'en': 'AI', 'et': 'AI'},
     {'en': 'AI-safety', 'et': 'AI-turvalisus'},
+    {'en': 'AI-progress', 'et': 'AI-progress'},
 ]
 
 # If set to True, a tag in a language will be treated as a translation
