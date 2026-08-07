@@ -33,12 +33,18 @@ Because of this, I am trying to dive into this field to educate me and people ar
 reader, with me to this journey. I will try to keep the content simple and accessible to everyone without any prior specialized 
 knowledge about AI systems.
 
-I would like to finish with a quote from TED talk of Yoshua Bengio (who is often called a "godfather of AI").
+I would like to finish with a quote from a 
+`TED talk of Yoshua Bengio <https://www.ted.com/talks/yoshua_bengio_the_catastrophic_risks_of_ai_and_a_safer_path>`_ 
+(he is often refered to as a "godfather of AI"). 
+In that TED talk, he talks about catasthropic risks related to AI, and about his vision for a safer path. 
+To cite him:
 
-!+++ Yoshua Bengio:
-https://www.ted.com/talks/yoshua_bengio_the_catastrophic_risks_of_ai_and_a_safer_path
+.. raw:: html
 
-Cite:
-We are blindly driving into a fog. [...] We need that everyone understands these risks.
-We can all get engaged to steer our societies in a safe pathway in which the joys and endeavors 
-of our children will be protected. +++
+    <blockquote cite="https://www.ted.com/talks/yoshua_bengio_the_catastrophic_risks_of_ai_and_a_safer_path">
+      <p>We are blindly driving into a fog, despite the warnings of scientists like myself, that this trajectory could lead to loss of control. [..]</p>
+      <p>We need [..] to make sure that everyone understands these risks. We can all get engaged to steer our societies in a safe pathway in which 
+      the joys and endeavors of our children will be protected.</p>      
+    </blockquote>
+
+
