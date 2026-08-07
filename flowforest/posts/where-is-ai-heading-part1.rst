@@ -95,7 +95,7 @@ How sure are the experts of this?
 ===================================
 
 METR benchmark is one of the most cited benchmarks in the industry. There is a lot of disagreement about what the exact doubling time 
-is currently (whether 4 months or 7 months) - people tend to point out that it is probably more in the range of 4-6 months.
+is currently (whether 4 months or 7 months) - people tend to point out that it is probably **more** likely in the range of 4-6 months.
 
 Critics also point out that the benchmark focuses a lot on coding; other real-world tasks, which are messier, might not follow the exact same 
 trend. METR `looked into this as well <https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains>`_ and concluded that other 
