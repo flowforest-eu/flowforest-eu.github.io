@@ -36,7 +36,7 @@ METR noticed that one of the issues that AI models (LLMs in particular) have is 
 complete a multi-step task without losing track. This means that there is a natural metric: if you list various tasks that take 
 human experts different time to complete (from mere seconds to several days) and group them by completion time, then how long 
 tasks of those can the AI model complete with a certain 
-reliability (e.g. 50% or 80%)? They named this metric **task completion time horizon**.
+probability (e.g. 50% or 80%)? They named this metric **task completion time horizon**.
 
 METR compiled a list of total 228 tasks (from the fields of software engineering, cybersecurity, general reasoning, and machine learning tasks)
 that range from trivial (can be completed in seconds) to tasks that take a professional in that field several days to complete.
