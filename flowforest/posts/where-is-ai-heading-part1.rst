@@ -175,9 +175,9 @@ Let's take a look at how those diverse factors could affect the trends if the ri
 ======================= ======================================= ==============================================================================================
 Factor                  Potential consequence                   Comments
 ======================= ======================================= ==============================================================================================
-Scientific factors      Either: |up_exp| OR |down_exp|          Breakthroughs speed up, scaling bottlenecks slow down
+Scientific factors      |up_exp| OR |down_exp|                  Breakthroughs speed up, scaling bottlenecks slow down
 Physical bottlenecks    |down_exp|                              Likely will cause a weak slowdown for frontier AI labs
-Financial reasons       |down_exp| OR |down_linear|             Strength of slowdown effect varies
+Financial reasons       |down_exp| OR |down_linear|             Strength of slowdown effect varies; slowdown to linear may only occur in extreme scenarios
 Policy reasons          |down_exp| OR |down_linear|             If a national/global slowdown is agreed upon, it could significantly slow down development
 ======================= ======================================= ==============================================================================================
 
