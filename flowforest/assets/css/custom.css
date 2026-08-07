@@ -5,7 +5,7 @@
 }
 
 #footer_nikola {
-    font-size: 13px;
+    font-size: 0.8125rem;
     color: #636057 !important;
 }
 
@@ -15,7 +15,7 @@ body {
     color: #273328 !important;
 
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 1.75;
     letter-spacing: -0.011em;
     -webkit-font-smoothing: antialiased;
@@ -144,7 +144,7 @@ p.ai-disclaimer {
     border: 1px solid #d4caaf;
     background-color: #f6f3e8;
     border-radius: 5px !important;
-    font-size: 15px;
+    font-size: 0.9375rem;
     padding: 8px 12px;
     color: #8c5e11;
 }
@@ -222,7 +222,7 @@ blockquote p {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: italic;
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 1.75;
     color: #384639 !important; 
     margin-bottom: 0;
