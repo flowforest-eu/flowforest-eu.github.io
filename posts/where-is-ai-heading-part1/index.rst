@@ -131,7 +131,8 @@ explain why he thinks that the current approach could still scale until at least
 Of course, one should take this with a grain of salt (since he has an incentive to not say anything that would lessen the interest of their investors).
 
 **Physical bottlenecks**. There is increasing demand for compute power. This is causing RAM shortages and requires building of a lot of data centers.
-Also, there is `increasing public opposition <https://datacenteropposition.com/>`_ to data center buildout in USA.
+Also, there is `increasing public opposition <https://datacenteropposition.com/>`_ to data center buildout in USA. Not being able to sufficiently expand 
+and build new data centers could force frontier AI labs to scale back plans and/or innovate into creating novel, smaller architectures.
 
 **Financial reasons**. Financial viability of the business model of frontier AI labs is a complicated topic; some critics question the viability of 
 the business model. The business model (of training increasingly complex models) requires a continuous influx of capital. There are two problems with this: 
@@ -141,6 +142,9 @@ the business model. The business model (of training increasingly complex models)
 2. For frontier labs to become profitable, they would probably need to conquer a sizable portion of the labor market; however, there is 
    `growing sentiment <https://hai.stanford.edu/ai-index/2026-ai-index-report/public-opinion>`_ 
    against the effects AI might have regarding the labor market.
+
+Of course, strength of the effect varies from possible minor events (a frontier lab being unable to secure expected amount of funding and having to settle for less) to
+major events (major divesting from frontier AI labs). 
 
 **Policy reasons**. Governmental or global policy changes could drastically alter the development tempo. Curiously, just recently (July 29, 2026) a statement 
 `was released <https://www.pacingthefrontier.com/>`_ by 1300+ employees of frontier AI labs requesting a global slowdown of AI development. Of course, this is not 
@@ -168,15 +172,14 @@ Let's take a look at how those diverse factors could affect the trends if the ri
 * The doubling time would increase (slower growth) - |down_exp_framed|
 * The growth would slow down to become linear - |down_linear_framed|
 
-======================= =====================================================================
-Factor                  Potential consequence
-======================= =====================================================================
-Scientific factors      Either: |up_exp| OR |down_exp|
-Physical bottlenecks    |down_exp|
-Information bottlenecks |down_exp|
-Financial reasons       |down_exp|
-Policy reasons          |down_exp| OR |down_linear|
-======================= =====================================================================
+======================= ======================================= ==============================================================================================
+Factor                  Potential consequence                   Comments
+======================= ======================================= ==============================================================================================
+Scientific factors      Either: |up_exp| OR |down_exp|          Breakthroughs speed up, scaling bottlenecks slow down
+Physical bottlenecks    |down_exp|                              Likely will cause a weak slowdown for frontier AI labs
+Financial reasons       |down_exp| OR |down_linear|             Strength of slowdown effect varies
+Policy reasons          |down_exp| OR |down_linear|             If a national/global slowdown is agreed upon, it could significantly slow down development
+======================= ======================================= ==============================================================================================
 
 .. raw:: html
 
