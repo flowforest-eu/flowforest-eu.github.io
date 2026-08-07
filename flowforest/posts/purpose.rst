@@ -23,7 +23,7 @@ theorems. However, both in the fields of computer security and mathematics, the 
 .. TEASER_END
 
 Likewise, in the next decade (or even just next 5 years) there will very probably be progress that we cannot even fully fathom yet. 
-It might have tremendous impact on all aspect of human society, particularly the labour market.
+It might have tremendous impact on all aspect of human society, particularly the labor market.
 
 Thinking about my kids who are growing up, I would like to help them to prepare for this new and changing world.
 
@@ -35,8 +35,8 @@ knowledge about AI systems.
 
 I would like to finish with a quote from a 
 `TED talk of Yoshua Bengio <https://www.ted.com/talks/yoshua_bengio_the_catastrophic_risks_of_ai_and_a_safer_path>`_ 
-(he is often refered to as "a godfather of AI"). 
-In that talk, he talks about catasthropic risks related to AI, and about his vision for a safer path. 
+(he is often referred to as "a godfather of AI"). 
+In that talk, he talks about catastrophic risks related to AI, and about his vision for a safer path. 
 To cite him:
 
 .. raw:: html
