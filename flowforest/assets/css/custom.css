@@ -4,12 +4,15 @@
     text-align: left !important;
 }
 
+.tags > li a {
+    font-weight: 500 !important;
+}
+
 #footer_nikola {
     font-size: 0.8125rem;
     color: #636057 !important;
 }
 
-/* Base page style */
 body {
     background-color: #fbf9f5 !important;
     color: #273328 !important;
@@ -125,7 +128,7 @@ nav.navbar,
     color: #8c5e11 !important;
     border: 1px solid rgba(184, 130, 40, 0.3) !important;
     border-radius: 4px;
-    padding: 3px 8px;
+    padding: 0.2rem 0.5rem;
     font-size: 0.82em;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
@@ -145,7 +148,7 @@ p.ai-disclaimer {
     background-color: #f6f3e8;
     border-radius: 5px !important;
     font-size: 0.9375rem;
-    padding: 8px 12px;
+    padding: 0.5rem 0.75rem;
     color: #8c5e11;
 }
 
@@ -170,10 +173,6 @@ code.literal {
     color: #5670d4 !important;
 }
 
-th, td {
-    padding: 2px;
-}
-
 article.postpage p.show_if_not_teaser {
     display: block !important;
 }
@@ -192,7 +191,7 @@ table {
 td, th {
   border: solid 1px #d4caaf;
   border-style: none solid solid none;
-  padding: 10px;
+  padding: 0.625rem;
 }
 
 /* This all is needed for rounded corners of tables */
@@ -204,17 +203,13 @@ tr:first-child th { border-top-style: solid; }
 tr td:first-child, tr th:first-child { border-left-style: solid; }
 
 blockquote {
-    font-style: italic;
-
-}
-
-blockquote {
     background-color: #f2efe4 !important; 
     border-left: 4px solid #b88228 !important; 
     border-radius: 0 6px 6px 0;
     margin: 2rem 0;
     padding: 1.25rem 1.75rem;
     position: relative;
+    font-style: italic;
 }
 
 blockquote p {

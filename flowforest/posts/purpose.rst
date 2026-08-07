@@ -35,7 +35,7 @@ knowledge about AI systems.
 
 I would like to finish with a quote from a 
 `TED talk of Yoshua Bengio <https://www.ted.com/talks/yoshua_bengio_the_catastrophic_risks_of_ai_and_a_safer_path>`_ 
-(he is often refered to as a "godfather of AI"). 
+(he is often refered to as "a godfather of AI"). 
 In that talk, he talks about catasthropic risks related to AI, and about his vision for a safer path. 
 To cite him:
 
