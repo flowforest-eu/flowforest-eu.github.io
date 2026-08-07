@@ -88,7 +88,7 @@ This now means that after 28 months (four doublings, so 16x growth), in November
 And just 7 months later, in summer 2029, we could expect AI models to be able to complete tasks (with a 50% success rate) that previously 
 took humans specialists a whole month.
 
-Statistics like this are what have caused some AI forecasters to warn us that we are moving head-first into a world that we are not fully ready for.
+Statistics like this are what have caused some forecasters to warn us that we are moving head-first into a world that we are not fully ready for.
 
 ===================================
 How sure are the experts of this?
@@ -101,7 +101,7 @@ Critics also point out that the benchmark focuses a lot on coding; other real-wo
 trend. METR `looked into this as well <https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains>`_ and concluded that other 
 tasks also seem to follow similar trends, but the doubling time (and the current state) varies by the field.
 
-However, the trend can only continue if the underlying assumptions continue to hold. Lets have a look of how it could cease to be.
+However, the trend can only continue if the underlying assumptions continue to hold. Let's have a look of how it could cease to be.
 
 =======================================
 What could cause the trend to change?
@@ -111,9 +111,9 @@ There are several ways how the landscape could drastically change: scientific br
 financial reasons, or policy reasons.
 
 **Scientific factors - reasons for acceleration**. If a new AI architecture is discovered that allows for reliable completion of tasks with longer time 
-horizons, the growth might further significantly accelarate. 
+horizons, the growth might further significantly accelerate. 
 
-**Scientific factors - reasons for slowdown**. It is widely recognized that there are three dimensions for scaling capabalities: increasing model size, 
+**Scientific factors - reasons for slowdown**. It is widely recognized that there are three dimensions for scaling capabilities: increasing model size, 
 increasing training time, and improving amount (or quality) of input data. All of those dimensions have been scaled quite aggressively:
 
 * Model sizes are now in trillions of parameters (Kimi K3 has parameter size of 2.8 trillions; OpenAI and Anthropic do not make their parameter sizes
@@ -133,17 +133,17 @@ Of course, one should take this with a grain of salt (since he has an incentive 
 **Physical bottlenecks**. There is increasing demand for compute power. This is causing RAM shortages and requires building of a lot of data centers.
 Also, there is `increasing public opposition <https://datacenteropposition.com/>`_ to data center buildout in USA.
 
-**Financial reasons**. Financial viability of the business model of AI companies is a complicated topic; some critics question the viability of 
+**Financial reasons**. Financial viability of the business model of frontier AI labs is a complicated topic; some critics question the viability of 
 the business model. The business model (of training increasingly complex models) requires a continuous influx of capital. There are two problems with this: 
 
 1. Profitability is nowhere in sight; `critics point out <https://www.wheresyoured.at/the-openai-bubble/>`_ that for e.g. OpenAI there is a sizable discrepancy 
    between the pricing of current LLM models vs how much they would need to cost for break-even.
-2. For AI companies to come profitable, they would need to conquer a sizable portion of the labor market; however, there is 
+2. For frontier labs to become profitable, they would probably need to conquer a sizable portion of the labor market; however, there is 
    `growing sentiment <https://hai.stanford.edu/ai-index/2026-ai-index-report/public-opinion>`_ 
    against the effects AI might have regarding the labor market.
 
-**Policy reasons**. Governmental or global policy changes could drastically alter the AI development tempo. Curiously, just recently (July 29, 2026) a statement 
-`was released <https://www.pacingthefrontier.com/>`_ by 1300+ employees of frontier AI companies requesting a global slowdown of AI development. Of course, this is not 
+**Policy reasons**. Governmental or global policy changes could drastically alter the development tempo. Curiously, just recently (July 29, 2026) a statement 
+`was released <https://www.pacingthefrontier.com/>`_ by 1300+ employees of frontier AI labs requesting a global slowdown of AI development. Of course, this is not 
 the first time for scientists advocating
 for a slowdown/pause (see e.g. `here <https://futureoflife.org/open-letter/pause-giant-ai-experiments/>`_). However, this letter stands out by the fact 
 that many of the signees are from OpenAI and Anthropic, two of the companies 
@@ -162,7 +162,7 @@ would exist.
 .. |down_linear_framed| image:: /images/down_linear.png
   :class: framed
 
-Lets have a look at how those diverse factors could affect the trends if the risks/possibilies realize. We use small pictograms for brevity:
+Let's take a look at how those diverse factors could affect the trends if the risks/possibilities realize. We use small pictograms for brevity:
 
 * The doubling time would decrease (faster growth) - |up_exp_framed|
 * The doubling time would increase (slower growth) - |down_exp_framed|
@@ -222,7 +222,11 @@ There will be upcoming posts where we do deep dives into those two shortcomings 
 Along that, we will look at where this all could take the humankind as a whole - and whether all this is inevitable or do we have some agency in 
 shaping the future.
 
-And finally, because I believe that transparency about AI usage is important:
+.. raw:: html
+
+    <embed>
+        <p style="font-size: 0.9em;">And finally, because I believe that transparency about AI usage is important, and my usage of AI tools varies:</p>
+    </embed>
 
 .. raw:: html
 
