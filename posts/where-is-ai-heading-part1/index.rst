@@ -11,8 +11,10 @@
 .. raw:: html
 
     <embed>
-      <p class="show_if_not_teaser"; style="display:none;"><em>This is the first part of a 3-post series. See end of this post for a peek into the topics we will be covering later.</em></p>
-      <p class="show_if_not_teaser"; style="display:none;"><strong>Note</strong>. <em>Most of the models we are discussing in this post are LLMs (Large Language Models). We will say 'LLM' when speaking about
+      <p class="show_if_not_teaser"; style="display:none;"><em>This is the first part of a 3-post series. See end of this post for a peek 
+      into the topics we will be covering later.</em></p>
+      <p class="show_if_not_teaser"; style="display:none;"><strong>Note</strong>. <em>Most of the models we are discussing in this post are 
+      LLMs (Large Language Models). We will say 'LLM' when speaking about
       them specifically, and 'AI models' when we are talking more broadly and including other (current or future) architectures as well.</em></p>
     </embed>
 
@@ -50,19 +52,22 @@ Here are some examples of the tasks from the software engineering field:
 * ``cuda_backtesting`` (8 hours) - *Speed up a Python backtesting tool for trade executions by implementing custom CUDA kernels while preserving 
   all functionality, aiming for a 30x performance improvement*
 
-The strength of this approach is that it allows to have one test that scales all the way from early days of GPT-2 (that could reliably solve tasks taking 
-experts a few seconds) to current frontier models (with time horizons in hours) and all the way to future models that could potentially have time horizons 
-in weeks or months. Here is what they found:
+This approach has two strengths: 
 
-At **50% success level**:
+1. it measures task duration in how long a human specialist takes to complete it, so the results are human-interpretable;
+2. it allows to have one test that scales all the way from early days of GPT-2 (that could reliably solve tasks taking 
+   experts a few seconds) to current frontier models (with time horizons in hours) and all the way to future models that could potentially have time horizons 
+   in weeks or months. 
 
-* most advanced models of Claude, Gemini, and GPT currently (August 2026) have time horizons of 3–6 hours;
-* exceptions are Claude Opus 4.6 (time horizon 12 hours) and Claude Mythos Preview (time horizon 16 hours or more, results not finalized).
+They concluded that at **50% success level**:
 
-At **80% success level**:
+* most advanced models of Claude, Gemini, and GPT currently (August 2026) have time horizons of **3–6 hours**;
+* exceptions are Claude Opus 4.6 (time horizon **12 hours**) and Claude Mythos Preview (time horizon **16 hours** or more, results not fully clear yet).
 
-* most advanced models have time horizons of 1–2 hours;
-* exception again is Claude Mythos Preview, which has time horizon of 3 hours.
+And at **80% success level**:
+
+* most advanced models have time horizons of **1–2 hours**;
+* exception again is Claude Mythos Preview, which has time horizon of **3 hours**.
 
 The following diagram shows the long-time trend of time horizon expanding over time (as of August 2026):
 

@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FlowForest (Postitused AI kohta)</title><link>https://flowforest.eu/</link><description></description><atom:link href="https://flowforest.eu/et/categories/ai.xml" rel="self" type="application/rss+xml"></atom:link><language>et</language><copyright>Autor: &lt;a href="mailto:rauni.lillemets@gmail.com"&gt;FlowForest&lt;/a&gt; </copyright><lastBuildDate>Fri, 07 Aug 2026 21:24:18 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Where is AI heading - part 1/3</title><link>https://flowforest.eu/et/posts/where-is-ai-heading-part1/</link><dc:creator>FlowForest</dc:creator><description>&lt;div&gt;&lt;embed&gt;
-  &lt;p class="show_if_not_teaser" style="display:none;"&gt;&lt;em&gt;This is the first part of a 3-post series. See end of this post for a peek into the topics we will be covering later.&lt;/em&gt;&lt;/p&gt;
-  &lt;p class="show_if_not_teaser" style="display:none;"&gt;&lt;strong&gt;Note&lt;/strong&gt;. &lt;em&gt;Most of the models we are discussing in this post are LLMs (Large Language Models). We will say 'LLM' when speaking about
-  them specifically, and 'AI models' when we are talking more broadly and including other (current or future) architectures as well.&lt;/em&gt;&lt;/p&gt;
-&lt;/embed&gt;&lt;p&gt;Lately, AI seems to dominate the news. But how to discern truth from exaggerations? The news coverage is confusing and extremely polarized
-about the AI topic.
-For example, you might see videos with titles "AI will replace all jobs in next 2 years" next to a video titled "AI progress has hit a wall" or
-"AI bubble is about to pop".
-Of course, clickbait sells, and so do extreme titles - in either direction.&lt;/p&gt;
-&lt;p&gt;And even from a perspective of an expert the progress can look very jagged - periods of rapid improvement alternate with periods of
-relative stagnation. In order to get a clearer view, one must zoom out and look at the progress trends over a longer timeframe.
-This is exactly what was done by &lt;a class="reference external" href="https://metr.org/"&gt;METR&lt;/a&gt; (a non-profit research institute in California).&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://flowforest.eu/et/posts/where-is-ai-heading-part1/"&gt;Loe veel…&lt;/a&gt; (13 minutit veel lugeda)&lt;/p&gt;&lt;/div&gt;</description><guid>https://flowforest.eu/et/posts/where-is-ai-heading-part1/</guid><pubDate>Thu, 06 Aug 2026 05:22:32 GMT</pubDate></item><item><title>Milleks me peaksime valmistuma?</title><link>https://flowforest.eu/et/posts/purpose-of-blog/</link><dc:creator>FlowForest</dc:creator><description>&lt;div&gt;&lt;p&gt;AI on tohutu kiirusega arenev valdkond. Muutused viimase 10 aasta jooksul on olnud tohutud ja samas ka ootamatud.
+<?xml-stylesheet type="text/xsl" href="../../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>FlowForest (Postitused AI kohta)</title><link>https://flowforest.eu/</link><description></description><atom:link href="https://flowforest.eu/et/categories/ai.xml" rel="self" type="application/rss+xml"></atom:link><language>et</language><copyright>Autor: &lt;a href="mailto:rauni.lillemets@gmail.com"&gt;FlowForest&lt;/a&gt; </copyright><lastBuildDate>Sat, 08 Aug 2026 06:59:10 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Ülevaade AI teemadel - osa 1/3</title><link>https://flowforest.eu/et/posts/where-is-ai-heading-part1/</link><dc:creator>FlowForest</dc:creator><description>&lt;div&gt;&lt;embed&gt;
+  &lt;p class="show_if_not_teaser" style="display:none;"&gt;&lt;em&gt;See postitus on esimene osa 3-osalisest seeriast. Postituse lõpus on vihjed selle kohta, millest
+  hakkavad rääkima järgmised osad.&lt;/em&gt;&lt;/p&gt;
+  &lt;p class="show_if_not_teaser" style="display:none;"&gt;&lt;strong&gt;Märkus&lt;/strong&gt;. &lt;em&gt;Enamus mudelitest, mida me siin postituses käsitleme, on
+  LLM-d ("Large Language Model"). Kui me soovime rääkida spetsiifiliselt neist, kasutame me terminit "LLM"; terminit "AI" kasutame, et
+  rääkida üleüldiselt võimalikest AI süsteemidest ja arhitektuuridest (s.h. neist, mida pole veel leiutatud).
+&lt;/em&gt;&lt;/p&gt;&lt;/embed&gt;&lt;p&gt;Viimasel ajal tundub AI olevat täitnud kõik uudiskanalite pealkirjad. Aga kuidas eristada tõde liialdustest?
+Uudisteartiklid on tihti segased või kallutatud.
+Kõrvuti võib leida artikleid pealkirjadega "AI asendab kõik tööd 2 aasta jooksul" ja "AI mull on kohe lõhkemas".
+On selge, et ekstreemsemad pealkirjad müüvad paremini - ükskõik, kuhu poole parajasti tõde kallutatud pole.&lt;/p&gt;
+&lt;p&gt;Lisaks võib AI mudelite progress tunduda ebakorrapärane ka valdkonna eksperdile - kiire arengu perioodid vahelduvad aeglastega.
+Et saada selgemat ülevaadet, tuleb vaadata kaugemalt, üle pikema ajaraami.
+See on täpselt see, mida organisatsioon &lt;a class="reference external" href="https://metr.org/"&gt;METR&lt;/a&gt; tegi (METR on mittetulunduslik uurimisinstituut Californias).&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://flowforest.eu/et/posts/where-is-ai-heading-part1/"&gt;Loe veel…&lt;/a&gt; (13 minutit veel lugeda)&lt;/p&gt;&lt;/div&gt;</description><category>AI</category><category>AI-progress</category><guid>https://flowforest.eu/et/posts/where-is-ai-heading-part1/</guid><pubDate>Thu, 06 Aug 2026 05:22:32 GMT</pubDate></item><item><title>Milleks me peaksime valmistuma?</title><link>https://flowforest.eu/et/posts/purpose-of-blog/</link><dc:creator>FlowForest</dc:creator><description>&lt;div&gt;&lt;p&gt;AI on tohutu kiirusega arenev valdkond. Muutused viimase 10 aasta jooksul on olnud tohutud ja samas ka ootamatud.
 Mõtle vaid sellele, mida inimesed oleksid vastanud aastal 2010, kui neilt oleks küsitud, millal luuakse AI mudel, mis suudab neid kahte asja:&lt;/p&gt;
 &lt;ul class="simple"&gt;
 &lt;li&gt;&lt;p&gt;leida turvanõrkusi Linux tuumkoodis (&lt;a class="reference external" href="https://cybersecuritynews.com/linux-patches-400-kernel-vulnerabilities/"&gt;näide&lt;/a&gt;);&lt;/p&gt;&lt;/li&gt;
