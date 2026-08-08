@@ -1,4 +1,4 @@
-.. title: Ülevaade AI teemadel - osa 1/3
+.. title: Ülevaade AI arengusuundadest - osa 1/3
 .. slug: where-is-ai-heading-part1
 .. date: 2026-08-10 08:22:32 UTC+03:00
 .. tags: 
@@ -11,11 +11,11 @@
 .. raw:: html
 
     <embed>
-      <p class="show_if_not_teaser"; style="display:none;"><em>See postitus on esimene osa 3-osalisest seeriast. Postituse lõpus on vihjed selle kohta, millest
-      hakkavad rääkima järgmised osad.</em></p>
+      <p class="show_if_not_teaser"; style="display:none;"><em>See postitus on esimene osa 3-osalisest seeriast, mis räägib AI arengusuundadest ja 
+      trendidest.</em></p>
       <p class="show_if_not_teaser"; style="display:none;"><strong>Märkus</strong>. <em>Enamus mudelitest, mida me siin postituses käsitleme, on 
       LLM-d ("Large Language Model"). Kui me soovime rääkida spetsiifiliselt neist, kasutame me terminit "LLM"; terminit "AI" kasutame, et 
-      rääkida üleüldiselt võimalikest AI süsteemidest ja arhitektuuridest (s.h. neist, mida pole veel leiutatud).
+      rääkida üleüldiselt võimalikest AI süsteemidest ja arhitektuuridest (s.h. neist, mida pole veel leiutatud).</em></p>
     </embed>
 
 Viimasel ajal tundub AI olevat täitnud kõik uudiskanalite pealkirjad. Aga kuidas eristada tõde liialdustest? 
@@ -36,7 +36,7 @@ Arengu mõõtmine
 METR märkas, et üks AI mudelite probleemidest (eriti LLM-de puhul) on järjepidavuse puudumine - neil võib olla väga raske 
 läbida pikaajalisi või mitme-sammulisi ülesandeid ilma järge kaotamata. See järeldus aitas neil defineerida ühe efektiivse
 mõõdupuu: kui ajaliselt keerukate (inimesel lahendamiseks kuluva aja mõttes) ülesannetega saab mudel hakkama teatud fikseeritud 
-tõenäosusega (nt 50% või 80%)? Nad andsid sellele mõõdikule nimi **ülesannete lõpetamise ajahorisont** (i.k. "task completion
+tõenäosusega (nt 50% või 80%)? Nad andsid sellele mõõdikule nime **ülesannete läbimise ajahorisont** (i.k. "task completion
 time horizon").
 
 METR koostas nimekirja 228 erineva ülesandega (tarkvaraarenduse, küberturvalisuse, üldise loogika, ja masinõppe valdkonnast).
@@ -52,98 +52,108 @@ Here are some examples of the tasks from the software engineering field:
 * ``cuda_backtesting`` (8 hours) - *Kiirenda etteantud Python'i teeki aktsiatehingute tegemiseks ajalooliste tehinguandmete pealt, 
   kasutades teatud CUDA kernel'eid, jättes samaks kogu funktsionaalsuse, ning saavuta koodi kiirendamine 30% võrra.*
 
-The strength of this approach is that it allows to have one test that scales all the way from early days of GPT-2 (that could reliably solve tasks taking 
-experts a few seconds) to current frontier models (with time horizons in hours) and all the way to future models that could potentially have time horizons 
-in weeks or months. Here is what they found:
+Sellel lähenemisel on kaks tugevust:
 
-At **50% success level**:
+1. see mõõdab ülesannete keerukust läbi selle, kaua inimspetsialistil kulub selle läbimiseks, mis see muudab selle mõõdiku inimestele 
+   intuitiivselt arusaadavaks;
+2. see annab mõõdiku, mis skaleerub esimesest GPT-2 versioonist (mis suutis ainult lahendada ülesandeid, mis inimesel võtab mõned sekundid)
+   kuni praeguste tippmudeliteni (mille ajahorisont on mitmeid tunde) kuni tulevikumudeliteni, mille ajahorisont võib olla isegi nädalates või kuudes.
 
-* most advanced models of Claude, Gemini, and GPT currently (August 2026) have time horizons of 3–6 hours;
-* exceptions are Claude Opus 4.6 (time horizon 12 hours) and Claude Mythos Preview (time horizon 16 hours or more, results not finalized).
+Testid näitasid, et **50% edukuse tasemel**:
 
-At **80% success level**:
+* enamus Claude, Gemini, ja GPT tippmudeleid (august 2026 seisuga) on ajahorisondiga **3–6 tundi**;
+* erandiks on Claude Opus 4.6 (ajahorisont **12 tundi**) ja Claude Mythos Preview (ajahorisont **16 tundi** või enam, testide tulemused pole lõplikud).
 
-* most advanced models have time horizons of 1–2 hours;
-* exception again is Claude Mythos Preview, which has time horizon of 3 hours.
+Ja **80% success level**:
 
-The following diagram shows the long-time trend of time horizon expanding over time (as of August 2026):
+* tippmudelid on ajahorisondiga **1-2 tundi**;
+* erandiks on Claude Mythos Preview, mille ajahorisont on **3 tundi**.
+
+Järgnev graafik näitab, kuidas ajahorisont on arenenud aja jooksul (august 2026 seisuga). Horisontaal-teljel on mudeli avaldamise aeg ja 
+vertikaal-teljel mudeli ajahorisondi pikkus. Valitud on 50% edukuse tase.
 
 .. image:: /images/task-length-linear.png
 
 |
 
-I recommend you to play with the numbers yourself. To do this, go to `METR time horizons webpage <https://metr.org/time-horizons/>`_ and have a look
-at the first graph there. Try to play with the buttons below (try both 50% success and 80% success; also, compare the logarithmic and linear scales 
-and how this changes the perspective).
+Ma soovitan ise katsetada ja mängida nende numbritega. Seda saab teha `METR veebilehel <https://metr.org/time-horizons/>`_ (esimene graafik seal lehel).
+Seal saab valida 50% ja 80% edukuse taseme vahel, ning samuti vaadelda tulemusi eri skaaladel (lineaarne vs logaritmiline).
 
-The main finding of METR is that the time horizon has been **doubling roughly every 4–7 months** and this trend has held from 2019 to 2026 (if anything,
-progress speed has even increased from 2023 onwards).  
+Põhiline järeldus METR uurimistööst oli see, et mudelite ajahorisont on laias laastus **kahekordistunud iga 4-7 kuuga** ning et see trend on olnud püsiv 
+aastast 2019 kuni 2026-ni (kuigi tundub, et aastast 2023 alates on progress kiirenenud).
+Oluline on märkida, et kasvu tempo on olnud sarnane nii 50% kui ka 80% edukuse taseme juures.
 
-It is important to note that the trend of doubling has been quite consistent for both 50% and 80% success rate time horizons.
+Mis järeldusi siit teha saab? Eeldame, et praegune eksponentsiaalne kasv jätkub ning mudelite ajahorisondi pikkus kahekordistub iga 7 kuuga.
+See tähendaks, et 28 kuu pärast (November 2028) on toimunud 4 kahekordistumist (ehk 16x kasv), ning me näeksime mudeleid:
 
-Now, what does this mean? Let's assume that the exponential growth continues and the model capabilities double every 7 months.
-This now means that after 28 months (four doublings, so 16x growth), in November 2028, we would be facing:
+* 50% edukuse taseme juures lahendamas 8-24 päevase ajaaknaga ülesandeid;
+* 80% edukuse taseme juures lahendamas 2-4 päevase ajaaknaga ülesandeid.
 
-* models succeeding 50% for 8-24 day tasks;
-* models succeeding 80% for 2-4 day tasks.
+Ja veel 7 kuud hiljem, 2029. suvel, näeksime me AI mudeleid suutmas lahendada ülesandeid (50% edukuse tasemega), mis varem 
+võtsid inimspetsialistil terve kuu.
 
-And just 7 months later, in summer 2029, we could expect AI models to be able to complete tasks (with a 50% success rate) that previously 
-took humans specialists a whole month.
+See trend on üks põhjustest, miks AI turvalisuse valdkonna spetsialistid hoiatavad, et me oleme väga kiiresti liikumas maailma, milleks me ei ole ühiskonnana 
+valmis.
 
-Statistics like this are what have caused some forecasters to warn us that we are moving head-first into a world that we are not fully ready for.
+==========================================
+Kui kindlad on eksperdid selles trendis?
+==========================================
 
-===================================
-How sure are the experts of this?
-===================================
+METR loodud ajahorisondi kriteerium on üks enim tsiteeritud mõõdikuid AI valdkonnas. Pole ühest konsensust, mis on kõige tõenäolisem 
+kasvu kiirus (kahekordistumise ajasamm) praegusel hetkel (kas 4 kuud või 7 kuud) - üldiselt arvatakse, et see jääb pigem vahemikku 4-6 kuud.
 
-METR benchmark is one of the most cited benchmarks in the industry. There is a lot of disagreement about what the exact doubling time 
-is currently (whether 4 months or 7 months) - people tend to point out that it is probably **more likely** in the range of 4-6 months.
+Kriitikud on ka välja toonud, et see mõõdik keskendub liialt programmeerimisülesannetele; teised päris-elulised ülesanded ei pruugi järgida sama
+kasvutrendi. METR `uuris ka seda <https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains>`_ ja jõudis järeldusele, et teised 
+valdkonnad kasvavad sarnasel kujul, aga kahekordistumise kiirus (ja praegune hetkeseis) erineb valdkonniti.
 
-Critics also point out that the benchmark focuses a lot on coding; other real-world tasks, which are messier, might not follow the exact same 
-trend. METR `looked into this as well <https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains>`_ and concluded that other 
-tasks also seem to follow similar trends, but the doubling time (and the current state) varies by the field.
-
-However, the trend can only continue if the underlying assumptions continue to hold. Let's have a look of how it could cease to be.
+Oluline on siiski märkida, et see kasvutrend saab jätkuda vaid siis, kui seda kasvu toetavad tegurid ei muutu kardinaalselt. Uurime, mis viisil need tegurid 
+võiksid muutuda.
 
 =======================================
-What could cause the trend to change?
+Mis tegurid võivad kasvutrendi muuta?
 =======================================
 
-There are several ways how the landscape could drastically change: scientific breakthroughs or limitations, physical bottlenecks, 
-financial reasons, or policy reasons.
+On mitmeid tegureid, mis võivad olukorda drastiliselt muutuda: teaduslikud läbimurded või piirangud, füüsilise maailmaga seotud pudelikaelad, finantsilised 
+põhjused, või poliitilised otsused.
 
-**Scientific factors - reasons for acceleration**. If a new AI architecture is discovered that allows for reliable completion of tasks with longer time 
-horizons, the growth might further significantly accelerate. 
+**Teadus - kiirendavad tegurid**. Kui avastatakse uus AI arhitektuur, mis võimaldab mudelitel tegeleda suurema püsivuse ja järjepidavusega tegeleda keeruliste 
+ülesannetega, võib kasvutempo oluliselt kiireneda.
 
-**Scientific factors - reasons for slowdown**. It is widely recognized that there are three dimensions for scaling capabilities: increasing model size, 
-increasing training time, and improving amount (or quality) of input data. All of those dimensions have been scaled quite aggressively:
+**Teadus - aeglustavad tegurid**. Valdkonnas on laialt levinud teadmine, et on 3 põhilist mõõdet mudelite võimekuse skaleerimiseks: mudelite parameetrite arvu
+suurendamine, treeninguaja pikendamine, ning treeningandmete mahu (ja kvaliteedi) suurendamine. Seni on kõiki kolme mõõdet suurendatud üsna agressiivselt:
 
-* Model sizes are now in trillions of parameters (Kimi K3 has parameter size of 2.8 trillions; OpenAI and Anthropic do not make their parameter sizes
-  public, but their top models likely exceed that). Just getting a single answer from a model as big as Kimi K3 requires a computer with 11.2 TB (!) of RAM. 
-  Bigger models also take more time and energy to produce answers; and they are already ridiculously expensive to train. This is one of the main reasons
-  that OpenAI and Anthropic need increasingly larger investments regularly.
-* For any given model, there is a certain amount of training that is optimal; continuing training indefinitely will produce smaller and smaller additional benefits.
-* Increasing amount of data is also not trivial. Already Chat-GPT 3 (2020) was trained on a large corpus of books and all internet content they could obtain 
-  (500 billion tokens). Companies are now relying on synthetic data and data manually created by human experts. It is important to note that quality of data 
-  is also crucial.
+* Mudelite parameetrite arv on nüüdseks jõudnud triljoniteni (Kimi K3 mudelil on 2.8 triljonit parameetrit; OpenAI ja Anthropic hoiavad täpse parameetri arvu 
+  salajasena, aga nende tippmudelitel on eeldatavasti parameetreid, kui Kimi K3 mudelil). Et saada ühte vastust mudelilt, mis on nii suur kui Kimi K3, on vaja
+  arvutit, millel on 11.2 TB (!) mälu. Suuremad mudelid vajavad ka rohkem aega ja energiat, et vastuseid anda; ja nende treenimine on meeletult kulukas.
+  See on üks põhjuseid, miks OpenAI ja Anthropic vajavad pidevalt järjeset suuremaid summasid investeeringuna.
+* Treeninguaega on võimalik alati pikendada, kuid mingist punktist alates väheneb treenimise jätkamisest saadav kasu oluliselt.
+* Treeningandmete mahu suurendamine ei ole samuti triviaalne. Juba Chat-GPT 3 (2020) treeniti suure koguse raamatute ja praktiliselt kogu interneti sisu peal,
+  mida oli võimalik tolleks hetkeks kokku koguda. Värskete uute andmete saamiseks kasutavad firmad nüüd on sünteetilisi andmeid ja inimekspertide käest kogutud 
+  vastuseid. Ülioluline on siin muidugi ka andmete kvaliteet ja unikaalsus.
 
-It is clear that it is not trivial to continue the scaling in those 3 dimensions. 
-Nevertheless, Dario Amodei (CEO of Anthropic) has `presented some interesting arguments <https://www.youtube.com/watch?v=GrloGdp5wdc>`_ to  
-explain why he thinks that the current approach could still scale until at least we reach human-level intelligence. 
-Of course, one should take this with a grain of salt (since he has an incentive to not say anything that would lessen the interest of their investors).
+On selge, et nende kõigi 3 mõõtme jätkuv skaleerumine on firmadele väljakutse.
+Sellegipoolest esitas Dario Amodei (Anthropic'u tegevjuht) ühes `hiljutises intervjuus <https://www.youtube.com/watch?v=GrloGdp5wdc>`_ huvitavaid põhjendusi,
+miks tema arvates võiks praegune lähenemine skaleeruda vähemalt selle punktini, kuni me jõuame inim-taseme intelligentsuseni.
+Samas tuleb muidugi tema nendesse väidetesse suhtuda kriitiliselt, kuna tal on taga tugev surve mitte öelda midagi, mis võiks nende investorite huvi 
+vähendada.
 
-**Physical bottlenecks**. There is increasing demand for compute power. This is causing RAM shortages and requires building of a lot of data centers.
-Also, there is `increasing public opposition <https://datacenteropposition.com/>`_ to data center buildout in USA. Not being able to sufficiently expand 
-and build new data centers could force frontier AI labs to scale back plans and/or innovate into creating novel, smaller architectures.
+**Füüsilise maailmaga seotud pudelikaelad**. Nõudlus arvutusvõimsuse järele üha kasvab, mis tekitab maailmas mälukiipide puudujäägi ning eeldab üha uute
+arvutuskeskuste ehitamist. Samas on Ameerikas kasvutrendis `avalikkuse vastuseis <https://datacenteropposition.com/>`_ arvutuskeskuste väljaehitamisele.
+Kui AI firmad ei saa piisavas mahus laieneda, peavad nad kasvutempot aeglustama ja/või investeerima uute väiksemate AI arhitektuuride 
+loomisesse.
 
-**Financial reasons**. Financial viability of the business model of frontier AI labs is a complicated topic; some critics question the viability of 
-the business model. The business model (of training increasingly complex models) requires a continuous influx of capital. There are two problems with this: 
+**Finantsilised põhjused**. Juhtivate AI firmade ärimudeli finantsiline elujõulisus on keeruline teema; on kriitikuid, kus kahtlevad, kas selline ärimudel
+saab üldse olema jätkusuutlik. Nende ärimudel (mis eeldab järjest keerulisemate mudelite treenimist) vajab pidevat kapitali juurdevoolu. Sellega seoses 
+tekib 2 probleemi:
 
-1. Profitability is nowhere in sight; `critics point out <https://www.wheresyoured.at/the-openai-bubble/>`_ that for e.g. OpenAI there is a sizable discrepancy 
-   between the pricing of current LLM models vs how much they would need to cost for break-even.
-2. For frontier labs to become profitable, they would probably need to conquer a sizable portion of the labor market; however, there is 
-   `growing sentiment <https://hai.stanford.edu/ai-index/2026-ai-index-report/public-opinion>`_ 
-   against the effects AI might have regarding the labor market.
+1. Nad pole jõudnud veel isegi kasumlikkuse lähedale; üks kriitikutest, Ed Zitron, `koostas analüüsi <https://www.wheresyoured.at/the-openai-bubble/>`_, mis
+   toob teravalt välja käärid praeguste LLM mudelite hinnakirjade vahel ning selle vahel, kui palju nad peaksid maksma, et mitte olla kahjumlikud.
+2. Selleks, et juhtivad AI firmad saaksid jõuda kasumlikkuseni, peaksid nad vallutama suure osa tööturust; samas on näiteks Ameerikas 
+   `kasvav vastumeelsus <https://hai.stanford.edu/ai-index/2026-ai-index-report/public-opinion>`_ selle osas, mis mõju AI-l saab olema tööturul.
+
+Kui rääkida võimalike finantsiliste sündmuste mõjust AI arengukiirusele, siis mõju tugevus ulatub väikesemõjulisest (..) väga suuremõjulisteni (..).
+
++++
 
 Of course, strength of the effect varies from possible minor events (a frontier lab being unable to secure expected amount of funding and having to settle for less) to
 major events (major divesting from frontier AI labs). 

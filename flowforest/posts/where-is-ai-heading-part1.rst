@@ -38,7 +38,7 @@ METR noticed that one of the issues that AI models (LLMs in particular) have is 
 complete a multi-step task without losing track. This means that there is a natural metric: if you list various tasks that take 
 human experts different time to complete (from mere seconds to several days) and group them by completion time, then how long 
 tasks of those can the AI model complete with a certain 
-probability (e.g. 50% or 80%)? They named this metric **task completion time horizon**.
+success rate (e.g. 50% or 80%)? They named this metric **task completion time horizon**.
 
 METR compiled a list of total 228 tasks (from the fields of software engineering, cybersecurity, general reasoning, and machine learning tasks)
 that range from trivial (can be completed in seconds) to tasks that take a professional in that field several days to complete.
@@ -59,12 +59,12 @@ This approach has two strengths:
    experts a few seconds) to current frontier models (with time horizons in hours) and all the way to future models that could potentially have time horizons 
    in weeks or months. 
 
-They concluded that at **50% success level**:
+They concluded that at **50% success rate**:
 
 * most advanced models of Claude, Gemini, and GPT currently (August 2026) have time horizons of **3–6 hours**;
 * exceptions are Claude Opus 4.6 (time horizon **12 hours**) and Claude Mythos Preview (time horizon **16 hours** or more, results not fully clear yet).
 
-And at **80% success level**:
+And at **80% success rate**:
 
 * most advanced models have time horizons of **1–2 hours**;
 * exception again is Claude Mythos Preview, which has time horizon of **3 hours**.
@@ -76,7 +76,7 @@ The following diagram shows the long-time trend of time horizon expanding over t
 |
 
 I recommend you to play with the numbers yourself. To do this, go to `METR time horizons webpage <https://metr.org/time-horizons/>`_ and have a look
-at the first graph there. Try to play with the buttons below (try both 50% success and 80% success; also, compare the logarithmic and linear scales 
+at the first graph there. Try to play with the buttons below (try both 50% and 80% success rate; also, compare the logarithmic and linear scales 
 and how this changes the perspective).
 
 The main finding of METR is that the time horizon has been **doubling roughly every 4–7 months** and this trend has held from 2019 to 2026 (if anything,
@@ -126,11 +126,10 @@ increasing training time, and improving amount (or quality) of input data. All o
   Bigger models also take more time and energy to produce answers; and they are already ridiculously expensive to train. This is one of the main reasons
   that OpenAI and Anthropic need increasingly larger investments regularly.
 * For any given model, there is a certain amount of training that is optimal; continuing training indefinitely will produce smaller and smaller additional benefits.
-* Increasing amount of data is also not trivial. Already Chat-GPT 3 (2020) was trained on a large corpus of books and all internet content they could obtain 
-  (500 billion tokens). Companies are now relying on synthetic data and data manually created by human experts. It is important to note that quality of data 
-  is also crucial.
 
-It is clear that it is not trivial to continue the scaling in those 3 dimensions. 
+On selge, et kõigi nende 
+
+It is clear that it is not trivial to continue the scaling indefinitely in those 3 dimensions. 
 Nevertheless, Dario Amodei (CEO of Anthropic) has `presented some interesting arguments <https://www.youtube.com/watch?v=GrloGdp5wdc>`_ to  
 explain why he thinks that the current approach could still scale until at least we reach human-level intelligence. 
 Of course, one should take this with a grain of salt (since he has an incentive to not say anything that would lessen the interest of their investors).
