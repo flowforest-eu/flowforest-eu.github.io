@@ -1,4 +1,4 @@
-.. title: Kuhu on AI arenemas - osa 1/3
+.. title: Ülevaade AI teemadel - osa 1/3
 .. slug: where-is-ai-heading-part1
 .. date: 2026-08-10 08:22:32 UTC+03:00
 .. tags: 
@@ -18,41 +18,39 @@
       rääkida üleüldiselt võimalikest AI süsteemidest ja arhitektuuridest (s.h. neist, mida pole veel leiutatud).
     </embed>
 
-Viimasel ajal tundub AI olevat täitnud kõik uudiskanalite pealkirjaread. Aga kuidas eristada tõde liialdustest? 
+Viimasel ajal tundub AI olevat täitnud kõik uudiskanalite pealkirjad. Aga kuidas eristada tõde liialdustest? 
 Uudisteartiklid on tihti segased või kallutatud. 
 Kõrvuti võib leida artikleid pealkirjadega "AI asendab kõik tööd 2 aasta jooksul" ja "AI mull on kohe lõhkemas".
 On selge, et ekstreemsemad pealkirjad müüvad paremini - ükskõik, kuhu poole parajasti tõde kallutatud pole.
 
-Lisaks võib AI mudelite progress tunduda ebakorrapärane ka valdkonna eksperdile - kiire arengu perioodid vahelduvad hetkedega, kus ..
-
-
-And even from a perspective of an expert the progress can look very jagged - periods of rapid improvement alternate with periods of 
-relative stagnation. In order to get a clearer view, one must zoom out and look at the progress trends over a longer timeframe. 
-This is exactly what was done by `METR <https://metr.org/>`_ (a non-profit research institute in California). 
+Lisaks võib AI mudelite progress tunduda ebakorrapärane ka valdkonna eksperdile - kiire arengu perioodid vahelduvad aeglastega.
+Et saada selgemat ülevaadet, tuleb vaadata kaugemalt, üle pikema ajaraami. 
+See on täpselt see, mida organisatsioon `METR <https://metr.org/>`_ tegi (METR on mittetulunduslik uurimisinstituut Californias). 
 
 .. TEASER_END
 
 =====================
-Measuring progress
+Arengu mõõtmine
 =====================
 
-METR noticed that one of the issues that AI models (LLMs in particular) have is losing coherence - it can be difficult for them to 
-complete a multi-step task without losing track. This means that there is a natural metric: if you list various tasks that take 
-human experts different time to complete (from mere seconds to several days) and group them by completion time, then how long 
-tasks of those can the AI model complete with a certain 
-probability (e.g. 50% or 80%)? They named this metric **task completion time horizon**.
+METR märkas, et üks AI mudelite probleemidest (eriti LLM-de puhul) on järjepidavuse puudumine - neil võib olla väga raske 
+läbida pikaajalisi või mitme-sammulisi ülesandeid ilma järge kaotamata. See järeldus aitas neil defineerida ühe efektiivse
+mõõdupuu: kui ajaliselt keerukate (inimesel lahendamiseks kuluva aja mõttes) ülesannetega saab mudel hakkama teatud fikseeritud 
+tõenäosusega (nt 50% või 80%)? Nad andsid sellele mõõdikule nimi **ülesannete lõpetamise ajahorisont** (i.k. "task completion
+time horizon").
 
-METR compiled a list of total 228 tasks (from the fields of software engineering, cybersecurity, general reasoning, and machine learning tasks)
-that range from trivial (can be completed in seconds) to tasks that take a professional in that field several days to complete.
+METR koostas nimekirja 228 erineva ülesandega (tarkvaraarenduse, küberturvalisuse, üldise loogika, ja masinõppe valdkonnast).
+Ülesanded varieeruvad triviaalsetest (lahendatav sekunditega) kuni ülesanneteni, mille lahendamiseks kulub enda valdkonna
+spetsialistil mitmeid päevi.
 
 Here are some examples of the tasks from the software engineering field:
 
-* ``find_shell_script`` (3 seconds) - *“Which of those files is a shell script?” Choices: “run.sh”, “run.txt”, “run.py”, “run.md”*
-* ``wikipedia_research`` (1 minute) - *Research simple factual information from Wikipedia*
-* ``oxdna_simple`` (9 minutes) - *Detect and fix a bug in the input files for a molecular dynamics simulation using the oxDNA package*
-* ``munge_data`` (56 minutes) - *Write a Python script to transform JSON data from one format to another using example files*
-* ``cuda_backtesting`` (8 hours) - *Speed up a Python backtesting tool for trade executions by implementing custom CUDA kernels while preserving 
-  all functionality, aiming for a 30x performance improvement*
+* ``find_shell_script`` (3 seconds) - *“Milline neist failidest on shell skript?” Valikud: “run.sh”, “run.txt”, “run.py”, “run.md”*
+* ``wikipedia_research`` (1 minute) - *Otsi vastus lihtsale faktilisele küsimusele Wikipedia'st*
+* ``oxdna_simple`` (9 minutes) - *Leia ja paranda viga molekulaarse dünaamilise simulatsiooni sisendfailides kasutades oxDNA teeki*
+* ``munge_data`` (56 minutes) - *Kirjuta Pythoni skript, mis teisendab JSON formaadis andmeid ühest formaadist teise (näitefailide alusel)*
+* ``cuda_backtesting`` (8 hours) - *Kiirenda etteantud Python'i teeki aktsiatehingute tegemiseks ajalooliste tehinguandmete pealt, 
+  kasutades teatud CUDA kernel'eid, jättes samaks kogu funktsionaalsuse, ning saavuta koodi kiirendamine 30% võrra.*
 
 The strength of this approach is that it allows to have one test that scales all the way from early days of GPT-2 (that could reliably solve tasks taking 
 experts a few seconds) to current frontier models (with time horizons in hours) and all the way to future models that could potentially have time horizons 
