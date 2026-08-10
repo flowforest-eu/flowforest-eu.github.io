@@ -233,14 +233,14 @@ https://arxiv.org/pdf/2503.14499
 Kuhu edasi?
 =====================
 
-Selle postitus oli 1. osa AI arengu teemalisest artiklite seeriast. Me keskendusime siin sellele, kuidas LLM'de ajaline järjepidevus paraneb aja jooksul.
+Selle postitus oli 1. osa AI arengu teemalisest artiklite seeriast. Keskendusin siin sellele, kuidas LLM'de ajaline järjepidevus on paranenud aja jooksul.
 Samas on LLM'del teisi olulisi puudujääke, mida on vaja lahata:
 
 * hoolimata sellest, et LLM'd on oluliselt edasi arenenud, jäävad nad tihti hätta üllatavate ülesannete juures, mis on inimestele väga lihtsad;
 * LLM'del esinevad "hallutsinatsioonid" - ja neil esineb tihti seda, et nad "eksivad enesekindlalt" ja ei suuda enda vigu tunnistada.
 
-Järgmistes postitustes sukeldume me nende kahe puudujäägi telgitagustesse. 
-Muuhulgas puudutame me seda, kuhu võib see kõik viia inimkonna tervikuna - ning uurime seda, kas tulevik on "kivisse raiutud" või on meil 
+Järgmistes postitustes keskendun nende kahe puudujäägi telgitagustesse. 
+Muuhulgas puudutan seda, kuhu võib see kõik viia inimkonna tervikuna - ning jagan enda mõtteid selle kohta, kas tulevik on "kivisse raiutud" või on meil 
 võimalik seda veel oluliselt kujundada oma tahte järgi.
 
 .. raw:: html
