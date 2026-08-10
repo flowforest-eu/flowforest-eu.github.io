@@ -14,7 +14,7 @@
       <p class="show_if_not_teaser"; style="display:none;"><em>See postitus on esimene osa 3-osalisest seeriast, mis räägib AI arengusuundadest ja 
       trendidest.</em></p>
       <p class="show_if_not_teaser"; style="display:none;"><strong>Märkus</strong>. <em>Enamus mudelitest, mida siin postituses käsitlen, on 
-      LLM-d ("Large Language Model"). Kasutan terminit "LLM", kui soovime rõhutada, et räägin just neist; üldisemat terminit "AI" kasutan, kui 
+      LLM-d ("Large Language Model"). Kasutan terminit "LLM", kui soovin rõhutada, et räägin just neist; üldisemat terminit "AI" kasutan, kui 
       räägin üleüldiselt kõikvõimalikest AI süsteemidest ja arhitektuuridest (sealhulgas neist, mida võidakse leiutada tulevikus).</em></p>
     </embed>
 
@@ -90,7 +90,7 @@ Soovitan ka uurida graafikut 80% edukuse taseme jaoks. METR ise tõi oma uurimis
 50% kui ka 80% edukuse taseme juures.
 
 Mis järeldusi siit kõigest teha saab? Eeldame, et praegune eksponentsiaalne kasv jätkub ning mudelite ajahorisondi pikkus kahekordistub iga 7 kuuga.
-See tähendaks, et 28 kuu pärast (november 2028) on toimunud 4 kahekordistumist (ehk 16x kasv), ning me võime näha mudeleid saavutamas järgmisi tulemusi:
+See tähendaks, et 28 kuu pärast (november 2028) on toimunud 4 kahekordistumist (ehk 16x kasv), ning võiksime näha mudeleid saavutamas järgmisi tulemusi:
 
 * 50% edukuse taseme juures lahendamas 8-24 päevase ajaaknaga ülesandeid;
 * 80% edukuse taseme juures lahendamas 2-4 päevase ajaaknaga ülesandeid.
@@ -180,7 +180,8 @@ Kahjuks oleme me veel kaugel maailmast, kus selle jaoks oleks olemas piisav poli
 .. |down_linear_framed| image:: /images/down_linear.png
   :class: framed
 
-Vaatame, kuidas need erinevad tegurid mõjutaksid arengutrende, kui need riskid või võimalused realiseeruksid. Lühiduse eesmärgil kasutame järgnevaid piltmärke:
+Järgnev tabel kirjeldab, kuidas need erinevad tegurid mõjutaksid arengutrende, kui need riskid või võimalused realiseeruksid. 
+Lühiduse eesmärgil kasutan järgnevaid piltmärke:
 
 * Kahekordistumise aeg lüheneks (ehk kiirem kasv) - |up_exp_framed|
 * Kahekordistumise aeg pikeneks (ehk aeglasem kasv) - |down_exp_framed|
