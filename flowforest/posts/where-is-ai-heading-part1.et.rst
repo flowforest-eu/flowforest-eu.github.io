@@ -187,14 +187,20 @@ Lühiduse eesmärgil kasutan järgnevaid piltmärke:
 * Kahekordistumise aeg pikeneks (ehk aeglasem kasv) - |down_exp_framed|
 * Kasvutempo aeglustuks niivõrd, et muutuks lineaarseks - |down_linear_framed|
 
-======================= ======================================= =================================================================================================================================
-Mõjutegur               Võimalik tagajärg                       Kommentaar
-======================= ======================================= =================================================================================================================================
-Teaduslikud tegurid     |up_exp| VÕI |down_exp|                 Läbimurded kiirendavad, pudelikaelad aeglustavad
-Füüsilised pudelikaelad |down_exp|                              Teguri mõju on aeglustav
-Finantsilised tegurid   |down_exp| VÕI |down_linear|            Teguri mõju tugevus varieerub; aeglustumine lineaarseks kasvuks saab realiseeruda vaid ekstreemsetel juhtudel (a la börsikrahh)
-Poliitilised tegurid    |down_exp| VÕI |down_linear|            Kui jõutaks rahvusvahelise leppeni, siis selle mõju arengutrendidele saab olla väga tugev
-======================= ======================================= =================================================================================================================================
+.. table:: 
+    :widths: 15 16 69
+
+    +-------------------------+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+ 
+    | Mõjutegur               |  Võimalik tagajärg                    |  Kommentaar                                                                                                                     |
+    +=========================+=======================================+=================================================================================================================================+
+    | Teaduslikud tegurid     | |up_exp| VÕI |down_exp|               | Läbimurded kiirendavad, pudelikaelad aeglustavad                                                                                |
+    +-------------------------+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+    | Füüsilised pudelikaelad | |down_exp|                            | Teguri mõju on aeglustav                                                                                                        |
+    +-------------------------+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+    | Finantsilised tegurid   | |down_exp| VÕI |down_linear|          | Teguri mõju tugevus varieerub; aeglustumine lineaarseks kasvuks saab realiseeruda vaid ekstreemsetel juhtudel (a la börsikrahh) |
+    +-------------------------+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+    | Poliitilised tegurid    | |down_exp| VÕI |down_linear|          | Kui jõutaks rahvusvahelise leppeni, siis selle mõju arengutrendidele saaks olla väga tugev                                      |
+    +-------------------------+---------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 
 .. raw:: html
 
