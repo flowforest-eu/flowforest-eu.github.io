@@ -13,9 +13,9 @@
     <embed>
       <p class="show_if_not_teaser"; style="display:none;"><em>See postitus on esimene osa 3-osalisest seeriast, mis räägib AI arengusuundadest ja 
       trendidest.</em></p>
-      <p class="show_if_not_teaser"; style="display:none;"><strong>Märkus</strong>. <em>Enamus mudelitest, mida me siin postituses käsitleme, on 
-      LLM-d ("Large Language Model"). Me kasutame terminit "LLM", kui soovime rõhutada, et räägime just neist; üldisemat terminit "AI" kasutame, kui 
-      räägime üleüldiselt kõikvõimalikest AI süsteemidest ja arhitektuuridest (s.h. neist, mida võidakse leiutada tulevikus).</em></p>
+      <p class="show_if_not_teaser"; style="display:none;"><strong>Märkus</strong>. <em>Enamus mudelitest, mida siin postituses käsitlen, on 
+      LLM-d ("Large Language Model"). Kasutan terminit "LLM", kui soovime rõhutada, et räägin just neist; üldisemat terminit "AI" kasutan, kui 
+      räägin üleüldiselt kõikvõimalikest AI süsteemidest ja arhitektuuridest (sealhulgas neist, mida võidakse leiutada tulevikus).</em></p>
     </embed>
 
 Viimasel ajal tundub AI olevat täitnud kõik uudiskanalite pealkirjad. Aga kuidas eristada tõde liialdustest? 
@@ -112,14 +112,14 @@ Kriitikud on ka välja toonud, et see mõõdik keskendub liialt programmeerimis�
 kasvutrendi. METR `uuris ka seda <https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains>`_ ja jõudis järeldusele, et teised 
 valdkonnad kasvavad sarnasel viisil, aga kahekordistumise kiirus (ja praegune hetkeseis) erineb valdkonniti.
 
-Oluline on siiski märkida, et see kasvutrend saab jätkuda vaid siis, kui seda kasvu toetavad tegurid ei muutu kardinaalselt. Uurime, mis viisil need tegurid 
+Oluline on siiski märkida, et see kasvutrend saab jätkuda vaid siis, kui seda kasvu toetavad tegurid ei muutu kardinaalselt. Vaatleme, mis viisil need tegurid 
 võiksid muutuda.
 
 =======================================
 Mis tegurid võivad kasvutrendi muuta?
 =======================================
 
-On mitmeid tegureid, mis võivad olukorda drastiliselt muutuda: teaduslikud läbimurded või piirangud, füüsilise maailmaga seotud pudelikaelad, finantsilised 
+On mitmeid tegureid, mis võivad olukorda drastiliselt muuta: teaduslikud läbimurded või piirangud, füüsilise maailmaga seotud pudelikaelad, finantsilised 
 tegurid, või poliitilised otsused.
 
 **Teadus - kiirendavad tegurid**. Kui näiteks leitakse uus AI arhitektuur, mis võimaldab mudelitel suurema püsivuse ja järjepidavusega tegeleda keeruliste 
@@ -233,14 +233,14 @@ https://arxiv.org/pdf/2503.14499
 Kuhu edasi?
 =====================
 
-Selle postitus oli 1. osa AI arengu teemalisest artiklite seeriast. Me keskendusime siin sellele, kuidas LLM'de ajaline järjepidevus paraneb aja jooksul.
+Selle postitus oli 1. osa AI arengu teemalisest artiklite seeriast. Keskendusin siin sellele, kuidas LLM'de ajaline järjepidevus on paranenud aja jooksul.
 Samas on LLM'del teisi olulisi puudujääke, mida on vaja lahata:
 
 * hoolimata sellest, et LLM'd on oluliselt edasi arenenud, jäävad nad tihti hätta üllatavate ülesannete juures, mis on inimestele väga lihtsad;
 * LLM'del esinevad "hallutsinatsioonid" - ja neil esineb tihti seda, et nad "eksivad enesekindlalt" ja ei suuda enda vigu tunnistada.
 
-Järgmistes postitustes sukeldume me nende kahe puudujäägi telgitagustesse. 
-Muuhulgas puudutame me seda, kuhu võib see kõik viia inimkonna tervikuna - ning uurime seda, kas tulevik on "kivisse raiutud" või on meil 
+Järgmistes postitustes keskendun nende kahe puudujäägi telgitagustesse. 
+Muuhulgas puudutan seda, kuhu võib see kõik viia inimkonna tervikuna - ning jagan enda mõtteid selle kohta, kas tulevik on "kivisse raiutud" või on meil 
 võimalik seda veel oluliselt kujundada oma tahte järgi.
 
 .. raw:: html
