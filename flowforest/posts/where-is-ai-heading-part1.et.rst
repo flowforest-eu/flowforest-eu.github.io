@@ -252,5 +252,5 @@ võimalik seda veel oluliselt kujundada oma tahte järgi.
 .. raw:: html
 
     <embed>
-        <p class="ai-disclaimer"><b>Teave AI kasutamise kohta</b>: Selle postituse loomisel ei kasutatud AI-d</p>
+        <p class="ai-disclaimer"><b>Teave AI kasutamise kohta</b>: Selle postituse loomisel ei kasutatud AI mudeleid</p>
     </embed>
