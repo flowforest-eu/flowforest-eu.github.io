@@ -14,7 +14,7 @@
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><link href="../../assets/css/custom.css" rel="stylesheet" type="text/css">
 <link href="../../assets/css/code.css" rel="stylesheet" type="text/css">
 <meta name="author" content="FlowForest">
-<link rel="prev" href="../purpose-of-blog/" title="What should we be preparing for?" type="text/html">
+<link rel="prev" href="../purpose-of-blog/" title="Intro: what should we be preparing for?" type="text/html">
 <meta property="og:site_name" content="FlowForest">
 <meta property="og:title" content="Where is AI heading - part 1/3">
 <meta property="og:url" content="https://flowforest.eu/posts/where-is-ai-heading-part1/">
@@ -117,7 +117,7 @@ This is exactly what was done by <a class="reference external" href="https://met
 complete a multi-step task without losing track. This means that there is a natural metric: if you list various tasks that take
 human experts different time to complete (from mere seconds to several days) and group them by completion time, then how long
 tasks of those can the AI model complete with a certain
-probability (e.g. 50% or 80%)? They named this metric <strong>task completion time horizon</strong>.</p>
+success rate (e.g. 50% or 80%)? They named this metric <strong>task completion time horizon</strong>.</p>
 <p>METR compiled a list of total 228 tasks (from the fields of software engineering, cybersecurity, general reasoning, and machine learning tasks)
 that range from trivial (can be completed in seconds) to tasks that take a professional in that field several days to complete.</p>
 <p>Here are some examples of the tasks from the software engineering field:</p>
@@ -136,12 +136,12 @@ all functionality, aiming for a 30x performance improvement</em></p></li>
 experts a few seconds) to current frontier models (with time horizons in hours) and all the way to future models that could potentially have time horizons
 in weeks or months.</p></li>
 </ol>
-<p>They concluded that at <strong>50% success level</strong>:</p>
+<p>They concluded that at <strong>50% success rate</strong>:</p>
 <ul class="simple">
 <li><p>most advanced models of Claude, Gemini, and GPT currently (August 2026) have time horizons of <strong>3–6 hours</strong>;</p></li>
 <li><p>exceptions are Claude Opus 4.6 (time horizon <strong>12 hours</strong>) and Claude Mythos Preview (time horizon <strong>16 hours</strong> or more, results not fully clear yet).</p></li>
 </ul>
-<p>And at <strong>80% success level</strong>:</p>
+<p>And at <strong>80% success rate</strong>:</p>
 <ul class="simple">
 <li><p>most advanced models have time horizons of <strong>1–2 hours</strong>;</p></li>
 <li><p>exception again is Claude Mythos Preview, which has time horizon of <strong>3 hours</strong>.</p></li>
@@ -150,13 +150,17 @@ in weeks or months.</p></li>
 <img alt="/images/task-length-linear.png" src="../../images/task-length-linear.png"><div class="line-block">
 <div class="line"><br></div>
 </div>
-<p>I recommend you to play with the numbers yourself. To do this, go to <a class="reference external" href="https://metr.org/time-horizons/">METR time horizons webpage</a> and have a look
-at the first graph there. Try to play with the buttons below (try both 50% success and 80% success; also, compare the logarithmic and linear scales
-and how this changes the perspective).</p>
 <p>The main finding of METR is that the time horizon has been <strong>doubling roughly every 4–7 months</strong> and this trend has held from 2019 to 2026 (if anything,
-progress speed has even increased from 2023 onwards).</p>
-<p>It is important to note that the trend of doubling has been quite consistent for both 50% and 80% success rate time horizons.</p>
-<p>Now, what does this mean? Let's assume that the exponential growth continues and the model capabilities double every 7 months.
+progress speed has even increased from 2023 onwards). This can been seen from the following graph (it is the same graph as previous, but now the vertical
+axis has logarithmic scale - meaning that time horisont values on the vertical axis double after taking a fixed step upwards):</p>
+<img alt="/images/task-length-log.png" src="../../images/task-length-log.png"><div class="line-block">
+<div class="line"><br></div>
+</div>
+<p>I recommend you to play with the numbers yourself. To do this, go to <a class="reference external" href="https://metr.org/time-horizons/">METR time horizons webpage</a> and have a look
+at the first graph there. Have a look at the graph for 80% success rate as well.</p>
+<p>After comparing graphs for 50% and 80% success rates, METR concluded that the trend of doubling has been
+quite consistent for both of them.</p>
+<p>Now, what does this all mean? Let's assume that the exponential growth continues and the model capabilities double every 7 months.
 This now means that after 28 months (four doublings, so 16x growth), in November 2028, we would be facing:</p>
 <ul class="simple">
 <li><p>models succeeding 50% for 8-24 day tasks;</p></li>
@@ -180,16 +184,17 @@ horizons, the growth might further significantly accelerate.</p>
 <p><strong>Scientific factors - reasons for slowdown</strong>. It is widely recognized that there are three dimensions for scaling capabilities: increasing model size,
 increasing training time, and improving amount (or quality) of input data. All of those dimensions have been scaled quite aggressively:</p>
 <ul class="simple">
-<li><p>Model sizes are now in trillions of parameters (Kimi K3 has parameter size of 2.8 trillions; OpenAI and Anthropic do not make their parameter sizes
+<li><p><strong>Model sizes</strong> are now in trillions of parameters (Kimi K3 has parameter size of 2.8 trillions; OpenAI and Anthropic do not make their parameter sizes
 public, but their top models likely exceed that). Just getting a single answer from a model as big as Kimi K3 requires a computer with 11.2 TB (!) of RAM.
 Bigger models also take more time and energy to produce answers; and they are already ridiculously expensive to train. This is one of the main reasons
 that OpenAI and Anthropic need increasingly larger investments regularly.</p></li>
-<li><p>For any given model, there is a certain amount of training that is optimal; continuing training indefinitely will produce smaller and smaller additional benefits.</p></li>
-<li><p>Increasing amount of data is also not trivial. Already Chat-GPT 3 (2020) was trained on a large corpus of books and all internet content they could obtain
-(500 billion tokens). Companies are now relying on synthetic data and data manually created by human experts. It is important to note that quality of data
-is also crucial.</p></li>
+<li><p>Regarding <strong>training time</strong> - for any given model, there is a certain amount of it that is optimal; continuing training
+indefinitely would produce smaller and smaller additional gains.</p></li>
+<li><p>Increasing <strong>amount of data</strong> is also not trivial. Already Chat-GPT 3 (2020) was trained on a large corpus of books and all internet content they could obtain
+(500 billion tokens). Companies are now relying on synthetic data and data manually created by human experts (which is more costly and time-consuming).
+It is important to note that the quality of data is also crucial.</p></li>
 </ul>
-<p>It is clear that it is not trivial to continue the scaling in those 3 dimensions.
+<p>It is clear that it is not trivial to continue the scaling indefinitely in those 3 dimensions.
 Nevertheless, Dario Amodei (CEO of Anthropic) has <a class="reference external" href="https://www.youtube.com/watch?v=GrloGdp5wdc">presented some interesting arguments</a> to
 explain why he thinks that the current approach could still scale until at least we reach human-level intelligence.
 Of course, one should take this with a grain of salt (since he has an incentive to not say anything that would lessen the interest of their investors).</p>
@@ -290,7 +295,7 @@ shaping the future.</p>
         </ul>
 <ul class="pager hidden-print">
 <li class="previous">
-                <a href="../purpose-of-blog/" rel="prev" title="What should we be preparing for?">Previous post</a>
+                <a href="../purpose-of-blog/" rel="prev" title="Intro: what should we be preparing for?">Previous post</a>
             </li>
         </ul></nav></aside></article><!--End of body content--><footer id="footer">
             Contents by <a href="mailto:rauni.lillemets@gmail.com">FlowForest</a> – <span id="footer_nikola">Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> blog engine</span>         
