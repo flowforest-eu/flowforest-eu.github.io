@@ -75,16 +75,21 @@ The following diagram shows the long-time trend of time horizon expanding over t
 
 |
 
-I recommend you to play with the numbers yourself. To do this, go to `METR time horizons webpage <https://metr.org/time-horizons/>`_ and have a look
-at the first graph there. Try to play with the buttons below (try both 50% and 80% success rate; also, compare the logarithmic and linear scales 
-and how this changes the perspective).
-
 The main finding of METR is that the time horizon has been **doubling roughly every 4–7 months** and this trend has held from 2019 to 2026 (if anything,
-progress speed has even increased from 2023 onwards).  
+progress speed has even increased from 2023 onwards). This can been seen from the following graph (it is the same graph as previous, but now the vertical 
+axis has logarithmic scale - meaning that time horisont values on the vertical axis double after taking a fixed step upwards):
 
-It is important to note that the trend of doubling has been quite consistent for both 50% and 80% success rate time horizons.
+.. image:: /images/task-length-log.png
 
-Now, what does this mean? Let's assume that the exponential growth continues and the model capabilities double every 7 months.
+|
+
+I recommend you to play with the numbers yourself. To do this, go to `METR time horizons webpage <https://metr.org/time-horizons/>`_ and have a look
+at the first graph there. Have a look at the graph for 80% success rate as well.
+
+After comparing graphs for 50% and 80% success rates, METR concluded that the trend of doubling has been 
+quite consistent for both of them.
+
+Now, what does this all mean? Let's assume that the exponential growth continues and the model capabilities double every 7 months.
 This now means that after 28 months (four doublings, so 16x growth), in November 2028, we would be facing:
 
 * models succeeding 50% for 8-24 day tasks;
@@ -121,13 +126,15 @@ horizons, the growth might further significantly accelerate.
 **Scientific factors - reasons for slowdown**. It is widely recognized that there are three dimensions for scaling capabilities: increasing model size, 
 increasing training time, and improving amount (or quality) of input data. All of those dimensions have been scaled quite aggressively:
 
-* Model sizes are now in trillions of parameters (Kimi K3 has parameter size of 2.8 trillions; OpenAI and Anthropic do not make their parameter sizes
+* **Model sizes** are now in trillions of parameters (Kimi K3 has parameter size of 2.8 trillions; OpenAI and Anthropic do not make their parameter sizes
   public, but their top models likely exceed that). Just getting a single answer from a model as big as Kimi K3 requires a computer with 11.2 TB (!) of RAM. 
   Bigger models also take more time and energy to produce answers; and they are already ridiculously expensive to train. This is one of the main reasons
   that OpenAI and Anthropic need increasingly larger investments regularly.
-* For any given model, there is a certain amount of training that is optimal; continuing training indefinitely will produce smaller and smaller additional benefits.
-
-On selge, et kõigi nende 
+* Regarding **training time** - for any given model, there is a certain amount of it that is optimal; continuing training 
+  indefinitely would produce smaller and smaller additional gains.
+* Increasing **amount of data** is also not trivial. Already Chat-GPT 3 (2020) was trained on a large corpus of books and all internet content they could obtain 
+  (500 billion tokens). Companies are now relying on synthetic data and data manually created by human experts (which is more costly and time-consuming). 
+  It is important to note that the quality of data is also crucial.
 
 It is clear that it is not trivial to continue the scaling indefinitely in those 3 dimensions. 
 Nevertheless, Dario Amodei (CEO of Anthropic) has `presented some interesting arguments <https://www.youtube.com/watch?v=GrloGdp5wdc>`_ to  

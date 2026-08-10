@@ -1,4 +1,4 @@
-.. title: Milleks me peaksime valmistuma?
+.. title: Sissejuhatus: milleks me peaksime valmistuma?
 .. slug: purpose-of-blog
 .. date: 2026-08-03 01:00:00 UTC+03:00
 .. category: 

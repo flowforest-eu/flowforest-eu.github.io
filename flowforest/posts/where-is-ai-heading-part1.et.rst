@@ -14,18 +14,18 @@
       <p class="show_if_not_teaser"; style="display:none;"><em>See postitus on esimene osa 3-osalisest seeriast, mis räägib AI arengusuundadest ja 
       trendidest.</em></p>
       <p class="show_if_not_teaser"; style="display:none;"><strong>Märkus</strong>. <em>Enamus mudelitest, mida me siin postituses käsitleme, on 
-      LLM-d ("Large Language Model"). Kui me soovime rääkida spetsiifiliselt neist, kasutame me terminit "LLM"; terminit "AI" kasutame, et 
-      rääkida üleüldiselt võimalikest AI süsteemidest ja arhitektuuridest (s.h. neist, mida pole veel leiutatud).</em></p>
+      LLM-d ("Large Language Model"). Me kasutame terminit "LLM", kui soovime rõhutada, et räägime just neist; üldisemat terminit "AI" kasutame, kui 
+      räägime üleüldiselt kõikvõimalikest AI süsteemidest ja arhitektuuridest (s.h. neist, mida võidakse leiutada tulevikus).</em></p>
     </embed>
 
 Viimasel ajal tundub AI olevat täitnud kõik uudiskanalite pealkirjad. Aga kuidas eristada tõde liialdustest? 
 Uudisteartiklid on tihti segased või kallutatud. 
-Kõrvuti võib leida artikleid pealkirjadega "AI asendab kõik tööd 2 aasta jooksul" ja "AI mull on kohe lõhkemas".
-On selge, et ekstreemsemad pealkirjad müüvad paremini - ükskõik, kuhu poole parajasti tõde kallutatud pole.
+Kõrvuti võib leida artikleid pealkirjadega "AI võtab üle kõik töökohad järgneva 2 aasta jooksul" ja "AI mull on kohe lõhkemas".
+On selge, et ekstreemsemad pealkirjad müüvad paremini - nii ühele või teisele poole tõde kallutades.
 
-Lisaks võib AI mudelite progress tunduda ebakorrapärane ka valdkonna eksperdile - kiire arengu perioodid vahelduvad aeglastega.
-Et saada selgemat ülevaadet, tuleb vaadata kaugemalt, üle pikema ajaraami. 
-See on täpselt see, mida organisatsioon `METR <https://metr.org/>`_ tegi (METR on mittetulunduslik uurimisinstituut Californias). 
+Lisaks võib AI mudelite progress tunduda ebakorrapärane ka spetsialisti vaatenurgast - kiire arengu perioodid vahelduvad aeglastega.
+Et saada selgemat ülevaadet, tuleb olukorda vaadata kaugemalt ning üle pikema ajaraami. 
+See on täpselt see, mida organisatsioon `METR <https://metr.org/>`_ (mittetulunduslik uurimisinstituut Californias) on oma uurimistöös teinud. 
 
 .. TEASER_END
 
@@ -34,39 +34,39 @@ Arengu mõõtmine
 =====================
 
 METR märkas, et üks AI mudelite probleemidest (eriti LLM-de puhul) on järjepidavuse puudumine - neil võib olla väga raske 
-läbida pikaajalisi või mitme-sammulisi ülesandeid ilma järge kaotamata. See järeldus aitas neil defineerida ühe efektiivse
-mõõdupuu: kui ajaliselt keerukate (inimesel lahendamiseks kuluva aja mõttes) ülesannetega saab mudel hakkama teatud fikseeritud 
-tõenäosusega (nt 50% või 80%)? Nad andsid sellele mõõdikule nime **ülesannete läbimise ajahorisont** (i.k. "task completion
-time horizon").
+läbida pikaajalisi või mitme-sammulisi ülesandeid ilma järge kaotamata. See tähelepanek aitas neil defineerida ühe efektiivse
+mõõdupuu: kui ajaliselt keerukate (inimesel ülesande lahendamiseks kuluva aja mõttes) ülesannetega saab mudel hakkama teatud fikseeritud 
+tõenäosusega (nt 50% või 80%)? Nad andsid sellele mõõdikule nime **ülesannete läbimise ajahorisont** (i.k. "*task completion
+time horizon*").
 
-METR koostas nimekirja 228 erineva ülesandega (tarkvaraarenduse, küberturvalisuse, üldise loogika, ja masinõppe valdkonnast).
-Ülesanded varieeruvad triviaalsetest (lahendatav sekunditega) kuni ülesanneteni, mille lahendamiseks kulub enda valdkonna
-spetsialistil mitmeid päevi.
+METR koostas nimekirja 228 erinevast ülesandest (tarkvaraarenduse, küberturvalisuse, üldise loogika, ja masinõppe valdkondadest).
+Ülesanded varieeruvad triviaalsetest (lahendatav sekunditega) kuni ülesanneteni, mille lahendamiseks võib valdkonna
+spetsialistil kuluda mitmeid päevi.
 
-Here are some examples of the tasks from the software engineering field:
+Siin on mõned näited ülesannetest tarkvara arenduse valdkonnast:
 
-* ``find_shell_script`` (3 seconds) - *“Milline neist failidest on shell skript?” Valikud: “run.sh”, “run.txt”, “run.py”, “run.md”*
-* ``wikipedia_research`` (1 minute) - *Otsi vastus lihtsale faktilisele küsimusele Wikipedia'st*
-* ``oxdna_simple`` (9 minutes) - *Leia ja paranda viga molekulaarse dünaamilise simulatsiooni sisendfailides kasutades oxDNA teeki*
-* ``munge_data`` (56 minutes) - *Kirjuta Pythoni skript, mis teisendab JSON formaadis andmeid ühest formaadist teise (näitefailide alusel)*
-* ``cuda_backtesting`` (8 hours) - *Kiirenda etteantud Python'i teeki aktsiatehingute tegemiseks ajalooliste tehinguandmete pealt, 
+* ``find_shell_script`` (3 sekundit) - *“Milline neist failidest on shell'i skript?” Valikud: “run.sh”, “run.txt”, “run.py”, “run.md”*
+* ``wikipedia_research`` (1 minut) - *Otsi vastus lihtsale faktilisele küsimusele Wikipedia'st*
+* ``oxdna_simple`` (9 minutit) - *Leia ja paranda viga molekulaarse dünaamilise simulatsiooni sisendfailides, mis kasutavad oxDNA teeki*
+* ``munge_data`` (56 minutit) - *Kirjuta Pythoni skript, mis teisendab JSON formaadis andmeid ühest formaadist teise (näitefailide alusel)*
+* ``cuda_backtesting`` (8 tundi) - *Kiirenda etteantud Python'i teeki aktsiatehingute tegemiseks ajalooliste tehinguandmete pealt, 
   kasutades teatud CUDA kernel'eid, jättes samaks kogu funktsionaalsuse, ning saavuta koodi kiirendamine 30% võrra.*
 
-Sellel lähenemisel on kaks tugevust:
+Sellel lähenemisel on kaks eelist:
 
-1. see mõõdab ülesannete keerukust läbi selle, kaua inimspetsialistil kulub selle läbimiseks, mis see muudab selle mõõdiku inimestele 
+1. see mõõdab ülesannete keerukust läbi selle, kaua inimspetsialistil kulub selle lahendamiseks - see muudab selle mõõdiku inimestele 
    intuitiivselt arusaadavaks;
-2. see annab mõõdiku, mis skaleerub esimesest GPT-2 versioonist (mis suutis ainult lahendada ülesandeid, mis inimesel võtab mõned sekundid)
-   kuni praeguste tippmudeliteni (mille ajahorisont on mitmeid tunde) kuni tulevikumudeliteni, mille ajahorisont võib olla isegi nädalates või kuudes.
+2. see annab mõõdiku, mis skaleerub esimesest GPT-2 versioonist (mis suutis ainult lahendada ülesandeid, mis inimesel võtavad mõne sekundi)
+   kuni praeguste tippmudeliteni (mille ajahorisont on mitmeid tunde) kuni tulevikumudeliteni, mille ajahorisont võib ulatuda nädalate või kuudeni.
 
 Testid näitasid, et **50% edukuse tasemel**:
 
-* enamus Claude, Gemini, ja GPT tippmudeleid (august 2026 seisuga) on ajahorisondiga **3–6 tundi**;
+* on enamus Claude, Gemini, ja GPT tippmudeleid (graafik on august 2026 seisuga) ajahorisondiga **3–6 tundi**;
 * erandiks on Claude Opus 4.6 (ajahorisont **12 tundi**) ja Claude Mythos Preview (ajahorisont **16 tundi** või enam, testide tulemused pole lõplikud).
 
-Ja **80% success level**:
+Ja **80% edukuse tasemel**:
 
-* tippmudelid on ajahorisondiga **1-2 tundi**;
+* on tippmudelid ajahorisondiga **1-2 tundi**;
 * erandiks on Claude Mythos Preview, mille ajahorisont on **3 tundi**.
 
 Järgnev graafik näitab, kuidas ajahorisont on arenenud aja jooksul (august 2026 seisuga). Horisontaal-teljel on mudeli avaldamise aeg ja 
@@ -76,20 +76,26 @@ vertikaal-teljel mudeli ajahorisondi pikkus. Valitud on 50% edukuse tase.
 
 |
 
-Ma soovitan ise katsetada ja mängida nende numbritega. Seda saab teha `METR veebilehel <https://metr.org/time-horizons/>`_ (esimene graafik seal lehel).
-Seal saab valida 50% ja 80% edukuse taseme vahel, ning samuti vaadelda tulemusi eri skaaladel (lineaarne vs logaritmiline).
-
 Põhiline järeldus METR uurimistööst oli see, et mudelite ajahorisont on laias laastus **kahekordistunud iga 4-7 kuuga** ning et see trend on olnud püsiv 
 aastast 2019 kuni 2026-ni (kuigi tundub, et aastast 2023 alates on progress kiirenenud).
-Oluline on märkida, et kasvu tempo on olnud sarnane nii 50% kui ka 80% edukuse taseme juures.
+Seda on kõige parem näha järgnevast graafikust (see on sisuliselt sama graafik, kui eelmine; ent nüüd on vertikaaltelje skaala logaritmiline - see tähendab,
+et ajalised väärtused vertikaalteljel kahekordistuvad iga teatud sammu tagant):
 
-Mis järeldusi siit teha saab? Eeldame, et praegune eksponentsiaalne kasv jätkub ning mudelite ajahorisondi pikkus kahekordistub iga 7 kuuga.
-See tähendaks, et 28 kuu pärast (November 2028) on toimunud 4 kahekordistumist (ehk 16x kasv), ning me näeksime mudeleid:
+.. image:: /images/task-length-log.png
+
+|
+
+Ma soovitan ise katsetada ja uurida neid andmeid. Seda saab teha `METR veebilehel <https://metr.org/time-horizons/>`_ (kõige esimene graafik seal lehel).
+Soovitan ka uurida graafikut 80% edukuse taseme jaoks. METR ise tõi oma uurimistöö tulemustes välja, et kasvu trend on olnud sarnane nii 
+50% kui ka 80% edukuse taseme juures.
+
+Mis järeldusi siit kõigest teha saab? Eeldame, et praegune eksponentsiaalne kasv jätkub ning mudelite ajahorisondi pikkus kahekordistub iga 7 kuuga.
+See tähendaks, et 28 kuu pärast (november 2028) on toimunud 4 kahekordistumist (ehk 16x kasv), ning me võime näha mudeleid saavutamas järgmisi tulemusi:
 
 * 50% edukuse taseme juures lahendamas 8-24 päevase ajaaknaga ülesandeid;
 * 80% edukuse taseme juures lahendamas 2-4 päevase ajaaknaga ülesandeid.
 
-Ja veel 7 kuud hiljem, 2029. suvel, näeksime me AI mudeleid suutmas lahendada ülesandeid (50% edukuse tasemega), mis varem 
+Ja veel 7 kuud hiljem, 2029. suvel, näeksime me AI mudeleid suutmas 50% edukuse taseme juures lahendada ülesandeid, mis varem 
 võtsid inimspetsialistil terve kuu.
 
 See trend on üks põhjustest, miks AI turvalisuse valdkonna spetsialistid hoiatavad, et me oleme väga kiiresti liikumas maailma, milleks me ei ole ühiskonnana 
@@ -104,7 +110,7 @@ kasvu kiirus (kahekordistumise ajasamm) praegusel hetkel (kas 4 kuud või 7 kuud
 
 Kriitikud on ka välja toonud, et see mõõdik keskendub liialt programmeerimisülesannetele; teised päris-elulised ülesanded ei pruugi järgida sama
 kasvutrendi. METR `uuris ka seda <https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains>`_ ja jõudis järeldusele, et teised 
-valdkonnad kasvavad sarnasel kujul, aga kahekordistumise kiirus (ja praegune hetkeseis) erineb valdkonniti.
+valdkonnad kasvavad sarnasel viisil, aga kahekordistumise kiirus (ja praegune hetkeseis) erineb valdkonniti.
 
 Oluline on siiski märkida, et see kasvutrend saab jätkuda vaid siis, kui seda kasvu toetavad tegurid ei muutu kardinaalselt. Uurime, mis viisil need tegurid 
 võiksid muutuda.
@@ -114,59 +120,55 @@ Mis tegurid võivad kasvutrendi muuta?
 =======================================
 
 On mitmeid tegureid, mis võivad olukorda drastiliselt muutuda: teaduslikud läbimurded või piirangud, füüsilise maailmaga seotud pudelikaelad, finantsilised 
-põhjused, või poliitilised otsused.
+tegurid, või poliitilised otsused.
 
-**Teadus - kiirendavad tegurid**. Kui avastatakse uus AI arhitektuur, mis võimaldab mudelitel tegeleda suurema püsivuse ja järjepidavusega tegeleda keeruliste 
+**Teadus - kiirendavad tegurid**. Kui näiteks leitakse uus AI arhitektuur, mis võimaldab mudelitel suurema püsivuse ja järjepidavusega tegeleda keeruliste 
 ülesannetega, võib kasvutempo oluliselt kiireneda.
 
-**Teadus - aeglustavad tegurid**. Valdkonnas on laialt levinud teadmine, et on 3 põhilist mõõdet mudelite võimekuse skaleerimiseks: mudelite parameetrite arvu
+**Teadus - aeglustavad tegurid**. Valdkonnas on laialt levinud arusaam, et on 3 põhilist mõõdet mudelite võimekuse skaleerimiseks: mudelite parameetrite arvu
 suurendamine, treeninguaja pikendamine, ning treeningandmete mahu (ja kvaliteedi) suurendamine. Seni on kõiki kolme mõõdet suurendatud üsna agressiivselt:
 
-* Mudelite parameetrite arv on nüüdseks jõudnud triljoniteni (Kimi K3 mudelil on 2.8 triljonit parameetrit; OpenAI ja Anthropic hoiavad täpse parameetri arvu 
-  salajasena, aga nende tippmudelitel on eeldatavasti parameetreid, kui Kimi K3 mudelil). Et saada ühte vastust mudelilt, mis on nii suur kui Kimi K3, on vaja
-  arvutit, millel on 11.2 TB (!) mälu. Suuremad mudelid vajavad ka rohkem aega ja energiat, et vastuseid anda; ja nende treenimine on meeletult kulukas.
-  See on üks põhjuseid, miks OpenAI ja Anthropic vajavad pidevalt järjeset suuremaid summasid investeeringuna.
-* Treeninguaega on võimalik alati pikendada, kuid mingist punktist alates väheneb treenimise jätkamisest saadav kasu oluliselt.
-* Treeningandmete mahu suurendamine ei ole samuti triviaalne. Juba Chat-GPT 3 (2020) treeniti suure koguse raamatute ja praktiliselt kogu interneti sisu peal,
-  mida oli võimalik tolleks hetkeks kokku koguda. Värskete uute andmete saamiseks kasutavad firmad nüüd on sünteetilisi andmeid ja inimekspertide käest kogutud 
-  vastuseid. Ülioluline on siin muidugi ka andmete kvaliteet ja unikaalsus.
+* **Mudelite parameetrite arv** on nüüdseks jõudnud triljoniteni (Kimi K3 mudelil on 2.8 triljonit parameetrit; OpenAI ja Anthropic hoiavad täpse parameetri arvu 
+  salajasena, aga nende tippmudelitel on eeldatavasti rohkem parameetreid, kui Kimi K3 mudelil). Et saada ühte vastust Kimi K3 suurusega mudelilt, 
+  on vaja arvutit, millel on 11.2 TB (!) mälu. Suuremad mudelid vajavad ka rohkem aega ja energiat, et vastuseid anda; samuti on nende treenimine 
+  meeletult kulukas. See on üks põhjuseid, miks OpenAI ja Anthropic vajavad pidevalt järjest suuremaid summasid investeeringute näol.
+* **Treeninguaega** on võimalik alati pikendada, kuid mingist punktist alates väheneb treenimise jätkamisest saadav kasu oluliselt.
+* **Treeningandmete mahu** suurendamine ei ole samuti triviaalne. Juba Chat-GPT 3 (2020) treeniti suure koguse raamatute ja praktiliselt kogu interneti sisu peal,
+  mida oli võimalik tolleks hetkeks kokku koguda. Värskete uute andmete saamiseks kasutavad firmad nüüd sünteetilisi andmeid ja inimekspertide käest kogutud 
+  vastuseid (mille kogumine on kallim ja ajamahukam). Ülioluline on siin muidugi ka andmete kvaliteet ja unikaalsus.
 
 On selge, et nende kõigi 3 mõõtme jätkuv skaleerumine on firmadele väljakutse.
-Sellegipoolest esitas Dario Amodei (Anthropic'u tegevjuht) ühes `hiljutises intervjuus <https://www.youtube.com/watch?v=GrloGdp5wdc>`_ huvitavaid põhjendusi,
-miks tema arvates võiks praegune lähenemine skaleeruda vähemalt selle punktini, kuni me jõuame inim-taseme intelligentsuseni.
-Samas tuleb muidugi tema nendesse väidetesse suhtuda kriitiliselt, kuna tal on taga tugev surve mitte öelda midagi, mis võiks nende investorite huvi 
+Sellegipoolest oli huvitav kuulata Dario Amodei (firma Anthropic tegevjuht) `põhjendusi <https://www.youtube.com/watch?v=GrloGdp5wdc>`_ selle kohta,
+miks tema arvates võiks praegune lähenemine skaleeruda vähemalt selle punktini, kuni me jõuame inimtasemele sarnase intelligentsuseni.
+Samas tuleb muidugi tema nendesse väidetesse suhtuda kriitiliselt, kuna tal on tugev surve mitte öelda midagi, mis võiks nende investorite huvi 
 vähendada.
 
 **Füüsilise maailmaga seotud pudelikaelad**. Nõudlus arvutusvõimsuse järele üha kasvab, mis tekitab maailmas mälukiipide puudujäägi ning eeldab üha uute
 arvutuskeskuste ehitamist. Samas on Ameerikas kasvutrendis `avalikkuse vastuseis <https://datacenteropposition.com/>`_ arvutuskeskuste väljaehitamisele.
-Kui AI firmad ei saa piisavas mahus laieneda, peavad nad kasvutempot aeglustama ja/või investeerima uute väiksemate AI arhitektuuride 
+Kui AI firmad ei saa piisavas mahus laieneda, peavad nad kasvutempot aeglustama ja/või investeerima uute (väiksemate) AI arhitektuuride 
 loomisesse.
 
-**Finantsilised põhjused**. Juhtivate AI firmade ärimudeli finantsiline elujõulisus on keeruline teema; on kriitikuid, kus kahtlevad, kas selline ärimudel
+**Finantsilised tegurid**. Juhtivate AI firmade ärimudeli finantsiline elujõulisus on keeruline teema; on kriitikuid, kus kahtlevad, kas selline ärimudel
 saab üldse olema jätkusuutlik. Nende ärimudel (mis eeldab järjest keerulisemate mudelite treenimist) vajab pidevat kapitali juurdevoolu. Sellega seoses 
 tekib 2 probleemi:
 
 1. Nad pole jõudnud veel isegi kasumlikkuse lähedale; üks kriitikutest, Ed Zitron, `koostas analüüsi <https://www.wheresyoured.at/the-openai-bubble/>`_, mis
-   toob teravalt välja käärid praeguste LLM mudelite hinnakirjade vahel ning selle vahel, kui palju nad peaksid maksma, et mitte olla kahjumlikud.
+   toob teravalt välja käärid praeguste LLM mudelite hinnakirjade vahel ning selle vahel, kui palju nad peaksid kasutuse eest raha küsima, et jõuda 
+   rahavoogudega nulli.
 2. Selleks, et juhtivad AI firmad saaksid jõuda kasumlikkuseni, peaksid nad vallutama suure osa tööturust; samas on näiteks Ameerikas 
-   `kasvav vastumeelsus <https://hai.stanford.edu/ai-index/2026-ai-index-report/public-opinion>`_ selle osas, mis mõju AI-l saab olema tööturul.
+   `kasvav vastumeelsus <https://hai.stanford.edu/ai-index/2026-ai-index-report/public-opinion>`_ sellele, milline mõju AI-l saab olema tööturule.
 
-Kui rääkida võimalike finantsiliste sündmuste mõjust AI arengukiirusele, siis mõju tugevus ulatub väikesemõjulisest (..) väga suuremõjulisteni (..).
+Loomulikult on erinevatel võimalikel finantsilistel sündmustel väga erinev mõju ulatus.
 
-+++
-
-Of course, strength of the effect varies from possible minor events (a frontier lab being unable to secure expected amount of funding and having to settle for less) to
-major events (major divesting from frontier AI labs). 
-
-**Policy reasons**. Governmental or global policy changes could drastically alter the development tempo. Curiously, just recently (July 29, 2026) a statement 
-`was released <https://www.pacingthefrontier.com/>`_ by 1300+ employees of frontier AI labs requesting a global slowdown of AI development. Of course, this is not 
-the first time for scientists advocating
-for a slowdown/pause (see e.g. `here <https://futureoflife.org/open-letter/pause-giant-ai-experiments/>`_). However, this letter stands out by the fact 
-that many of the signees are from OpenAI and Anthropic, two of the companies 
-who have most advocated against any slowdown in the past, including Dario Amodei himself. CEO of OpenAI, Sam Altman, has not signed the 
-letter, but has publicly made `similar comments <https://techcrunch.com/2026/07/28/sam-altman-is-ready-to-decelerate/>`_. If the world governments would take the 
-risks seriously and collaborate, AI progress could become significantly slower and more controlled. However, we are yet far from a world where such political will
-would exist.
+**Poliitilised tegurid**. Poliitilised otsused riikide tasemel või globaalselt võivad drastiliselt mõjutada arengutempot. Just hiljuti (29. juuli 2026)
+`avaldati ühiskiri <https://www.pacingthefrontier.com/>`_ koos 1300+ allkirjaga juhtivate AI firmade töötajate poolt. Ühiskirjas nõuavad nad, et USA valitsus
+püüaks luua rahvusvahelist lepet, et aeglustada AI mudelite arengut ja keskenduda ohutumate lahenduste leidmisele. See ei ole muidugi esimene kord, kui 
+teadlased soovitavad AI arengu tempot aeglustada (`varasem näide <https://futureoflife.org/open-letter/pause-giant-ai-experiments/>`_). Kuid praegune ühiskiri
+on tähelepanuväärne selle poolest, et allkirjastajate hulgas on palju OpenAI ja Anthropic'u töötajaid, sealhulgas Dario Amodei ise. OpenAI tegevjuht Sam Altman 
+ei allkirjastanud küll seda pöördumist, kuid on avalikult avaldanud hiljuti 
+`sarnaseid mõtteid <https://techcrunch.com/2026/07/28/sam-altman-is-ready-to-decelerate/>`_.
+Kui eri riikide valitsused võtaksid riske tõsiselt ja teeksid koostööd, saaks AI progress muutuda oluliselt aeglasemaks ja kontrollitumaks. 
+Kahjuks oleme me veel kaugel maailmast, kus selle jaoks oleks olemas piisav poliitiline tahe.
 
 .. |up_exp| image:: /images/up_exp.png
 .. |down_exp| image:: /images/down_exp.png
@@ -178,20 +180,20 @@ would exist.
 .. |down_linear_framed| image:: /images/down_linear.png
   :class: framed
 
-Let's take a look at how those diverse factors could affect the trends if the risks/possibilities realize. We use small pictograms for brevity:
+Vaatame, kuidas need erinevad tegurid mõjutaksid arengutrende, kui need riskid või võimalused realiseeruksid. Lühiduse eesmärgil kasutame järgnevaid piltmärke:
 
-* The doubling time would decrease (faster growth) - |up_exp_framed|
-* The doubling time would increase (slower growth) - |down_exp_framed|
-* The growth would slow down to become linear - |down_linear_framed|
+* Kahekordistumise aeg lüheneks (ehk kiirem kasv) - |up_exp_framed|
+* Kahekordistumise aeg pikeneks (ehk aeglasem kasv) - |down_exp_framed|
+* Kasvutempo aeglustuks niivõrd, et muutuks lineaarseks - |down_linear_framed|
 
-======================= ======================================= ==============================================================================================
-Factor                  Potential consequence                   Comments
-======================= ======================================= ==============================================================================================
-Scientific factors      |up_exp| OR |down_exp|                  Breakthroughs speed up, scaling bottlenecks slow down
-Physical bottlenecks    |down_exp|                              Likely will cause a weak slowdown for frontier AI labs
-Financial reasons       |down_exp| OR |down_linear|             Strength of slowdown effect varies; slowdown to linear may only occur in extreme scenarios
-Policy reasons          |down_exp| OR |down_linear|             If a national/global slowdown is agreed upon, it could significantly slow down development
-======================= ======================================= ==============================================================================================
+======================= ======================================= =================================================================================================================================
+Mõjutegur               Võimalik tagajärg                       Kommentaar
+======================= ======================================= =================================================================================================================================
+Teaduslikud tegurid     |up_exp| VÕI |down_exp|                 Läbimurded kiirendavad, pudelikaelad aeglustavad
+Füüsilised pudelikaelad |down_exp|                              Teguri mõju on aeglustav
+Finantsilised tegurid   |down_exp| VÕI |down_linear|            Teguri mõju tugevus varieerub; aeglustumine lineaarseks kasvuks saab realiseeruda vaid ekstreemsetel juhtudel (a la börsikrahh)
+Poliitilised tegurid    |down_exp| VÕI |down_linear|            Kui jõutaks rahvusvahelise leppeni, siis selle mõju arengutrendidele saab olla väga tugev
+======================= ======================================= =================================================================================================================================
 
 .. raw:: html
 
@@ -199,52 +201,56 @@ Policy reasons          |down_exp| OR |down_linear|             If a national/gl
         <p style="line-height: 10px;">&nbsp;</p>
     </embed>
 
-It is evident that there are a lot of factors that may play a role in determining what the rate of the progress is; 
-and reliably predicting them is a difficult task even for experts.
-However, this is why I think the METR time horizon graph is such a good tool to have: one can `bookmark it <https://metr.org/time-horizons/>`_ and review
-it whenever some new model launches and is being hyped - METR will keep updating it when new notable models are released.
+On selge, et on palju erinevaid faktoreid, mis mängivad rolli arengutempo muutmisel;
+nende kõikide täpselt ennustamine on raske ülesannde isegi valdkonna ekspertidele.
+See on põhjus, miks ma näen palju väärust sellel samal METR ajahorisondi graafikul - see on hea tööriist, kui `salvestada 
+see endale järjehoidjaribale <https://metr.org/time-horizons/>`_ (i.k. *bookmarks*) ja vaadata tulemusi aeg-ajalt (või iga kord, kui uus oluline 
+mudel avaldatakse).
+METR plaanib jätkata selle lehe uuendamist iga kord, kui uus märkimisväärne mudel tehakse firmade poolt avalikuks ja saab METRi poolt testitud.
 
-==========================
-If you want to learn more
-==========================
+=================================
+Kui on soov rohkem teada saada
+=================================
 
-Another reason to read the `METR time horizons page <https://metr.org/time-horizons/>`_ is that I skipped over many important caveats to keep the length of this blog post reasonable.
-So I recommend scrolling to the "Frequently Asked Questions" section in their page and read their answers to clarifying questions such as:
+Veel üks hea põhjus lugeda `METR ajahorisondi lehte <https://metr.org/time-horizons/>`_ on see, et ma libisesin selles postituses 
+üle mõnest oluliselt täpsustusest, et hoida selle postituse pikkust mõistlikuna. 
+Ma soovitan lugeda nende lehelt "Korduma Kippuvaid Küsimusi" (i.k. *Frequently Asked Questions*), kus nad vastavad sellistele täpsustavatele küsimustele:
 
-* Does “time horizon” mean the length of time that current AI agents can act autonomously?
-* Does an 8-hour time horizon mean that AI can automate all jobs?
-* Why not report the time horizon at a higher reliability level (e.g. time horizon at 99% success rate)?
-* When you say that a model has a 2-hour time horizon, does that mean it can do 50% of all 2-hour tasks, or that each 2-hour task has a 50% success rate?
+* Kas "ajahorisont" vastab ajavahemikule, mille jooksul AI agent saab tegutseda autonoomselt?
+* Kas 8-tunnine ajahorisont tähendab, et AI saab automatiseerida kõiki töökohti?
+* Miks mitte raporteerida ajahorisonti kõrgema edukuse taseme (näiteks 99%) juures?
+* Kui te ütlete, et mudelil on 2-tunnine ajahorisont, kas see tähendab, et ta saab hakkama 50% kõigist 2-tunnistest ülesannetest, või seda,
+  et iga 2-tunnine ülesanne on 50% edukuse määraga?
 
-METR also has tons of other research as well on their webpage; additionally, they also have a newsletter that you can subscribe to 
-(to do that, scroll to the footer of their webpage).
+METR on avaldanud oma kodulehel ka palju muid uurimistulemusi; lisaks on neil e-maili uudiskiri, millega saab liituda (selle leidmiseks tuleb
+kerida lehe allosani).
 
-If you prefer reading information in the form of a scientific paper, check out the original METR paper from 2025 instead 
-(obviously, this is not being updated with statistics about the latest models):
+Lisaks on võimalik tutvuda ka METR'i algse teadusartikliga aastast 2025 ajahorisondi teemal:
 https://arxiv.org/pdf/2503.14499
+(kahjuks aga seda ei uuendata uute mudelite mõõtmistulemustega).
 
 =====================
-What's next?
+Kuhu edasi?
 =====================
 
-The title of this post was "Where is AI heading - part 1/3". This is because while we focused on how coherence of LLMs
-is increasing over time, there are other fundamental shortcomings of LLMs that need to be explored as well:
+Selle postitus oli 1. osa AI arengu teemalisest artiklite seeriast. Me keskendusime siin sellele, kuidas LLM'de ajaline järjepidevus paraneb aja jooksul.
+Samas on LLM'del teisi olulisi puudujääke, mida on vaja lahata:
 
-* even after all the progress, LLMs often fail in surprising ways at tasks that are trivial to humans;
-* LLMs have hallucinations - and they are often confidently wrong, and fail to admit mistakes.
+* hoolimata sellest, et LLM'd on oluliselt edasi arenenud, jäävad nad tihti hätta üllatavate ülesannete juures, mis on inimestele väga lihtsad;
+* LLM'del esinevad "hallutsinatsioonid" - ja neil esineb tihti seda, et nad "eksivad enesekindlalt" ja ei suuda enda vigu tunnistada.
 
-There will be upcoming posts where we do deep dives into those two shortcomings and the reasons behind them. 
-Along that, we will look at where this all could take the humankind as a whole - and whether all this is inevitable or do we have some agency in 
-shaping the future.
+Järgmistes postitustes sukeldume me nende kahe puudujäägi telgitagustesse. 
+Muuhulgas puudutame me seda, kuhu võib see kõik viia inimkonna tervikuna - ning uurime seda, kas tulevik on "kivisse raiutud" või on meil 
+võimalik seda veel oluliselt kujundada oma tahte järgi.
 
 .. raw:: html
 
     <embed>
-        <p style="font-size: 0.9em;">And finally, because I believe that transparency about AI usage is important, and my usage of AI tools varies:</p>
+        <p style="font-size: 0.9em;">Ja lõpetuseks, kuna ma usun, et avatus AI mudelite kasutamise osas on oluline (ja mu enda AI mudelite kasutus varieerub ajas):</p>
     </embed>
 
 .. raw:: html
 
     <embed>
-        <p class="ai-disclaimer"><b>Disclaimer of AI usage</b>: AI was not used in writing this blog post.</p>
+        <p class="ai-disclaimer"><b>Teave AI kasutamise kohta</b>: Selle postituse loomisel ei kasutatud AI-d</p>
     </embed>
