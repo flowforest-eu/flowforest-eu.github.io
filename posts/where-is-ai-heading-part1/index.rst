@@ -21,7 +21,7 @@
 .. raw:: html
 
     <embed>
-        <img alt="English" src="flowforest.eu/images/us-flag.svg" width="91" height="48">
+        <img alt="English" src="flowforest.eu/images/us-flag.svg" width="91" height="48"></img>
     </embed>
 
 Lately, AI seems to dominate the news. But how to discern truth from exaggerations? The news coverage is confusing and extremely polarized 
