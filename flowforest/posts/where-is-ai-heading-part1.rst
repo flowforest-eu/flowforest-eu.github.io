@@ -18,12 +18,6 @@
       them specifically, and 'AI models' when we are talking more broadly and including other (current or future) architectures as well.</em></p>
     </embed>
 
-.. raw:: html
-
-    <embed>
-        <img alt="English" src="flowforest.eu/images/us-flag.svg" width="91" height="48"></img>
-    </embed>
-
 Lately, AI seems to dominate the news. But how to discern truth from exaggerations? The news coverage is confusing and extremely polarized 
 about the AI topic. 
 For example, you might see videos with titles "AI will replace all jobs in next 2 years" next to a video titled "AI progress has hit a wall" or
