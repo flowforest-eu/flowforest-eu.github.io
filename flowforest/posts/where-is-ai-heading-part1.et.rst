@@ -225,7 +225,7 @@ Kui on soov rohkem teada saada
 
 Veel üks hea põhjus lugeda `METR ajahorisondi lehte <https://metr.org/time-horizons/>`_ on see, et ma libisesin selles postituses 
 üle mõnest oluliselt täpsustusest, et hoida selle postituse pikkust mõistlikuna. 
-Ma soovitan lugeda nende lehelt "Korduma Kippuvaid Küsimusi" (i.k. *Frequently Asked Questions*), kus nad vastavad sellistele täpsustavatele küsimustele:
+Ma soovitan lugeda nende lehelt (vajadusel tõlget kasutades) "Korduma Kippuvaid Küsimusi" (i.k. *Frequently Asked Questions*), kus nad vastavad sellistele täpsustavatele küsimustele:
 
 * Kas "ajahorisont" vastab ajavahemikule, mille jooksul AI agent saab tegutseda autonoomselt?
 * Kas 8-tunnine ajahorisont tähendab, et AI saab automatiseerida kõiki töökohti?
