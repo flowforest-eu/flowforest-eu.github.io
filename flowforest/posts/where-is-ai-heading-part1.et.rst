@@ -73,8 +73,7 @@ Järgnev graafik näitab, kuidas ajahorisont on arenenud aja jooksul (august 202
 vertikaal-teljel mudeli ajahorisondi pikkus. Valitud on 50% edukuse tase.
 
 .. image:: /images/task-length-linear.png
-
-|
+   :alt: Aja horisondi diagramm
 
 Põhiline järeldus METR uurimistööst oli see, et mudelite ajahorisont on laias laastus **kahekordistunud iga 4-7 kuuga** ning et see trend on olnud püsiv 
 aastast 2019 kuni 2026-ni (kuigi tundub, et aastast 2023 alates on progress kiirenenud).
@@ -82,8 +81,7 @@ Seda on kõige parem näha järgnevast graafikust (see on sisuliselt sama graafi
 et ajalised väärtused vertikaalteljel kahekordistuvad iga teatud sammu tagant):
 
 .. image:: /images/task-length-log.png
-
-|
+   :alt: Aja horisondi diagramm (logaritmiline skaala)
 
 Ma soovitan ise katsetada ja uurida neid andmeid. Seda saab teha `METR veebilehel <https://metr.org/time-horizons/>`_ (kõige esimene graafik seal lehel).
 Soovitan ka uurida graafikut 80% edukuse taseme jaoks. METR ise tõi oma uurimistöö tulemustes välja, et kasvu trend on olnud sarnane nii 
@@ -171,14 +169,20 @@ Kui eri riikide valitsused võtaksid riske tõsiselt ja teeksid koostööd, saak
 Kahjuks oleme me veel kaugel maailmast, kus selle jaoks oleks olemas piisav poliitiline tahe.
 
 .. |up_exp| image:: /images/up_exp.png
+   :alt: Eksponentsiaalne kasv kiireneb
 .. |down_exp| image:: /images/down_exp.png
+   :alt: Eksponentsiaalne kasv aeglustub
 .. |down_linear| image:: /images/down_linear.png
+   :alt: Kasv aeglustub lineaarseks
 .. |up_exp_framed| image:: /images/up_exp.png
-  :class: framed
+   :alt: Eksponentsiaalne kasv kiireneb
+   :class: framed
 .. |down_exp_framed| image:: /images/down_exp.png
-  :class: framed
+   :alt: Eksponentsiaalne kasv aeglustub
+   :class: framed
 .. |down_linear_framed| image:: /images/down_linear.png
-  :class: framed
+   :alt: Kasv aeglustub lineaarseks
+   :class: framed
 
 Järgnev tabel kirjeldab, kuidas need erinevad tegurid mõjutaksid arengutrende, kui need riskid või võimalused realiseeruksid. 
 Lühiduse eesmärgil kasutan järgnevaid piltmärke:
