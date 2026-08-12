@@ -72,16 +72,14 @@ And at **80% success rate**:
 The following diagram shows the long-time trend of time horizon expanding over time (as of August 2026):
 
 .. image:: /images/task-length-linear.png
-
-|
+   :alt: Time horizon diagram
 
 The main finding of METR is that the time horizon has been **doubling roughly every 4–7 months** and this trend has held from 2019 to 2026 (if anything,
 progress speed has even increased from 2023 onwards). This can been seen from the following graph (it is the same graph as previous, but now the vertical 
 axis has logarithmic scale - meaning that time horisont values on the vertical axis double after taking a fixed step upwards):
 
 .. image:: /images/task-length-log.png
-
-|
+   :alt: Time horizon diagram (logarithmic scale)
 
 I recommend you to play with the numbers yourself. To do this, go to `METR time horizons webpage <https://metr.org/time-horizons/>`_ and have a look
 at the first graph there. Have a look at the graph for 80% success rate as well.
@@ -168,14 +166,20 @@ risks seriously and collaborate, AI progress could become significantly slower a
 would exist.
 
 .. |up_exp| image:: /images/up_exp.png
+   :alt: Increases speed of exponential growth
 .. |down_exp| image:: /images/down_exp.png
+   :alt: Decreases speed of exponential growth
 .. |down_linear| image:: /images/down_linear.png
+   :alt: Growth slows down to linear
 .. |up_exp_framed| image:: /images/up_exp.png
-  :class: framed
+   :alt: Increases speed of exponential growth
+   :class: framed
 .. |down_exp_framed| image:: /images/down_exp.png
-  :class: framed
+   :alt: Decreases speed of exponential growth
+   :class: framed
 .. |down_linear_framed| image:: /images/down_linear.png
-  :class: framed
+   :alt: Growth slows down to linear
+   :class: framed
 
 Let's take a look at how those diverse factors could affect the trends if the risks/possibilities realize. We use small pictograms for brevity:
 

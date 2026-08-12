@@ -1176,3 +1176,28 @@ blockquote cite {
     letter-spacing: 0.03em;
 }
 
+a.nav-link[hreflang="et"]::before {
+    content: url("https://flagcdn.com/h20/ee.png");
+    height: 20px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+a.nav-link[hreflang="et"]::after {
+    content: " keeles";
+}
+
+a.nav-link[hreflang="en"]::before {
+    content: url("https://flagcdn.com/h20/gb.png");
+    height: 20px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+div.translations a[hreflang="et"]::after {
+    content: " keeles";
+}
+
+div.translations a[hreflang="en"]::before {
+    content: "In ";
+}
