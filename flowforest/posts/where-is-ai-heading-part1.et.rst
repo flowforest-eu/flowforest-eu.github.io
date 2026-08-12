@@ -14,8 +14,13 @@
       <p class="show_if_not_teaser"; style="display:none;"><em>See postitus on esimene osa 3-osalisest seeriast, mis räägib AI arengusuundadest ja 
       trendidest.</em></p>
       <p class="show_if_not_teaser"; style="display:none;"><strong>Märkus</strong>. <em>Enamus mudelitest, mida siin postituses käsitlen, on 
-      LLM-d ("Large Language Model"). Kasutan terminit "LLM", kui soovin rõhutada, et räägin just neist; üldisemat terminit "AI" kasutan, kui 
-      räägin üleüldiselt kõikvõimalikest AI süsteemidest ja arhitektuuridest (sealhulgas neist, mida võidakse leiutada tulevikus).</em></p>
+      LLM-d ("Large Language Model", eesti keeles "suur keelemudel"). Kasutan terminit "LLM", kui soovin rõhutada, et räägin just neist; 
+      üldisemat terminit "AI" kasutan, kui räägin üleüldiselt kõikvõimalikest AI süsteemidest ja arhitektuuridest 
+      (sealhulgas neist, mida võidakse leiutada tulevikus).
+      Kui termin 'LLM' või 'suur keelemudel' pole tuttav, loe ikka edasi - lähitulevikus tuleb järgmine postitus, kus me räägime sellest, mis 
+      keelemudelid oma olemuselt on. Käesoleva postituse mõistmiseks piisab vaid, kui mõelda mõnedest tuntud keelemudelitest 
+      nagu Chat-GPT, Claude, DeepSeek, Gemini, jne.</em></p>
+      <h1 class="show_if_not_teaser"; style="display:none;">Sissejuhatus</h1>
     </embed>
 
 Viimasel ajal tundub AI olevat täitnud kõik uudiskanalite pealkirjad. Aga kuidas eristada tõde liialdustest? 

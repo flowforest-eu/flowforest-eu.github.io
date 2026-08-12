@@ -15,7 +15,10 @@
       into the topics we will be covering later.</em></p>
       <p class="show_if_not_teaser"; style="display:none;"><strong>Note</strong>. <em>Most of the models we are discussing in this post are 
       LLMs (Large Language Models). We will say 'LLM' when speaking about
-      them specifically, and 'AI models' when we are talking more broadly and including other (current or future) architectures as well.</em></p>
+      them specifically, and 'AI models' when we are talking more broadly and including other (current or future) architectures as well.
+      If you are not familiar with the term 'LLM', don't worry - there will soon be a follow-up post where we explain what LLMs are.
+      For now, just think of well-known examples of families of LLMs, like Chat-GPT, Claude, DeepSeek, Gemini, etc.</em></p>
+      <h1 class="show_if_not_teaser"; style="display:none;">Introduction</h1>
     </embed>
 
 Lately, AI seems to dominate the news. But how to discern truth from exaggerations? The news coverage is confusing and extremely polarized 
@@ -130,7 +133,7 @@ increasing training time, and improving amount (or quality) of input data. All o
   that OpenAI and Anthropic need increasingly larger investments regularly.
 * Regarding **training time** - for any given model, there is a certain amount of it that is optimal; continuing training 
   indefinitely would produce smaller and smaller additional gains.
-* Increasing **amount of data** is also not trivial. Already Chat-GPT 3 (2020) was trained on a large corpus of books and all internet content they could obtain 
+* Increasing **amount of data** is also not trivial. Already GPT 3 (2020) was trained on a large corpus of books and all internet content they could obtain 
   (500 billion tokens). Companies are now relying on synthetic data and data manually created by human experts (which is more costly and time-consuming). 
   It is important to note that the quality of data is also crucial.
 
