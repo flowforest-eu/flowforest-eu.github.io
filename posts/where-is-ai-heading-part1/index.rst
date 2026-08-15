@@ -79,7 +79,7 @@ The following diagram shows the long-time trend of time horizon expanding over t
 
 The main finding of METR is that the time horizon has been **doubling roughly every 4–7 months** and this trend has held from 2019 to 2026 (if anything,
 progress speed has even increased from 2023 onwards). This can been seen from the following graph (it is the same graph as previous, but now the vertical 
-axis has logarithmic scale - meaning that time horisont values on the vertical axis double after taking a fixed step upwards):
+axis has logarithmic scale - meaning that time horizon values on the vertical axis double after taking a fixed step upwards):
 
 .. image:: /images/task-length-log.png
    :alt: Time horizon diagram (logarithmic scale)
@@ -201,7 +201,7 @@ exact same trend. METR looked into this as well and concluded that tasks in othe
 `follow similar growth trends <https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains/>`_, but the doubling time 
 (and the current state) varies by the field. 
 
-One of potential concerns METR themselves tackled in `the original paper <https://arxiv.org/abs/2503.14499>`_ was that it might be harder
+One of potential concerns METR tackled in `the original time horizon paper <https://arxiv.org/abs/2503.14499>`_ was that it might be harder
 for AI models to solve tasks that are inherently "messier" (as tasks in real life often are). For this, they divided tasks into categories 
 based on "messiness factor" and analyzed task success of "cleaner" vs "messier" tasks.
 Their conclusion was that although models performed slightly worse on messier tasks, the underlying 
@@ -249,7 +249,7 @@ shaping the future.
 .. raw:: html
 
     <embed>
-        <p style="font-size: 0.9em;">And finally, because I believe that transparency about AI usage is important, and my usage of AI tools varies:</p>
+        <p style="font-size: 0.8em;">And finally, because I believe that transparency about AI usage is important, and my usage of AI tools varies:</p>
     </embed>
 
 .. raw:: html

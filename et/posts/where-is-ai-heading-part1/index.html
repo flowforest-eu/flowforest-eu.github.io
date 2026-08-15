@@ -170,14 +170,6 @@ See tähendaks, et 28 kuu pärast (november 2028) on toimunud 4 kahekordistumist
 võtsid inimspetsialistil terve kuu.</p>
 <p>See trend on üks põhjustest, miks AI turvalisuse valdkonna spetsialistid hoiatavad, et me oleme väga kiiresti liikumas maailma, milleks me ei ole ühiskonnana
 valmis.</p>
-</section><section id="kui-kindlad-on-eksperdid-selles-trendis"><h2>Kui kindlad on eksperdid selles trendis?</h2>
-<p>METR loodud ajahorisondi kriteerium on üks enim tsiteeritud mõõdikuid AI valdkonnas. Pole ühest konsensust, mis on kõige tõenäolisem
-kasvu kiirus (kahekordistumise ajasamm) praegusel hetkel (kas 4 kuud või 7 kuud) - üldiselt arvatakse, et see jääb pigem vahemikku 4-6 kuud.</p>
-<p>Kriitikud on ka välja toonud, et see mõõdik keskendub liialt programmeerimisülesannetele; teised päris-elulised ülesanded ei pruugi järgida sama
-kasvutrendi. METR <a class="reference external" href="https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains">uuris ka seda</a> ja jõudis järeldusele, et teised
-valdkonnad kasvavad sarnasel viisil, aga kahekordistumise kiirus (ja praegune hetkeseis) erineb valdkonniti.</p>
-<p>Oluline on siiski märkida, et see kasvutrend saab jätkuda vaid siis, kui seda kasvu toetavad tegurid ei muutu kardinaalselt. Vaatleme, mis viisil need tegurid
-võiksid muutuda.</p>
 </section><section id="mis-tegurid-voivad-kasvutrendi-muuta"><h2>Mis tegurid võivad kasvutrendi muuta?</h2>
 <p>On mitmeid tegureid, mis võivad olukorda drastiliselt muuta: teaduslikud läbimurded või piirangud, füüsilise maailmaga seotud pudelikaelad, finantsilised
 tegurid, või poliitilised otsused.</p>
@@ -266,16 +258,26 @@ Lühiduse eesmärgil kasutan järgnevaid piltmärke:</p>
 </tbody>
 </table>
 <embed><p style="line-height: 10px;"> </p>
-</embed><p>On selge, et on palju erinevaid faktoreid, mis mängivad rolli arengutempo muutmisel;
-nende kõikide täpselt ennustamine on raske ülesannde isegi valdkonna ekspertidele.
-See on põhjus, miks ma näen palju väärust sellel samal METR ajahorisondi graafikul - see on hea tööriist, kui <a class="reference external" href="https://metr.org/time-horizons/">salvestada
-see endale järjehoidjaribale</a> (i.k. <em>bookmarks</em>) ja vaadata tulemusi aeg-ajalt (või iga kord, kui uus oluline
-mudel avaldatakse).
-METR plaanib jätkata selle lehe uuendamist iga kord, kui uus märkimisväärne mudel tehakse firmade poolt avalikuks ja saab METRi poolt testitud.</p>
+</embed></section><section id="metoodika-kitsaskohad"><h2>Metoodika kitsaskohad</h2>
+<p>Kriitikud on ka välja toonud, et see mõõdik keskendub liialt programmeerimisülesannetele; teised päris-elulised ülesanded ei pruugi järgida sama
+kasvutrendi. METR <a class="reference external" href="https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains">uuris ka seda</a> ja jõudis järeldusele, et teised
+valdkonnad kasvavad sarnase tempoga, aga kahekordistumise kiirus (ja praegune hetkeseis) erineb valdkonniti.</p>
+<p>METR uuris enda <a class="reference external" href="https://arxiv.org/abs/2503.14499">esialgses artiklis</a> ka seda, et AI mudelitel võib olla raskem
+lahendada ülesandeid, mis on oma olemuselt hägusemad või ebatäpsemad (i.k. "messier"), nagu ülesanded päris elus tihti on.
+Nende järeldus oli, et kuigi mudelite tulemused olid hägusemate ülesannete kohta natuke kehvemad, jäi
+<a class="reference external" href="https://arxiv.org/pdf/2503.14499#page=31">üldine kasvutendents üle aja siiski püsima</a>.</p>
+<p>Kuigi METR hoiab salajastena täpsed testjuhud, on nad siiski avalikult kirjeldanud eri testide üldisi eesmärke.
+Teaduse seisukohast teeb see tulemused paremini võrreldavaks; samas võib see suunata AI firmasid treenima enda
+mudeleid just sellistel teemadel. Samas, kuna METR jätkab ka tulevikus testide lisamist enda andmestikele, saavad
+pikas plaanis kõige edukamad olla need mudelid, mis suudavad lahendada laia valikut ülesannetest.</p>
 </section><section id="kui-on-soov-rohkem-teada-saada"><h2>Kui on soov rohkem teada saada</h2>
-<p>Veel üks hea põhjus lugeda <a class="reference external" href="https://metr.org/time-horizons/">METR ajahorisondi lehte</a> on see, et ma libisesin selles postituses
-üle mõnest oluliselt täpsustusest, et hoida selle postituse pikkust mõistlikuna.
-Ma soovitan lugeda nende lehelt (vajadusel tõlget kasutades) "Korduma Kippuvaid Küsimusi" (i.k. <em>Frequently Asked Questions</em>), kus nad vastavad sellistele täpsustavatele küsimustele:</p>
+<p>Ma soovitan salvestada <a class="reference external" href="https://metr.org/time-horizons/">METR ajahorisondi graafiku leht</a> enda järjehoidjatesse
+ja vaadata seda aeg-ajalt, et näha, kuidas AI valdkond areneb. METR on lubanud uuendada seda lehte, kui avaldatakse uusi suure potentsiaaliga mudeleid,
+või kui nad lisavad uusi teste enda andmestikku.</p>
+<p>Veel üks hea põhjus lugeda METR ajahorisondi lehte on see, et seal
+on ära toodud "<a class="reference external" href="https://metr.org/time-horizons/#frequently-asked-questions">Korduma Kippuvad Küsimused</a>"
+(i.k. <em>Frequently Asked Questions</em>), mis täpsustavad mitmeid olulisi aspekte antud mõõdiku kohta.
+Näiteks on seal ära toodud vastused sellistele küsimustele (soovitan vajadusel kasutada tõlget):</p>
 <ul class="simple">
 <li><p>Kas "ajahorisont" vastab ajavahemikule, mille jooksul AI agent saab tegutseda autonoomselt?</p></li>
 <li><p>Kas 8-tunnine ajahorisont tähendab, et AI saab automatiseerida kõiki töökohti?</p></li>
@@ -285,9 +287,6 @@ et iga 2-tunnine ülesanne on 50% edukuse määraga?</p></li>
 </ul>
 <p>METR on avaldanud oma kodulehel ka palju muid uurimistulemusi; lisaks on neil e-maili uudiskiri, millega saab liituda (selle leidmiseks tuleb
 kerida lehe allosani).</p>
-<p>Lisaks on võimalik tutvuda ka METR'i algse teadusartikliga aastast 2025 ajahorisondi teemal:
-<a class="reference external" href="https://arxiv.org/pdf/2503.14499">https://arxiv.org/pdf/2503.14499</a>
-(kahjuks aga seda ei uuendata uute mudelite mõõtmistulemustega).</p>
 </section><section id="kuhu-edasi"><h2>Kuhu edasi?</h2>
 <p>Selle postitus oli 1. osa AI arengu teemalisest artiklite seeriast. Keskendusin siin sellele, kuidas LLM'de ajaline järjepidevus on paranenud aja jooksul.
 Samas on LLM'del teisi olulisi puudujääke, mida on vaja lahata:</p>
@@ -298,7 +297,7 @@ Samas on LLM'del teisi olulisi puudujääke, mida on vaja lahata:</p>
 <p>Järgmistes postitustes keskendun nende kahe puudujäägi telgitagustesse.
 Muuhulgas puudutan seda, kuhu võib see kõik viia inimkonna tervikuna - ning jagan enda mõtteid selle kohta, kas tulevik on "kivisse raiutud" või on meil
 võimalik seda veel oluliselt kujundada oma tahte järgi.</p>
-<embed><p style="font-size: 0.9em;">Ja lõpetuseks, kuna ma usun, et avatus AI mudelite kasutamise osas on oluline (ja mu enda AI mudelite kasutus varieerub ajas):</p>
+<embed><p style="font-size: 0.8em;">Ja lõpetuseks, kuna ma usun, et avatus AI mudelite kasutamise osas on oluline (ja mu enda AI mudelite kasutus varieerub ajas):</p>
 </embed><embed><p class="ai-disclaimer"><b>Teave AI kasutamise kohta</b>: Selle postituse loomisel ei kasutatud AI mudeleid</p>
 </embed></section>
 </div>

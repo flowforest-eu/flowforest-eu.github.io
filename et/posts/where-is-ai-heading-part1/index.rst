@@ -104,20 +104,6 @@ võtsid inimspetsialistil terve kuu.
 See trend on üks põhjustest, miks AI turvalisuse valdkonna spetsialistid hoiatavad, et me oleme väga kiiresti liikumas maailma, milleks me ei ole ühiskonnana 
 valmis.
 
-==========================================
-Kui kindlad on eksperdid selles trendis?
-==========================================
-
-METR loodud ajahorisondi kriteerium on üks enim tsiteeritud mõõdikuid AI valdkonnas. Pole ühest konsensust, mis on kõige tõenäolisem 
-kasvu kiirus (kahekordistumise ajasamm) praegusel hetkel (kas 4 kuud või 7 kuud) - üldiselt arvatakse, et see jääb pigem vahemikku 4-6 kuud.
-
-Kriitikud on ka välja toonud, et see mõõdik keskendub liialt programmeerimisülesannetele; teised päris-elulised ülesanded ei pruugi järgida sama
-kasvutrendi. METR `uuris ka seda <https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains>`_ ja jõudis järeldusele, et teised 
-valdkonnad kasvavad sarnasel viisil, aga kahekordistumise kiirus (ja praegune hetkeseis) erineb valdkonniti.
-
-Oluline on siiski märkida, et see kasvutrend saab jätkuda vaid siis, kui seda kasvu toetavad tegurid ei muutu kardinaalselt. Vaatleme, mis viisil need tegurid 
-võiksid muutuda.
-
 =======================================
 Mis tegurid võivad kasvutrendi muuta?
 =======================================
@@ -217,20 +203,36 @@ Lühiduse eesmärgil kasutan järgnevaid piltmärke:
         <p style="line-height: 10px;">&nbsp;</p>
     </embed>
 
-On selge, et on palju erinevaid faktoreid, mis mängivad rolli arengutempo muutmisel;
-nende kõikide täpselt ennustamine on raske ülesannde isegi valdkonna ekspertidele.
-See on põhjus, miks ma näen palju väärust sellel samal METR ajahorisondi graafikul - see on hea tööriist, kui `salvestada 
-see endale järjehoidjaribale <https://metr.org/time-horizons/>`_ (i.k. *bookmarks*) ja vaadata tulemusi aeg-ajalt (või iga kord, kui uus oluline 
-mudel avaldatakse).
-METR plaanib jätkata selle lehe uuendamist iga kord, kui uus märkimisväärne mudel tehakse firmade poolt avalikuks ja saab METRi poolt testitud.
+=========================
+Metoodika kitsaskohad
+=========================
+
+Kriitikud on ka välja toonud, et see mõõdik keskendub liialt programmeerimisülesannetele; teised päris-elulised ülesanded ei pruugi järgida sama
+kasvutrendi. METR `uuris ka seda <https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains>`_ ja jõudis järeldusele, et teised 
+valdkonnad kasvavad sarnase tempoga, aga kahekordistumise kiirus (ja praegune hetkeseis) erineb valdkonniti.
+
+METR uuris enda `esialgses artiklis <https://arxiv.org/abs/2503.14499>`_ ka seda, et AI mudelitel võib olla raskem 
+lahendada ülesandeid, mis on oma olemuselt hägusemad või ebatäpsemad (i.k. "messier"), nagu ülesanded päris elus tihti on. 
+Nende järeldus oli, et kuigi mudelite tulemused olid hägusemate ülesannete kohta natuke kehvemad, jäi 
+`üldine kasvutendents üle aja siiski püsima <https://arxiv.org/pdf/2503.14499#page=31>`_.
+
+Kuigi METR hoiab salajastena täpsed testjuhud, on nad siiski avalikult kirjeldanud eri testide üldisi eesmärke.
+Teaduse seisukohast teeb see tulemused paremini võrreldavaks; samas võib see suunata AI firmasid treenima enda
+mudeleid just sellistel teemadel. Samas, kuna METR jätkab ka tulevikus testide lisamist enda andmestikele, saavad
+pikas plaanis kõige edukamad olla need mudelid, mis suudavad lahendada laia valikut ülesannetest.
 
 =================================
 Kui on soov rohkem teada saada
 =================================
 
-Veel üks hea põhjus lugeda `METR ajahorisondi lehte <https://metr.org/time-horizons/>`_ on see, et ma libisesin selles postituses 
-üle mõnest oluliselt täpsustusest, et hoida selle postituse pikkust mõistlikuna. 
-Ma soovitan lugeda nende lehelt (vajadusel tõlget kasutades) "Korduma Kippuvaid Küsimusi" (i.k. *Frequently Asked Questions*), kus nad vastavad sellistele täpsustavatele küsimustele:
+Ma soovitan salvestada `METR ajahorisondi graafiku leht <https://metr.org/time-horizons/>`_ enda järjehoidjatesse 
+ja vaadata seda aeg-ajalt, et näha, kuidas AI valdkond areneb. METR on lubanud uuendada seda lehte, kui avaldatakse uusi suure potentsiaaliga mudeleid,
+või kui nad lisavad uusi teste enda andmestikku.
+
+Veel üks hea põhjus lugeda METR ajahorisondi lehte on see, et seal 
+on ära toodud "`Korduma Kippuvad Küsimused <https://metr.org/time-horizons/#frequently-asked-questions>`_" 
+(i.k. *Frequently Asked Questions*), mis täpsustavad mitmeid olulisi aspekte antud mõõdiku kohta.
+Näiteks on seal ära toodud vastused sellistele küsimustele (soovitan vajadusel kasutada tõlget):
 
 * Kas "ajahorisont" vastab ajavahemikule, mille jooksul AI agent saab tegutseda autonoomselt?
 * Kas 8-tunnine ajahorisont tähendab, et AI saab automatiseerida kõiki töökohti?
@@ -240,10 +242,6 @@ Ma soovitan lugeda nende lehelt (vajadusel tõlget kasutades) "Korduma Kippuvaid
 
 METR on avaldanud oma kodulehel ka palju muid uurimistulemusi; lisaks on neil e-maili uudiskiri, millega saab liituda (selle leidmiseks tuleb
 kerida lehe allosani).
-
-Lisaks on võimalik tutvuda ka METR'i algse teadusartikliga aastast 2025 ajahorisondi teemal:
-https://arxiv.org/pdf/2503.14499
-(kahjuks aga seda ei uuendata uute mudelite mõõtmistulemustega).
 
 =====================
 Kuhu edasi?
@@ -262,7 +260,7 @@ võimalik seda veel oluliselt kujundada oma tahte järgi.
 .. raw:: html
 
     <embed>
-        <p style="font-size: 0.9em;">Ja lõpetuseks, kuna ma usun, et avatus AI mudelite kasutamise osas on oluline (ja mu enda AI mudelite kasutus varieerub ajas):</p>
+        <p style="font-size: 0.8em;">Ja lõpetuseks, kuna ma usun, et avatus AI mudelite kasutamise osas on oluline (ja mu enda AI mudelite kasutus varieerub ajas):</p>
     </embed>
 
 .. raw:: html
