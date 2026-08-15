@@ -221,6 +221,10 @@ Teaduse seisukohast teeb see tulemused paremini võrreldavaks; samas võib see s
 mudeleid just sellistel teemadel. Samas, kuna METR jätkab ka tulevikus testide lisamist enda andmestikele, saavad
 pikas plaanis kõige edukamad olla need mudelid, mis suudavad lahendada laia valikut ülesannetest.
 
+Lisaks, kuna mõned inimesed on valesti tõlgendanud METR tulemusi või proovinud teha neilt andmetelt järeldusi, mida andmeid ei toeta,
+on Thomas Kwa (üks algsetest uuringu autoritest) `välja andnud kirjatüki <https://metr.org/notes/2026-01-22-time-horizon-limitations/>`_, 
+kus ta kirjeldab täpsemalt, mida saab uuringu tulemustest järeldada ja mida mitte. 
+
 =================================
 Kui on soov rohkem teada saada
 =================================

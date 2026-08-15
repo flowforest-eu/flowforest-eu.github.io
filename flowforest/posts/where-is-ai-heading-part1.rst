@@ -212,6 +212,9 @@ From research perspective, this has the benefit of making their results more int
 for training for those topics. However, as METR will keep adding new tasks to the data set, models with ability to solve a broad range of tasks
 will continue to perform better.
 
+Additionally, since some people have mis-interpreted the results or tried to make claims that the results do not fully support, Thomas Kwa (researcher from
+METR) has put out some `notes to clarify <https://metr.org/notes/2026-01-22-time-horizon-limitations/>`_ what the results exactly claim and what they don't claim. 
+
 ==========================
 If you want to learn more
 ==========================
