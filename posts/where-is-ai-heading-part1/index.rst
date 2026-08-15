@@ -101,19 +101,6 @@ took humans specialists a whole month.
 
 Statistics like this are what have caused some forecasters to warn us that we are moving head-first into a world that we are not fully ready for.
 
-===================================
-How sure are the experts of this?
-===================================
-
-METR benchmark is one of the most cited benchmarks in the industry. There is a lot of disagreement about what the exact doubling time 
-is currently (whether 4 months or 7 months) - people tend to point out that it is probably **more likely** in the range of 4-6 months.
-
-Critics also point out that the benchmark focuses a lot on coding; other real-world tasks, which are messier, might not follow the exact same 
-trend. METR `looked into this as well <https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains>`_ and concluded that other 
-tasks also seem to follow similar trends, but the doubling time (and the current state) varies by the field.
-
-However, the trend can only continue if the underlying assumptions continue to hold. Let's have a look of how it could cease to be.
-
 =======================================
 What could cause the trend to change?
 =======================================
@@ -205,17 +192,37 @@ Policy reasons          |down_exp| OR |down_linear|             If a national/gl
         <p style="line-height: 10px;">&nbsp;</p>
     </embed>
 
-It is evident that there are a lot of factors that may play a role in determining what the rate of the progress is; 
-and reliably predicting them is a difficult task even for experts.
-However, this is why I think the METR time horizon graph is such a good tool to have: one can `bookmark it <https://metr.org/time-horizons/>`_ and review
-it whenever some new model launches and is being hyped - METR will keep updating it when new notable models are released.
+===============================
+Limitations of methodology
+===============================
+
+Critics have pointed out that the METR benchmark focuses a lot on coding; other real-world tasks might not follow the 
+exact same trend. METR looked into this as well and concluded that tasks in other fields also seem to 
+`follow similar growth trends <https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains/>`_, but the doubling time 
+(and the current state) varies by the field. 
+
+One of potential concerns METR themselves tackled in `the original paper <https://arxiv.org/abs/2503.14499>`_ was that it might be harder
+for AI models to solve tasks that are inherently "messier" (as tasks in real life often are). For this, they divided tasks into categories 
+based on "messiness factor" and analyzed task success of "cleaner" vs "messier" tasks.
+Their conclusion was that although models performed slightly worse on messier tasks, the underlying 
+`growth trend over time was similar <https://arxiv.org/pdf/2503.14499#page=31>`_.
+
+Although METR ensures secrecy of exact test cases, they have publicly described the broad topics of various tests.
+From research perspective, this has the benefit of making their results more interpretable; on the other hand, this can give pointers for AI companies 
+for training for those topics. However, as METR will keep adding new tasks to the data set, models with ability to solve a broad range of tasks
+will continue to perform better.
 
 ==========================
 If you want to learn more
 ==========================
 
-Another reason to read the `METR time horizons page <https://metr.org/time-horizons/>`_ is that I skipped over many important caveats to keep the length of this blog post reasonable.
-So I recommend scrolling to the "Frequently Asked Questions" section in their page and read their answers to clarifying questions such as:
+I recommend to bookmark `METR time horizons page <https://metr.org/time-horizons/>`_ and review
+it from time to time to see how the field is progressing - METR will keep updating it when new notable models are released and when they add new tests
+to their data sets.
+
+Another reason to read their webpage is that I skipped over several important caveats to keep the length of this blog post reasonable.
+So I recommend reviewing the "`Frequently Asked Questions <https://metr.org/time-horizons/#frequently-asked-questions>`_" section of the time horizons page 
+and read their answers to clarifying questions such as:
 
 * Does “time horizon” mean the length of time that current AI agents can act autonomously?
 * Does an 8-hour time horizon mean that AI can automate all jobs?
@@ -224,10 +231,6 @@ So I recommend scrolling to the "Frequently Asked Questions" section in their pa
 
 METR also has tons of other research as well on their webpage; additionally, they also have a newsletter that you can subscribe to 
 (to do that, scroll to the footer of their webpage).
-
-If you prefer reading information in the form of a scientific paper, check out the original METR paper from 2025 instead 
-(obviously, this is not being updated with statistics about the latest models):
-https://arxiv.org/pdf/2503.14499
 
 =====================
 What's next?

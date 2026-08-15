@@ -1201,3 +1201,11 @@ div.translations a[hreflang="et"]::after {
 div.translations a[hreflang="en"]::before {
     content: "In ";
 }
+
+p.byline.author {
+    display: none;
+}
+
+p.dateline::before {
+    content: "" !important; 
+}

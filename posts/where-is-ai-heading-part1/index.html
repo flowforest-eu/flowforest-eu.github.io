@@ -166,13 +166,6 @@ This now means that after 28 months (four doublings, so 16x growth), in November
 <p>And just 7 months later, in summer 2029, we could expect AI models to be able to complete tasks (with a 50% success rate) that previously
 took humans specialists a whole month.</p>
 <p>Statistics like this are what have caused some forecasters to warn us that we are moving head-first into a world that we are not fully ready for.</p>
-</section><section id="how-sure-are-the-experts-of-this"><h2>How sure are the experts of this?</h2>
-<p>METR benchmark is one of the most cited benchmarks in the industry. There is a lot of disagreement about what the exact doubling time
-is currently (whether 4 months or 7 months) - people tend to point out that it is probably <strong>more likely</strong> in the range of 4-6 months.</p>
-<p>Critics also point out that the benchmark focuses a lot on coding; other real-world tasks, which are messier, might not follow the exact same
-trend. METR <a class="reference external" href="https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains">looked into this as well</a> and concluded that other
-tasks also seem to follow similar trends, but the doubling time (and the current state) varies by the field.</p>
-<p>However, the trend can only continue if the underlying assumptions continue to hold. Let's have a look of how it could cease to be.</p>
 </section><section id="what-could-cause-the-trend-to-change"><h2>What could cause the trend to change?</h2>
 <p>There are several ways how the landscape could drastically change: scientific breakthroughs or limitations, physical bottlenecks,
 financial reasons, or policy reasons.</p>
@@ -254,13 +247,27 @@ would exist.</p>
 </tbody>
 </table>
 <embed><p style="line-height: 10px;"> </p>
-</embed><p>It is evident that there are a lot of factors that may play a role in determining what the rate of the progress is;
-and reliably predicting them is a difficult task even for experts.
-However, this is why I think the METR time horizon graph is such a good tool to have: one can <a class="reference external" href="https://metr.org/time-horizons/">bookmark it</a> and review
-it whenever some new model launches and is being hyped - METR will keep updating it when new notable models are released.</p>
+</embed></section><section id="limitations-of-methodology"><h2>Limitations of methodology</h2>
+<p>Critics have pointed out that the METR benchmark focuses a lot on coding; other real-world tasks might not follow the
+exact same trend. METR looked into this as well and concluded that tasks in other fields also seem to
+<a class="reference external" href="https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains/">follow similar growth trends</a>, but the doubling time
+(and the current state) varies by the field.</p>
+<p>One of potential concerns METR themselves tackled in <a class="reference external" href="https://arxiv.org/abs/2503.14499">the original paper</a> was that it might be harder
+for AI models to solve tasks that are inherently "messier" (as tasks in real life often are). For this, they divided tasks into categories
+based on "messiness factor" and analyzed task success of "cleaner" vs "messier" tasks.
+Their conclusion was that although models performed slightly worse on messier tasks, the underlying
+<a class="reference external" href="https://arxiv.org/pdf/2503.14499#page=31">growth trend over time was similar</a>.</p>
+<p>Although METR ensures secrecy of exact test cases, they have publicly described the broad topics of various tests.
+From research perspective, this has the benefit of making their results more interpretable; on the other hand, this can give pointers for AI companies
+for training for those topics. However, as METR will keep adding new tasks to the data set, models with ability to solve a broad range of tasks
+will continue to perform better.</p>
 </section><section id="if-you-want-to-learn-more"><h2>If you want to learn more</h2>
-<p>Another reason to read the <a class="reference external" href="https://metr.org/time-horizons/">METR time horizons page</a> is that I skipped over many important caveats to keep the length of this blog post reasonable.
-So I recommend scrolling to the "Frequently Asked Questions" section in their page and read their answers to clarifying questions such as:</p>
+<p>I recommend to bookmark <a class="reference external" href="https://metr.org/time-horizons/">METR time horizons page</a> and review
+it from time to time to see how the field is progressing - METR will keep updating it when new notable models are released and when they add new tests
+to their data sets.</p>
+<p>Another reason to read their webpage is that I skipped over several important caveats to keep the length of this blog post reasonable.
+So I recommend reviewing the "<a class="reference external" href="https://metr.org/time-horizons/#frequently-asked-questions">Frequently Asked Questions</a>" section of the time horizons page
+and read their answers to clarifying questions such as:</p>
 <ul class="simple">
 <li><p>Does “time horizon” mean the length of time that current AI agents can act autonomously?</p></li>
 <li><p>Does an 8-hour time horizon mean that AI can automate all jobs?</p></li>
@@ -269,9 +276,6 @@ So I recommend scrolling to the "Frequently Asked Questions" section in their pa
 </ul>
 <p>METR also has tons of other research as well on their webpage; additionally, they also have a newsletter that you can subscribe to
 (to do that, scroll to the footer of their webpage).</p>
-<p>If you prefer reading information in the form of a scientific paper, check out the original METR paper from 2025 instead
-(obviously, this is not being updated with statistics about the latest models):
-<a class="reference external" href="https://arxiv.org/pdf/2503.14499">https://arxiv.org/pdf/2503.14499</a></p>
 </section><section id="what-s-next"><h2>What's next?</h2>
 <p>The title of this post was "Where is AI heading - part 1/3". This is because while we focused on how coherence of LLMs
 is increasing over time, there are other fundamental shortcomings of LLMs that need to be explored as well:</p>
