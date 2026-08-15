@@ -1296,6 +1296,7 @@ GENERATE_RSS = True
 EXTRA_HEAD_DATA = """
 <link href="/assets/css/custom.css" rel="stylesheet" type="text/css">
 <link href="/assets/css/code.css" rel="stylesheet" type="text/css">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="e4abbcea-cef0-4387-913f-b0074cd513de"></script>
 """
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
