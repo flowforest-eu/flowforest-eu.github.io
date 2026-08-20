@@ -62,7 +62,8 @@ Sellel lähenemisel on kaks eelist:
 1. see mõõdab ülesannete keerukust läbi selle, kaua inimspetsialistil kulub selle lahendamiseks - see muudab selle mõõdiku inimestele 
    intuitiivselt arusaadavaks;
 2. see annab mõõdiku, mis skaleerub esimesest GPT-2 versioonist (mis suutis ainult lahendada ülesandeid, mis inimesel võtavad mõne sekundi)
-   kuni praeguste tippmudeliteni (mille ajahorisont on mitmeid tunde) kuni tulevikumudeliteni, mille ajahorisont võib ulatuda nädalate või kuudeni.
+   kuni praeguste tippmudeliteni (mille ajahorisont on mitmeid tunde – nad suudavad lahendada ülesandeid, mille lahendamiseks kulub inimesel 
+   mitmeid tunde) kuni tulevikumudeliteni, mille ajahorisont võib ulatuda nädalate või kuudeni.
 
 Testid näitasid, et **50% edukuse tasemel**:
 
