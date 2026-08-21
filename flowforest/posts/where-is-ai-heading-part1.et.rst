@@ -247,6 +247,10 @@ Näiteks on seal ära toodud vastused sellistele küsimustele (soovitan vajaduse
 * Kui te ütlete, et mudelil on 2-tunnine ajahorisont, kas see tähendab, et ta saab hakkama 50% kõigist 2-tunnistest ülesannetest, või seda,
   et iga 2-tunnine ülesanne on 50% edukuse määraga?
 
+Oluline on ka täpsustada seda, et AI mudelid saavad ülesandeid lahendada agentselt selles mõttes, et nad saavad kutsuda teatud tööriistu, planeerida enda
+järgmisi samme ja töötada nii kaua, kuni mudel on valmis andma vastust. Täpsemalt saab lugeda 
+`peatükist C.3.1 METR artiklist <https://arxiv.org/pdf/2503.14499v4#page=24>`_.
+
 METR on avaldanud oma kodulehel ka palju muid uurimistulemusi; lisaks on neil e-maili uudiskiri, millega saab liituda (selle leidmiseks tuleb
 kerida lehe allosani).
 
