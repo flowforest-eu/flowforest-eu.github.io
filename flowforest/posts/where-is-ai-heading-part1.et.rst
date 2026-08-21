@@ -62,8 +62,7 @@ Sellel lähenemisel on kaks eelist:
 1. see mõõdab ülesannete keerukust läbi selle, kaua inimspetsialistil kulub selle lahendamiseks - see muudab selle mõõdiku inimestele 
    intuitiivselt arusaadavaks;
 2. see annab mõõdiku, mis skaleerub esimesest GPT-2 versioonist (mis suutis ainult lahendada ülesandeid, mis inimesel võtavad mõne sekundi)
-   kuni praeguste tippmudeliteni (mille ajahorisont on mitmeid tunde – nad suudavad lahendada ülesandeid, mille lahendamiseks kulub inimesel 
-   mitmeid tunde) kuni tulevikumudeliteni, mille ajahorisont võib ulatuda nädalate või kuudeni.
+   kuni praeguste tippmudeliteni (mille ajahorisont on mitmeid tunde) kuni tulevikumudeliteni, mille ajahorisont võib ulatuda nädalate või kuudeni.
 
 Testid näitasid, et **50% edukuse tasemel**:
 
@@ -74,6 +73,9 @@ Ja **80% edukuse tasemel**:
 
 * on tippmudelid ajahorisondiga **1-2 tundi**;
 * erandiks on Claude Mythos Preview, mille ajahorisont on **3 tundi**.
+
+**NB:** Kuna lugejatel on tekkinud mõnikord lugedes siinkohal segadus, kordan üle: AI mudeli ajahorisondi pikkus on mõõdik, mis on ehitatud sellele, 
+kaua **inimspetsialistil kulub mingi ülesande täitmiseks** (mitte sellele, kui kaua vastav mudel suudab ise järjest ühe eesmärgi suunas tegutseda).
 
 Järgnev graafik näitab, kuidas ajahorisont on arenenud aja jooksul (august 2026 seisuga). Horisontaal-teljel on mudeli avaldamise aeg ja 
 vertikaal-teljel mudeli ajahorisondi pikkus. Valitud on 50% edukuse tase.
