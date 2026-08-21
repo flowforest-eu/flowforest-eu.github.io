@@ -232,6 +232,9 @@ and read their answers to clarifying questions such as:
 * Why not report the time horizon at a higher reliability level (e.g. time horizon at 99% success rate)?
 * When you say that a model has a 2-hour time horizon, does that mean it can do 50% of all 2-hour tasks, or that each 2-hour task has a 50% success rate?
 
+It is also important to specify that AI models can solve the task in an agentic way in the sense that they can use certain tools, plan their next steps
+and iterate until they are ready to provide an answer. More details can be found in `section C.3.1 of the METR paper <https://arxiv.org/pdf/2503.14499v4#page=24>`_.
+
 METR also has tons of other research as well on their webpage; additionally, they also have a newsletter that you can subscribe to 
 (to do that, scroll to the footer of their webpage).
 
