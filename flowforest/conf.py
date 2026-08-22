@@ -16,7 +16,7 @@ import time
 
 
 # Data about this site
-BLOG_AUTHOR = "FlowForest"  # (translatable)
+BLOG_AUTHOR = "Rauni Lillemets"  # (translatable)
 BLOG_TITLE = "FlowForest"  # (translatable)
 # This is the main URL for your site. It will be used
 # in a prominent link. Don't forget the protocol (http/https)!
@@ -144,12 +144,14 @@ NAVIGATION_LINKS = {
         ("/archive.html", "Archive"),
         ("/categories/", "Tags"),
         ("/rss.xml", "RSS feed"),
+        ("/pages/about/", "About me"),
     ),
 
     "et": (
         ("/et/archive.html", "Arhiiv"),
         ("/et/categories/", "Märksõnad"),
         ("/et/rss.xml", "RSS uudisvoog"),
+        ("/et/pages/about/", "Lühidalt minust"),
     ),
 }
 
@@ -999,8 +1001,8 @@ LICENSE = ""
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
 CONTENT_FOOTER = {
-    "en": 'Contents by <a href="mailto:{email}">{author}</a> – <span id="footer_nikola">Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> blog engine</span>         {license}',
-    "et": 'Autor: <a href="mailto:{email}">{author}</a> – <span id="footer_nikola">Jookseb         <a href="https://getnikola.com" rel="nofollow">Nikola</a> blogimootoril</span>         {license}',
+    "en": '<span id="footer_author">Contents by <a href="mailto:{email}">{author}</a> –</span> <span id="footer_nikola">Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> blog engine</span>         {license}',
+    "et": '<span id="footer_author">Autor: <a href="mailto:{email}">{author}</a> –</span> <span id="footer_nikola">Jookseb         <a href="https://getnikola.com" rel="nofollow">Nikola</a> blogimootoril</span>         {license}',
 }
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
