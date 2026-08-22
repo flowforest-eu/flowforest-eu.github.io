@@ -8,6 +8,10 @@
     font-weight: 500 !important;
 }
 
+#footer_author {
+    font-size: 0.92rem;
+}
+
 #footer_nikola {
     font-size: 0.8125rem;
     color: #636057 !important;
