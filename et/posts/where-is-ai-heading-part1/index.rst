@@ -41,10 +41,10 @@ Arengu mõõtmine
 METR märkas, et üks AI mudelite probleemidest (eriti LLM-de puhul) on järjepidavuse puudumine - neil võib olla väga raske 
 läbida pikaajalisi või mitme-sammulisi ülesandeid ilma järge kaotamata. See tähelepanek aitas neil defineerida ühe efektiivse
 mõõdupuu: kui ajaliselt keerukate (inimesel ülesande lahendamiseks kuluva aja mõttes) ülesannetega saab mudel hakkama teatud fikseeritud 
-tõenäosusega (nt 50% või 80%)? Nad andsid sellele mõõdikule nime **ülesannete läbimise ajahorisont** (i.k. "*task completion
+tõenäosusega (nt 50% või 80%)? Nad andsid sellele mõõdikule nime **ülesannete läbimise ajahorisont** (ingl. k. "*task completion
 time horizon*").
 
-METR koostas nimekirja 228 erinevast ülesandest (tarkvaraarenduse, küberturvalisuse, üldise loogika, ja masinõppe valdkondadest).
+METR koostas nimekirja 228 erinevast ülesandest (tarkvaraarenduse, küberturvalisuse, üldise loogika ja masinõppe valdkondadest).
 Ülesanded varieeruvad triviaalsetest (lahendatav sekunditega) kuni ülesanneteni, mille lahendamiseks võib valdkonna
 spetsialistil kuluda mitmeid päevi.
 
@@ -66,7 +66,7 @@ Sellel lähenemisel on kaks eelist:
 
 Testid näitasid, et **50% edukuse tasemel**:
 
-* on enamus Claude, Gemini, ja GPT tippmudeleid (graafik on august 2026 seisuga) ajahorisondiga **3–6 tundi**;
+* on enamus Claude, Gemini ja GPT tippmudeleid (graafik on 2026. augusti seisuga) ajahorisondiga **3–6 tundi**;
 * erandiks on Claude Opus 4.6 (ajahorisont **12 tundi**) ja Claude Mythos Preview (ajahorisont **16 tundi** või enam, testide tulemused pole lõplikud).
 
 Ja **80% edukuse tasemel**:
@@ -77,7 +77,7 @@ Ja **80% edukuse tasemel**:
 **NB:** Kuna lugejatel on tekkinud mõnikord lugedes siinkohal segadus, kordan üle: AI mudeli ajahorisondi pikkus on mõõdik, mis on ehitatud sellele, 
 kaua **inimspetsialistil kulub mingi ülesande täitmiseks** (mitte sellele, kui kaua vastav mudel suudab ise järjest ühe eesmärgi suunas tegutseda).
 
-Järgnev graafik näitab, kuidas ajahorisont on arenenud aja jooksul (august 2026 seisuga). Horisontaal-teljel on mudeli avaldamise aeg ja 
+Järgnev graafik näitab, kuidas ajahorisont on arenenud aja jooksul (2026. augusti seisuga). Horisontaal-teljel on mudeli avaldamise aeg ja 
 vertikaal-teljel mudeli ajahorisondi pikkus. Valitud on 50% edukuse tase.
 
 .. image:: /images/task-length-linear.png
@@ -96,7 +96,7 @@ Soovitan ka uurida graafikut 80% edukuse taseme jaoks. METR ise tõi oma uurimis
 50% kui ka 80% edukuse taseme juures.
 
 Mis järeldusi siit kõigest teha saab? Eeldame, et praegune eksponentsiaalne kasv jätkub ning mudelite ajahorisondi pikkus kahekordistub iga 7 kuuga.
-See tähendaks, et 28 kuu pärast (november 2028) on toimunud 4 kahekordistumist (ehk 16x kasv), ning võiksime näha mudeleid saavutamas järgmisi tulemusi:
+See tähendaks, et 28 kuu pärast (november 2028) on toimunud 4 kahekordistumist (ehk 16x kasv) ning võiksime näha mudeleid saavutamas järgmisi tulemusi:
 
 * 50% edukuse taseme juures lahendamas 8-24 päevase ajaaknaga ülesandeid;
 * 80% edukuse taseme juures lahendamas 2-4 päevase ajaaknaga ülesandeid.
@@ -112,13 +112,13 @@ Mis tegurid võivad kasvutrendi muuta?
 =======================================
 
 On mitmeid tegureid, mis võivad olukorda drastiliselt muuta: teaduslikud läbimurded või piirangud, füüsilise maailmaga seotud pudelikaelad, finantsilised 
-tegurid, või poliitilised otsused.
+tegurid või poliitilised otsused.
 
 **Teadus - kiirendavad tegurid**. Kui näiteks leitakse uus AI arhitektuur, mis võimaldab mudelitel suurema püsivuse ja järjepidavusega tegeleda keeruliste 
 ülesannetega, võib kasvutempo oluliselt kiireneda.
 
 **Teadus - aeglustavad tegurid**. Valdkonnas on laialt levinud arusaam, et on 3 põhilist mõõdet mudelite võimekuse skaleerimiseks: mudelite parameetrite arvu
-suurendamine, treeninguaja pikendamine, ning treeningandmete mahu (ja kvaliteedi) suurendamine. Seni on kõiki kolme mõõdet suurendatud üsna agressiivselt:
+suurendamine, treeninguaja pikendamine ning treeningandmete mahu (ja kvaliteedi) suurendamine. Seni on kõiki kolme mõõdet suurendatud üsna agressiivselt:
 
 * **Mudelite parameetrite arv** on nüüdseks jõudnud triljoniteni (Kimi K3 mudelil on 2.8 triljonit parameetrit; OpenAI ja Anthropic hoiavad täpse parameetri arvu 
   salajasena, aga nende tippmudelitel on eeldatavasti rohkem parameetreid, kui Kimi K3 mudelil). Et saada ühte vastust Kimi K3 suurusega mudelilt, 
@@ -215,7 +215,7 @@ kasvutrendi. METR `uuris ka seda <https://metr.org/blog/2025-07-14-how-does-time
 valdkonnad kasvavad sarnase tempoga, aga kahekordistumise kiirus (ja praegune hetkeseis) erineb valdkonniti.
 
 METR uuris enda `esialgses artiklis <https://arxiv.org/abs/2503.14499>`_ ka seda, et AI mudelitel võib olla raskem 
-lahendada ülesandeid, mis on oma olemuselt hägusemad või ebatäpsemad (i.k. "messier"), nagu ülesanded päris elus tihti on. 
+lahendada ülesandeid, mis on oma olemuselt hägusemad või ebatäpsemad (ingl. k. "messier"), nagu ülesanded päris elus tihti on. 
 Nende järeldus oli, et kuigi mudelite tulemused olid hägusemate ülesannete kohta natuke kehvemad, jäi 
 `üldine kasvutendents üle aja siiski püsima <https://arxiv.org/pdf/2503.14499#page=31>`_.
 
@@ -238,13 +238,13 @@ või kui nad lisavad uusi teste enda andmestikku.
 
 Veel üks hea põhjus lugeda METR ajahorisondi lehte on see, et seal 
 on ära toodud "`Korduma Kippuvad Küsimused <https://metr.org/time-horizons/#frequently-asked-questions>`_" 
-(i.k. *Frequently Asked Questions*), mis täpsustavad mitmeid olulisi aspekte antud mõõdiku kohta.
+(ingl. k. *Frequently Asked Questions*), mis täpsustavad mitmeid olulisi aspekte antud mõõdiku kohta.
 Näiteks on seal ära toodud vastused sellistele küsimustele (soovitan vajadusel kasutada tõlget):
 
 * Kas "ajahorisont" vastab ajavahemikule, mille jooksul AI agent saab tegutseda autonoomselt?
 * Kas 8-tunnine ajahorisont tähendab, et AI saab automatiseerida kõiki töökohti?
 * Miks mitte raporteerida ajahorisonti kõrgema edukuse taseme (näiteks 99%) juures?
-* Kui te ütlete, et mudelil on 2-tunnine ajahorisont, kas see tähendab, et ta saab hakkama 50% kõigist 2-tunnistest ülesannetest, või seda,
+* Kui te ütlete, et mudelil on 2-tunnine ajahorisont, kas see tähendab, et ta saab hakkama 50% kõigi 2-tunniste ülesannetega või seda,
   et iga 2-tunnine ülesanne on 50% edukuse määraga?
 
 Oluline on ka täpsustada seda, et AI mudelid saavad ülesandeid lahendada agentselt selles mõttes, et nad saavad kutsuda teatud tööriistu, planeerida enda

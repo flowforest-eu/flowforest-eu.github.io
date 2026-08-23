@@ -123,9 +123,9 @@ See on täpselt see, mida organisatsioon <a class="reference external" href="htt
 <p>METR märkas, et üks AI mudelite probleemidest (eriti LLM-de puhul) on järjepidavuse puudumine - neil võib olla väga raske
 läbida pikaajalisi või mitme-sammulisi ülesandeid ilma järge kaotamata. See tähelepanek aitas neil defineerida ühe efektiivse
 mõõdupuu: kui ajaliselt keerukate (inimesel ülesande lahendamiseks kuluva aja mõttes) ülesannetega saab mudel hakkama teatud fikseeritud
-tõenäosusega (nt 50% või 80%)? Nad andsid sellele mõõdikule nime <strong>ülesannete läbimise ajahorisont</strong> (i.k. "<em>task completion
+tõenäosusega (nt 50% või 80%)? Nad andsid sellele mõõdikule nime <strong>ülesannete läbimise ajahorisont</strong> (ingl. k. "<em>task completion
 time horizon</em>").</p>
-<p>METR koostas nimekirja 228 erinevast ülesandest (tarkvaraarenduse, küberturvalisuse, üldise loogika, ja masinõppe valdkondadest).
+<p>METR koostas nimekirja 228 erinevast ülesandest (tarkvaraarenduse, küberturvalisuse, üldise loogika ja masinõppe valdkondadest).
 Ülesanded varieeruvad triviaalsetest (lahendatav sekunditega) kuni ülesanneteni, mille lahendamiseks võib valdkonna
 spetsialistil kuluda mitmeid päevi.</p>
 <p>Siin on mõned näited ülesannetest tarkvara arenduse valdkonnast:</p>
@@ -146,7 +146,7 @@ kuni praeguste tippmudeliteni (mille ajahorisont on mitmeid tunde) kuni tuleviku
 </ol>
 <p>Testid näitasid, et <strong>50% edukuse tasemel</strong>:</p>
 <ul class="simple">
-<li><p>on enamus Claude, Gemini, ja GPT tippmudeleid (graafik on august 2026 seisuga) ajahorisondiga <strong>3–6 tundi</strong>;</p></li>
+<li><p>on enamus Claude, Gemini ja GPT tippmudeleid (graafik on 2026. augusti seisuga) ajahorisondiga <strong>3–6 tundi</strong>;</p></li>
 <li><p>erandiks on Claude Opus 4.6 (ajahorisont <strong>12 tundi</strong>) ja Claude Mythos Preview (ajahorisont <strong>16 tundi</strong> või enam, testide tulemused pole lõplikud).</p></li>
 </ul>
 <p>Ja <strong>80% edukuse tasemel</strong>:</p>
@@ -156,7 +156,7 @@ kuni praeguste tippmudeliteni (mille ajahorisont on mitmeid tunde) kuni tuleviku
 </ul>
 <p><strong>NB:</strong> Kuna lugejatel on tekkinud mõnikord lugedes siinkohal segadus, kordan üle: AI mudeli ajahorisondi pikkus on mõõdik, mis on ehitatud sellele,
 kaua <strong>inimspetsialistil kulub mingi ülesande täitmiseks</strong> (mitte sellele, kui kaua vastav mudel suudab ise järjest ühe eesmärgi suunas tegutseda).</p>
-<p>Järgnev graafik näitab, kuidas ajahorisont on arenenud aja jooksul (august 2026 seisuga). Horisontaal-teljel on mudeli avaldamise aeg ja
+<p>Järgnev graafik näitab, kuidas ajahorisont on arenenud aja jooksul (2026. augusti seisuga). Horisontaal-teljel on mudeli avaldamise aeg ja
 vertikaal-teljel mudeli ajahorisondi pikkus. Valitud on 50% edukuse tase.</p>
 <img alt="Aja horisondi diagramm" src="../../../images/task-length-linear.png"><p>Põhiline järeldus METR uurimistööst oli see, et mudelite ajahorisont on laias laastus <strong>kahekordistunud iga 4-7 kuuga</strong> ning et see trend on olnud püsiv
 aastast 2019 kuni 2026-ni (kuigi tundub, et aastast 2023 alates on progress kiirenenud).
@@ -166,7 +166,7 @@ et ajalised väärtused vertikaalteljel kahekordistuvad iga teatud sammu tagant)
 Soovitan ka uurida graafikut 80% edukuse taseme jaoks. METR ise tõi oma uurimistöö tulemustes välja, et kasvu trend on olnud sarnane nii
 50% kui ka 80% edukuse taseme juures.</p>
 <p>Mis järeldusi siit kõigest teha saab? Eeldame, et praegune eksponentsiaalne kasv jätkub ning mudelite ajahorisondi pikkus kahekordistub iga 7 kuuga.
-See tähendaks, et 28 kuu pärast (november 2028) on toimunud 4 kahekordistumist (ehk 16x kasv), ning võiksime näha mudeleid saavutamas järgmisi tulemusi:</p>
+See tähendaks, et 28 kuu pärast (november 2028) on toimunud 4 kahekordistumist (ehk 16x kasv) ning võiksime näha mudeleid saavutamas järgmisi tulemusi:</p>
 <ul class="simple">
 <li><p>50% edukuse taseme juures lahendamas 8-24 päevase ajaaknaga ülesandeid;</p></li>
 <li><p>80% edukuse taseme juures lahendamas 2-4 päevase ajaaknaga ülesandeid.</p></li>
@@ -177,11 +177,11 @@ võtsid inimspetsialistil terve kuu.</p>
 valmis.</p>
 </section><section id="mis-tegurid-voivad-kasvutrendi-muuta"><h2>Mis tegurid võivad kasvutrendi muuta?</h2>
 <p>On mitmeid tegureid, mis võivad olukorda drastiliselt muuta: teaduslikud läbimurded või piirangud, füüsilise maailmaga seotud pudelikaelad, finantsilised
-tegurid, või poliitilised otsused.</p>
+tegurid või poliitilised otsused.</p>
 <p><strong>Teadus - kiirendavad tegurid</strong>. Kui näiteks leitakse uus AI arhitektuur, mis võimaldab mudelitel suurema püsivuse ja järjepidavusega tegeleda keeruliste
 ülesannetega, võib kasvutempo oluliselt kiireneda.</p>
 <p><strong>Teadus - aeglustavad tegurid</strong>. Valdkonnas on laialt levinud arusaam, et on 3 põhilist mõõdet mudelite võimekuse skaleerimiseks: mudelite parameetrite arvu
-suurendamine, treeninguaja pikendamine, ning treeningandmete mahu (ja kvaliteedi) suurendamine. Seni on kõiki kolme mõõdet suurendatud üsna agressiivselt:</p>
+suurendamine, treeninguaja pikendamine ning treeningandmete mahu (ja kvaliteedi) suurendamine. Seni on kõiki kolme mõõdet suurendatud üsna agressiivselt:</p>
 <ul class="simple">
 <li><p><strong>Mudelite parameetrite arv</strong> on nüüdseks jõudnud triljoniteni (Kimi K3 mudelil on 2.8 triljonit parameetrit; OpenAI ja Anthropic hoiavad täpse parameetri arvu
 salajasena, aga nende tippmudelitel on eeldatavasti rohkem parameetreid, kui Kimi K3 mudelil). Et saada ühte vastust Kimi K3 suurusega mudelilt,
@@ -268,7 +268,7 @@ Lühiduse eesmärgil kasutan järgnevaid piltmärke:</p>
 kasvutrendi. METR <a class="reference external" href="https://metr.org/blog/2025-07-14-how-does-time-horizon-vary-across-domains">uuris ka seda</a> ja jõudis järeldusele, et teised
 valdkonnad kasvavad sarnase tempoga, aga kahekordistumise kiirus (ja praegune hetkeseis) erineb valdkonniti.</p>
 <p>METR uuris enda <a class="reference external" href="https://arxiv.org/abs/2503.14499">esialgses artiklis</a> ka seda, et AI mudelitel võib olla raskem
-lahendada ülesandeid, mis on oma olemuselt hägusemad või ebatäpsemad (i.k. "messier"), nagu ülesanded päris elus tihti on.
+lahendada ülesandeid, mis on oma olemuselt hägusemad või ebatäpsemad (ingl. k. "messier"), nagu ülesanded päris elus tihti on.
 Nende järeldus oli, et kuigi mudelite tulemused olid hägusemate ülesannete kohta natuke kehvemad, jäi
 <a class="reference external" href="https://arxiv.org/pdf/2503.14499#page=31">üldine kasvutendents üle aja siiski püsima</a>.</p>
 <p>Kuigi METR hoiab salajastena täpsed testjuhud, on nad siiski avalikult kirjeldanud eri testide üldisi eesmärke.
@@ -284,13 +284,13 @@ ja vaadata seda aeg-ajalt, et näha, kuidas AI valdkond areneb. METR on lubanud 
 või kui nad lisavad uusi teste enda andmestikku.</p>
 <p>Veel üks hea põhjus lugeda METR ajahorisondi lehte on see, et seal
 on ära toodud "<a class="reference external" href="https://metr.org/time-horizons/#frequently-asked-questions">Korduma Kippuvad Küsimused</a>"
-(i.k. <em>Frequently Asked Questions</em>), mis täpsustavad mitmeid olulisi aspekte antud mõõdiku kohta.
+(ingl. k. <em>Frequently Asked Questions</em>), mis täpsustavad mitmeid olulisi aspekte antud mõõdiku kohta.
 Näiteks on seal ära toodud vastused sellistele küsimustele (soovitan vajadusel kasutada tõlget):</p>
 <ul class="simple">
 <li><p>Kas "ajahorisont" vastab ajavahemikule, mille jooksul AI agent saab tegutseda autonoomselt?</p></li>
 <li><p>Kas 8-tunnine ajahorisont tähendab, et AI saab automatiseerida kõiki töökohti?</p></li>
 <li><p>Miks mitte raporteerida ajahorisonti kõrgema edukuse taseme (näiteks 99%) juures?</p></li>
-<li><p>Kui te ütlete, et mudelil on 2-tunnine ajahorisont, kas see tähendab, et ta saab hakkama 50% kõigist 2-tunnistest ülesannetest, või seda,
+<li><p>Kui te ütlete, et mudelil on 2-tunnine ajahorisont, kas see tähendab, et ta saab hakkama 50% kõigi 2-tunniste ülesannetega või seda,
 et iga 2-tunnine ülesanne on 50% edukuse määraga?</p></li>
 </ul>
 <p>Oluline on ka täpsustada seda, et AI mudelid saavad ülesandeid lahendada agentselt selles mõttes, et nad saavad kutsuda teatud tööriistu, planeerida enda
