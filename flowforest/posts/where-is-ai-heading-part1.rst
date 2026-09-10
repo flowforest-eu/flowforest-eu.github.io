@@ -1,4 +1,4 @@
-.. title: Where is AI heading - part 1/3
+.. title: Where is AI heading - part 1/4
 .. slug: where-is-ai-heading-part1
 .. date: 2026-08-06 08:22:32 UTC+03:00
 .. tags: 
@@ -74,14 +74,14 @@ And at **80% success rate**:
 
 The following diagram shows the long-time trend of time horizon expanding over time (as of August 2026):
 
-.. image:: /images/task-length-linear.png
+.. image:: /images/part1/task-length-linear.png
    :alt: Time horizon diagram
 
 The main finding of METR is that the time horizon has been **doubling roughly every 4–7 months** and this trend has held from 2019 to 2026 (if anything,
 progress speed has even increased from 2023 onwards). This can been seen from the following graph (it is the same graph as previous, but now the vertical 
 axis has logarithmic scale - meaning that time horizon values on the vertical axis double after taking a fixed step upwards):
 
-.. image:: /images/task-length-log.png
+.. image:: /images/part1/task-length-log.png
    :alt: Time horizon diagram (logarithmic scale)
 
 I recommend you to play with the numbers yourself. To do this, go to `METR time horizons webpage <https://metr.org/time-horizons/>`_ and have a look

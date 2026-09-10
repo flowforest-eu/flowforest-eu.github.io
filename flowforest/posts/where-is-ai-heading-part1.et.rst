@@ -1,4 +1,4 @@
-.. title: Ülevaade AI arengusuundadest - osa 1/3
+.. title: Ülevaade AI arengusuundadest - osa 1/4
 .. slug: where-is-ai-heading-part1
 .. date: 2026-08-10 08:22:32 UTC+03:00
 .. tags: 
@@ -80,7 +80,7 @@ kaua **inimspetsialistil kulub mingi ülesande täitmiseks** (mitte sellele, kui
 Järgnev graafik näitab, kuidas ajahorisont on arenenud aja jooksul (2026. augusti seisuga). Horisontaal-teljel on mudeli avaldamise aeg ja 
 vertikaal-teljel mudeli ajahorisondi pikkus. Valitud on 50% edukuse tase.
 
-.. image:: /images/task-length-linear.png
+.. image:: /images/part1/task-length-linear.png
    :alt: Aja horisondi diagramm
 
 Põhiline järeldus METR uurimistööst oli see, et mudelite ajahorisont on laias laastus **kahekordistunud iga 4-7 kuuga** ning et see trend on olnud püsiv 
@@ -88,7 +88,7 @@ aastast 2019 kuni 2026-ni (kuigi tundub, et aastast 2023 alates on progress kiir
 Seda on kõige parem näha järgnevast graafikust (see on sisuliselt sama graafik, kui eelmine; ent nüüd on vertikaaltelje skaala logaritmiline - see tähendab,
 et ajalised väärtused vertikaalteljel kahekordistuvad iga teatud sammu tagant):
 
-.. image:: /images/task-length-log.png
+.. image:: /images/part1/task-length-log.png
    :alt: Aja horisondi diagramm (logaritmiline skaala)
 
 Ma soovitan ise katsetada ja uurida neid andmeid. Seda saab teha `METR veebilehel <https://metr.org/time-horizons/>`_ (kõige esimene graafik seal lehel).
