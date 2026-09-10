@@ -1,5 +1,5 @@
 .. title: Where is AI heading - part 2/4: History of AI
-.. slug: where-is-ai-heading-part-2-4-narrow-ai
+.. slug: where-is-ai-heading-part-2-of-4-narrow-ai
 .. date: 2026-09-10 20:17:59 UTC+03:00
 .. tags: 
 .. category: 
@@ -87,9 +87,10 @@ There are 120 million rods and 6 million cones in the human eye.
 The raw image captured by those rods and cones is heavily compressed before it ever leaves the eye. 
 The Retinal ganglion cells (see the above image) act like a biological image compression algorithm.
 
-The optic nerve consists of ~1 million optic nerve fibers. You might think of it as an 1.2 megapixel camera cable.
+The optic nerve consists of ~1.2 million optic nerve fibers. You might think of it as an 1.2 megapixel camera cable.
 However, human vision seems much better than a picture taken by a 1.2 megapixel camera, and there are some 
 `absolutely fascinating reasons behind it <https://clippingexpertasia.com/blog/human-eye-resolution-explained-megapixels-fps-vision>`_.
++++
 
 After reaching the optic nerve, `information is processed <https://en.wikipedia.org/wiki/Visual_system#System_overview>`_ 
 via a series of neural layers:
@@ -123,10 +124,15 @@ was popularized by David Rumelhart, Geoffrey Hinton & Ronald Williams. This is o
 John Hopfield and Geoffrey Hinton received `Nobel Prize in Physics in 2024 <https://www.nature.com/collections/ehbjaifcgc>`_.
 Training such multi-layer networks is nowadays known as **deep learning**.
 
+.. image:: /images/part2/deep_neural_network.png
+   :alt: A deep neural network.
+
+*A deep neural network. Source: KDNuggets*
+
 Computational capabilities continued to grow, and during the 2010s, the development of deep learning models gained 
 massive momentum.
 
-In 2009, Fei-Fei Li and her team introduced _ImageNet_ - a groundbreaking dataset containing over 14 million images across
+In 2009, Fei-Fei Li and her team introduced **ImageNet** - a groundbreaking dataset containing over 14 million images across
 20,000 categories, annotated with exceptionally low error rates.
 
 Previously, the AI field focused primarily on designing better algorithms that were trained on small datasets. 
@@ -152,8 +158,8 @@ as information moves through increasing number of layers,
 .. image:: /images/part2/clownfish.jpg
    :alt: A clownfish.
 
-| *A clownfish. Before introduction of CNNs, there was no way to classify*
-| *such complex objects. Source: Aquarium of the Pacific*
+| *A clownfish. CNNs provide an efficient algorithm to classify such complex objects.*
+| *Source: Aquarium of the Pacific*
 
 ==================================
 What has deep learning given us?
