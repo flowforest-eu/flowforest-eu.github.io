@@ -11,7 +11,7 @@
 .. raw:: html
 
     <embed>
-      <p class="show_if_not_teaser"; style="display:none;"><em>This is the first part of a 3-post series. See end of this post for a peek 
+      <p class="show_if_not_teaser"; style="display:none;"><em>This is the first part of a 4-post series. See end of this post for a peek 
       into the topics we will be covering later.</em></p>
       <p class="show_if_not_teaser"; style="display:none;"><strong>Note</strong>. <em>Most of the models we are discussing in this post are 
       LLMs (Large Language Models). We will say 'LLM' when speaking about
@@ -242,7 +242,7 @@ METR also has tons of other research as well on their webpage; additionally, the
 What's next?
 =====================
 
-The title of this post was "Where is AI heading - part 1/3". This is because while we focused on how coherence of LLMs
+The title of this post was "Where is AI heading - part 1/4". This is because while we focused on how coherence of LLMs
 is increasing over time, there are other fundamental shortcomings of LLMs that need to be explored as well:
 
 * even after all the progress, LLMs often fail in surprising ways at tasks that are trivial to humans;

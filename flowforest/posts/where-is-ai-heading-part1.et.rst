@@ -11,7 +11,7 @@
 .. raw:: html
 
     <embed>
-      <p class="show_if_not_teaser"; style="display:none;"><em>See postitus on esimene osa 3-osalisest seeriast, mis räägib AI arengusuundadest ja 
+      <p class="show_if_not_teaser"; style="display:none;"><em>See postitus on esimene osa 4-osalisest seeriast, mis räägib AI arengusuundadest ja 
       trendidest.</em></p>
       <p class="show_if_not_teaser"; style="display:none;"><strong>Märkus</strong>. <em>Enamus mudelitest, mida siin postituses käsitlen, on 
       LLM-d ("Large Language Model", eesti keeles "suur keelemudel"). Kasutan terminit "LLM", kui soovin rõhutada, et räägin just neist; 
@@ -264,7 +264,7 @@ Samas on LLM'del teisi olulisi puudujääke, mida on vaja lahata:
 * hoolimata sellest, et LLM'd on oluliselt edasi arenenud, jäävad nad tihti hätta üllatavate ülesannete juures, mis on inimestele väga lihtsad;
 * LLM'del esinevad "hallutsinatsioonid" - ja neil esineb tihti seda, et nad "eksivad enesekindlalt" ja ei suuda enda vigu tunnistada.
 
-Järgmistes postitustes keskendun nende kahe puudujäägi telgitagustesse. 
+Järgmistes postitustes süvenen nende kahe puudujäägi telgitagustesse. 
 Muuhulgas puudutan seda, kuhu võib see kõik viia inimkonna tervikuna - ning jagan enda mõtteid selle kohta, kas tulevik on "kivisse raiutud" või on meil 
 võimalik seda veel oluliselt kujundada oma tahte järgi.
 
