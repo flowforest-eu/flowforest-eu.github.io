@@ -201,15 +201,15 @@ improve or (opposite of improve) the model's capability to accuractely detect (+
 This goal was simple to state (I just did it in one sentence - the previous one ++), but getting the mathematical underpinnings correct for this
 has taken decades of research. The complexity is that since a change in a single weight in a single layer possibly affects each of the 
 layers after it (++), calculating the effect of changing that one weight requires calculating (++) how it exactly affects each of the subsequent layers.
-Mathematically, it uses concepts like differentation (measuring how a small change in a weight effects the goal function), 
-using the chain rule for differentation (to measure how the change propagates into the next layers), and backpropagation (making it possible to 
+Mathematically, it uses concepts like differentation(link) (measuring how a small change in a weight effects the goal function), 
+using the chain rule(link) for differentation (to measure how the change propagates into the next layers), and backpropagation(link) (making it possible to 
 calculate this for all layers efficiently by starting the calculation from the last layer and moving backwards layer by layer).
 In addition to all this being mathematically correct and efficient, it also needs to be efficient to compute in computers. This is where GPUs come to 
-play - they are computing hardware that is specifically optimize to carry out certain calculation in extremely high parallelity (++) (similarly how
+play - they are computing hardware that is specifically optimized(2w link) to carry out certain calculations in extremely high parallelity (++) (similarly how
 GPU speeds up the framerate when you (?++) play a computer game, by carrying out all of the complicated 3D graphics calculations in parallel).
 
 Just for illustration, I will attach here how the formula for updating weights looks in a CNN. Unless you have background in mathematics, this is just 
-to illustrate the complexity (or simplicity, depending on the perspective) of the formula for updating the weights (++):
+to illustrate how the formula for updating the weights looks like (++):
 
 (Formula)
 
