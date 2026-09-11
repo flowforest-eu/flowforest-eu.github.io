@@ -161,15 +161,112 @@ as information moves through increasing number of layers,
 | *A clownfish. CNNs provide an efficient algorithm to classify such complex objects.*
 | *Source: Aquarium of the Pacific*
 
+======================================
+But how does this learning happen?
+======================================
+
+++
+input is fixed. 
+mathematical operations done for each layer are fixed (pre-determined by machine learning experts; exact formulas are different for various models).
+what is unknown is the combination of weights that produces the result that we want (e.g., a model that can reliably detect clownfishes).
+
+initially, all weights are assigned completely randomly, so the model produces complete non-sense. 
+It might assert that random noise is a clownfish.
+Analogue (++) in human brain.(+) 
+
+In a brain of a .. old kid, there is a huge amount of neurons ... but they are not yet so strongly connected ..+++
+Through learning (scientist know?), ...
+
+Similarly, at each training step, weights in the model are changed so that the model produces more correct outputs.
+For this to happen, there has to be some way to measure what exactly is "more correct".
+This is where the ImageNet dataset comes in - they have previously defined what are the correct labels (categories?++)
+that the model should ideally detect. This is also why the purity (?++) of the dataset is so crucial. In AI, this principle is 
+called "garbage in, garbage out" (meaning that if training data contains errors, AI models will be capped in their learning capabilities
+and will likely echo the biases in the input data).
+
+Lets look at how this works in practice with a simple example.
+Lets say (++) that a CNN model has been trained that detects clownfishes with 99.9999% accuracy (in practice, such precision is probably impossible, but 
+lets (++) make this assumption anyway for the argument's sake). Now lets (++) go and change those parameters of the model that rely on detecting 
+clownfishes by finding features of orange fins and orange stripes on the body - lets (++) change the model to expect those fins and stripes to be blue
+instead (again, this can be done by changing a small amount, perhaps 5-100 of the parameter weights of the ... parameters total). 
+With this simple change, the accuracy of the model will drop to be near zero (or be very small).
+
+++ we changed values from 1 to -1.
+
+++ goal function
+
+Now we want to run that botched (++) model again through the training (improve the weights).
+How the model works? It calculates (for each of the .. weights) a formula, which represents how a change of that specific parameter would
+improve or (opposite of improve) the model's capability to accuractely detect (++read more) the desired object categories.
+This goal was simple to state (I just did it in one sentence - the previous one ++), but getting the mathematical underpinnings correct for this
+has taken decades of research. The complexity is that since a change in a single weight in a single layer possibly affects each of the 
+layers after it (++), calculating the effect of changing that one weight requires calculating (++) how it exactly affects each of the subsequent layers.
+Mathematically, it uses concepts like differentation (measuring how a small change in a weight effects the goal function), 
+using the chain rule for differentation (to measure how the change propagates into the next layers), and backpropagation (making it possible to 
+calculate this for all layers efficiently by starting the calculation from the last layer and moving backwards layer by layer).
+In addition to all this being mathematically correct and efficient, it also needs to be efficient to compute in computers. This is where GPUs come to 
+play - they are computing hardware that is specifically optimize to carry out certain calculation in extremely high parallelity (++) (similarly how
+GPU speeds up the framerate when you (?++) play a computer game, by carrying out all of the complicated 3D graphics calculations in parallel).
+
+Just for illustration, I will attach here how the formula for updating weights looks in a CNN. Unless you have background in mathematics, this is just 
+to illustrate the complexity (or simplicity, depending on the perspective) of the formula for updating the weights (++):
+
+(Formula)
+
+In the example of we had of a botched model for detecting clownfishes that suddenly expected them to be blue & white striped (++).
+This update mechanic will correctly deduce that out of all of the .. weights, there are a small number of weights that, when modified, will improve the
+model performance. Presumably these should be exactly the weights that we botched.
+
+Now, it won't just go in one big step and change the values back from -1 to 1. If the model did that, the training process would be extremely unstable
+and chaotic, since the values would jump around a lot. Instead, it will move the values towards the right direction by a small amount (lets say 0.01).
+In the next training step, it will do the same. After 100 (or slightly more) steps, the weights will be approximately at 0, and the model will expect 
+(correct color++), which will cause the model to be a bit better at predicting the clownfishes. After running the training for 1000 more steps, 
+the weights will converge back at 0.99 (++?) and the model will again reliably detect clownfishes with high accuracy.
+
+I hope this example helped to explain how the model, which starts from making random guesses, starts to first detect lines, then textures, then ..,
+until it eventually has learned to detect all of those individual features and learns how these together form a clownfish (keep in mind that it is 
+not just detecting the features itself, but also their relative positions - a clownfish with a head and tail swapped is not a clownfish!).
+
+Crucially, it is not sufficient to just provide images of clownfishes in the training set - then the model would just learn to say that every
+image contains a clownfish. It is crucial to provide images *not* containing clownfishes (labelled correspondingly) so that the model starts to 
+learn what *doesn't* work. 
+
+As far as we know, something similar (++) happens when human babies learn to "see". ..++++
+Curiously, humans do not start from a blank state like computers do - there are some things that are hard-wired to our brains by genetics.
+Examples of that include ...+++
+
+========================================
+How does this CNN actually look like?
+========================================
+
+++ humans choose model architecture
+++ for CNN, this looks like this: ... +++
+
 ==================================
 What has deep learning given us?
 ==================================
 
-+++
+As you see from the previous example, the training of a model does not involve manually crafting any of the features (detection of shapes, textures, or colors);
+this all are learned (or one might say - "found") in the space of all possible combinations by a stochastic (probabilistic. keep??++) process.
+For this to work, humans must do the following:
+
+* Collect sufficient input data and classify it with high accuracy;
+* Define the goal function;
+* Choose a model architecture (e.g., CNN);
+* Run the training process.
+
+All of the steps above are crucial, but I would like to high-light the importance of choosing an appropriate goal function.
+There are some fields where defined goal functions is easier, since the fields themselves are more precise (mathematics, programming),
+and some fields where defining goal functions is somewhat harder, since the field is less precise in its terms (++?? or avoid).
+Spoiler alert: this is one of the reasons that LLMs have made enormous progress in some of the fields that where previously considered
+the hardest hills to conquer (e.g. mathematics), while the progress has not been equally great in some other areas (++?? or avoid).
+
+Lets look briefly at what deep learning has given us:
 
 AlphaGo
 AlphaFold
 
+++??
 AlphaGo - by DeepMind (..)
 * AlphaFold - by DeepMind (..)
 * Image classifier - ...
