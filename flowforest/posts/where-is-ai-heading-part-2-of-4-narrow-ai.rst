@@ -15,6 +15,9 @@ a lot of people think that AI is synonymous with chatbots; the truth is that the
 decades to describe very different models and approaches - and those different approaches have very different implications 
 for our society, both in terms of risks and how they might affect our future.
 
+**Important note**: if you scroll through this post, you will see some complex-looking images. Don't be put away (++) by them!
+Those are here for illustrative purposes - I will do my best to explain everything in simple and understandable terms.
+
 +++ take few words from here:
 In this blog post, we will dig into narrow AI models; in the next one, we will focus on LLMs (+? general AI systems? generative AI models?) again. There are three reasons for this:
 * A lot of the fundamental principles are the same for both; however, it is possible to give much better intuition by first explaining some of the more traditional, narrow AI systems first;
