@@ -8,22 +8,37 @@
 .. type: text
 .. status: draft
 
+..
+   Improve. Put to italics?
+
 Initially I planned to use this 2nd post to dive straight into Large Language Models (LLMs). 
 But then I realized that since my goal is to educate people and start from the basics, it would be 
 much more useful to first give some historical context. After all, one of the issues in public debate about AI is that
 a lot of people think that AI is synonymous with chatbots; the truth is that the term of "AI" has been used over many 
 decades to describe very different models and approaches - and those different approaches have very different implications 
-for our society, both in terms of risks and how they might affect our future.
+upsides (what they are capable of) and downsides (environmental cost, risks).
+
+..
+   Kas ma tahan üldse sõnastada nii? Pigem vist mitte.
+   Äkki ikka alustada "narrow AI" ja "general AI" defineerimisega?
+   Ja kuidagi anda motivatsiooni, miks general AI arusaamiseks on hea alustada kitsast AI-st.
+   Varasem tekst: for our society, both in terms of risks and how they might affect our future.
 
 **Important note**: if you scroll through this post, you will see some complex-looking images. Don't be put away (++) by them!
 Those are here for illustrative purposes - I will do my best to explain everything in simple and understandable terms.
 
-+++ take few words from here:
-In this blog post, we will dig into narrow AI models; in the next one, we will focus on LLMs (+? general AI systems? generative AI models?) again. There are three reasons for this:
-* A lot of the fundamental principles are the same for both; however, it is possible to give much better intuition by first explaining some of the more traditional, narrow AI systems first;
-* In common discourse about AI models and their implications for the society, narrow and general AI models are often lumped together, which creates confusion and makes it harder to have constructive dialogue with the public;
-* The security properties for narrow and general AI models are vastly different, with narrow AI systems being much safer by their nature (you do not need to worry about an image classification network causing malicious actions in your computer network).
-+++
+..
+   mõelda - see, et ma pean seda ütlema, pole ka hea. Sisu peaks tõmbama ise inimesi.
+   Sisu tase peaks olema, et see tõmbab inimesi ise lugema. Et oleks soov lugeda. Et ei väsita. Et on arusaadav iga hetk, miks ta
+   loeb ja miks tal seda vaja on.
+
+..
+   +++ take few words from here:
+   In this blog post, we will dig into narrow AI models; in the next one, we will focus on LLMs (+? general AI systems? generative AI models?) again. There are three reasons for this:
+   * A lot of the fundamental principles are the same for both; however, it is possible to give much better intuition by first explaining some of the more traditional, narrow AI systems first;
+   * In common discourse about AI models and their implications for the society, narrow and general AI models are often lumped together, which creates confusion and makes it harder to have constructive dialogue with the public;
+   * The security properties for narrow and general AI models are vastly different, with narrow AI systems being much safer by their nature (you do not need to worry about an image classification network causing malicious actions in your computer network).
+   +++
 
 =========================================
 Inspiration for AI - human brains
@@ -40,11 +55,11 @@ Some interesting facts about neurons in our brains and bodies:
 
 * An adult human brain contains approximately `80 billion neurons <https://academic.oup.com/brain/article/148/3/689/7909879?login=false>`_.
 * A single neuron may be connected to 1000-10000 other neurons.
-* Neurons form networks that encode memories, shape personalities, drive decisions, and process the sensations of touch, taste, sight, smell, and sound.
+* Neurons form networks that encode memories, shape personalities, drive decisions, and process the sensations of touch, taste, sight, smell, and sound (++link).
 * The `longest neuron in human body <https://en.wikipedia.org/wiki/Sciatic_nerve>`_ can be over a meter long (from bottom of spine to toes). However, most neurons in brain are less than a millimeter in length.
 
 In 1957, Frank Rosenblatt came up with `perceptron <https://www.simplilearn.com/tutorials/deep-learning-tutorial/perceptron>`_,
-a simplified model for a single neuron. Just for illustrative purposes, compare a neuron in a brain and an 
+a simplified mathematical model of a neuron. Just for illustrative purposes, compare a neuron in a brain and an 
 artificial neuron:
 
 .. image:: /images/part2/neuron2.png
@@ -238,25 +253,64 @@ As far as we know, something similar (++) happens when human babies learn to "se
 Curiously, humans do not start from a blank state like computers do - there are some things that are hard-wired to our brains by genetics.
 Examples of that include ...+++
 
-========================================
-How does this CNN actually look like?
-========================================
+================================================
+Do we fully understand how those models work?
+================================================
 
-++ humans choose model architecture
-++ for CNN, this looks like this: ... +++
+In order to answer the question "do we fully understand how those models work?" we must separate two things:
 
-==================================
-What has deep learning given us?
-==================================
++++ change to not be 2-point list.
+
+* What is the model's architecture? (this we fully understand, since scientists hand-picked it ++++). OR_PHRASE: how result is calculated +++
+* How exactly does the model arrive at the conclusion? (++)
+
+Regarding just following through the calculations - entirely doable (++).
+There is a website devoted to letting one see what happens inside the model when a given input image is fed into it.
+It is called `CNN explainer <https://poloclub.github.io/cnn-explainer/>`_, and it allows you to export a 
+
+For those that want to have a more visual understanding of how CNNs work, there is a resource called 
+very small CNN (called Tiny VGG) that was created solely for educational purposes.
+It is only capable of processing tiny images into one of 10 pre-defined categories. 
+It is possible to choose the input image in the top of the screen; 
+and it is possible to click on any of the layers to see more details about what happens at that exact moment of time.
+
+For any larger model (like original AlexNet), it is much harder to make sense of what the model exactly does. Does it rely more on texture or shape?
+Are there ways to fool it? (++w) A good example of it is regarding a model X (++) that was meant to classify cows. Instead, it learned to detect grass
+(since grass is much easier to detect) and labelled any image with grass a "cow". So, how do scientist evaluate a model to see if it actually has 
+learned what is was meant to? (instead of taking shortcuts) (++).
+
+One technique that researchers use is `Saliency Map <https://en.wikipedia.org/wiki/Saliency_map>`_. 
+It is a technique for high-lighting the pixels in the input image that were most strongly used in the 
+process of assigning the category "cow". In our example, it would high-light the pixels containing grass, which would inform the researchers of the 
+problem. Researchers could then fix it by enlarging the dataset by images of grass pastures without any cows.
+
+There is another very interesting technique for visually understanding what a given neuron (or a group of neurons) in the neural net reacts to.
+For this, an image with random noise is taken. After that, it is gradually modified so that it becomes an image that makes the previously chosen
+neuron to be maximally active. This often produces some quite psychedelic images that are filled with the object that this neuron reacts to.
+In the next image, we can see a feature visualisation for a neuron that activates for certain type of electron displays.
+
+.. image:: /images/part2/feature_visualisation_displays.png
+   :alt: Example of a feature visualisation.
+
+| *Example of a feature visualisation. Source: Distill*
+
+This page allows to `navigate through feature visualisations <https://distill.pub/2017/feature-visualization/appendix/>`_ of a CNN model
+called GoogLeNet. It can be observed that initial layers (3a and 3b) correspond to simple textures, whereas later layers correspond to more 
+complicated concepts. For each layer, there are visualisations that maximally excite that neuron ("positive channel") and visualisations that 
+least excite that neuron ("negative channel"). More explanations can be found `here <https://distill.pub/2017/feature-visualization/>`_.
+
+=========================================
+What else has deep learning given us?
+=========================================
 
 As you see from the previous example, the training of a model does not involve manually crafting any of the features (detection of shapes, textures, or colors);
 this all are learned (or one might say - "found") in the space of all possible combinations by a stochastic (probabilistic. keep??++) process.
-For this to work, humans must do the following:
+For this to work, researchers must do the following:
 
-* Collect sufficient input data and classify it with high accuracy;
-* Define the goal function;
-* Choose a model architecture (e.g., CNN);
-* Run the training process.
+* Collect sufficient **input data**, classified with sufficiently high accuracy;
+* Define the **goal function**;
+* Choose a **model architecture** (e.g., CNN);
+* Run the **training process**.
 
 All of the steps above are crucial, but I would like to high-light the importance of choosing an appropriate goal function.
 There are some fields where defined goal functions is easier, since the fields themselves are more precise (mathematics, programming),
@@ -264,24 +318,101 @@ and some fields where defining goal functions is somewhat harder, since the fiel
 Spoiler alert: this is one of the reasons that LLMs have made enormous progress in some of the fields that where previously considered
 the hardest hills to conquer (e.g. mathematics), while the progress has not been equally great in some other areas (++?? or avoid).
 
-Lets look briefly at what deep learning has given us:
+After 2012 AlexNet, deep learning saw a avalanche (++) of new interest (++). Progress was made (using deep learning techniques ++)
+in speech recognition, image generation, image classification, machine translation. 
 
-AlphaGo
-AlphaFold
+(++) to give feeling of the avalanche.
 
-++??
-AlphaGo - by DeepMind (..)
-* AlphaFold - by DeepMind (..)
-* Image classifier - ...
-* Hand-writing detection - ...
-* Audio detection - ...
-* Transcribing - ...
-* Translating - ...
-* Playing video games - ...
-* +++
-* good to add examples from medicine
+One of the major labs of that area was DeepMind (founded in .. by Demis Hassabis, acquired in .. by Google). I would like to mention 3 
+areas where they successfully applied deep learning methods.
+
+.. raw:: html
+
+    <embed>
+         <h3>Playing 1980s computer games</h3>
+    </embed>
+
+In 2014, Google Deepmind published research (++ https://deepmind.google/blog/deep-reinforcement-learning/) 
+about a model (**DQN** - "deep Q-learning") that could learn to play a wide range of classical 1980s computer games 
+(such as Pong, Breakout or Space Invaders) without given *any description* about how those games work.
+Instead, they used deep learning methods, letting the model learn by trying to play the games and getting feedback by the game's score
+at any given time. Model could only interact with the game by choosing which keys to use at any given time.
+
+Initially, the model started out by "pressing" random keys at random times. Throughout the training, models
+accidentally stumbled on tactics which increased the chances of acheiving a high score; these tactics got reinforced.
+This video (++link) .. (++ fascinatingly describes the process?).
+
+* Input data: game screen (pixels shown on the screen) at any given time moment.
+* Goal function: score of the game.
+
+.. raw:: html
+
+    <embed>
+         <h3>AlphaGo</h3>
+    </embed>
+
+123
+
+.. raw:: html
+
+    <embed>
+         <h3>AlphaFold</h3>
+    </embed>
+
+123
+
+====================================
+Turing award in .. (Nobel ..)
+====================================
+
+In 2014, GAN (Generative adversarial network) .. was introduced by Ian Goodfellow and others (under supervision of Yoshua Bengio) 
+... - one network (discriminator) tries to detect AI-generated images, 
+another network tries to fool it. At the same time, the discriminator also keeps learning and improving.
+This creates an "arms race" between the two models. 
+
++++?
+Yoshua Bengio, Geoffrey Hinton and Yann LeCun were awarded the 2018 Turing Award for 
+"conceptual and engineering breakthroughs that have made deep neural networks a critical component of computing".
+https://awards.acm.org/about/2018-turing
+
++++?
+While the use of artificial neural networks as a tool to help computers recognize patterns and simulate human 
+intelligence had been introduced in the 1980s, by the early 2000s, LeCun, Hinton and Bengio were among a small group 
+who remained committed to this approach.
+
++++?
+Though their efforts to rekindle the AI community’s interest in neural networks were initially met with skepticism, 
+their ideas recently resulted in major technological advances, and their methodology is now the dominant paradigm in the field.
+(2018)
+
++++? https://awards.acm.org/about/2018-turing
+In addition to the products we use every day, new advances in deep learning have given scientists powerful new tools—in areas 
+ranging from medicine, to astronomy, to materials science.”
 
 +++
+weaknesses of deep learning models about text:
+Key Concept: Contrast old sequential models (like RNNs/LSTMs that read word-by-word and forgot the beginning of a long essay) with 
+Transformers, which look at an entire block of text all at once.
+
+Yann LeCun
+In the late 1980s, while working at the University of Toronto and Bell Labs, LeCun was the first to train a convolutional 
+neural network system on images of handwritten digits. 
+<-- lisan ülesse?
+
+Yann LeCun
+backpropagation
+<-- lisan ülesse
+
+===============
+Summary (++)
+===============
+
+High-lights: 
+
+..
+   https://timeline.knightlab.com/
+
+++ AlphaStar master StarCraft II.
 
 =========================
 Narrow AI vs general AI
@@ -298,6 +429,24 @@ Some of the functions of narrow AI models have been taken over (superceded by) L
 TODO: Read about image classifiers, ... etc. various examples. Have they been beaten by LLMs altogether?
 
 ?? +++?? image: Venn-diagram type of different terms and taxonomy. Transformer. General. Narrow. LLM. Video generation. Audio generation. Generative AI.
+
+Narrow AI has also given a wide range of medical breakthroughs:
++++
+
+==============
+Final words
+==============
+
+Although neural networks are inspired by neural structures in brains, there are limits to that analogy, which are important to keep in mind. (++)
+Also, machine learning experts are not trying to emulate or replicate human brains exactly - instead, they try to build on neural nets that have 
+previously worked, and try to improve and find algorithms that work well on machines (GPUs and all). (++++++)
+
+Ways how brains are different from artificial neural nets: (++)
+
+* Much more complex
+* Biological, quantum effects
+* Neural networks in brains often run in loops (most neural nets do not loop; but there are `exceptions <https://en.wikipedia.org/wiki/Recurrent_neural_network>`_)
+* Learning happens completely differently
 
 ++ In next post: ...
 
