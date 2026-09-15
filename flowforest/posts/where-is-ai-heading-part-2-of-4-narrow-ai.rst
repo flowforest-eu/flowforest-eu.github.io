@@ -8,57 +8,52 @@
 .. type: text
 .. status: draft
 
-..
-   Improve. Put to italics?
-
 Initially I planned to use this 2nd post to dive straight into Large Language Models (LLMs). 
-But then I realized that since my goal is to educate people and start from the basics, it would be 
-much more useful to first give some historical context. After all, one of the issues in public debate about AI is that
-a lot of people think that AI is synonymous with chatbots; the truth is that the term of "AI" has been used over many 
-decades to describe very different models and approaches - and those different approaches have very different implications 
-upsides (what they are capable of) and downsides (environmental cost, risks).
+But the more I thought about how to best explain LLMs, the more I realized that it is much easier to 
+explain the basic concepts on the basis of previous AI systems (++). In particular, models related
+to image classification are easy to intuitively grasp and they are very illustrative for concepts that
+we will need later on. On the way, we will touch a bit on historical progress and how we have gotten to 
+the point that we are in today.
+
+The following timeline high-lights some of the key events in the history of AI:
 
 ..
-   Kas ma tahan üldse sõnastada nii? Pigem vist mitte.
-   Äkki ikka alustada "narrow AI" ja "general AI" defineerimisega?
-   Ja kuidagi anda motivatsiooni, miks general AI arusaamiseks on hea alustada kitsast AI-st.
-   Varasem tekst: for our society, both in terms of risks and how they might affect our future.
+   https://timeline.knightlab.com/
+
+..
+   ++ AlphaStar master StarCraft II.
 
 **Important note**: if you scroll through this post, you will see some complex-looking images. Don't be put away (++) by them!
 Those are here for illustrative purposes - I will do my best to explain everything in simple and understandable terms.
-
-..
-   mõelda - see, et ma pean seda ütlema, pole ka hea. Sisu peaks tõmbama ise inimesi.
-   Sisu tase peaks olema, et see tõmbab inimesi ise lugema. Et oleks soov lugeda. Et ei väsita. Et on arusaadav iga hetk, miks ta
-   loeb ja miks tal seda vaja on.
-
-..
-   +++ take few words from here:
-   In this blog post, we will dig into narrow AI models; in the next one, we will focus on LLMs (+? general AI systems? generative AI models?) again. There are three reasons for this:
-   * A lot of the fundamental principles are the same for both; however, it is possible to give much better intuition by first explaining some of the more traditional, narrow AI systems first;
-   * In common discourse about AI models and their implications for the society, narrow and general AI models are often lumped together, which creates confusion and makes it harder to have constructive dialogue with the public;
-   * The security properties for narrow and general AI models are vastly different, with narrow AI systems being much safer by their nature (you do not need to worry about an image classification network causing malicious actions in your computer network).
-   +++
 
 =========================================
 Inspiration for AI - human brains
 =========================================
 
-Humans have always been fascinated by how our brains work, and as our understanding of it evolved, scientists
+Humans have always been fascinated by how our brains work, and as our understanding of the brain evolved, scientists
 started thinking about whether it would one day be possible to imitate the brain artificially. 
+Scientist (++ word repeat) have tried to understand, what are the fundamental building pieces of the brain and how do they 
+function together to give rise to such complex phenomena (++simplify) like vision, smell, or thinking?
 
-Neurons are essentially the computational building blocks of the brain: 
-they receive inputs (chemical and electrical) from multiple sources, combine them into a single signal, 
-and if the signal is strong enough, they fire an output that reaches the next neurons.
+One of the critical parts of the answer are cells called neurons. Together, neurons form networks (++ consisting of millions) that encode memories, 
+shape personalities, drive decisions, and process the sensations of touch, taste, sight, smell, and sound (++link).
 
 Some interesting facts about neurons in our brains and bodies:
 
 * An adult human brain contains approximately `80 billion neurons <https://academic.oup.com/brain/article/148/3/689/7909879?login=false>`_.
 * A single neuron may be connected to 1000-10000 other neurons.
-* Neurons form networks that encode memories, shape personalities, drive decisions, and process the sensations of touch, taste, sight, smell, and sound (++link).
 * The `longest neuron in human body <https://en.wikipedia.org/wiki/Sciatic_nerve>`_ can be over a meter long (from bottom of spine to toes). However, most neurons in brain are less than a millimeter in length.
 
-In 1957, Frank Rosenblatt came up with `perceptron <https://www.simplilearn.com/tutorials/deep-learning-tutorial/perceptron>`_,
+Hundreds of millions such neurons together enable us to see. (++ make smoother)
+However, each individual neuron by itself is not that complicated.
+They carry out the following functions:
+
+* they receive inputs (chemical and electrical) from multiple sources;
+* they combine those inputs into a single signal;
+* if the signal is strong enough, they fire an output that reaches the next neuron (or neurons).
+
+Scientists working in this area thought about the fact (++) that an individual neuron is not that hard to describe mathematically.
+Building on that ide, in 1957, Frank Rosenblatt came up with `perceptron <https://www.simplilearn.com/tutorials/deep-learning-tutorial/perceptron>`_,
 a simplified mathematical model of a neuron. Just for illustrative purposes, compare a neuron in a brain and an 
 artificial neuron:
 
@@ -403,17 +398,6 @@ Yann LeCun
 backpropagation
 <-- lisan ülesse
 
-===============
-Summary (++)
-===============
-
-High-lights: 
-
-..
-   https://timeline.knightlab.com/
-
-++ AlphaStar master StarCraft II.
-
 =========================
 Narrow AI vs general AI
 =========================
@@ -432,6 +416,10 @@ TODO: Read about image classifiers, ... etc. various examples. Have they been be
 
 Narrow AI has also given a wide range of medical breakthroughs:
 +++
+
+..
+   Add? In common discourse about AI models and their implications for the society, narrow and general AI models are often lumped together, which creates confusion and makes it harder to have constructive dialogue with the public;
+   Add? The security properties for narrow and general AI models are vastly different, with narrow AI systems being much safer by their nature (you do not need to worry about an image classification network causing malicious actions in your computer network).
 
 ==============
 Final words
