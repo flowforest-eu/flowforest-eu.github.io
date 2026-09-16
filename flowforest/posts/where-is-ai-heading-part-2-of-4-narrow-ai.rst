@@ -105,16 +105,28 @@ However, human vision seems much better than a picture taken by a 1.2 megapixel 
 `absolutely fascinating reasons behind it <https://clippingexpertasia.com/blog/human-eye-resolution-explained-megapixels-fps-vision>`_.
 +++
 
-After reaching the optic nerve, `information is processed <https://en.wikipedia.org/wiki/Visual_system#System_overview>`_ 
-via a series of neural layers:
+After reaching the optic nerve, information is processed 
+via a series of neural layers. Here is a rather simplified description of how the visual information is processed in the brain
+(`see here <https://en.wikipedia.org/wiki/Visual_system#System_overview>`_ for a more detailed overview):
 
-* LGN layer - organizes visual information;
-* V1 layer - detects low-level features: orientation, edges, and lines;
-* V2/V3 layer - combines simple edges into basic shapes and textures;
-* V4 layer - processes complex shapes and geometric forms;
-* IT cortex (1-2 layers) - detects whole objects, faces, and abstract concepts (e.g. reckognizing a dog, a car, or a number).
+1. layer: organizes visual information (technically: "LGN layer");
+2. layer: detects low-level features: orientation, edges, and lines (technically: "V1 layer");
+3. layer: combines simple edges into basic shapes and textures (technically: "V2/V3 layer");
+4. layer: processes complex shapes and geometric forms (technically: "V4 layer");
+5. layer: detects whole objects, faces, and abstract concepts, e.g. reckognizing a dog, a car, or a number (technically, 1 or 2 layers: "IT cortex").
 
-The main reason that I list those layers here is that it illustrates an absolutely crucial point for machine learning: 
+..
+   ++ fact-check me
+
+.. raw:: html
+
+    <embed>
+        <p style="font-size: 0.8em;">Since I am not a neuroscientist, the above text may contain oversimplifications or errors. 
+        However, the general principle should still be still correct. The full picture involves the full description involves looping
+        effects, complicated time-based processes, and some layers having multiple functions.
+    </embed>
+
+This list of layers and information through them illustrates an absolutely crucial point for machine learning: 
 the more layers there are, the more complicated relations can be observed from the input data. However, increasing the number of layers also
 increases the training time.
 
@@ -126,15 +138,18 @@ Early research into neural networks (in 1940s to 1960s) encountered significant 
 As mentioned above, those neural networks were primarily confined to single-layer architectures.
 Also, the research initially lacked a strong theoretical foundation.
 In 1969, a book called `Perceptrons <https://en.wikipedia.org/wiki/Perceptrons_(book)>`_ demonstrated that 
-single-layer networks were fundamentally limited, and noted that there is no known efficient way to train multi-layer networks.
+*single-layer networks are fundamentally limited* 
+(`mathematical explanation <https://apxml.com/courses/introduction-to-deep-learning/chapter-1-neural-network-foundations/perceptron-limitations>`_), 
+and noted that there is no known efficient way to train multi-layer networks.
 
 After that, there were several periods when the interest in AI research was considerably reduced. Such time periods are now
-called "AI winters" (see `here <https://news.sparkfun.com/7896>`_ for a more context and background).
+called "AI winters" (`see here <https://news.sparkfun.com/7896>`_ for more context and background).
 However, there were dedicated researchers who kept pushing the boundaries regardless.
 
-In 1986, backpropagation (technique for effectively training multi-layer networks)
-was popularized by David Rumelhart, Geoffrey Hinton & Ronald Williams. This is one of the reasons why 
-John Hopfield and Geoffrey Hinton received `Nobel Prize in Physics in 2024 <https://www.nature.com/collections/ehbjaifcgc>`_.
+In 1986, a technique for effectively training multi-layer networks (called **backpropagation**) was popularized by 
+David Rumelhart, Geoffrey Hinton & Ronald Williams. 
+This is one of the reasons why John Hopfield and Geoffrey Hinton received 
+`the Nobel Prize in Physics in 2024 <https://www.nature.com/collections/ehbjaifcgc>`_.
 Training such multi-layer networks is nowadays known as **deep learning**.
 
 .. image:: /images/part2/deep_neural_network.png
@@ -144,6 +159,13 @@ Training such multi-layer networks is nowadays known as **deep learning**.
 
 Computational capabilities continued to grow, and during the 2010s, the development of deep learning models gained 
 massive momentum.
+
+..
+   peaks ütlema rohkem: võimalused arenesid, aga oli vähe, kes tegelesid. see ei olnud "mainstream". Aasta ~2010 paiku tuli läbimurre
+   ootamatust kohast. 
+   "The field has always been more of an exploration than proving. People who have been in the field for a long time assume something;
+   then someone comes who tries something different, and the results can be incredible if the person is at the right time and place with
+   the right idea."
 
 In 2009, Fei-Fei Li and her team introduced **ImageNet** - a groundbreaking dataset containing over 14 million images across
 20,000 categories, annotated with exceptionally low error rates.
