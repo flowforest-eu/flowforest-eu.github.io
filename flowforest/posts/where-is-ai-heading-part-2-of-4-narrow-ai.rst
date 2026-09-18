@@ -73,6 +73,9 @@ The same basic framework powers the vast majority of neural networks used today 
 The main difference is how the third step works: modern networks swap out the strict "all-or-nothing" threshold for smooth activation 
 functions, which scale smaller values down rather than setting them to 0.
 
+..
+   last part is too complicated. best to just say "... which have better mathematical properties."
+
 A crucial feature of the perceptron was its ability to adjust its weights based on input data and target output.
 The process of weight adjustment is achieved through a learning algorithm, often referred to as the *perceptron learning rule*.
 This algorithm updates the weights to reduce the difference between the predicted output and the desired output, 
@@ -147,6 +150,14 @@ called "AI winters" (`see here <https://news.sparkfun.com/7896>`_ for more exact
 However, there were dedicated researchers who kept pushing the boundaries regardless. (//??)
 
 ++ backpropagation - make easily readable.
+.. 
+   Their idea was to start with the final layer of the network and work backward. For each connection in the final layer, 
+   the algorithm computes a gradient—a mathematical estimate of whether increasing the strength of that connection would push the network 
+   toward the right answer. Based on these gradients, the algorithm adjusts each parameter in the model’s final layer.
+   The algorithm then propagates these gradients backward to the second-to-last layer. A key innovation here is a formula—based on the 
+   chain rule from high school calculus—for computing the gradients in one layer based on gradients in the following layer. 
+   Using these new gradients, the algorithm updates each parameter in the second-to-last layer of the model. 
+   The gradients then get propagated backward to the third-to-last layer, and the whole process repeats once again.
 
 In 1986, a technique for effectively training multi-layer networks (called **backpropagation**) was popularized by 
 David Rumelhart, Geoffrey Hinton & Ronald Williams. (--?)
@@ -159,43 +170,25 @@ Training such multi-layer networks is nowadays known as **deep learning**.
 
 *A deep neural network. Source: KDNuggets*
 
+Neural networks had delivered some impressive results in the late 1980s and early 1990s. 
+But then progress stalled. By 2008, many researchers had moved on to approaches that seemed mathematically 
+more elegant.
 
-Over time, interest in AI research lessened, since there hadn't been any major breakthroughs.
-However, there were dedicated researchers who kept pushing the boundaries regardless. (//??)
-At the same time, computers continued to get more powerful (++).
+A breakthrough came from an unexpected place. A researcher named Fei-Fei Li 
+`had an intuition <https://arstechnica.com/ai/2024/11/how-a-stubborn-computer-scientist-accidentally-launched-the-deep-learning-boom/>`_ 
+that progress could be made if a more comprehensive training dataset was built. This was based on her own prior experience with
+machine learning. She was also inspired by an 
+`estimate <http://wexler.free.fr/library/files/biederman%20%281987%29%20recognition-by-components.%20a%20theory%20of%20human%20image%20understanding.pdf>`_ 
+by vision scientist Irving Biederman that the average person 
+recognizes roughly 30,000 different kinds of objects.    
+With just a few colleagues, limited funding, 2 years of hard work, and a lot of ingenuity, she managed to compile a dataset of 14 million images, 
+annotated into 22 000 categories, which she named **ImageNet**. She released it in 2009 and also launched a image classification 
+competition for AI systems.
 
-One of the bottlenecks at that time was that the datasets were not very large and their quality (++) was mediocre.
-Today, we know that quality of the datasets is one of the most important prerequisites for success; however, at that time
-it was not an obvious fact to everyone.
-
-However, this was the intuition of Fei-Fei Li
-
-In 2009,  and her team introduced **ImageNet** - a groundbreaking dataset containing over 14 million images across
-20,000 categories, annotated with exceptionally low error rates.
-
-
-Everyone was investing in approving the algorithms and increasing the training time or model size (??),
-but there weren't many people that thought that just increasing the amount and quality of the 
-training   
-
-, and during the 2010s, the development of deep learning models gained 
-massive momentum.
-
-..
-   peaks ütlema rohkem: võimalused arenesid, aga oli vähe, kes tegelesid. see ei olnud "mainstream". Aasta ~2010 paiku tuli läbimurre
-   ootamatust kohast. 
-   "The field has always been more of an exploration than proving. People who have been in the field for a long time assume something;
-   then someone comes who tries something different, and the results can be incredible if the person is at the right time and place with
-   the right idea."
-
-
-Previously, the AI field focused primarily on designing better algorithms that were trained on small datasets. 
-ImageNet pioneered a revolutionary shift: scaling up high-quality, correctly labeled data could itself catalyze 
-breakthroughs in machine learning algorithms. This insight `proved correct and reinvigorated interest 
-in the field as whole. <https://qz.com/1034972/the-data-that-changed-the-direction-of-ai-research-and-possibly-the-world>`_.
-
-In 2012, Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton won the ImageNet competition using an architecture based
-on the **Convolutional Neural Network** (**CNN**) that had 8 layers. It crushed the competition with an error rate of just 15% 
+In 2010 and 2011, winners of the ImageNet competition used techniques that were only slight improvements from the state of the art. 
+In 2012, Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton won the ImageNet competition using an AI system **AlexNet**, which based
+on an architecture called 
+**Convolutional Neural Network** (**CNN**). It crushed the competition with an error rate of just 15% 
 (winners of 2011 and 2010 had error rates of 26% and 28%, correspondingly), while the training time dropped from months to days. 
 This event was a huge catalyst for the following boom in deep learning (and AI in general).
 
@@ -209,10 +202,12 @@ as information moves through increasing number of layers,
 * later layers assemble whole object parts (e.g., fin of a clownfish);
 * final layers detect the object class (e.g., a clownfish).
 
+**Note**. The AI model AlexNet mentioned above had 8 layers and approximately 60 million parameters.
+
 .. image:: /images/part2/clownfish.jpg
    :alt: A clownfish.
 
-| *A clownfish. CNNs provide an efficient algorithm to classify such complex objects.*
+| *A clownfish. CNNs provide an efficient algorithm to classify such complex images.*
 | *Source: Aquarium of the Pacific*
 
 ======================================
