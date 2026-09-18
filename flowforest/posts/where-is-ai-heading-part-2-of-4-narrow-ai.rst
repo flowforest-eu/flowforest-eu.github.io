@@ -122,7 +122,7 @@ via a series of neural layers. Here is a rather simplified description of how th
 
     <embed>
         <p style="font-size: 0.8em;">Since I am not a neuroscientist, the above text may contain oversimplifications or errors. 
-        However, the general principle should still be still correct. The full picture involves the full description involves looping
+        However, the general principle should still be still correct. The full picture involves looping
         effects, complicated time-based processes, and some layers having multiple functions.
     </embed>
 
@@ -143,11 +143,13 @@ In 1969, a book called `Perceptrons <https://en.wikipedia.org/wiki/Perceptrons_(
 and noted that there is no known efficient way to train multi-layer networks.
 
 After that, there were several periods when the interest in AI research was considerably reduced. Such time periods are now
-called "AI winters" (`see here <https://news.sparkfun.com/7896>`_ for more context and background).
-However, there were dedicated researchers who kept pushing the boundaries regardless.
+called "AI winters" (`see here <https://news.sparkfun.com/7896>`_ for more exact historical background).
+However, there were dedicated researchers who kept pushing the boundaries regardless. (//??)
+
+++ backpropagation - make easily readable.
 
 In 1986, a technique for effectively training multi-layer networks (called **backpropagation**) was popularized by 
-David Rumelhart, Geoffrey Hinton & Ronald Williams. 
+David Rumelhart, Geoffrey Hinton & Ronald Williams. (--?)
 This is one of the reasons why John Hopfield and Geoffrey Hinton received 
 `the Nobel Prize in Physics in 2024 <https://www.nature.com/collections/ehbjaifcgc>`_.
 Training such multi-layer networks is nowadays known as **deep learning**.
@@ -157,7 +159,26 @@ Training such multi-layer networks is nowadays known as **deep learning**.
 
 *A deep neural network. Source: KDNuggets*
 
-Computational capabilities continued to grow, and during the 2010s, the development of deep learning models gained 
+
+Over time, interest in AI research lessened, since there hadn't been any major breakthroughs.
+However, there were dedicated researchers who kept pushing the boundaries regardless. (//??)
+At the same time, computers continued to get more powerful (++).
+
+One of the bottlenecks at that time was that the datasets were not very large and their quality (++) was mediocre.
+Today, we know that quality of the datasets is one of the most important prerequisites for success; however, at that time
+it was not an obvious fact to everyone.
+
+However, this was the intuition of Fei-Fei Li
+
+In 2009,  and her team introduced **ImageNet** - a groundbreaking dataset containing over 14 million images across
+20,000 categories, annotated with exceptionally low error rates.
+
+
+Everyone was investing in approving the algorithms and increasing the training time or model size (??),
+but there weren't many people that thought that just increasing the amount and quality of the 
+training   
+
+, and during the 2010s, the development of deep learning models gained 
 massive momentum.
 
 ..
@@ -167,8 +188,6 @@ massive momentum.
    then someone comes who tries something different, and the results can be incredible if the person is at the right time and place with
    the right idea."
 
-In 2009, Fei-Fei Li and her team introduced **ImageNet** - a groundbreaking dataset containing over 14 million images across
-20,000 categories, annotated with exceptionally low error rates.
 
 Previously, the AI field focused primarily on designing better algorithms that were trained on small datasets. 
 ImageNet pioneered a revolutionary shift: scaling up high-quality, correctly labeled data could itself catalyze 
