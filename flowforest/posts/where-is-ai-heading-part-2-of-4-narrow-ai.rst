@@ -91,17 +91,17 @@ layers of neurons between the inputs and the output. Contrast that with the
 where there are ~10 layers of neurons between the cells receiving the light impulses and the neurons 
 in the brain that correspond to a concept, like seeing a cat.
 
-.. image:: /images/part2/visual-system.jpg
+.. image:: /images/part2/visual-system.png
    :alt: Neural layers in the eye
 
-*The five neural layers in the eye. Source: Open Neuroscience Initiative*
+*The five neural layers in the eye. Source: Open Neuroscience Initiative (with my modifications)*
 
-Don't worry about all the technical terms on the picture. The main idea is that the light impulse stimulates the cones (in the daylight) 
-or the rods (in the night-time); then it passes through various layers of neurons, until it reaches the optic nerve.
+Although the image looks complicated, the main idea is fairly simple. Light enters the eye and excites either the cones (in the daylight) 
+or the rods (in the night-time). After that, it passes through various layers of neurons, until it reaches the optic nerve.
 
 There are 120 million rods and 6 million cones in the human eye. 
 The raw image captured by those rods and cones is heavily compressed before it ever leaves the eye. 
-The Retinal ganglion cells (see the above image) act like a biological image compression algorithm.
+For example, the retinal ganglion cells (marked on the above image) act like a biological image compression algorithm.
 
 The optic nerve consists of ~1.2 million optic nerve fibers. You might think of it as an 1.2 megapixel camera cable.
 However, human vision seems much better than a picture taken by a 1.2 megapixel camera, and there are some 
@@ -125,8 +125,9 @@ via a series of neural layers. Here is a rather simplified description of how th
 
     <embed>
         <p style="font-size: 0.8em;">Since I am not a neuroscientist, the above text may contain oversimplifications or errors. 
-        However, the general principle should still be still correct. The full picture involves looping
-        effects, complicated time-based processes, and some layers having multiple functions.
+        However, the general principle should still be still correct. The full description of how the visual cortex in the brain
+        also involving looping effects, complicated time-dependent processes, and some layers serving multiple functions. My description
+        is a simplification of a complex process.
     </embed>
 
 This list of layers and information through them illustrates an absolutely crucial point for machine learning: 
@@ -142,60 +143,47 @@ As mentioned above, those neural networks were primarily confined to single-laye
 Also, the research initially lacked a strong theoretical foundation.
 In 1969, a book called `Perceptrons <https://en.wikipedia.org/wiki/Perceptrons_(book)>`_ demonstrated that 
 *single-layer networks are fundamentally limited* 
-(`mathematical explanation <https://apxml.com/courses/introduction-to-deep-learning/chapter-1-neural-network-foundations/perceptron-limitations>`_), 
+(`mathematical explanation <https://apxml.com/courses/introduction-to-deep-learning/chapter-1-neural-network-foundations/perceptron-limitations>`_ ++), 
 and noted that there is no known efficient way to train multi-layer networks.
 
 After that, there were several periods when the interest in AI research was considerably reduced. Such time periods are now
 called "AI winters" (`see here <https://news.sparkfun.com/7896>`_ for more exact historical background).
-However, there were dedicated researchers who kept pushing the boundaries regardless. (//??)
+However, there were dedicated researchers who regardless kept pushing the boundaries.
 
-++ backpropagation - make easily readable.
-.. 
-   Their idea was to start with the final layer of the network and work backward. For each connection in the final layer, 
-   the algorithm computes a gradient—a mathematical estimate of whether increasing the strength of that connection would push the network 
-   toward the right answer. Based on these gradients, the algorithm adjusts each parameter in the model’s final layer.
-   The algorithm then propagates these gradients backward to the second-to-last layer. A key innovation here is a formula—based on the 
-   chain rule from high school calculus—for computing the gradients in one layer based on gradients in the following layer. 
-   Using these new gradients, the algorithm updates each parameter in the second-to-last layer of the model. 
-   The gradients then get propagated backward to the third-to-last layer, and the whole process repeats once again.
-
-In 1986, a technique for effectively training multi-layer networks (called **backpropagation**) was popularized by 
-David Rumelhart, Geoffrey Hinton & Ronald Williams. (--?)
-This is one of the reasons why John Hopfield and Geoffrey Hinton received 
-`the Nobel Prize in Physics in 2024 <https://www.nature.com/collections/ehbjaifcgc>`_.
+In 1980s, process was made regarding how to train such multi-layer networks - a technique called **backpropagation** was invented.
 Training such multi-layer networks is nowadays known as **deep learning**.
 
 .. image:: /images/part2/deep_neural_network.png
-   :alt: A deep neural network.
+   :alt: A simplified illustration of a deep neural network.
 
-*A deep neural network. Source: KDNuggets*
+*A simplified illustration of a deep neural network. Source: KDNuggets*
 
-Neural networks had delivered some impressive results in the late 1980s and early 1990s. 
-But then progress stalled. By 2008, many researchers had moved on to approaches that seemed mathematically 
-more elegant.
+After some progress had been made in 1980s and 1990s, progress stalled again. 
+Lets fast forward to 2008. In terms of AI, most researchers had moved on to approaches that seemed mathematically more elegant.
 
 A breakthrough came from an unexpected place. A researcher named Fei-Fei Li 
 `had an intuition <https://arstechnica.com/ai/2024/11/how-a-stubborn-computer-scientist-accidentally-launched-the-deep-learning-boom/>`_ 
-that progress could be made if a more comprehensive training dataset was built. This was based on her own prior experience with
+that progress could be made if a more comprehensive training dataset was built (++). This was based on her own prior experience with
 machine learning. She was also inspired by an 
 `estimate <http://wexler.free.fr/library/files/biederman%20%281987%29%20recognition-by-components.%20a%20theory%20of%20human%20image%20understanding.pdf>`_ 
 by vision scientist Irving Biederman that the average person 
 recognizes roughly 30,000 different kinds of objects.    
 With just a few colleagues, limited funding, 2 years of hard work, and a lot of ingenuity, she managed to compile a dataset of 14 million images, 
-annotated into 22 000 categories, which she named **ImageNet**. She released it in 2009 and also launched a image classification 
-competition for AI systems.
+annotated into 22 000 categories, which she named **ImageNet**. She released it in 2009. To help to popularize it, she also launched an
+image classification competition for AI systems.
 
-In 2010 and 2011, winners of the ImageNet competition used techniques that were only slight improvements from the state of the art. 
-In 2012, Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton won the ImageNet competition using an AI system **AlexNet**, which based
+In 2010 and 2011, winners of the ImageNet competition used techniques that were only slight improvements from the state of the art. (++ Moreso, they .. 
+hand-crafted ..).  
+In 2012, Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton won the ImageNet competition using an AI system **AlexNet**, which was based
 on an architecture called 
 **Convolutional Neural Network** (**CNN**). It crushed the competition with an error rate of just 15% 
 (winners of 2011 and 2010 had error rates of 26% and 28%, correspondingly), while the training time dropped from months to days. 
 This event was a huge catalyst for the following boom in deep learning (and AI in general).
 
 CNNs have multiple interesting and useful properties. First of all, they could efficiently be parallalized and trained using
-GPUs, which brought huge performance gains. Second, CNNs have the same property that we observed in human brains: 
-as information moves through increasing number of layers, 
-`those layers start to represent increasingly complex concepts <https://arxiv.org/pdf/2108.00107>`_:
+GPUs, which brought huge performance gains. Second, CNNs have a property that we already observed in human brains: 
+as information moves through subsequent layers, 
+`these layers start to represent increasingly complex concepts <https://arxiv.org/pdf/2108.00107>`_:
 
 * earlier layers detect edges and colors (e.g., the edge of an orange stripe);
 * following layers start to combine them into texture-like feature groups (e.g., an orange-white striped pattern);
@@ -207,20 +195,39 @@ as information moves through increasing number of layers,
 .. image:: /images/part2/clownfish.jpg
    :alt: A clownfish.
 
-| *A clownfish. CNNs provide an efficient algorithm to classify such complex images.*
+| *A clownfish. CNNs like AlexNet proved to be efficient at classifying such complex images.*
 | *Source: Aquarium of the Pacific*
 
 ======================================
 But how does this learning happen?
 ======================================
 
-++
-input is fixed. 
-mathematical operations done for each layer are fixed (pre-determined by machine learning experts; exact formulas are different for various models).
-what is unknown is the combination of weights that produces the result that we want (e.g., a model that can reliably detect clownfishes).
+Lets look at how the AI model "sees" the image. 
+First of all, it does not see "see" the image as we do (in color). Instead, each pixel is just 3 numbers for the AI model - 
+corresponding to the amount of red, green, and blue in that pixel.
 
-initially, all weights are assigned completely randomly, so the model produces complete non-sense. 
-It might assert that random noise is a clownfish.
+If we look at how the AI model works, then we will see that the mathematical operations done for each layer are fixed 
+(pre-determined by machine learning experts; exact formulas are different for various models).
+What are "open" in the training process are the weights. To better illustrate this, consider the following diagram:
+
+.+++
+
+We are focusing here on the neuron E. In the previous layer, there are 4 neurons - A, B, C, and D (this is a toy example - 
+in a real neural net, there could be tens of millions of such neurons). There are four weights leading up to the neuron E -
+w\ :sub:`1`, w\ :sub:`2`, w\ :sub:`3`, and w\ :sub:`4`. Lets say that we modify the weight w\ :sub:`1` that affects how
+neuron E depends on the neuron A. Changing w\ :sub:`1` can either:
+
+* make E to be more heavily dependent on A (by increasing w\ :sub:`1`);
+* make E to not depend on A (by setting the weight w\ :sub:`1` to 0);
+* make E to shut down when A is active (by setting the weight w\ :sub:`1` to a negative value).
+
+But how do we find that specific combinations of weights that produces the result that we want 
+(e.g., a model that can reliably detect clownfishes).
+
+To do this, initially all weights are assigned a completely random value. 
+Essentially, at this stage the model will produce complete non-sense - it might assert that a random picture of black and white
+noise is a perfect example of an elephant.
+
 Analogue (++) in human brain.(+) 
 
 In a brain of a .. old kid, there is a huge amount of neurons ... but they are not yet so strongly connected ..+++
