@@ -202,9 +202,39 @@ as information moves through subsequent layers,
 But how does this learning happen?
 ======================================
 
-Lets look at how the AI model "sees" the image. 
-First of all, it does not see "see" the image as we do (in color). Instead, each pixel is just 3 numbers for the AI model - 
+There are some similarities between learning in humans (especially babies) and how AI models are trained, and there are many 
+crucial differences. Before we dive into those, it is useful to think a bit about how babies learn.
+
+At birth, babies do not see colors - their vision is black and white. 
+Babies at about 1 month of age do not yet see the world clearly - their vision is 
+`blurry <https://www.nationwidechildrens.org/family-resources-education/health-wellness-and-safety-resources/helping-hands/infant-vision-birth-to-one-year>`_
+and they cannot see very far. (++)
+Research from 2024 `has also shown <https://neurosciencenews.com/infant-vision-development-ai-27078>`_ that babies prefer to 
+look at simple, high-contrast patterns and edges found in everyday environments; furthermore, this is very important
+for the development of their visual skills. At later stages of child's development, they start to reckognize and understand
+more complex visual aspects.
+
+What follows is that learning and development of visual system happen in parallel - as babies' eyes develops to allow for 
+seeing more complex input (black-and-white to color, blurry and short-sighted to sharp and long-sighted ++), brain learns
+to reckognize and interpret increasingly complex patterns from it (++). Above, we discussed what the different neural layers 
+in the brain's visual cortex are - at different time points, different parts of the brain are developing (focus is on different parts). (++)
+
+What is interesting is that a baby at the moment of birth has already almost 
+`all of the neurons <https://scienceinsights.org/how-developed-is-a-babys-brain-at-birth/>`_ that the adult will have. 
+The learning process is not about *producing new neurons*, it is about the process of new connections (synapses) *forming* 
+between the existing neurons, unused connections being pruned (removed), and the strengths of connections changing.
+
+..
+   There is also a process in brain development for making existing networks quicker (*myelination*). 
+   https://www.zerotothree.org/resource/what-are-the-most-important-changes-in-the-brain-after-birth/
+ 
+Lets now think about AI models, their training, and the similarities and differences compared to human learning.
+First of all, AI does not see "see" the image as we do (in color). Instead, each pixel is just 3 numbers for the AI model - 
 corresponding to the amount of red, green, and blue in that pixel.
+
+
+
+Lets look at how the AI model "sees" the image. 
 
 If we look at how the AI model works, then we will see that the mathematical operations done for each layer are fixed 
 (pre-determined by machine learning experts; exact formulas are different for various models).
