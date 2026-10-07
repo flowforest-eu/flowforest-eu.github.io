@@ -82,16 +82,16 @@ This algorithm updates the weights to reduce the difference between the predicte
 effectively allowing the perceptron to learn from its mistakes and improve its performance over time.
 
 ============================
-Multi-layer networks
+Multi-layer networks 
 ============================
-
+ 
 A fundamental limitation of the perceptron model was that it was a single-layer network - meaning there were no intermediate ("hidden") 
 layers of neurons between the inputs and the output. Contrast that with the 
 `human vision <https://pressbooks.atlanticoer-relatlantique.ca/openneuroscience/chapter/chapter-9-sensation-and-perception-the-visual-system/>`_, 
 where there are ~10 layers of neurons between the cells receiving the light impulses and the neurons 
 in the brain that correspond to a concept, like seeing a cat.
 
-.. image:: /images/part2/visual-system.png
+.. image:: /images/part2/eye-visual-system.png
    :alt: Neural layers in the eye
 
 *The five neural layers in the eye. Source: Open Neuroscience Initiative (with my modifications)*
@@ -202,6 +202,8 @@ as information moves through subsequent layers,
 But how does this learning happen?
 ======================================
 
+**GOAL: SHORTEN, SIMPLIFY.**
+
 There are some similarities between learning in humans (especially babies) and how AI models are trained, and there are many 
 crucial differences. Before we dive into those, it is useful to think a bit about how babies learn.
 
@@ -215,13 +217,27 @@ for the development of their visual skills. At later stages of child's developme
 more complex visual aspects.
 
 What follows is that learning and development of visual system happen in parallel - as babies' eyes develops to allow for 
-seeing more complex input (black-and-white to color, blurry and short-sighted to sharp and long-sighted ++), brain learns
+seeing more complex input (from black-and-white to color, from blurry and short-sighted to sharp and long-sighted ++), brain learns
 to reckognize and interpret increasingly complex patterns from it (++). Above, we discussed what the different neural layers 
-in the brain's visual cortex are - at different time points, different parts of the brain are developing (focus is on different parts). (++)
+in the brain's visual cortex are - at different stages of the brain's development, different layers are going through the most active 
+process of learning and adaption. (+++)
+
+To give a concrete example, imagine kids of different ages who are seeing a wooden Jenga block for the first time in their life.
+Each of them will be curious about this new object, and this curiosity will cause them to make observations, but depending on their 
+age and development stage, they might focus on different aspects of that Jenga block:
+
+* the youngest (a baby) might focus just on its color (and put it to his mouth, which is also a way of learning about the world);
+* a slightly older kid will focus on it having straight edges;
+* next kid might concentrate on the texture of the wooden block;
+* and the oldest of them could notice all of the previous, associate it with the words "Jenga block" that he heard from his parents, and memorize
+  this new concept. (++ concrete ages?)
+
+Every time a kid learns something, it causes some neural connections to be strengthened or new connections to be formed. Sleeping also plays a 
+crucial role in this process. (+++ learn more)
 
 What is interesting is that a baby at the moment of birth has already almost 
 `all of the neurons <https://scienceinsights.org/how-developed-is-a-babys-brain-at-birth/>`_ that the adult will have. 
-The learning process is not about *producing new neurons*, it is about the process of new connections (synapses) *forming* 
+The learning process is not about *producing new neurons*, it is about the process of new connections (**synapses**) *forming* 
 between the existing neurons, unused connections being pruned (removed), and the strengths of connections changing.
 
 ..
@@ -229,12 +245,56 @@ between the existing neurons, unused connections being pruned (removed), and the
    https://www.zerotothree.org/resource/what-are-the-most-important-changes-in-the-brain-after-birth/
  
 Lets now think about AI models, their training, and the similarities and differences compared to human learning.
-First of all, AI does not see "see" the image as we do (in color). Instead, each pixel is just 3 numbers for the AI model - 
-corresponding to the amount of red, green, and blue in that pixel.
+First, the analogue of a biological synapse (connection between neurons) is a **weight** in an AI model. Here is again the image from above. 
+Bigger arrows correspond to larger weights. 
 
+++ see image ++.
 
+In neural nets, weights can also have a negative value (not depicted on the image above). This has the effect of that neuron acting as a brake
+for the next layer (the technical term is "**inhibition**"). This also happens in the human brain in various contexts. In the context of vision,
+this happens at the edge where a darker object and a lighter object meet (for example a dark tree next to a bright sky). When light hits the
+receptors in the eye, neurons fire strong active signals ("it is bright here") and *also send* inhibitory (negative) signals to *their neighbor neurons*.
+This causes the borders between dark and bright objects to have a lot of contrast and look crisp. At the same time, this process (called
+`visual lateral inhibition <https://en.wikipedia.org/wiki/Lateral_inhibition#Visual_inhibition>`_) is exactly the cause for 
+`several optical illusions <https://en.wikipedia.org/wiki/Grid_illusion>`_ where we see dots appearing on white background.
 
-Lets look at how the AI model "sees" the image. 
+The word "learning" in the context of AI models means that some weights are strengthened and some are weakened. The mathematical operations 
+themselves connecting the previous layer with the next one do not change; only the weights do. This begs the question: how does the training 
+process find those weights that produce a useful AI model like AlexNet?
+
+**Remark**. *Keep in mind that computers does not see "see" the image as we do. Instead, they see an image as a 2-dimensional grid of pixels,
+and each pixel is just 3 numbers for the AI model - corresponding to the amount of red, green, and blue in that pixel.
+In that sense, for AI an image is just a grid of numbers.*
+
+As an initial step, a model is chosen with all of the weights being completely random in a given range.
+In the example of AlexNet, this means that the model will produce completely random outputs (e.g. classifying a image of random noise
+as an elephant). Now, at each step, the following happens:
+
+* A small batch of images (e.g. 128 images in case of AlexNet) is chosen randomly.
+* For each of the images, the error rate is calculated (how good or bad the prediction was). Those error rates are summarized over the given batch.
+* Using clever mathematical techniques (++link), it is calculated for *each weight* how much changing that specific weight in a 
+  positive/negative direction would have affected the error rates of the model for the given images.
+* Each weight is changed by a tiny amount in the direction (calculated in the previous step) that improves the error rates.
+
+This process is then repeated millions of times; if everything goes as expected, the error rates should start to fall and the 
+model should learn to reckognize features and classify images correctly and reliably. 
+
+Lets walk through an example of how this works. We are the first step, where the model has been initialized randomly. 
+The image that we are given depicts a slightly cloudy sky and the image has been classified (by a human, before training) as the "sky".
+In the network that has been initialized randomly, there will be neurons in the earlier layers which respond to the blue color; 
+and there will be neurons in the layer laters that eventually lead to the image class "sky" being activated. Since we have just started training,
+the image is as likely to be classified as the "sky" as an "orange". 
+
+ (this is where the **backpropagation** comes 
+  to play - this allows us to calculate this mathematically, although each layer affects also each subsequent layer as well).
+
+To summarize, the process of obtaining a useful AI model like AlexNet consists of the following steps:
+
+* Collect sufficient **input data**, classified with sufficiently high accuracy;
+* Define the **goal function**;
+* Choose a **model architecture** (e.g., CNN);
+* Initialize the model with random weights 
+* Run the **training process**.
 
 If we look at how the AI model works, then we will see that the mathematical operations done for each layer are fixed 
 (pre-determined by machine learning experts; exact formulas are different for various models).
@@ -242,14 +302,6 @@ What are "open" in the training process are the weights. To better illustrate th
 
 .+++
 
-We are focusing here on the neuron E. In the previous layer, there are 4 neurons - A, B, C, and D (this is a toy example - 
-in a real neural net, there could be tens of millions of such neurons). There are four weights leading up to the neuron E -
-w\ :sub:`1`, w\ :sub:`2`, w\ :sub:`3`, and w\ :sub:`4`. Lets say that we modify the weight w\ :sub:`1` that affects how
-neuron E depends on the neuron A. Changing w\ :sub:`1` can either:
-
-* make E to be more heavily dependent on A (by increasing w\ :sub:`1`);
-* make E to not depend on A (by setting the weight w\ :sub:`1` to 0);
-* make E to shut down when A is active (by setting the weight w\ :sub:`1` to a negative value).
 
 But how do we find that specific combinations of weights that produces the result that we want 
 (e.g., a model that can reliably detect clownfishes).
@@ -322,8 +374,10 @@ Curiously, humans do not start from a blank state like computers do - there are 
 Examples of that include ...+++
 
 ================================================
-Do we fully understand how those models work?
+How to look inside of a model?
 ================================================
+
+**GOAL: MAKE SURE IT IS KEPT SIMPLE**
 
 In order to answer the question "do we fully understand how those models work?" we must separate two things:
 
@@ -371,14 +425,13 @@ least excite that neuron ("negative channel"). More explanations can be found `h
 What else has deep learning given us?
 =========================================
 
+**TODO: review. keep intro + 3 examples. but as short as possible. move "you need to have 4 things" to another place. - OTHERWISE KEEP**
+
 As you see from the previous example, the training of a model does not involve manually crafting any of the features (detection of shapes, textures, or colors);
 this all are learned (or one might say - "found") in the space of all possible combinations by a stochastic (probabilistic. keep??++) process.
 For this to work, researchers must do the following:
 
-* Collect sufficient **input data**, classified with sufficiently high accuracy;
-* Define the **goal function**;
-* Choose a **model architecture** (e.g., CNN);
-* Run the **training process**.
+(!! Moved this part upwards)
 
 All of the steps above are crucial, but I would like to high-light the importance of choosing an appropriate goal function.
 There are some fields where defined goal functions is easier, since the fields themselves are more precise (mathematics, programming),
@@ -429,9 +482,36 @@ This video (++link) .. (++ fascinatingly describes the process?).
 
 123
 
+=========================
+Narrow AI vs general AI
+=========================
+
+**GOAL: KEEP SIMPLE**
+
++++
+// One of the ways to divide AI systems is between narrow AI and general (or "wide") AI. 
+Narrow AI systems are trained to fulfil one function and do it well; general AI systems can execute a wide variety of tasks, depending on the prompt. (ALT: general AI systems can fulfil various goals, depending on the input prompt). LLMs and other generative models (e.g., for video and audio generation) are examples of general AI; here are some examples of narrow AI systems that are still in use today (with the year number of when the model was released ++). (ALT: TO_THINK: "are relevant today or were when they were introduced)
+
++++ Hm. Does not make sense: calling video generation "general". Hm.
+
+Some of the functions of narrow AI models have been taken over (superceded by) LLMs (++? general AI): ...
+
+TODO: Read about image classifiers, ... etc. various examples. Have they been beaten by LLMs altogether?
+
+?? +++?? image: Venn-diagram type of different terms and taxonomy. Transformer. General. Narrow. LLM. Video generation. Audio generation. Generative AI.
+
+Narrow AI has also given a wide range of medical breakthroughs:
++++
+
+..
+   Add? In common discourse about AI models and their implications for the society, narrow and general AI models are often lumped together, which creates confusion and makes it harder to have constructive dialogue with the public;
+   Add? The security properties for narrow and general AI models are vastly different, with narrow AI systems being much safer by their nature (you do not need to worry about an image classification network causing malicious actions in your computer network).
+
 ====================================
 Turing award in .. (Nobel ..)
 ====================================
+
+**GOAL: KEEP SHORT**
 
 In 2014, GAN (Generative adversarial network) .. was introduced by Ian Goodfellow and others (under supervision of Yoshua Bengio) 
 ... - one network (discriminator) tries to detect AI-generated images, 
@@ -471,32 +551,11 @@ Yann LeCun
 backpropagation
 <-- lisan ülesse
 
-=========================
-Narrow AI vs general AI
-=========================
-
-+++
-// One of the ways to divide AI systems is between narrow AI and general (or "wide") AI. 
-Narrow AI systems are trained to fulfil one function and do it well; general AI systems can execute a wide variety of tasks, depending on the prompt. (ALT: general AI systems can fulfil various goals, depending on the input prompt). LLMs and other generative models (e.g., for video and audio generation) are examples of general AI; here are some examples of narrow AI systems that are still in use today (with the year number of when the model was released ++). (ALT: TO_THINK: "are relevant today or were when they were introduced)
-
-+++ Hm. Does not make sense: calling video generation "general". Hm.
-
-Some of the functions of narrow AI models have been taken over (superceded by) LLMs (++? general AI): ...
-
-TODO: Read about image classifiers, ... etc. various examples. Have they been beaten by LLMs altogether?
-
-?? +++?? image: Venn-diagram type of different terms and taxonomy. Transformer. General. Narrow. LLM. Video generation. Audio generation. Generative AI.
-
-Narrow AI has also given a wide range of medical breakthroughs:
-+++
-
-..
-   Add? In common discourse about AI models and their implications for the society, narrow and general AI models are often lumped together, which creates confusion and makes it harder to have constructive dialogue with the public;
-   Add? The security properties for narrow and general AI models are vastly different, with narrow AI systems being much safer by their nature (you do not need to worry about an image classification network causing malicious actions in your computer network).
-
 ==============
 Final words
 ==============
+
+**GOAL:  KEEP SIMPLE AND SHORT. Name: summary / conclusion**.
 
 Although neural networks are inspired by neural structures in brains, there are limits to that analogy, which are important to keep in mind. (++)
 Also, machine learning experts are not trying to emulate or replicate human brains exactly - instead, they try to build on neural nets that have 
