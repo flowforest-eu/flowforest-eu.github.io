@@ -348,11 +348,24 @@ But there are things which are harder to assess:
 * What kind of patterns or capabilities has the model learned?
 * Which neurons are relevant or necessary for a given pattern or capability?
 
-...
+It is entirely possible to follow the mathematical calculations - finding meaning is harder to do.
 
-Regarding just following through the calculations - entirely doable (++).
-There is a website devoted to letting one see what happens inside the model when a given input image is fed into it.
-It is called `CNN explainer <https://poloclub.github.io/cnn-explainer/>`_, and it allows you to export a 
+Neuroscientists face the exact same challenge when studying biological brains. If you show someone an image of a cat, you can observe which 
+areas of the brain light up. But what specific groups of neurons were responsible for noticing the color of the fur? Which ones detected
+the patterns? Which ones separated the cat from the background, recognized its facial expression, or inferred its mood? 
+Or even deeper - which neurons caused the viewer to feel an emotion based on how the cat seemed to be feeling? 
+
+Of course, both neuroscientists and AI researchers have developed techniques to overcome those issues. However, since a large part of 
+human cognition and model capabilities are complex and emergent properties, it is not often easy to give simple and intuitive answers to such 
+questions. For example, in the early days of modern brain research, scientists tended to make absolute statements like "each specific brain 
+region controls just one distinct mental task". Modern neuroscience shows that high-level intelligence emerges from interconnected, dynamic 
+networks rather than isolated single components.
+
+In the context of AI research, the problem is even more complex when analyzing complex models like LLMs. (++) However, there are a few interesting 
+techniques that have been developed specifically for visualizing the inner workings of image classifications systems. (++)
+
+There is a website devoted to letting one see what happens inside the model when a given input image is fed into it. (++)
+It is called `CNN explainer <https://poloclub.github.io/cnn-explainer/>`_, and it allows you to export a... (++)
 
 For those that want to have a more visual understanding of how CNNs work, there is a resource called 
 very small CNN (called Tiny VGG) that was created solely for educational purposes.
