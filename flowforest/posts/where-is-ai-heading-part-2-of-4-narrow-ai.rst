@@ -60,7 +60,7 @@ artificial neuron:
 .. image:: /images/part2/neuron2.png
    :alt: Biological neuron vs artificial neuron
 
-*Biological neuron vs artificial neuron. Source: Towards Data Science.*
+*Biological neuron vs artificial neuron. Source: Towards Data Science (modified).*
 
 Artificial neurons (specifically in the original perceptron model) follow the same core principles as biological neurons, 
 but in simplified mathematical form. Artificial neurons:
@@ -248,7 +248,10 @@ Lets now think about AI models, their training, and the similarities and differe
 First, the analogue of a biological synapse (connection between neurons) is a **weight** in an AI model. Here is again the image from above. 
 Bigger arrows correspond to larger weights. 
 
-++ see image ++.
+.. image:: /images/part2/neuron_only.png
+   :alt: Artificial neuron
+
+*Artificial neuron. Source: Towards Data Science (modified).*
 
 In neural nets, weights can also have a negative value (not depicted on the image above). This has the effect of that neuron acting as a brake
 for the next layer (the technical term is "**inhibition**"). This also happens in the human brain in various contexts. In the context of vision,
@@ -258,9 +261,9 @@ This causes the borders between dark and bright objects to have a lot of contras
 `visual lateral inhibition <https://en.wikipedia.org/wiki/Lateral_inhibition#Visual_inhibition>`_) is exactly the cause for 
 `several optical illusions <https://en.wikipedia.org/wiki/Grid_illusion>`_ where we see dots appearing on white background.
 
-The word "learning" in the context of AI models means that some weights are strengthened and some are weakened. The mathematical operations 
-themselves connecting the previous layer with the next one do not change; only the weights do. This begs the question: how does the training 
-process find those weights that produce a useful AI model like AlexNet?
+The word "learning" in the context of AI models means that during the training process some weights are strengthened and some are weakened. 
+The mathematical operations themselves connecting the previous layer with the next one do not change; only the weights do. 
+This begs the question: how does the training process know which weights to change to produce a useful AI model such as the AlexNet?
 
 **Remark**. *Keep in mind that computers does not see "see" the image as we do. Instead, they see an image as a 2-dimensional grid of pixels,
 and each pixel is just 3 numbers for the AI model - corresponding to the amount of red, green, and blue in that pixel.
@@ -271,22 +274,59 @@ In the example of AlexNet, this means that the model will produce completely ran
 as an elephant). Now, at each step, the following happens:
 
 * A small batch of images (e.g. 128 images in case of AlexNet) is chosen randomly.
-* For each of the images, the error rate is calculated (how good or bad the prediction was). Those error rates are summarized over the given batch.
+* For each of the images in that batch, the error rate is calculated (how good or bad the prediction was).
 * Using clever mathematical techniques (++link), it is calculated for *each weight* how much changing that specific weight in a 
-  positive/negative direction would have affected the error rates of the model for the given images.
-* Each weight is changed by a tiny amount in the direction (calculated in the previous step) that improves the error rates.
+  positive/negative direction would have affected the error rates of the model for the given batch of images.
+* Each weight is changed by a tiny amount in the direction (calculated in the previous step) that most improves the error rates.
 
 This process is then repeated millions of times; if everything goes as expected, the error rates should start to fall and the 
-model should learn to reckognize features and classify images correctly and reliably. 
+model should learn to recognize features and classify images correctly and reliably. 
 
-Lets walk through an example of how this works. We are the first step, where the model has been initialized randomly. 
+**Remark**. *Mathematically, the hard part is calculating how changing of each specific weight would have affected the resulting error rate,
+since each layer also affects each subsequent layer as well. Remember that a single image classification model will have tens or hundreds of 
+millions of parameters, so the efficiency of this calculation is crucial. This is the problem that the*
+`mathematical technique of backpropagation solved <https://www.geeksforgeeks.org/machine-learning/backpropagation-in-neural-network/>`_.
+*Recall from the historical overview above that backpropagation was invented only in 1980s after several decades of research into this area.*
+
+Lets walk through an example of how this training process starts. We are at the first step, where the model has been initialized randomly. 
 The image that we are given depicts a slightly cloudy sky and the image has been classified (by a human, before training) as the "sky".
 In the network that has been initialized randomly, there will be neurons in the earlier layers which respond to the blue color; 
 and there will be neurons in the layer laters that eventually lead to the image class "sky" being activated. Since we have just started training,
-the image is as likely to be classified as the "sky" as an "orange". 
+the image is as likely to be classified as the "sky" as an "orange". Since the number of neurons is large, there will be (just by chance) 
+some neurons that react to the color blue and eventually affect the result being classified as the sky. So if the given batch contains 
+images of sky, those weights that support this relationship ("lot of blue => image could depict the sky") are strengthened. At the same time,
+alternative relationships (e.g. "lot of blue => image could depict an orange") are weakened.
 
- (this is where the **backpropagation** comes 
-  to play - this allows us to calculate this mathematically, although each layer affects also each subsequent layer as well).
+Of course, this is just the easiest type of heuristic one can have. In order to become truly effective at classifying images 
+(e.g., images of the sky), the model has to learn to (i.e., find weights that enable to):
+
+* detect areas of same color, edges, lines, orientation of features;
+* understand how simple edges combine into basic edges and textures;
+* how complex shapes consist of simpler shapes and geometric forms.
+
+Take the the example of detecting a clownfish. Lets say that model has learned that clownfishes have orange and white stripes on them.
+The detection capability of the model will increase if it also starts making sure that those orange and white stripes are next to each other
+and alternate in color. For this to happen, some neurons in the later layers have to specialize to respond to the positional information of 
+those shapes (orange/white stripes) that were detected in the preceding layers.
+
+I recommend to make a small pause here. Think about some specific object in the world and think about how do you recognize 
+it from an image. Try to imagine the features that define it; think how the model might learn to detect it (given that there are images 
+in the input data where recognizing this feature is beneficial).
+
+The last part is crucial: the model may take "shortcuts" if the input data does not punish for it. There is a 
+`famous study <https://arxiv.org/abs/1807.04975>`_ that showed that image detection models often rely extensively on the context for 
+detecting animals (specific example: cows are usually photographed on grassy pastures). If ones moves the cow to a new context
+(e.g., cow on a paved road, or cow on a beach), the model will fail to classify it as a cow. 
+What happened was that instead of learning the complex anatomical features of a cow (ears, muzzle, body shape), it learned a much 
+simpler rule: "cow-like animal on green grass => cow". This is an example of what is called **shortcut learning**.
+
+To be completely honest, I think that humans would also do somewhat worse for detecting cows on beaches. To see what I mean, just look at
+`page 2 of the PDF linked above <https://arxiv.org/pdf/1807.04975>`_. 
+
+The solution is to enrich the dataset of images to have variation of contexts, backgrounds lighting, viewpoints and shapes. It is also useful
+to incorporate images taken by different photographers and camera types.
+
+++
 
 To summarize, the process of obtaining a useful AI model like AlexNet consists of the following steps:
 
