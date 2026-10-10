@@ -180,8 +180,9 @@ on an architecture called
 (winners of 2011 and 2010 had error rates of 26% and 28%, correspondingly), while the training time dropped from months to days. 
 This event was a huge catalyst for the following boom in deep learning (and AI in general).
 
-CNNs have multiple interesting and useful properties. First of all, they could efficiently be parallalized and trained using
-GPUs, which brought huge performance gains. Second, CNNs have a property that we already observed in human brains: 
+CNNs have multiple interesting and useful properties. First of all, their training process could efficiently be parallalized using
+`GPU chips <https://www.ingameloop.com/graphics-cards/learn/what-does-a-gpu-do-for-gaming/>`_, 
+which brought huge performance gains. Second, CNNs have a property that we already observed in human brains: 
 as information moves through subsequent layers, 
 `these layers start to represent increasingly complex concepts <https://arxiv.org/pdf/2108.00107>`_:
 
@@ -201,8 +202,6 @@ as information moves through subsequent layers,
 ======================================
 But how does this learning happen?
 ======================================
-
-**GOAL: SHORTEN, SIMPLIFY.**
 
 There are some similarities between learning in humans (especially babies) and how AI models are trained, and there are many 
 crucial differences. Before we dive into those, it is useful to think a bit about how babies learn.
@@ -317,114 +316,39 @@ The last part is crucial: the model may take "shortcuts" if the input data does 
 `famous study <https://arxiv.org/abs/1807.04975>`_ that showed that image detection models often rely extensively on the context for 
 detecting animals (specific example: cows are usually photographed on grassy pastures). If ones moves the cow to a new context
 (e.g., cow on a paved road, or cow on a beach), the model will fail to classify it as a cow. 
-What happened was that instead of learning the complex anatomical features of a cow (ears, muzzle, body shape), it learned a much 
-simpler rule: "cow-like animal on green grass => cow". This is an example of what is called **shortcut learning**.
+What happened was that instead of learning the complex anatomical features of a cow (ears, muzzle, body shape), it learned a 
+simpler rule: "somewhat cow-like animal on green grass => cow". This is an example of what is called **shortcut learning**.
 
-To be completely honest, I think that humans would also do somewhat worse for detecting cows on beaches. To see what I mean, just look at
+To be completely honest, I think that humans would also do somewhat worse at detecting cows on beaches. To see what I mean, just look at
 `page 2 of the PDF linked above <https://arxiv.org/pdf/1807.04975>`_. 
 
 The solution is to enrich the dataset of images to have variation of contexts, backgrounds lighting, viewpoints and shapes. It is also useful
 to incorporate images taken by different photographers and camera types.
 
-++
+To summarize this section, the process of obtaining a useful AI model like AlexNet consists of the following steps:
 
-To summarize, the process of obtaining a useful AI model like AlexNet consists of the following steps:
-
-* Collect sufficient **input data**, classified with sufficiently high accuracy;
-* Define the **goal function**;
-* Choose a **model architecture** (e.g., CNN);
-* Initialize the model with random weights 
+* Collect sufficient **input data**, classified with sufficiently high accuracy.
+* Define the **goal function**.
+* Choose a **model architecture** (e.g., CNN).
+* Initialize the model with random weights.
 * Run the **training process**.
 
-If we look at how the AI model works, then we will see that the mathematical operations done for each layer are fixed 
-(pre-determined by machine learning experts; exact formulas are different for various models).
-What are "open" in the training process are the weights. To better illustrate this, consider the following diagram:
-
-.+++
-
-
-But how do we find that specific combinations of weights that produces the result that we want 
-(e.g., a model that can reliably detect clownfishes).
-
-To do this, initially all weights are assigned a completely random value. 
-Essentially, at this stage the model will produce complete non-sense - it might assert that a random picture of black and white
-noise is a perfect example of an elephant.
-
-Analogue (++) in human brain.(+) 
-
-In a brain of a .. old kid, there is a huge amount of neurons ... but they are not yet so strongly connected ..+++
-Through learning (scientist know?), ...
-
-Similarly, at each training step, weights in the model are changed so that the model produces more correct outputs.
-For this to happen, there has to be some way to measure what exactly is "more correct".
-This is where the ImageNet dataset comes in - they have previously defined what are the correct labels (categories?++)
-that the model should ideally detect. This is also why the purity (?++) of the dataset is so crucial. In AI, this principle is 
-called "garbage in, garbage out" (meaning that if training data contains errors, AI models will be capped in their learning capabilities
-and will likely echo the biases in the input data).
-
-Lets look at how this works in practice with a simple example.
-Lets say (++) that a CNN model has been trained that detects clownfishes with 99.9999% accuracy (in practice, such precision is probably impossible, but 
-lets (++) make this assumption anyway for the argument's sake). Now lets (++) go and change those parameters of the model that rely on detecting 
-clownfishes by finding features of orange fins and orange stripes on the body - lets (++) change the model to expect those fins and stripes to be blue
-instead (again, this can be done by changing a small amount, perhaps 5-100 of the parameter weights of the ... parameters total). 
-With this simple change, the accuracy of the model will drop to be near zero (or be very small).
-
-++ we changed values from 1 to -1.
-
-++ goal function
-
-Now we want to run that botched (++) model again through the training (improve the weights).
-How the model works? It calculates (for each of the .. weights) a formula, which represents how a change of that specific parameter would
-improve or (opposite of improve) the model's capability to accuractely detect (++read more) the desired object categories.
-This goal was simple to state (I just did it in one sentence - the previous one ++), but getting the mathematical underpinnings correct for this
-has taken decades of research. The complexity is that since a change in a single weight in a single layer possibly affects each of the 
-layers after it (++), calculating the effect of changing that one weight requires calculating (++) how it exactly affects each of the subsequent layers.
-Mathematically, it uses concepts like differentation(link) (measuring how a small change in a weight effects the goal function), 
-using the chain rule(link) for differentation (to measure how the change propagates into the next layers), and backpropagation(link) (making it possible to 
-calculate this for all layers efficiently by starting the calculation from the last layer and moving backwards layer by layer).
-In addition to all this being mathematically correct and efficient, it also needs to be efficient to compute in computers. This is where GPUs come to 
-play - they are computing hardware that is specifically optimized(2w link) to carry out certain calculations in extremely high parallelity (++) (similarly how
-GPU speeds up the framerate when you (?++) play a computer game, by carrying out all of the complicated 3D graphics calculations in parallel).
-
-Just for illustration, I will attach here how the formula for updating weights looks in a CNN. Unless you have background in mathematics, this is just 
-to illustrate how the formula for updating the weights looks like (++):
-
-(Formula)
-
-In the example of we had of a botched model for detecting clownfishes that suddenly expected them to be blue & white striped (++).
-This update mechanic will correctly deduce that out of all of the .. weights, there are a small number of weights that, when modified, will improve the
-model performance. Presumably these should be exactly the weights that we botched.
-
-Now, it won't just go in one big step and change the values back from -1 to 1. If the model did that, the training process would be extremely unstable
-and chaotic, since the values would jump around a lot. Instead, it will move the values towards the right direction by a small amount (lets say 0.01).
-In the next training step, it will do the same. After 100 (or slightly more) steps, the weights will be approximately at 0, and the model will expect 
-(correct color++), which will cause the model to be a bit better at predicting the clownfishes. After running the training for 1000 more steps, 
-the weights will converge back at 0.99 (++?) and the model will again reliably detect clownfishes with high accuracy.
-
-I hope this example helped to explain how the model, which starts from making random guesses, starts to first detect lines, then textures, then ..,
-until it eventually has learned to detect all of those individual features and learns how these together form a clownfish (keep in mind that it is 
-not just detecting the features itself, but also their relative positions - a clownfish with a head and tail swapped is not a clownfish!).
-
-Crucially, it is not sufficient to just provide images of clownfishes in the training set - then the model would just learn to say that every
-image contains a clownfish. It is crucial to provide images *not* containing clownfishes (labelled correspondingly) so that the model starts to 
-learn what *doesn't* work. 
-
-As far as we know, something similar (++) happens when human babies learn to "see". ..++++
-Curiously, humans do not start from a blank state like computers do - there are some things that are hard-wired to our brains by genetics.
-Examples of that include ...+++
-
 ================================================
-How to look inside of a model?
+How to look inside the model?
 ================================================
 
 **GOAL: MAKE SURE IT IS KEPT SIMPLE**
 
-In order to answer the question "do we fully understand how those models work?" we must separate two things:
+Lets consider a seemingly simple question - "do we fully understand how those models work?".
 
-+++ change to not be 2-point list.
+On the one hand, for a given model, we fully know what is the model's architecture (or at least it is known by the researchers who 
+created the model and chose the architecture). Also, at any point of training, all of the weights are known and can be inspected.
+But there are things which are harder to assess:
 
-* What is the model's architecture? (this we fully understand, since scientists hand-picked it ++++). OR_PHRASE: how result is calculated +++
-* How exactly does the model arrive at the conclusion? (++)
+* What kind of patterns or capabilities has the model learned?
+* Which neurons are relevant or necessary for a given pattern or capability?
+
+...
 
 Regarding just following through the calculations - entirely doable (++).
 There is a website devoted to letting one see what happens inside the model when a given input image is fed into it.
