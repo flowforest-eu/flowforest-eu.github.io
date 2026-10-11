@@ -116,7 +116,7 @@ via a series of neural layers. Here is a rather simplified description of how th
 2. layer: detects low-level features: orientation, edges, and lines (technically: "V1 layer");
 3. layer: combines simple edges into basic shapes and textures (technically: "V2/V3 layer");
 4. layer: processes complex shapes and geometric forms (technically: "V4 layer");
-5. layer: detects whole objects, faces, and abstract concepts, e.g. reckognizing a dog, a car, or a number (technically, 1 or 2 layers: "IT cortex").
+5. layer: detects whole objects, faces, and abstract concepts, e.g., reckognizing a dog, a car, or a number (technically, 1 or 2 layers: "IT cortex").
 
 ..
    ++ fact-check me
@@ -269,10 +269,10 @@ and each pixel is just 3 numbers for the AI model - corresponding to the amount 
 In that sense, for AI an image is just a grid of numbers.*
 
 As an initial step, a model is chosen with all of the weights being completely random in a given range.
-In the example of AlexNet, this means that the model will produce completely random outputs (e.g. classifying a image of random noise
+In the example of AlexNet, this means that the model will produce completely random outputs (e.g., classifying a image of random noise
 as an elephant). Now, at each step, the following happens:
 
-* A small batch of images (e.g. 128 images in case of AlexNet) is chosen randomly.
+* A small batch of images (e.g., 128 images in case of AlexNet) is chosen randomly.
 * For each of the images in that batch, the error rate is calculated (how good or bad the prediction was).
 * Using clever mathematical techniques (++link), it is calculated for *each weight* how much changing that specific weight in a 
   positive/negative direction would have affected the error rates of the model for the given batch of images.
@@ -294,7 +294,7 @@ and there will be neurons in the layer laters that eventually lead to the image 
 the image is as likely to be classified as the "sky" as an "orange". Since the number of neurons is large, there will be (just by chance) 
 some neurons that react to the color blue and eventually affect the result being classified as the sky. So if the given batch contains 
 images of sky, those weights that support this relationship ("lot of blue => image could depict the sky") are strengthened. At the same time,
-alternative relationships (e.g. "lot of blue => image could depict an orange") are weakened.
+alternative relationships (e.g., "lot of blue => image could depict an orange") are weakened.
 
 Of course, this is just the easiest type of heuristic one can have. In order to become truly effective at classifying images 
 (e.g., images of the sky), the model has to learn to (i.e., find weights that enable to):
@@ -325,30 +325,46 @@ To be completely honest, I think that humans would also do somewhat worse at det
 The solution is to enrich the dataset of images to have variation of contexts, backgrounds lighting, viewpoints and shapes. It is also useful
 to incorporate images taken by different photographers and camera types.
 
-To summarize this section, the process of obtaining a useful AI model like AlexNet consists of the following steps:
+This has been a very simplified overview of AI models work in general. To fully understand a model architecture like CNN, one would have to 
+dive into what are the exact building blocks that this architecture consists of (++), and this goes beyond the level of detail I intended 
+for this blog. For example, in CNN architecture some of the layers are built so that each neuron is connected to the whole previous layer (e.g. *convolutional layers*),
+but in some of the layers (e.g., *kernel layers*) each neuron is only connected to a small amount of the neurons from the previous layer.
+Some of the layers just apply pre-defined mathematical operations (*ReLU activation*, *max pooling*).
+Since I want to keep the length of this post reasonable, I will not explain those notions further and will refer the interested reader to 
+`this explainer <https://poloclub.github.io/cnn-explainer/>`_.
+
+I recommend to visit 
+`that same link <https://poloclub.github.io/cnn-explainer/>`_
+also by those who are not interested in the technical details of the CNN model, since that webpage includes an
+amazing visual explainer of what happens inside of the model at every layer. For this purpose, they created a very small CNN model (called Tiny VGG)
+that runs directly inside the browser. It is only capable of processing tiny (64x64 pixels) images into one of the 10 pre-defined categories, but
+you can visually inspect any of the intermediate steps and even see what calculations are done at each step.
+You can also upload an image yourself and see how the classification works on it.
+Play around with it and try to get an intuitive understanding of what happens at various steps of the process.
+
+In this section, we looked at the process that AI researchers go through for producing a useful AI model like AlexNet (++).
+All of those steps can be shortly summarized as such (++): 
 
 * Collect sufficient **input data**, classified with sufficiently high accuracy.
 * Define the **goal function**.
 * Choose a **model architecture** (e.g., CNN).
-* Initialize the model with random weights.
+* Initialize the model with **random weights**.
 * Run the **training process**.
 
 ================================================
 How to look inside the model?
 ================================================
 
-**GOAL: MAKE SURE IT IS KEPT SIMPLE**
+Lets consider a seemingly simple question - "do we fully understand how those models work?"
 
-Lets consider a seemingly simple question - "do we fully understand how those models work?".
-
-On the one hand, for a given model, we fully know what is the model's architecture (or at least it is known by the researchers who 
-created the model and chose the architecture). Also, at any point of training, all of the weights are known and can be inspected.
+On the one hand, for a given local model, we fully know what is the model's architecture. 
+Also, at any point of training, all of the weights are known and can be inspected.
 But there are things which are harder to assess:
 
 * What kind of patterns or capabilities has the model learned?
 * Which neurons are relevant or necessary for a given pattern or capability?
 
-It is entirely possible to follow the mathematical calculations - finding meaning is harder to do.
+It is entirely possible to follow the mathematical calculations - understanding the meaning behind the weights is harder to do.
 
 Neuroscientists face the exact same challenge when studying biological brains. If you show someone an image of a cat, you can observe which 
 areas of the brain light up. But what specific groups of neurons were responsible for noticing the color of the fur? Which ones detected
@@ -359,42 +375,29 @@ Of course, both neuroscientists and AI researchers have developed techniques to 
 human cognition and model capabilities are complex and emergent properties, it is not often easy to give simple and intuitive answers to such 
 questions. For example, in the early days of modern brain research, scientists tended to make absolute statements like "each specific brain 
 region controls just one distinct mental task". Modern neuroscience shows that high-level intelligence emerges from interconnected, dynamic 
-networks rather than isolated single components.
+networks rather than isolated single components. In the context of AI research, this is especially a problem for investigating general-purpose
+models like LLMs.
 
-In the context of AI research, the problem is even more complex when analyzing complex models like LLMs. (++) However, there are a few interesting 
-techniques that have been developed specifically for visualizing the inner workings of image classifications systems. (++)
-
-There is a website devoted to letting one see what happens inside the model when a given input image is fed into it. (++)
-It is called `CNN explainer <https://poloclub.github.io/cnn-explainer/>`_, and it allows you to export a... (++)
-
-For those that want to have a more visual understanding of how CNNs work, there is a resource called 
-very small CNN (called Tiny VGG) that was created solely for educational purposes.
-It is only capable of processing tiny images into one of 10 pre-defined categories. 
-It is possible to choose the input image in the top of the screen; 
-and it is possible to click on any of the layers to see more details about what happens at that exact moment of time.
-
-For any larger model (like original AlexNet), it is much harder to make sense of what the model exactly does. Does it rely more on texture or shape?
-Are there ways to fool it? (++w) A good example of it is regarding a model X (++) that was meant to classify cows. Instead, it learned to detect grass
-(since grass is much easier to detect) and labelled any image with grass a "cow". So, how do scientist evaluate a model to see if it actually has 
-learned what is was meant to? (instead of taking shortcuts) (++).
-
-One technique that researchers use is `Saliency Map <https://en.wikipedia.org/wiki/Saliency_map>`_. 
-It is a technique for high-lighting the pixels in the input image that were most strongly used in the 
-process of assigning the category "cow". In our example, it would high-light the pixels containing grass, which would inform the researchers of the 
-problem. Researchers could then fix it by enlarging the dataset by images of grass pastures without any cows.
+In the context of image recognition models, researchers have found clever ways to visually represent the inner workings of the AI models.
+One of those techniques is a `saliency map <https://en.wikipedia.org/wiki/Saliency_map>`_. 
+It is used to high-light the pixels in the input image that were most strongly used in the 
+process of assigning the category label (e.g., "a chair" or "a cow"). Recall the earlier example where detection of cows relied on detection of 
+grass by an extensive amount. In that case, the saliency map would strongly high-light the pixels containing grass, which would inform the 
+researchers of the problem. Researchers could then fix it by enlarging the dataset by cows in other context (e.g., on
+a paved road).
 
 There is another very interesting technique for visually understanding what a given neuron (or a group of neurons) in the neural net reacts to.
-For this, an image with random noise is taken. After that, it is gradually modified so that it becomes an image that makes the previously chosen
-neuron to be maximally active. This often produces some quite psychedelic images that are filled with the object that this neuron reacts to.
-In the next image, we can see a feature visualisation for a neuron that activates for certain type of electron displays.
+For this, an image with random noise is taken. After that, it is gradually modified so that it becomes an image that makes the *previously chosen
+neuron* to be maximally active. This often produces some quite psychedelic images that are filled with the object that this neuron reacts to.
+In the next image, we can see a feature visualisation for *a neuron that activates for eyes of dogs*.
 
-.. image:: /images/part2/feature_visualisation_displays.png
+.. image:: /images/part2/feature_visualisation_dog.png
    :alt: Example of a feature visualisation.
 
 | *Example of a feature visualisation. Source: Distill*
 
 This page allows to `navigate through feature visualisations <https://distill.pub/2017/feature-visualization/appendix/>`_ of a CNN model
-called GoogLeNet. It can be observed that initial layers (3a and 3b) correspond to simple textures, whereas later layers correspond to more 
+called GoogLeNet. Notice that initial layers (3a and 3b) correspond to simple textures, whereas later layers correspond to more 
 complicated concepts. For each layer, there are visualisations that maximally excite that neuron ("positive channel") and visualisations that 
 least excite that neuron ("negative channel"). More explanations can be found `here <https://distill.pub/2017/feature-visualization/>`_.
 
@@ -414,7 +417,7 @@ All of the steps above are crucial, but I would like to high-light the importanc
 There are some fields where defined goal functions is easier, since the fields themselves are more precise (mathematics, programming),
 and some fields where defining goal functions is somewhat harder, since the field is less precise in its terms (++?? or avoid).
 Spoiler alert: this is one of the reasons that LLMs have made enormous progress in some of the fields that where previously considered
-the hardest hills to conquer (e.g. mathematics), while the progress has not been equally great in some other areas (++?? or avoid).
+the hardest hills to conquer (e.g., mathematics), while the progress has not been equally great in some other areas (++?? or avoid).
 
 After 2012 AlexNet, deep learning saw a avalanche (++) of new interest (++). Progress was made (using deep learning techniques ++)
 in speech recognition, image generation, image classification, machine translation. 
