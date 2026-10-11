@@ -389,43 +389,48 @@ a paved road).
 There is another very interesting technique for visually understanding what a given neuron (or a group of neurons) in the neural net reacts to.
 For this, an image with random noise is taken. After that, it is gradually modified so that it becomes an image that makes the *previously chosen
 neuron* to be maximally active. This often produces some quite psychedelic images that are filled with the object that this neuron reacts to.
-In the next image, we can see a feature visualisation for *a neuron that activates for eyes of dogs*.
+In the next image, we can see a feature visualisation for a group of neurons that activates *for dog eyes*.
 
 .. image:: /images/part2/feature_visualisation_dog.png
    :alt: Example of a feature visualisation.
 
-| *Example of a feature visualisation. Source: Distill*
+*Example of a feature visualisation (dog eyes). Source: Distill*
 
 This page allows to `navigate through feature visualisations <https://distill.pub/2017/feature-visualization/appendix/>`_ of a CNN model
 called GoogLeNet. Notice that initial layers (3a and 3b) correspond to simple textures, whereas later layers correspond to more 
-complicated concepts. For each layer, there are visualisations that maximally excite that neuron ("positive channel") and visualisations that 
-least excite that neuron ("negative channel"). More explanations can be found `here <https://distill.pub/2017/feature-visualization/>`_.
+complicated concepts. For each layer, there are visualisations that maximally excite a group of neurons ("positive channel") and visualisations that 
+least excite that same group of neurons ("negative channel"). More explanations can be found `here <https://distill.pub/2017/feature-visualization/>`_.
+
+===================================================
+The importance of choosing a good goal function
+===================================================
+
+Above, we considered the steps in the process of obtaining a useful AI model. 
+I would like to now focus on the step of choosing an appropriate goal function, since this step is actually rather critical 
+for success.
+
+There are some fields where defining a good goal functions is easier, since the fields themselves are more precisely defined
+and there are ways for rather directly verifying the correctness of a generated result - in mathematics, a machine-readable 
+proof of a theorem can be verified; in programming, it is possible to verify whether the program compiles and produces the 
+expected output for various inputs.
+
+In some other fields it is harder to define a suitable goal function. Think of the task of writing a novel - there is no direct
+way to grade the quality of a machine-generated novel on the scale of 0% to 100%.
+
+As we will see in the next blog post, this is one of the reasons that LLMs have made enormous progress in some of the fields 
+that where previously considered the hardest hills to conquer (e.g., mathematics), while the progress has been lagging a bit
+more behind in some other areas.
 
 =========================================
 What else has deep learning given us?
 =========================================
 
-**TODO: review. keep intro + 3 examples. but as short as possible. move "you need to have 4 things" to another place. - OTHERWISE KEEP**
+After AlexNet was released in 2012, the field of deep learning experienced an avalanche of renewed interest. 
+Progress was made (using various deep learning techniques) in areas such as speech recognition, image generation, 
+image classification, and machine translation. 
 
-As you see from the previous example, the training of a model does not involve manually crafting any of the features (detection of shapes, textures, or colors);
-this all are learned (or one might say - "found") in the space of all possible combinations by a stochastic (probabilistic. keep??++) process.
-For this to work, researchers must do the following:
-
-(!! Moved this part upwards)
-
-All of the steps above are crucial, but I would like to high-light the importance of choosing an appropriate goal function.
-There are some fields where defined goal functions is easier, since the fields themselves are more precise (mathematics, programming),
-and some fields where defining goal functions is somewhat harder, since the field is less precise in its terms (++?? or avoid).
-Spoiler alert: this is one of the reasons that LLMs have made enormous progress in some of the fields that where previously considered
-the hardest hills to conquer (e.g., mathematics), while the progress has not been equally great in some other areas (++?? or avoid).
-
-After 2012 AlexNet, deep learning saw a avalanche (++) of new interest (++). Progress was made (using deep learning techniques ++)
-in speech recognition, image generation, image classification, machine translation. 
-
-(++) to give feeling of the avalanche.
-
-One of the major labs of that area was DeepMind (founded in .. by Demis Hassabis, acquired in .. by Google). I would like to mention 3 
-areas where they successfully applied deep learning methods.
+One of the major labs of that area was DeepMind (founded in 2010 by Demis Hassabis, acquired by Google in 2014). 
+I would like to mention 3 areas where they successfully applied deep learning methods.
 
 .. raw:: html
 
@@ -433,15 +438,19 @@ areas where they successfully applied deep learning methods.
          <h3>Playing 1980s computer games</h3>
     </embed>
 
-In 2014, Google Deepmind published research (++ https://deepmind.google/blog/deep-reinforcement-learning/) 
+In 2014, Google Deepmind 
+`published research <https://deepmind.google/blog/deep-reinforcement-learning/>`_
 about a model (**DQN** - "deep Q-learning") that could learn to play a wide range of classical 1980s computer games 
 (such as Pong, Breakout or Space Invaders) without given *any description* about how those games work.
-Instead, they used deep learning methods, letting the model learn by trying to play the games and getting feedback by the game's score
-at any given time. Model could only interact with the game by choosing which keys to use at any given time.
+Instead, they used deep learning methods, letting the model learn by trying to play the games -
+providing the game's screen as an input (and the game's score) to the model at every frame.
+Model could only interact with the game by choosing which keys to press.
 
 Initially, the model started out by "pressing" random keys at random times. Throughout the training, models
-accidentally stumbled on tactics which increased the chances of acheiving a high score; these tactics got reinforced.
-This video (++link) .. (++ fascinatingly describes the process?).
+accidentally stumbled on tactics which increased the chances of acheiving a high score and those tactics got reinforced.
+Here is a video of a 
+`nice strategy <https://www.youtube.com/watch?v=TmPfTpjtdgg>`_
+that the model discovered on its own in the game of Breakout.
 
 * Input data: game screen (pixels shown on the screen) at any given time moment.
 * Goal function: score of the game.
