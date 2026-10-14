@@ -429,7 +429,8 @@ After AlexNet was released in 2012, the field of deep learning experienced an av
 Progress was made (using various deep learning techniques) in areas such as speech recognition, image generation, 
 image classification, and machine translation. 
 
-One of the major labs of that area was DeepMind (founded in 2010 by Demis Hassabis, acquired by Google in 2014). 
+One of the major sources for innovation in that time period was a company called DeepMind 
+(founded in 2010 by Demis Hassabis, acquired by Google in 2014). 
 I would like to mention 3 areas where they successfully applied deep learning methods.
 
 .. raw:: html
@@ -446,14 +447,23 @@ Instead, they used deep learning methods, letting the model learn by trying to p
 providing the game's screen as an input (and the game's score) to the model at every frame.
 Model could only interact with the game by choosing which keys to press.
 
-Initially, the model started out by "pressing" random keys at random times. Throughout the training, models
-accidentally stumbled on tactics which increased the chances of acheiving a high score and those tactics got reinforced.
-Here is a video of a 
-`nice strategy <https://www.youtube.com/watch?v=TmPfTpjtdgg>`_
-that the model discovered on its own in the game of Breakout.
+Initially, the model starts out by "pressing" random keys at times. Throughout the training, models
+accidentally stumble on tactics which increase the chances of achieving a high score and the corresponding weights in the network
+get **reinforced**.
+In machine learning, this is called **reinforcement learning** - the network takes actions and is scored based on the result
+(the score, in this case). 
 
-* Input data: game screen (pixels shown on the screen) at any given time moment.
-* Goal function: score of the game.
+This is a crucial point that distinguishes it from learning that relies on pre-defined ground truth - which is called **supervised learning**.
+The model AlexNet, which we considered above, is an example of supervised learning. 
+Using supervised learning in the context of Atari games would be impossible - it would mean that humans would have to manually
+judge a large portion of *all possible game states*. In that sense, reinforcement learning is much more flexible - it just requires
+that there exists some well defined goal function (like the game's score).
+
+This also means that in the case of reinforcement learning, the model might find solutions that humans did not anticipate or 
+were not aware of. Here is a video of how this happened in the game of Breakout - model discovered a
+`nice strategy <https://www.youtube.com/watch?v=TmPfTpjtdgg>`_
+that the team in DeepMind had not been aware of.
+
 
 .. raw:: html
 
@@ -461,7 +471,41 @@ that the model discovered on its own in the game of Breakout.
          <h3>AlphaGo</h3>
     </embed>
 
-123
+After the dramatic chess matches between Garry Kasparov and a computer algorithm named Deep Blue (developed by IBM) in 1996 and 1997, 
+chess engines continued to improve. Chess players slowly came to accept that machines are and will remain superior to human players.
+The game of Go, however, was a different story - until 2015, the strongest computer programs played at intermediate level at best.
+The board size is huge (19x19) and the number of possible games is staggering (the number has 173 digits). The difference with chess is 
+that it is much harder to assess a position and say who is in the lead; the advantages become clear only in the end-game, where 
+the score is solidified. Playing the game requires relying significantly more on one's intuition and experience.
+
+Google Deepmind 
+`developed AlphaGo <https://research.google/blog/alphago-mastering-the-ancient-game-of-go-with-machine-learning/>`_
+using a combination of machine learning and tree search techniques, combined with extensive training, 
+both from human and computer play. For this, they trained two deep neural networks.
+One neural network, the **policy network**, predicts the next move, and is used to narrow the search to consider only the moves most 
+likely to lead to a win. The other neural network, the **value network**, is then used to reduce the depth of the search tree - estimating 
+the winner in each position in place of searching all the way to the end of the game. 
+Curiously, both of those networks are CNNs, fundamentally the same architecture that we already saw AlexNet using - 
+instead of images, the inputs are the game states. (++)
+
+The training process started with training (++) the policy network, which predicts the next move. (++rep)
+It was initially trained by using *supervised learning* on 30 million moves from games played by human experts, 
+until it could predict the human move 57% of the time.
+After that, the policy network was improved by reinforcement learning - AlphaGo played thousands of games with itself 
+and used the game's final result (win or loss) as the *goal function* to reinforce the weights behind the strategies that 
+consistently lead to winning (++). 
+
+This policy network was then used to train a *value network* via reinforcement learning and self-play.
+The obtained value networks were able to evaluate any Go position and estimate the eventual winner with high reliability -
+a problem so hard it was previously
+`believed to be impossible <https://www.sciencedirect.com/science/article/pii/S0004370201001217>`_.
+For a more in-depth description, I recommend to read either their
+`blog post <https://research.google/blog/alphago-mastering-the-ancient-game-of-go-with-machine-learning/>`_ or 
+`paper in Nature <http://www.nature.com/nature/journal/v529/n7587/full/nature16961.html>`_.
+
+In 2016, AlphaGo played a match against Lee Sedol, one of the best Go players in the world - and won 4:1.
+There is an `excellent movie <https://www.youtube.com/watch?v=WXuK6gekU1Y>`_ on YouTube which captures the dramatic events and
+also gives some visual explanations of the technology behind the breakthrough.
 
 .. raw:: html
 
@@ -495,6 +539,33 @@ Narrow AI has also given a wide range of medical breakthroughs:
 ..
    Add? In common discourse about AI models and their implications for the society, narrow and general AI models are often lumped together, which creates confusion and makes it harder to have constructive dialogue with the public;
    Add? The security properties for narrow and general AI models are vastly different, with narrow AI systems being much safer by their nature (you do not need to worry about an image classification network causing malicious actions in your computer network).
+
+==============
+Conclusion
+==============
+
+**GOAL:  KEEP SIMPLE AND SHORT. Name: summary / conclusion**.
+
+Although neural networks are inspired by neural structures in brains, there are limits to that analogy, which are important to keep in mind. (++)
+Also, machine learning experts are not trying to emulate or replicate human brains exactly - instead, they try to build on neural nets that have 
+previously worked, and try to improve and find algorithms that work well on machines (GPUs and all). (++++++)
+
+Ways how brains are different from artificial neural nets: (++)
+
+* Much more complex
+* Biological, quantum effects
+* Neural networks in brains often run in loops (most neural nets do not loop; but there are `exceptions <https://en.wikipedia.org/wiki/Recurrent_neural_network>`_)
+* Learning happens completely differently
+
+++ In next post: ...
+
+++ disclaimer below
+
+.. raw:: html
+
+    <embed>
+        <p class="ai-disclaimer"><b>Disclaimer of AI usage</b>: AI was used to find additional sources; all sources were manually verified before citing. AI was used to simplify some of the more complex & technical concepts.</p>
+    </embed>
 
 ====================================
 Turing award in .. (Nobel ..)
@@ -539,31 +610,4 @@ neural network system on images of handwritten digits.
 Yann LeCun
 backpropagation
 <-- lisan ülesse
-
-==============
-Final words
-==============
-
-**GOAL:  KEEP SIMPLE AND SHORT. Name: summary / conclusion**.
-
-Although neural networks are inspired by neural structures in brains, there are limits to that analogy, which are important to keep in mind. (++)
-Also, machine learning experts are not trying to emulate or replicate human brains exactly - instead, they try to build on neural nets that have 
-previously worked, and try to improve and find algorithms that work well on machines (GPUs and all). (++++++)
-
-Ways how brains are different from artificial neural nets: (++)
-
-* Much more complex
-* Biological, quantum effects
-* Neural networks in brains often run in loops (most neural nets do not loop; but there are `exceptions <https://en.wikipedia.org/wiki/Recurrent_neural_network>`_)
-* Learning happens completely differently
-
-++ In next post: ...
-
-++ disclaimer below
-
-.. raw:: html
-
-    <embed>
-        <p class="ai-disclaimer"><b>Disclaimer of AI usage</b>: AI was used to find additional sources; all sources were manually verified before citing. AI was used to simplify some of the more complex & technical concepts.</p>
-    </embed>
 
