@@ -320,27 +320,41 @@ What happened was that instead of learning the complex anatomical features of a 
 simpler rule: "somewhat cow-like animal on green grass => cow". This is an example of what is called **shortcut learning**.
 
 To be completely honest, I think that humans would also do somewhat worse at detecting cows on beaches. To see what I mean, just look at
-`page 2 of the PDF linked above <https://arxiv.org/pdf/1807.04975>`_. 
+the images on `page 2 of the PDF linked above <https://arxiv.org/pdf/1807.04975>`_. 
 
 The solution is to enrich the dataset of images to have variation of contexts, backgrounds lighting, viewpoints and shapes. It is also useful
 to incorporate images taken by different photographers and camera types.
 
-This has been a very simplified overview of AI models work in general. To fully understand a model architecture like CNN, one would have to 
-dive into what are the exact building blocks that this architecture consists of (++), and this goes beyond the level of detail I intended 
-for this blog. For example, in CNN architecture some of the layers are built so that each neuron is connected to the whole previous layer (e.g. *convolutional layers*),
-but in some of the layers (e.g., *kernel layers*) each neuron is only connected to a small amount of the neurons from the previous layer.
-Some of the layers just apply pre-defined mathematical operations (*ReLU activation*, *max pooling*).
-Since I want to keep the length of this post reasonable, I will not explain those notions further and will refer the interested reader to 
-`this explainer <https://poloclub.github.io/cnn-explainer/>`_.
+Now, for something completely different, I would like to present a *visual explainer* of a CNN model.
+It is a webpage that runs a CNN model called "Tiny VGG" *directly in your browser*, allowing to upload your own image and 
+see the classification model crunching through it before your own eyes.
+However, this model only accepts tiny images (64x64 pixels) and sorts the images to one of 10 pre-defined classes.
+This is intentional; firstly, it enables the model to run smoothly in a web browser. Secondly (and even more importantly), 
+this allows the model to be simple enough to visually illustrate what really happens at each step. Try clicking on different 
+steps to get an intuitive understanding of what happens at various steps and how the model "sees" the image.
 
-I recommend to visit 
-`that same link <https://poloclub.github.io/cnn-explainer/>`_
-also by those who are not interested in the technical details of the CNN model, since that webpage includes an
-amazing visual explainer of what happens inside of the model at every layer. For this purpose, they created a very small CNN model (called Tiny VGG)
-that runs directly inside the browser. It is only capable of processing tiny (64x64 pixels) images into one of the 10 pre-defined categories, but
-you can visually inspect any of the intermediate steps and even see what calculations are done at each step.
-You can also upload an image yourself and see how the classification works on it.
-Play around with it and try to get an intuitive understanding of what happens at various steps of the process.
+A word of warning, though - since my overview of the topic has been rather high-level, I have not given all of the necessary
+definitions for understanding CNNs. I have not explained concepts like *convolutional layers*, *kernel layers*, *ReLu activation*,
+*max pooling* that are used in the visual explainer page. If you want to learn those definitions, open the collapsible accordion 
+box below. If not, just head directly to the `visual explainer page <https://poloclub.github.io/cnn-explainer/>`_.
+
+.. raw:: html
+
+   <embed>
+      <details>
+         <summary>Click here to learn the technical terms about CNNs used in the visual explainer page</summary>
+         <ul>
+            <li><em>Convolutional layer</em> - A layer in CNN model where each neuron is connected to all neurons in the previous layer.</li>
+            <li><em>Kernel layer</em> - A layer in CNN model where each neuron is only connected to a small amount of the neurons from 
+            the previous layer, e.g. those that correspond to the closest 3x3 pixels (the <em>kernel</em>).</li>
+            <li><em>ReLu activation</em> - An activation function that maps negative values to 0, but keeps positive values intact. Imagine a 
+            neuron in the brain that blocks negative (inhibitory) signals.</li>
+            <li><em>Max pooling</em> - A layer that applies the <em>softmax</em> operation, normalizing the sum of all weights to be 1.</li>
+            <li><em>Hyperparameter</em> - Any parameter of the model that is not trained; the machine learning researchers have to 
+            manually choose those instead based on their experience / intuition.</li>
+         </ul>
+      </details>
+   </embed>
 
 In this section, we looked at the process that AI researchers go through for producing a useful AI model like AlexNet (++).
 All of those steps can be shortly summarized as such (++): 
@@ -474,38 +488,47 @@ that the team in DeepMind had not been aware of.
 After the dramatic chess matches between Garry Kasparov and a computer algorithm named Deep Blue (developed by IBM) in 1996 and 1997, 
 chess engines continued to improve. Chess players slowly came to accept that machines are and will remain superior to human players.
 The game of Go, however, was a different story - until 2015, the strongest computer programs played at intermediate level at best.
-The board size is huge (19x19) and the number of possible games is staggering (the number has 173 digits). The difference with chess is 
+The board size is huge (19x19) and the number of possible games is staggering (that number has 173 digits). The difference with chess is 
 that it is much harder to assess a position and say who is in the lead; the advantages become clear only in the end-game, where 
 the score is solidified. Playing the game requires relying significantly more on one's intuition and experience.
 
 Google Deepmind 
 `developed AlphaGo <https://research.google/blog/alphago-mastering-the-ancient-game-of-go-with-machine-learning/>`_
 using a combination of machine learning and tree search techniques, combined with extensive training, 
-both from human and computer play. For this, they trained two deep neural networks.
-One neural network, the **policy network**, predicts the next move, and is used to narrow the search to consider only the moves most 
-likely to lead to a win. The other neural network, the **value network**, is then used to reduce the depth of the search tree - estimating 
-the winner in each position in place of searching all the way to the end of the game. 
-Curiously, both of those networks are CNNs, fundamentally the same architecture that we already saw AlexNet using - 
-instead of images, the inputs are the game states. (++)
+both from human and computer play. It is fascinating that the models that they trained for playing Go were CNNs -
+the same architecture that AlexNet used. However, this time the inputs to the models were states of Go games, not images.
 
-The training process started with training (++) the policy network, which predicts the next move. (++rep)
-It was initially trained by using *supervised learning* on 30 million moves from games played by human experts, 
-until it could predict the human move 57% of the time.
-After that, the policy network was improved by reinforcement learning - AlphaGo played thousands of games with itself 
-and used the game's final result (win or loss) as the *goal function* to reinforce the weights behind the strategies that 
-consistently lead to winning (++). 
+Since I want to keep this post length reasonable, I leave the choice to the reader - feel free to read the technical details of how AlphaGo
+works at a technical level, or skip it.
 
-This policy network was then used to train a *value network* via reinforcement learning and self-play.
-The obtained value networks were able to evaluate any Go position and estimate the eventual winner with high reliability -
-a problem so hard it was previously
-`believed to be impossible <https://www.sciencedirect.com/science/article/pii/S0004370201001217>`_.
-For a more in-depth description, I recommend to read either their
-`blog post <https://research.google/blog/alphago-mastering-the-ancient-game-of-go-with-machine-learning/>`_ or 
-`paper in Nature <http://www.nature.com/nature/journal/v529/n7587/full/nature16961.html>`_.
+.. raw:: html
+
+   <embed>
+      <details>
+         <summary>Click here to read how Deepmind trained two CNN models for playing Go</summary>
+         <p>The first neural network, the <strong>policy network</strong>, predicts the next move, and is used to narrow the search 
+         to consider only the moves most likely to lead to a win. The second neural network, the <strong>value network</strong>, is 
+         then used to reduce the depth of the search tree - estimating
+         the winner in each position in place of searching all the way to the end of the game.</p>
+         <p>The training process started with training (++) the policy network, which predicts the next move. (++rep)
+         It was initially trained by using <em>supervised learning</em> on 30 million moves from games played by human experts,
+         until it could predict the human move 57% of the time.
+         After that, the policy network was improved by reinforcement learning - AlphaGo played thousands of games with itself
+         and used the game's final result (win or loss) as the <em>goal function</em> to reinforce the weights behind the strategies that
+         consistently lead to winning (++).</p>
+         <p>This policy network was then used to train a <em>value network</em> via reinforcement learning and self-play.
+         The obtained value networks were able to evaluate any Go position and estimate the eventual winner with high reliability -
+         a problem so hard it was previously
+         <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0004370201001217">believed to be impossible</a>.
+         For a more in-depth description, I recommend to read either their
+         <a class="reference external" href="https://research.google/blog/alphago-mastering-the-ancient-game-of-go-with-machine-learning/">blog post</a> or
+         <a class="reference external" href="http://www.nature.com/nature/journal/v529/n7587/full/nature16961.html">paper in Nature</a>.</p>
+      </details>
+   </embed>
 
 In 2016, AlphaGo played a match against Lee Sedol, one of the best Go players in the world - and won 4:1.
-There is an `excellent movie <https://www.youtube.com/watch?v=WXuK6gekU1Y>`_ on YouTube which captures the dramatic events and
-also gives some visual explanations of the technology behind the breakthrough.
+There is an `excellent movie <https://www.youtube.com/watch?v=WXuK6gekU1Y>`_ on YouTube which captures the dramatic events and how the world 
+of Go was ever changed through it. It also gives some nice visual explanations of the technology behind the breakthrough.
 
 .. raw:: html
 
@@ -514,6 +537,8 @@ also gives some visual explanations of the technology behind the breakthrough.
     </embed>
 
 123
+
+https://en.wikipedia.org/wiki/The_Thinking_Game
 
 =========================
 Narrow AI vs general AI
