@@ -435,6 +435,29 @@ As we will see in the next blog post, this is one of the reasons that LLMs have 
 that where previously considered the hardest hills to conquer (e.g., mathematics), while the progress has been lagging a bit
 more behind in some other areas.
 
+=========================
+Narrow AI vs general AI
+=========================
+
+In a very broad sense, AI systems can be divided into two:
+
+* narrow AI systems, which are trained to fulfill one or few specific functions and do it well (e.g., AlexNet);
+* general AI systems, which attempt to perform well on a very wide variety of tasks (e.g., any LLM).
+
+*NB! This should not be confused with "AGI" ("Artificial General Intelligence"), which are vaguely defined as an AI system that 
+that matches or surpasses human capabilities across virtually all cognitive tasks.*
+
+For many people, the word "AI" has become synonymous to LLMs. I think that this is problematic and makes it extremely hard to have 
+meaningful public discourse about risks and benefits of AI systems and their regulation. A lot of valid and difficult questions 
+about LLMs immediately become non-issues when applied to narrow AI systems.
+
+**Are AI systems wasteful in terms of energy usage?** Lets compare an image classification task - what animal is on the picture?
+If you ...
+
+At the same time, narrow AI systems have provided and continue to provide many impressive results. In the following section,
+we look at 3 examples from Google DeepMind that predate the creation of modern chatbots; the last one of them may  
+be characterized as the greatest biological breakthrough ever achieved by an AI system.
+
 =========================================
 What else has deep learning given us?
 =========================================
@@ -453,7 +476,7 @@ I would like to mention 3 areas where they successfully applied deep learning me
          <h3>Playing 1980s computer games</h3>
     </embed>
 
-In 2014, Google Deepmind 
+In 2014, DeepMind 
 `published research <https://deepmind.google/blog/deep-reinforcement-learning/>`_
 about a model (**DQN** - "deep Q-learning") that could learn to play a wide range of classical 1980s computer games 
 (such as Pong, Breakout or Space Invaders) without given *any description* about how those games work.
@@ -492,7 +515,7 @@ The board size is huge (19x19) and the number of possible games is staggering (t
 that it is much harder to assess a position and say who is in the lead; the advantages become clear only in the end-game, where 
 the score is solidified. Playing the game requires relying significantly more on one's intuition and experience.
 
-Google Deepmind 
+DeepMind 
 `developed AlphaGo <https://research.google/blog/alphago-mastering-the-ancient-game-of-go-with-machine-learning/>`_
 using a combination of machine learning and tree search techniques, combined with extensive training, 
 both from human and computer play. It is fascinating that the models that they trained for playing Go were CNNs -
@@ -536,34 +559,36 @@ of Go was ever changed through it. It also gives some nice visual explanations o
          <h3>AlphaFold</h3>
     </embed>
 
-123
+In recent years, leader of fronteir labs have talked a lot about how LLMs could cure cancer in the future. In a longer time span, this may be true;
+but in a shorter time span one has to keep in mind that while AI can help with suggesting new drug candidates or biological experiments,
+some of the steps can not be so easily side-stepped, like clinical testing and obtaining regulatory approval for drugs.
 
-https://en.wikipedia.org/wiki/The_Thinking_Game
+At the same time, we already have one incredible medicine breakthrough in an area that had seen only limited progress in 50 years - protein folding.
+The problem's statement sounds innocent enough: given a sequence of amino acids, what 3D shape does this molecule take? In human body, proteins
+play very different roles (although they all consist of the same 22 amino acids), and their role is largely determined by the 3D shape that they take: 
 
-=========================
-Narrow AI vs general AI
-=========================
+* keratin - long rod-like shape - important component of hair;
+* collagen - long triple helix shape - gives strength to bones, tendons, and ligaments;
+* hemoglobin (a protein that additionally contains iron) - a basket-like shape - transport oxygen into cells;
+* antibodies - Y-shape - each antibody branches to a different target (e.g., a microbe or infected cell) so that immune system knows to attack 
+  that target.
 
-**GOAL: KEEP SIMPLE**
+This was an active research area since 1971, and by end of 2022, 
+`scientists had identified 3D shapes for 200 thousand proteins <https://www.rcsb.org/news/639b9e337f8444f313d20414>`_.
+Previously, it could take a student their *whole PhD study* to determine the 3D structure of one single protein.
+DeepMind introduced a deep learning model called 
+`AlphaFold <https://deepmind.google/blog/alphafold-using-ai-for-scientific-discovery/>`_
+in 2018; and by 2022, they had achieved a milestone - they had mapped the 3D shape of *200 million* proteins, virtually 
+`every protein known to exist in nature <https://deepmind.google/blog/alphafold-reveals-the-structure-of-the-protein-universe/>`_.
+They had taken what took people years and tens of thousands of dollars via experimental methods, 
+and turned it into something that the AI could do in seconds for a negligible cost.
 
-+++
-// One of the ways to divide AI systems is between narrow AI and general (or "wide") AI. 
-Narrow AI systems are trained to fulfil one function and do it well; general AI systems can execute a wide variety of tasks, depending on the prompt. (ALT: general AI systems can fulfil various goals, depending on the input prompt). LLMs and other generative models (e.g., for video and audio generation) are examples of general AI; here are some examples of narrow AI systems that are still in use today (with the year number of when the model was released ++). (ALT: TO_THINK: "are relevant today or were when they were introduced)
+In October 2024, Demis Hassabis and John Jumper of Google DeepMind were awarded the 
+`Nobel Prize in Chemistry for AlphaFold <https://www.nobelprize.org/prizes/chemistry/2024/summary/>`_.
 
-+++ Hm. Does not make sense: calling video generation "general". Hm.
-
-Some of the functions of narrow AI models have been taken over (superceded by) LLMs (++? general AI): ...
-
-TODO: Read about image classifiers, ... etc. various examples. Have they been beaten by LLMs altogether?
-
-?? +++?? image: Venn-diagram type of different terms and taxonomy. Transformer. General. Narrow. LLM. Video generation. Audio generation. Generative AI.
-
-Narrow AI has also given a wide range of medical breakthroughs:
-+++
-
-..
-   Add? In common discourse about AI models and their implications for the society, narrow and general AI models are often lumped together, which creates confusion and makes it harder to have constructive dialogue with the public;
-   Add? The security properties for narrow and general AI models are vastly different, with narrow AI systems being much safer by their nature (you do not need to worry about an image classification network causing malicious actions in your computer network).
+There is an excellent `video overview from Veritaserium channel <https://www.youtube.com/watch?v=P_fHJIYENdI>`_ about AlphaFold.
+Alternatively, one can read technical details from 
+`DeepMind blog <https://deepmind.google/blog/alphafold-using-ai-for-scientific-discovery/>`_.
 
 ==============
 Conclusion
