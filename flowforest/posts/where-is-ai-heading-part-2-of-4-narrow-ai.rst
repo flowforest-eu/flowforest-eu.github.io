@@ -449,7 +449,10 @@ that matches or surpasses human capabilities across virtually all cognitive task
 
 For many people, the word "AI" has become synonymous to LLMs. I think that this is problematic and makes it extremely hard to have 
 meaningful public discourse about risks and benefits of AI systems and their regulation. A lot of valid and difficult questions 
-about LLMs immediately become non-issues when applied to narrow AI systems.
+about LLMs (safety, alignment, ) immediately become non-issues when applied to narrow AI systems.
+
+..
+   https://arxiv.org/pdf/2311.16863
 
 **Are AI systems wasteful in terms of energy usage?** Lets compare an image classification task - what animal is on the picture?
 If you ...
