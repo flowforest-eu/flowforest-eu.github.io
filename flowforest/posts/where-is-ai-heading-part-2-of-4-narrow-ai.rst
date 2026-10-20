@@ -9,12 +9,14 @@
 .. has_math: true
 .. status: draft
 
-Initially I planned to use this 2nd post to dive straight into Large Language Models (LLMs). 
-But the more I thought about how to best explain LLMs, the more I realized that it is much easier to 
-explain the basic concepts on the basis of previous AI systems (++). In particular, models related
-to image classification are easy to intuitively grasp and they are very illustrative for concepts that
-we will need later on. On the way, we will touch a bit on historical progress and how we have gotten to 
-the point that we are in today.
+Initially I planned to use this second post to dive straight into Large Language Models (LLMs). 
+But when I thought about explaining the basic principles of LLMs, I realized that it makes much more sense to
+start by explaining the basic concepts of preceding AI systems; and only then do a deep dive into LLMs and transformer
+architecture in general.
+
+In particular, we will focus in this post on image classification models. They are relatively easy to intuitively grasp 
+and they are also very illustrative for concepts that we will need later on. On the way, we will touch a bit on the history
+of the AI as a field. 
 
 The following timeline high-lights some of the key events in the history of AI:
 
@@ -24,20 +26,26 @@ The following timeline high-lights some of the key events in the history of AI:
 ..
    ++ AlphaStar master StarCraft II.
 
-**Important note**: if you scroll through this post, you will see some complex-looking images. Don't be put away (++) by them!
-Those are here for illustrative purposes - I will do my best to explain everything in simple and understandable terms.
+**Important note**: *if you scroll through this post, you will see some complex-looking images. Don't be put off by those!
+Those are mostly provided for illustrative purposes - I will do my best to explain everything in simple and understandable terms.*
 
 =========================================
 Inspiration for AI - human brains
 =========================================
 
-Humans have always been fascinated by how our brains work, and as our understanding of the brain evolved, scientists
-started thinking about whether it would one day be possible to imitate the brain artificially. 
-Scientist (++ word repeat) have tried to understand, what are the fundamental building pieces of the brain and how do they 
-function together to give rise to such complex phenomena (++simplify) like vision, smell, or thinking?
+For a long time, humankind has been fascinated by questions as:
 
-One of the critical parts of the answer are cells called neurons. Together, neurons form networks (++ consisting of millions) that encode memories, 
-shape personalities, drive decisions, and process the sensations of touch, taste, sight, smell, and sound (++link).
+* What is thinking?
+* How do our brains work?
+* Is it possible to artifically imitate the inner workings of the brain?
+* What are the fundamental building blocks of the brain? 
+* How do these building blocks function together to give rise to such complex phenomena as vision, smell, or logic?
+
+Cells called **neurons** play an important role in answering all of the questions above. 
+In the brain, millions of neurons form complicated networks that encode memories, 
+shape personalities, drive decisions, and process the sensations of touch, taste, sight, smell, and sound 
+(for deeper overview of this topic, read more at 
+`Khan Academy <https://www.khanacademy.org/science/biology/human-biology/neuron-nervous-system/a/overview-of-neuron-structure-and-function>`_).
 
 Some interesting facts about neurons in our brains and bodies:
 
@@ -45,20 +53,22 @@ Some interesting facts about neurons in our brains and bodies:
 * A single neuron may be connected to 1000-10000 other neurons.
 * The `longest neuron in human body <https://en.wikipedia.org/wiki/Sciatic_nerve>`_ can be over a meter long (from bottom of spine to toes). However, most neurons in brain are less than a millimeter in length.
 
-Hundreds of millions such neurons together enable us to see. (++ make smoother)
-However, each individual neuron by itself is not that complicated.
-They carry out the following functions:
+Human vision is made possible by a large number of neurons working in unison.
+Although neural networks consisting of hundreds of millions neurons are hard to research,
+each individual neuron by itself is (comparatively speaking) much simpler.
+
+Neurons carry out the following functions:
 
 * they receive inputs (chemical and electrical) from multiple sources;
 * they combine those inputs into a single signal;
 * if the signal is strong enough, they fire an output that reaches the next neuron (or neurons).
 
 Scientists working in this area thought about the fact (++) that an individual neuron is not that hard to describe mathematically.
-Building on that ide, in 1957, 
+Building on that idea,
 `Frank Rosenblatt <https://en.wikipedia.org/wiki/Frank_Rosenblatt>`_
-came up with the idea of a `perceptron <https://www.simplilearn.com/tutorials/deep-learning-tutorial/perceptron>`_,
+came up in 1957 with the idea of a `perceptron <https://www.simplilearn.com/tutorials/deep-learning-tutorial/perceptron>`_,
 a simplified mathematical model of a neuron. Just for illustrative purposes, compare a neuron in a brain and an 
-artificial neuron:
+artificial (mathematical ++) neuron:
 
 .. image:: /images/part2/neuron2.png
    :alt: Biological neuron vs artificial neuron
