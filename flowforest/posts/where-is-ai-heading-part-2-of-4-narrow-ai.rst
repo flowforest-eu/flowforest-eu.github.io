@@ -54,7 +54,9 @@ They carry out the following functions:
 * if the signal is strong enough, they fire an output that reaches the next neuron (or neurons).
 
 Scientists working in this area thought about the fact (++) that an individual neuron is not that hard to describe mathematically.
-Building on that ide, in 1957, Frank Rosenblatt came up with `perceptron <https://www.simplilearn.com/tutorials/deep-learning-tutorial/perceptron>`_,
+Building on that ide, in 1957, 
+`Frank Rosenblatt <https://en.wikipedia.org/wiki/Frank_Rosenblatt>`_
+came up with the idea of a `perceptron <https://www.simplilearn.com/tutorials/deep-learning-tutorial/perceptron>`_,
 a simplified mathematical model of a neuron. Just for illustrative purposes, compare a neuron in a brain and an 
 artificial neuron:
 
@@ -151,10 +153,16 @@ After that, there were several periods when the interest in AI research was cons
 called "AI winters" (`see here <https://news.sparkfun.com/7896>`_ for more exact historical background).
 However, there were dedicated researchers who regardless kept pushing the boundaries.
 
-A major breakthrough came in the 1980s when Geoffrey Hinton helped demonstrate how a technique called **backpropagation**
+A major breakthrough came in the 1980s when 
+`Geoffrey Hinton <https://en.wikipedia.org/wiki/Geoffrey_Hinton>`_ 
+helped demonstrate how a technique called **backpropagation**
 could be used to efficiently train multi-layer networks. 
-Yann LeCun then took this algorithm and successfully applied it to detecting handwritten digits. 
+`Yann LeCun <https://en.wikipedia.org/wiki/Yann_LeCun>`_
+then took this algorithm and applied it to the problem of recognizing handwritten digits, 
+creating an early example of a model architecture called **convolutional neural network (CNN)**. 
 This practical application of multi-layer training established the paradigm that is nowadays known as **deep learning**.
+Remember those concepts - throughout this blog post, we will come back several times to models based on the *CNN architecture* 
+(they are great for example purposes, since they rely on visual inputs).
 
 .. image:: /images/part2/deep_neural_network.png
    :alt: A simplified illustration of a deep neural network.
@@ -162,12 +170,18 @@ This practical application of multi-layer training established the paradigm that
 *A simplified illustration of a deep neural network. Source: KDNuggets*
 
 After some progress had been made in 1980s and 1990s, progress stalled again. 
-Lets fast forward to 2008. In terms of AI, most researchers had moved on to approaches that seemed mathematically more elegant.
+In terms of AI, most researchers had moved on to approaches that seemed mathematically more elegant - for example 
+carefully hand-crafted **expert systems** which require large amounts of manual programming.
+However, there were three notable figures - 
+`Yoshua Bengio <https://en.wikipedia.org/wiki/Yoshua_Bengio>`_,
+Geoffrey Hinton and Yann LeCun, who kept the flame of curiousity alive 
+even when the funding sources disappeared. Over the decades, they collectively supervised 50+ PhD students.
 
-A breakthrough came from an unexpected place. A researcher named Fei-Fei Li 
-`had an intuition <https://arstechnica.com/ai/2024/11/how-a-stubborn-computer-scientist-accidentally-launched-the-deep-learning-boom/>`_ 
-that progress could be made if a more comprehensive training dataset was built (++). This was based on her own prior experience with
-machine learning. She was also inspired by an 
+Lets fast forward to 2008. AI research was at a low; deep learning as such was seen by the industry mostly as a curious historical relic.
+A breakthrough came from an unexpected place. A researcher named `Fei-Fei Li <https://en.wikipedia.org/wiki/Fei-Fei_Li>`_ had
+`an intuition <https://arstechnica.com/ai/2024/11/how-a-stubborn-computer-scientist-accidentally-launched-the-deep-learning-boom/>`_ 
+that progress could be made if a more comprehensive high-quality training dataset was built (++). 
+This was based on her own prior experience with machine learning. She was also inspired by an 
 `estimate <http://wexler.free.fr/library/files/biederman%20%281987%29%20recognition-by-components.%20a%20theory%20of%20human%20image%20understanding.pdf>`_ 
 by vision scientist Irving Biederman that the average person 
 recognizes roughly 30,000 different kinds of objects.    
@@ -175,17 +189,25 @@ With just a few colleagues, limited funding, 2 years of hard work, and a lot of 
 annotated into 22 000 categories, which she named **ImageNet**. She released it in 2009. To help to popularize it, she also launched an
 image classification competition for AI systems.
 
-In 2010 and 2011, winners of the ImageNet competition used techniques that were only slight improvements from the state of the art. (++ Moreso, they .. 
-hand-crafted ..).  
-In 2012, Alex Krizhevsky, Ilya Sutskever, and Geoffrey Hinton won the ImageNet competition using an AI system **AlexNet**, which was based
-on an architecture called 
-**Convolutional Neural Network** (**CNN**). It crushed the competition with an error rate of just 15% 
+In 2010 and 2011, winners of the ImageNet competition used techniques that were only slight improvements from the state of the art 
+(mostly expert systems).
+In 2012, `Alex Krizhevsky <https://en.wikipedia.org/wiki/Alex_Krizhevsky>`_, 
+`Ilya Sutskever <https://en.wikipedia.org/wiki/Ilya_Sutskever>`_, 
+and Geoffrey Hinton won the ImageNet competition using an AI system **AlexNet**, which was an example of
+a Convolutional Neural Network (CNN). It crushed the competition with an error rate of just 15% 
 (winners of 2011 and 2010 had error rates of 26% and 28%, correspondingly), while the training time dropped from months to days. 
 This event was a huge catalyst for the following boom in deep learning (and AI in general).
 
-CNNs have multiple interesting and useful properties. First of all, their training process could efficiently be parallalized using
-`GPU chips <https://www.ingameloop.com/graphics-cards/learn/what-does-a-gpu-do-for-gaming/>`_, 
-which brought huge performance gains. Second, CNNs have a property that we already observed in human brains: 
+So, why had the time to shine now arrived for CNNs, 25 years after their invention?
+First of all, the computational capability of computers had improved enormously in that time.
+Secondly, the researchers behind AlexNet managed to use 
+`GPU chips <https://www.ingameloop.com/graphics-cards/learn/what-does-a-gpu-do-for-gaming/>`_
+to effeciently parallize the training process. 
+
+How did AlexNet manage to beat the hand-crafted expert systems by such a large margin?
+Furthermore, how can a model like CNN even succeed at such a complicated task like image classification?
+
+Well, CNNs have a property that we already observed in human brains: 
 as information moves through subsequent layers, 
 `these layers start to represent increasingly complex concepts <https://arxiv.org/pdf/2108.00107>`_:
 
@@ -194,7 +216,10 @@ as information moves through subsequent layers,
 * later layers assemble whole object parts (e.g., fin of a clownfish);
 * final layers detect the object class (e.g., a clownfish).
 
-**Note**. The AI model AlexNet mentioned above had 8 layers and approximately 60 million parameters.
+Thus, the CNNs manage to utilize one of the central pillars of intelligence: representing complex relationships via a mesh of 
+simpler relationships. In the next section we will have a look at how the learning process actually works.
+
+**Note**. The AlexNet model had 8 layers and approximately 60 million parameters.
 
 .. image:: /images/part2/clownfish.jpg
    :alt: A clownfish.
@@ -502,7 +527,10 @@ Progress was made (using various deep learning techniques) in areas such as spee
 image classification, and machine translation. 
 
 One of the major sources for innovation in that time period was a company called DeepMind 
-(founded in 2010 by Demis Hassabis, acquired by Google in 2014). 
+(founded in 2010 by `Demis Hassabis <https://en.wikipedia.org/wiki/Demis_Hassabis>`_, 
+`Shane Legg <https://en.wikipedia.org/wiki/Shane_Legg>`_, 
+and `Mustafa Suleyman <https://en.wikipedia.org/wiki/Mustafa_Suleyman>`_;
+acquired by Google in 2014). 
 I would like to mention 3 areas where they successfully applied deep learning methods.
 
 .. raw:: html
@@ -543,7 +571,11 @@ that the team in DeepMind had not been aware of.
          <h3>AlphaGo</h3>
     </embed>
 
-After the dramatic chess matches between Garry Kasparov and a computer algorithm named Deep Blue (developed by IBM) in 1996 and 1997, 
+After the 
+`dramatic chess matches <https://en.wikipedia.org/wiki/Deep_Blue_versus_Garry_Kasparov>`_
+between 
+`Garry Kasparov <https://en.wikipedia.org/wiki/Garry_Kasparov>`_
+and a computer algorithm named Deep Blue (developed by IBM) in 1996 and 1997, 
 chess engines continued to improve. Chess players slowly came to accept that machines are and will remain superior to human players.
 The game of Go, however, was a different story - until 2015, the strongest computer programs played at intermediate level at best.
 The board size is huge (19x19) and the number of possible games is staggering (that number has 173 digits). The difference with chess is 
@@ -584,7 +616,9 @@ works at a technical level, or skip it.
       </details>
    </embed>
 
-In 2016, AlphaGo played a match against Lee Sedol, one of the best Go players in the world - and won 4:1.
+In 2016, AlphaGo played a match against 
+`Lee Sedol <https://en.wikipedia.org/wiki/Lee_Sedol>`_, 
+one of the best Go players in the world - and won 4:1.
 There is an `excellent movie <https://www.youtube.com/watch?v=WXuK6gekU1Y>`_ on YouTube which captures the dramatic events and how the world 
 of Go was ever changed through it. It also gives some nice visual explanations of the technology behind the breakthrough.
 
@@ -618,7 +652,9 @@ in 2018; and by 2022, they had achieved a milestone - they had mapped the 3D sha
 They had taken what took people years and tens of thousands of dollars via experimental methods, 
 and turned it into something that the AI could do in seconds for a negligible cost.
 
-In October 2024, Demis Hassabis and John Jumper of Google DeepMind were awarded the 
+In October 2024, Demis Hassabis and 
+`John Jumper <https://en.wikipedia.org/wiki/John_M._Jumper>`_
+were awarded the 
 `Nobel Prize in Chemistry for AlphaFold <https://www.nobelprize.org/prizes/chemistry/2024/summary/>`_.
 
 There is an excellent `video overview from Veritaserium channel <https://www.youtube.com/watch?v=P_fHJIYENdI>`_ about AlphaFold.
@@ -629,25 +665,22 @@ Alternatively, one can read technical details from
 Conclusion
 ==============
 
-**GOAL:  KEEP SIMPLE AND SHORT. Name: summary / conclusion**.
+The main takeaways I want to leave to you, the reader:
 
-Although neural networks are inspired by neural structures in brains, there are limits to that analogy, which are important to keep in mind. (++)
-Also, machine learning experts are not trying to emulate or replicate human brains exactly - instead, they try to build on neural nets that have 
-previously worked, and try to improve and find algorithms that work well on machines (GPUs and all). (++++++)
+* Although AI systems have been originally been built on ideas borrowed from human brains, they are still very much different. And it is not 
+  necessary for AI systems to blindly imitate human brains - intelligence comes in many different forms.
+* Learning is possible where there is a clear goal function towards which to gradually optimize. Sometimes just defining a good goal 
+  function is already a significant step towards success.
+* There exists a large variety of different AI systems, both narrow and general ones. Being able to distinguish them is a starting point for 
+  any public discussion about both benefits and risks.
+* AI models are not magic - by learning the basic principles that they operate on, it is possible to have much more meaningful and deeper 
+  conversations.
 
-Ways how brains are different from artificial neural nets: (++)
+Although we covered a lot of ground in this post, this overview really just scratches the surface of all the research done over the decades
+into various AI systems. In the next blog post, we will focus on LLMs and how they differ from preceding AI architectures.
 
-* Much more complex
-* Biological, quantum effects
-* Neural networks in brains often run in loops (most neural nets do not loop; but there are `exceptions <https://en.wikipedia.org/wiki/Recurrent_neural_network>`_)
-* Learning happens completely differently
+------------
 
-++ In next post: ...
-
-++ disclaimer below
-
-Although we covered a lot of ground in this post, it really just scratches the surface of all the research done over the decades
-into this topic. 
 To recognize their contribution to this field, Yoshua Bengio, Geoffrey Hinton and Yann LeCun were awarded the 
 `2018 Turing Award <https://awards.acm.org/about/2018-turing>`_ 
 for *conceptual and engineering breakthroughs that have made deep neural networks a critical component of computing*.
