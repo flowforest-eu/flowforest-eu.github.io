@@ -6,6 +6,7 @@
 .. link: 
 .. description: 
 .. type: text
+.. has_math: true
 .. status: draft
 
 Initially I planned to use this 2nd post to dive straight into Large Language Models (LLMs). 
@@ -150,8 +151,10 @@ After that, there were several periods when the interest in AI research was cons
 called "AI winters" (`see here <https://news.sparkfun.com/7896>`_ for more exact historical background).
 However, there were dedicated researchers who regardless kept pushing the boundaries.
 
-In 1980s, process was made regarding how to train such multi-layer networks - a technique called **backpropagation** was invented.
-Training such multi-layer networks is nowadays known as **deep learning**.
+A major breakthrough came in the 1980s when Geoffrey Hinton helped demonstrate how a technique called **backpropagation**
+could be used to efficiently train multi-layer networks. 
+Yann LeCun then took this algorithm and successfully applied it to detecting handwritten digits. 
+This practical application of multi-layer training established the paradigm that is nowadays known as **deep learning**.
 
 .. image:: /images/part2/deep_neural_network.png
    :alt: A simplified illustration of a deep neural network.
@@ -441,24 +444,53 @@ Narrow AI vs general AI
 
 In a very broad sense, AI systems can be divided into two:
 
-* narrow AI systems, which are trained to fulfill one or few specific functions and do it well (e.g., AlexNet);
+* narrow AI systems, which are trained to fulfil one or few specific functions (e.g., AlexNet);
 * general AI systems, which attempt to perform well on a very wide variety of tasks (e.g., any LLM).
 
-*NB! This should not be confused with "AGI" ("Artificial General Intelligence"), which are vaguely defined as an AI system that 
+**NB!** *This should not be confused with "AGI" ("Artificial General Intelligence"), which is defined as an AI system that 
 that matches or surpasses human capabilities across virtually all cognitive tasks.*
+
+Note that while AGI is a vague term and everyone interprets it differently, the distinction between narrow and general AI systems 
+is much more clear-cut and meaningful.
 
 For many people, the word "AI" has become synonymous to LLMs. I think that this is problematic and makes it extremely hard to have 
 meaningful public discourse about risks and benefits of AI systems and their regulation. A lot of valid and difficult questions 
-about LLMs (safety, alignment, ) immediately become non-issues when applied to narrow AI systems.
+about LLMs (in particular about safety and alignment) are either non-issues or much milder for more narrow AI systems.
+Of course, there are also issues that are relevant in both cases (e.g., bias).
 
-..
-   https://arxiv.org/pdf/2311.16863
+Consider also energy usage. Lets consider energy usage (in joules) of a typical image classification task:
 
-**Are AI systems wasteful in terms of energy usage?** Lets compare an image classification task - what animal is on the picture?
-If you ...
+* For a typical **narrow** AI system, the energy usage falls in the range of 0.05-2 joules 
+  (`more details <https://arxiv.org/pdf/2412.09731>`_) - the equivalent of a household LED lightbulb shining for less than 0.1 seconds (essentially, one blink of a LED).
+* For a LLM, the energy usage for the same classification task could take ~200-300 joules (`more details <https://arxiv.org/abs/2311.16863>`_). 
+  If the answer is given by the LLM in the conversational format, the answer can easily be more than 10 times longer, bringing the energy usage to over 3000 joules - 
+  the LED lightbulb shining for 4 minutes straight.
 
-At the same time, narrow AI systems have provided and continue to provide many impressive results. In the following section,
-we look at 3 examples from Google DeepMind that predate the creation of modern chatbots; the last one of them may  
+For me, the difference is mind-blowing: using an LLM for the same task uses up **~3000** times more energy!
+
+.. raw:: html
+
+   <embed>
+      <details>
+         <summary>Click here for an explanation - what creates the 3000x energy difference?</summary>
+         <ul class="simple">
+         <li><p>As already mentioned, large part of it is that conversational answers take a lot more energy to produce - and LLMs <em>love</em> to be wordy.</p></li>
+         <li><p>Even if the classification result is provided without unnecessary clutter ("A golden retriever sitting on a grass field at sunset"), LLMs still build up
+         the answer word by word (<em>token by token, to be more precise - more about that in the next blog post</em>), using up energy on each iteration.</p></li>
+         <li><p>Unlike lightweight traditional models, LLMs require power-hungry GPU clusters to process requests.</p></li>
+         <li><p>The architecture of LLMs is vastly heavier - evaluating its billions of parameters requires far more layer-by-layer computation than a narrow AI system.</p></li>
+         </ul>
+      </details>
+   </embed>
+
+For all those reasons, I think that everyone should keep that lesson in their head:  
+
+.. math::
+
+  AI \neq LLM.   
+
+Crucially, narrow AI systems have produced (and continue to produce!) many impressive results. In the following section,
+we will have a look at three examples from Google DeepMind that predate the creation of modern chatbots. The last one of them may honestly  
 be characterized as the greatest biological breakthrough ever achieved by an AI system.
 
 =========================================
@@ -614,53 +646,15 @@ Ways how brains are different from artificial neural nets: (++)
 
 ++ disclaimer below
 
+Although we covered a lot of ground in this post, it really just scratches the surface of all the research done over the decades
+into this topic. 
+To recognize their contribution to this field, Yoshua Bengio, Geoffrey Hinton and Yann LeCun were awarded the 
+`2018 Turing Award <https://awards.acm.org/about/2018-turing>`_ 
+for *conceptual and engineering breakthroughs that have made deep neural networks a critical component of computing*.
+
 .. raw:: html
 
     <embed>
         <p class="ai-disclaimer"><b>Disclaimer of AI usage</b>: AI was used to find additional sources; all sources were manually verified before citing. AI was used to simplify some of the more complex & technical concepts.</p>
     </embed>
-
-====================================
-Turing award in .. (Nobel ..)
-====================================
-
-**GOAL: KEEP SHORT**
-
-In 2014, GAN (Generative adversarial network) .. was introduced by Ian Goodfellow and others (under supervision of Yoshua Bengio) 
-... - one network (discriminator) tries to detect AI-generated images, 
-another network tries to fool it. At the same time, the discriminator also keeps learning and improving.
-This creates an "arms race" between the two models. 
-
-+++?
-Yoshua Bengio, Geoffrey Hinton and Yann LeCun were awarded the 2018 Turing Award for 
-"conceptual and engineering breakthroughs that have made deep neural networks a critical component of computing".
-https://awards.acm.org/about/2018-turing
-
-+++?
-While the use of artificial neural networks as a tool to help computers recognize patterns and simulate human 
-intelligence had been introduced in the 1980s, by the early 2000s, LeCun, Hinton and Bengio were among a small group 
-who remained committed to this approach.
-
-+++?
-Though their efforts to rekindle the AI community’s interest in neural networks were initially met with skepticism, 
-their ideas recently resulted in major technological advances, and their methodology is now the dominant paradigm in the field.
-(2018)
-
-+++? https://awards.acm.org/about/2018-turing
-In addition to the products we use every day, new advances in deep learning have given scientists powerful new tools—in areas 
-ranging from medicine, to astronomy, to materials science.”
-
-+++
-weaknesses of deep learning models about text:
-Key Concept: Contrast old sequential models (like RNNs/LSTMs that read word-by-word and forgot the beginning of a long essay) with 
-Transformers, which look at an entire block of text all at once.
-
-Yann LeCun
-In the late 1980s, while working at the University of Toronto and Bell Labs, LeCun was the first to train a convolutional 
-neural network system on images of handwritten digits. 
-<-- lisan ülesse?
-
-Yann LeCun
-backpropagation
-<-- lisan ülesse
 
