@@ -63,12 +63,12 @@ Neurons carry out the following functions:
 * they combine those inputs into a single signal;
 * if the signal is strong enough, they fire an output that reaches the next neuron (or neurons).
 
-Scientists working in this area thought about the fact (++) that an individual neuron is not that hard to describe mathematically.
+Scientists working in this field realized that an individual neuron is not that difficult to describe mathematically.
 Building on that idea,
 `Frank Rosenblatt <https://en.wikipedia.org/wiki/Frank_Rosenblatt>`_
 came up in 1957 with the idea of a `perceptron <https://www.simplilearn.com/tutorials/deep-learning-tutorial/perceptron>`_,
 a simplified mathematical model of a neuron. Just for illustrative purposes, compare a neuron in a brain and an 
-artificial (mathematical ++) neuron:
+artificial "neuron":
 
 .. image:: /images/part2/neuron2.png
    :alt: Biological neuron vs artificial neuron
@@ -79,20 +79,21 @@ Artificial neurons (specifically in the original perceptron model) follow the sa
 but in simplified mathematical form. Artificial neurons:
 
 * receive input values (positive or negative numbers);
-* combine those values linearly using specific weights;
+* combine those values linearly using specific weights (this will be explained more later);
 * produce an output if the combined value passes a certain threshold (otherwise, the output is 0).
 
-The same basic framework powers the vast majority of neural networks used today (including LLMs). 
-The main difference is how the third step works: modern networks swap out the strict "all-or-nothing" threshold for smooth activation 
-functions, which scale smaller values down rather than setting them to 0.
+The same basic structure for neurons powers the vast majority of neural networks used today (including LLMs). 
+The main difference is how the third step works: modern networks swap out the strict "all-or-nothing" threshold for 
+a bit more complicated threshold functions (*mathematically: 
+they use smooth activation functions, which scale smaller values down rather than setting them to 0*).
 
-..
-   last part is too complicated. best to just say "... which have better mathematical properties."
+TODO: Improve this previous paragraph.
 
 A crucial feature of the perceptron was its ability to adjust its weights based on input data and target output.
 The process of weight adjustment is achieved through a learning algorithm, often referred to as the *perceptron learning rule*.
 This algorithm updates the weights to reduce the difference between the predicted output and the desired output, 
-effectively allowing the perceptron to learn from its mistakes and improve its performance over time.
+effectively allowing the perceptron to learn from its mistakes and improve its performance over time. In next sections,
+we will delve deeper into how learning process actually works.
 
 ============================
 Multi-layer networks 
@@ -101,35 +102,40 @@ Multi-layer networks
 A fundamental limitation of the perceptron model was that it was a single-layer network - meaning there were no intermediate ("hidden") 
 layers of neurons between the inputs and the output. Contrast that with the 
 `human vision <https://pressbooks.atlanticoer-relatlantique.ca/openneuroscience/chapter/chapter-9-sensation-and-perception-the-visual-system/>`_, 
-where there are ~10 layers of neurons between the cells receiving the light impulses and the neurons 
+where there are ~10 layers of neurons, from the cells receiving the light impulses to the neurons 
 in the brain that correspond to a concept, like seeing a cat.
+
+The next image is provided mostly for illustration purposes - there is no need to memorize all of it!
+It just demonstrates some of the neural layers present in the eye. The image should be read from bottom to top - 
+in the bottom, there are rods and cones, which respond to incoming light. Cones handle vision in bright daylight, while rods
+take over in low light and at night. 
+After that, the signal passes through various layers of neurons (illustrated by the diagram), until it reaches the optic nerve, which takes 
+the visual information to your brain for further processing.
 
 .. image:: /images/part2/eye-visual-system.png
    :alt: Neural layers in the eye
 
 *The five neural layers in the eye. Source: Open Neuroscience Initiative (with my modifications)*
 
-Although the image looks complicated, the main idea is fairly simple. Light enters the eye and excites either the cones (in the daylight) 
-or the rods (in the night-time). After that, it passes through various layers of neurons, until it reaches the optic nerve.
-
 There are 120 million rods and 6 million cones in the human eye. 
-The raw image captured by those rods and cones is heavily compressed before it ever leaves the eye. 
-For example, the retinal ganglion cells (marked on the above image) act like a biological image compression algorithm.
+The raw image captured by those rods and cones is heavily compressed before it ever leaves the eye (via the optic nerve). 
+For example, the retinal ganglion cells (drawn in blue color in the above image) act like a biological image compression algorithm.
 
 The optic nerve consists of ~1.2 million optic nerve fibers. You might think of it as an 1.2 megapixel camera cable.
 However, human vision seems much better than a picture taken by a 1.2 megapixel camera, and there are some 
-`absolutely fascinating reasons behind it <https://clippingexpertasia.com/blog/human-eye-resolution-explained-megapixels-fps-vision>`_.
-+++
+`absolutely fascinating reasons for this <https://clippingexpertasia.com/blog/human-eye-resolution-explained-megapixels-fps-vision>`_.
 
 After reaching the optic nerve, information is processed 
 via a series of neural layers. Here is a rather simplified description of how the visual information is processed in the brain
 (`see here <https://en.wikipedia.org/wiki/Visual_system#System_overview>`_ for a more detailed overview):
 
-1. layer: organizes visual information (technically: "LGN layer");
-2. layer: detects low-level features: orientation, edges, and lines (technically: "V1 layer");
-3. layer: combines simple edges into basic shapes and textures (technically: "V2/V3 layer");
-4. layer: processes complex shapes and geometric forms (technically: "V4 layer");
-5. layer: detects whole objects, faces, and abstract concepts, e.g., reckognizing a dog, a car, or a number (technically, 1 or 2 layers: "IT cortex").
+1. layer: organizes **visual information** (*technically: "LGN layer"*);
+2. layer: detects **low-level features**: orientation, edges, and lines (*technically: "V1 layer"*);
+3. layer: combines simple edges into **basic shapes** and textures (*technically: "V2/V3 layer"*);
+4. layer: processes **complex shapes** and geometric forms (*technically: "V4 layer"*);
+5. layer: detects **whole objects**, faces, and abstract concepts, e.g., reckognizing a dog, a car, or a number (*technically, 1 or 2 layers: "IT cortex"*).
+
+TODO
 
 ..
    ++ fact-check me
@@ -138,12 +144,15 @@ via a series of neural layers. Here is a rather simplified description of how th
 
     <embed>
         <p style="font-size: 0.8em;">Since I am not a neuroscientist, the above text may contain oversimplifications or errors. 
-        However, the general principle should still be still correct. The full description of how the visual cortex in the brain
-        also involving looping effects, complicated time-dependent processes, and some layers serving multiple functions. My description
+        However, the general principle should still be still correct. The full description of the work principles of the visual cortex 
+        also involves looping effects, complicated time-dependent processes, and some layers fulfiling multiple functions. My description
         is a simplification of a complex process.
     </embed>
 
-This list of layers and information through them illustrates an absolutely crucial point for machine learning: 
+TODO
+
+The main reason for listing those layers here is that they illustrate an absolutely crucial point for machine learning: 
+
 the more layers there are, the more complicated relations can be observed from the input data. However, increasing the number of layers also
 increases the training time.
 
