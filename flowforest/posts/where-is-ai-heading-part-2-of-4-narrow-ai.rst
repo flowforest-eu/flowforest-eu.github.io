@@ -767,7 +767,7 @@ and how it is different from the preceding AI architectures.
    <a class="reference external" href="https://awards.acm.org/about/2018-turing">2018 Turing Award</a>
    for:</p>
    <blockquote cite="https://awards.acm.org/about/2018-turing" style="margin-top: 0px;">
-      <p> conceptual and engineering breakthroughs that have made deep neural networks a critical component of computing.</p>      
+      <p>&nbsp; conceptual and engineering breakthroughs that have made deep neural networks a critical component of computing.</p>      
    </blockquote>
 
 .. raw:: html
@@ -776,6 +776,6 @@ and how it is different from the preceding AI architectures.
       <p class="ai-disclaimer"><b>Disclaimer of AI usage</b>: AI (Google Gemini) was used to find additional sources; 
       all sources were manually verified before citing. AI was used to simplify some of the more complex & technical concepts. 
       AI was used in the final proof-reading process for pointing out improvement possibilities, but not for re-writing. 
-      Total contribution of AI in terms of contribution effort: 5-10%</p>
+      Total contribution of AI in terms of contribution effort in the process: 5-10%</p>
    </embed>
 
