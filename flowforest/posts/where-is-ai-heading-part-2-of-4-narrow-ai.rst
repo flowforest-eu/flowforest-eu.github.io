@@ -1,7 +1,7 @@
 .. title: Where is AI heading - part 2/4: History of AI
 .. slug: where-is-ai-heading-part-2-of-4-narrow-ai
 .. date: 2026-09-10 20:17:59 UTC+03:00
-.. tags: 
+.. tags: AI, AI-overview, narrow-AI
 .. category: 
 .. link: 
 .. description: 
@@ -35,7 +35,7 @@ Inspiration for AI - human brains
 
 For a long time, humankind has been fascinated by questions as:
 
-* What is thinking?
+* What is intelligence?
 * How do our brains work?
 * Is it possible to artifically imitate the inner workings of the brain?
 * What are the fundamental building blocks of the brain? 
@@ -145,7 +145,7 @@ TODO: Double-check this.
         <p style="font-size: 0.8em;">Since I am not a neuroscientist, the above description may contain oversimplifications or errors. 
         However, the general principle should still be still correct. The full description of the work principles of the visual cortex 
         also involves looping effects, complicated time-dependent processes, and some layers fulfiling multiple functions. My description
-        is a simplification of a complex process.
+        is a simplification of a complex process.</p>
     </embed>
 
 The same principles applies for machine learning: the number of layers must be sufficient so that complex features or concepts can be 
@@ -283,6 +283,15 @@ Curiously, at the moment of birth a baby already has almost
 `all of the neurons <https://scienceinsights.org/how-developed-is-a-babys-brain-at-birth/>`_ that the adult will have. 
 The learning process is not about *producing new neurons*, it is about the process of new connections (**synapses**) *forming* 
 between the existing neurons, unused connections being *pruned* (removed), and the strengths of connections *changing*.
+
+.. raw:: html
+
+   <embed>
+      <p style="font-size: 0.8em;">There is also an important process in brain development for making existing networks quicker - 
+      <a class="reference external" href="https://www.zerotothree.org/resource/what-are-the-most-important-changes-in-the-brain-after-birth/">myelination</a>. 
+      Since it has no analogue for artificial neural networks, we will not focus on it.
+      </p>
+   </embed>
 
 Lets now think about AI models, their training, and the similarities and differences compared to human learning.
 First, the analogue of a biological synapse (connection between neurons) is a **weight** in an AI model. 
@@ -450,7 +459,7 @@ But there are things which are harder to assess:
 
 It is entirely possible to follow the mathematical calculations - understanding the meaning behind the weights is harder to do.
 
-Neuroscientists face the exact same challenge when studying biological brains. If you show someone an image of a cat, you can observe which 
+Neuroscientists face the exact same challenge when studying biological brains. If they show someone an image of a cat, they can observe which 
 areas of the brain light up. But what specific groups of neurons were responsible for noticing the color of the fur? Which ones detected
 the patterns? Which ones separated the cat from the background, recognized its facial expression, or inferred its mood? 
 Or even deeper - which neurons caused the viewer to feel an emotion based on how the cat seemed to be feeling? 
@@ -463,16 +472,25 @@ networks rather than isolated single components. In the context of AI research, 
 models like LLMs.
 
 In the context of image recognition models, researchers have found clever ways to visually represent the inner workings of the AI models.
-One of those techniques is a `saliency map <https://en.wikipedia.org/wiki/Saliency_map>`_. 
+One of those techniques is a **saliency map**. 
 It is used to high-light the pixels in the input image that were most strongly used in the 
-process of assigning the category label (e.g., "a chair" or "a cow"). Recall the earlier example where detection of cows relied on detection of 
+process of assigning the category label - e.g., "chair" or "cow" 
+(`read more here <https://www.geeksforgeeks.org/machine-learning/what-is-saliency-map/>`_). 
+Recall the earlier example where detection of cows relied on detection of 
 grass by an extensive amount. In that case, the saliency map would strongly high-light the pixels containing grass, which would inform the 
 researchers of the problem. Researchers could then fix it by enlarging the dataset by cows in other context (e.g., on
 a paved road).
 
-There is another very interesting technique for visually understanding what a given neuron (or a group of neurons) in the neural net reacts to.
+.. image:: /images/part2/dog-saliency-map.jpg
+   :alt: Example: A saliency map.
+
+*Example of a saliency map. Source:* `Jay Alammar <https://jalammar.github.io/explaining-transformers/>`_
+
+There is also the technique of **feature visualization** for understanding what a given neuron (or a group of neurons) in the neural net reacts to.
 For this, an image with random noise is taken. After that, it is gradually modified so that it becomes an image that makes the *previously chosen
-neuron* to be maximally active. This often produces some quite psychedelic images that are filled with the object that this neuron reacts to.
+neuron(s)* to be maximally active. This process is repeated for thousands of iterations. 
+By the end of the process, the image is filled with objects that the neuron(s) react to.
+The end result of this process is often quite psychedelic.
 In the next image, we can see a feature visualisation for a group of neurons that activates *for dog eyes*.
 
 .. image:: /images/part2/feature_visualisation_dog.png
@@ -505,27 +523,30 @@ As we will see in the next blog post, this is one of the reasons that LLMs have 
 that where previously considered the hardest hills to conquer (e.g., mathematics), while the progress has been lagging a bit
 more behind in some other areas.
 
-=========================
-Narrow AI vs general AI
-=========================
+==================================================
+Narrow AI vs general-purpose AI
+==================================================
 
 In a very broad sense, AI systems can be divided into two:
 
-* narrow AI systems, which are trained to fulfil one or few specific functions (e.g., AlexNet);
-* general AI systems, which attempt to perform well on a very wide variety of tasks (e.g., any LLM).
+* **narrow** AI systems, which can perform one (or a few) specific functions (e.g., AlexNet);
+* **general-purpose** AI systems, which can perform a variety of tasks (e.g., any LLM).
 
-**NB!** *This should not be confused with "AGI" ("Artificial General Intelligence"), which is defined as an AI system that 
-that matches or surpasses human capabilities across virtually all cognitive tasks.*
+**NB!** *The last definition should not be confused with "AGI" ("Artificial General Intelligence"), which is defined as "an AI system that 
+that matches or surpasses human capabilities across virtually all cognitive tasks"*.
 
-Note that while AGI is a vague term and everyone interprets it differently, the distinction between narrow and general AI systems 
-is much more clear-cut and meaningful.
+Note that while AGI is a vague term and everyone interprets it differently, the distinction between *narrow* and *general-purpose* AI systems 
+is much more clear-cut - the distinction focuses on the *applicability* of the model, not its capabilities. Even the earliest version of Chat-GPT
+were *general-purpose* (even though they were not very capable).
 
-For many people, the word "AI" has become synonymous to LLMs. I think that this is problematic and makes it extremely hard to have 
+For many people, the word "AI" has become synonymous to LLMs. I think that this is rather problematic and makes it extremely hard to have 
 meaningful public discourse about risks and benefits of AI systems and their regulation. A lot of valid and difficult questions 
-about LLMs (in particular about safety and alignment) are either non-issues or much milder for more narrow AI systems.
+about LLMs (in particular about their safety and alignment) are either non-issues or much milder for more narrow AI systems.
 Of course, there are also issues that are relevant in both cases (e.g., bias).
 
-Consider also energy usage. Lets consider energy usage (in joules) of a typical image classification task:
+Consider also energy efficiency. For example, lets compare the energy usage (in 
+`joules <https://whateverconverter.com/glossary/joule/>`_)
+of taking a single image and detecting the content of the image (i.e., an image classification task):
 
 * For a typical **narrow** AI system, the energy usage falls in the range of 0.05-2 joules 
   (`more details <https://arxiv.org/pdf/2412.09731>`_) - the equivalent of a household LED lightbulb shining for less than 0.1 seconds (essentially, one blink of a LED).
@@ -533,32 +554,33 @@ Consider also energy usage. Lets consider energy usage (in joules) of a typical 
   If the answer is given by the LLM in the conversational format, the answer can easily be more than 10 times longer, bringing the energy usage to over 3000 joules - 
   the LED lightbulb shining for 4 minutes straight.
 
-For me, the difference is mind-blowing: using an LLM for the same task uses up **~3000** times more energy!
+For me, the difference is mind-blowing: using an LLM for the same task uses **~3000** times more energy!
 
 .. raw:: html
 
    <embed>
       <details>
-         <summary>Click here for an explanation - what creates the 3000x energy difference?</summary>
+         <summary>Click here for an explanation - where does the 3000x energy difference come from?</summary>
          <ul class="simple">
          <li><p>As already mentioned, large part of it is that conversational answers take a lot more energy to produce - and LLMs <em>love</em> to be wordy.</p></li>
          <li><p>Even if the classification result is provided without unnecessary clutter ("A golden retriever sitting on a grass field at sunset"), LLMs still build up
-         the answer word by word (<em>token by token, to be more precise - more about that in the next blog post</em>), using up energy on each iteration.</p></li>
+         the answer word by word (<em>token by token, to be more precise - more about that in the next blog post</em>), using up a considerable amount of energy for 
+         producing each word.</p></li>
          <li><p>Unlike lightweight traditional models, LLMs require power-hungry GPU clusters to process requests.</p></li>
          <li><p>The architecture of LLMs is vastly heavier - evaluating its billions of parameters requires far more layer-by-layer computation than a narrow AI system.</p></li>
          </ul>
       </details>
    </embed>
 
-For all those reasons, I think that everyone should keep that lesson in their head:  
+For all of those reasons, I think that everyone should keep in mind that:  
 
 .. math::
 
   AI \neq LLM.   
 
 Crucially, narrow AI systems have produced (and continue to produce!) many impressive results. In the following section,
-we will have a look at three examples from Google DeepMind that predate the creation of modern chatbots. The last one of them may honestly  
-be characterized as the greatest biological breakthrough ever achieved by an AI system.
+we will have a look at three examples from Google DeepMind that predate the creation of modern chatbots. Looking back today in 2026,
+the last one of them may honestly be characterized as the greatest biological breakthrough ever achieved by an AI system.
 
 =========================================
 What else has deep learning given us?
@@ -581,10 +603,13 @@ I would like to mention 3 areas where they successfully applied deep learning me
          <h3>Playing 1980s computer games</h3>
     </embed>
 
+When DeepMind was founded, Demis Hassabis looked for ways of expanding the technique of deep learning to a wider array of contexts.
+For this, computer games proved to be a useful medium.
+
 In 2014, DeepMind 
 `published research <https://deepmind.google/blog/deep-reinforcement-learning/>`_
 about a model (**DQN** - "deep Q-learning") that could learn to play a wide range of classical 1980s computer games 
-(such as Pong, Breakout or Space Invaders) without given *any description* about how those games work.
+(such as Pong, Breakout or Space Invaders) without given any description about how those games work.
 Instead, they used deep learning methods, letting the model learn by trying to play the games -
 providing the game's screen as an input (and the game's score) to the model at every frame.
 Model could only interact with the game by choosing which keys to press.
@@ -599,13 +624,12 @@ This is a crucial point that distinguishes it from learning that relies on pre-d
 The model AlexNet, which we considered above, is an example of supervised learning. 
 Using supervised learning in the context of Atari games would be impossible - it would mean that humans would have to manually
 judge a large portion of *all possible game states*. In that sense, reinforcement learning is much more flexible - it just requires
-that there exists some well defined goal function (like the game's score).
+that there exists some well defined *goal function* (like the game's score).
 
 This also means that in the case of reinforcement learning, the model might find solutions that humans did not anticipate or 
 were not aware of. Here is a video of how this happened in the game of Breakout - model discovered a
 `nice strategy <https://www.youtube.com/watch?v=TmPfTpjtdgg>`_
 that the team in DeepMind had not been aware of.
-
 
 .. raw:: html
 
@@ -638,20 +662,21 @@ works at a technical level, or skip it.
    <embed>
       <details>
          <summary>Click here to read how Deepmind trained two CNN models for playing Go</summary>
-         <p>The first neural network, the <strong>policy network</strong>, predicts the next move, and is used to narrow the search 
+         <p>DeepMind trained two CNN models for playing Go. 
+         The first neural network, the <strong>policy network</strong>, predicts the next move, and is used to narrow the search 
          to consider only the moves most likely to lead to a win. The second neural network, the <strong>value network</strong>, is 
          then used to reduce the depth of the search tree - estimating
-         the winner in each position in place of searching all the way to the end of the game.</p>
-         <p>The training process started with training (++) the policy network, which predicts the next move. (++rep)
+         the winner in each position instead of searching all the way to the end of the game.</p>
+         <p>They started by training the policy network, which predicts the next move.
          It was initially trained by using <em>supervised learning</em> on 30 million moves from games played by human experts,
-         until it could predict the human move 57% of the time.
+         until it could predict the human move ~57% of the time.
          After that, the policy network was improved by reinforcement learning - AlphaGo played thousands of games with itself
          and used the game's final result (win or loss) as the <em>goal function</em> to reinforce the weights behind the strategies that
-         consistently lead to winning (++).</p>
+         consistently lead to winning.</p>
          <p>This policy network was then used to train a <em>value network</em> via reinforcement learning and self-play.
          The obtained value networks were able to evaluate any Go position and estimate the eventual winner with high reliability -
          a problem so hard it was previously
-         <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0004370201001217">believed to be impossible</a>.
+         <a class="reference external" href="https://www.sciencedirect.com/science/article/pii/S0004370201001217">believed to be impossible to be solved by a computer</a>.
          For a more in-depth description, I recommend to read either their
          <a class="reference external" href="https://research.google/blog/alphago-mastering-the-ancient-game-of-go-with-machine-learning/">blog post</a> or
          <a class="reference external" href="http://www.nature.com/nature/journal/v529/n7587/full/nature16961.html">paper in Nature</a>.</p>
@@ -675,29 +700,41 @@ but in a shorter time span one has to keep in mind that while AI can help with s
 some of the steps can not be so easily side-stepped, like clinical testing and obtaining regulatory approval for drugs.
 
 At the same time, we already have one incredible medicine breakthrough in an area that had seen only limited progress in 50 years - protein folding.
-The problem's statement sounds innocent enough: given a sequence of amino acids, what 3D shape does this molecule take? In human body, proteins
-play very different roles (although they all consist of the same 22 amino acids), and their role is largely determined by the 3D shape that they take: 
+The problem's statement sounds innocent enough: given a protein (*a sequence of amino acids*), what 3D shape does this protein molecule take? 
+In human body, proteins
+play very different roles (although they all consist *of the same 22 amino acids*), and their role is largely determined by the 3D shape that they take: 
 
 * keratin - long rod-like shape - important component of hair;
 * collagen - long triple helix shape - gives strength to bones, tendons, and ligaments;
 * hemoglobin (a protein that additionally contains iron) - a basket-like shape - transport oxygen into cells;
-* antibodies - Y-shape - each antibody branches to a different target (e.g., a microbe or infected cell) so that immune system knows to attack 
+* antibodies (immunoglobulin) - Y-shape - each antibody branches to a different target (e.g., a microbe or infected cell) so that immune system knows to attack 
   that target.
 
-This was an active research area since 1971, and by end of 2022, 
+.. image:: /images/part2/4proteins.png
+   :alt: 4 proteins (keratin, collagen, hemoglobin, antibodies)
+
+*Illustration: 3D structures of*
+`keratin <https://www.rcsb.org/structure/6EC0>`_, 
+`collagen <https://www.rcsb.org/structure/1CAG>`_, 
+`hemoglobin <https://www.rcsb.org/structure/2HHB>`_,
+`immunoglobulin <https://www.rcsb.org/structure/1IGT>`_.
+*Source: RCSB Protein Data Bank* 
+
+Protein folding was an active research area since 1971, and by end of 2022, 
 `scientists had identified 3D shapes for 200 thousand proteins <https://www.rcsb.org/news/639b9e337f8444f313d20414>`_.
-Previously, it could take a student their *whole PhD study* to determine the 3D structure of one single protein.
-DeepMind introduced a deep learning model called 
+Previously, it could take a student their whole PhD study to determine the 3D structure of a *single protein*.
+In 2018, DeepMind introduced a specialized deep learning model called 
 `AlphaFold <https://deepmind.google/blog/alphafold-using-ai-for-scientific-discovery/>`_
-in 2018; and by 2022, they had achieved a milestone - they had mapped the 3D shape of *200 million* proteins, virtually 
+for the protein folding problem, and it turned out to be hugely successful.
+By 2022, they had achieved a milestone - they had mapped the 3D shape of *200 million* proteins, virtually 
 `every protein known to exist in nature <https://deepmind.google/blog/alphafold-reveals-the-structure-of-the-protein-universe/>`_.
 They had taken what took people years and tens of thousands of dollars via experimental methods, 
 and turned it into something that the AI could do in seconds for a negligible cost.
 
-In October 2024, Demis Hassabis and 
+For this achievement, Demis Hassabis and 
 `John Jumper <https://en.wikipedia.org/wiki/John_M._Jumper>`_
 were awarded the 
-`Nobel Prize in Chemistry for AlphaFold <https://www.nobelprize.org/prizes/chemistry/2024/summary/>`_.
+`Nobel Prize in Chemistry for AlphaFold <https://www.nobelprize.org/prizes/chemistry/2024/summary/>`_ in October 2024.
 
 There is an excellent `video overview from Veritaserium channel <https://www.youtube.com/watch?v=P_fHJIYENdI>`_ about AlphaFold.
 Alternatively, one can read technical details from 
@@ -710,26 +747,35 @@ Conclusion
 The main takeaways I want to leave to you, the reader:
 
 * Although AI systems have been originally been built on ideas borrowed from human brains, they are still very much different. And it is not 
-  necessary for AI systems to blindly imitate human brains - intelligence comes in many different forms.
+  necessary for AI systems to blindly imitate human brains.
 * Learning is possible where there is a clear goal function towards which to gradually optimize. Sometimes just defining a good goal 
   function is already a significant step towards success.
-* There exists a large variety of different AI systems, both narrow and general ones. Being able to distinguish them is a starting point for 
-  any public discussion about both benefits and risks.
+* There exists a large variety of different AI systems, both narrow and general-purpose. Being able to distinguish between them is a starting point for 
+  any public discussion about both the benefits and risks.
 * AI models are not magic - by learning the basic principles that they operate on, it is possible to have much more meaningful and deeper 
   conversations.
 
 Although we covered a lot of ground in this post, this overview really just scratches the surface of all the research done over the decades
-into various AI systems. In the next blog post, we will focus on LLMs and how they differ from preceding AI architectures.
+into various AI systems. In the next blog post, we will focus on generative AI (including LLMs), the transformer architecture,
+and how it is different from the preceding AI architectures.
 
 ------------
 
-To recognize their contribution to this field, Yoshua Bengio, Geoffrey Hinton and Yann LeCun were awarded the 
-`2018 Turing Award <https://awards.acm.org/about/2018-turing>`_ 
-for *conceptual and engineering breakthroughs that have made deep neural networks a critical component of computing*.
+.. raw:: html
+
+   <p style="margin-bottom: 0.5rem;">To recognize their contribution to this field, Yoshua Bengio, Geoffrey Hinton and Yann LeCun were awarded the
+   <a class="reference external" href="https://awards.acm.org/about/2018-turing">2018 Turing Award</a>
+   for:</p>
+   <blockquote cite="https://awards.acm.org/about/2018-turing" style="margin-top: 0px;">
+      <p> conceptual and engineering breakthroughs that have made deep neural networks a critical component of computing.</p>      
+   </blockquote>
 
 .. raw:: html
 
-    <embed>
-        <p class="ai-disclaimer"><b>Disclaimer of AI usage</b>: AI was used to find additional sources; all sources were manually verified before citing. AI was used to simplify some of the more complex & technical concepts.</p>
-    </embed>
+   <embed>
+      <p class="ai-disclaimer"><b>Disclaimer of AI usage</b>: AI (Google Gemini) was used to find additional sources; 
+      all sources were manually verified before citing. AI was used to simplify some of the more complex & technical concepts. 
+      AI was used in the final proof-reading process for pointing out improvement possibilities, but not for re-writing. 
+      Total contribution of AI in terms of contribution effort: 5-10%</p>
+   </embed>
 
