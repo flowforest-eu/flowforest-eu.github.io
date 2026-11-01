@@ -699,16 +699,17 @@ In recent years, leader of fronteir labs have talked a lot about how LLMs could 
 but in a shorter time span one has to keep in mind that while AI can help with suggesting new drug candidates or biological experiments,
 some of the steps can not be so easily side-stepped, like clinical testing and obtaining regulatory approval for drugs.
 
-At the same time, we already have one incredible medicine breakthrough in an area that had seen only limited progress in 50 years - protein folding.
-The problem's statement sounds innocent enough: given a protein (*a sequence of amino acids*), what 3D shape does this protein molecule take? 
-In human body, proteins
-play very different roles (although they all consist *of the same 22 amino acids*), and their role is largely determined by the 3D shape that they take: 
+At the same time, we already have one incredible biological breakthrough in an area that had seen only limited progress in 50 years - protein folding.
+The problem's statement sounds innocent enough: given a protein, what 3D shape does this protein molecule take? 
+Proteins consist of 22 different amino acids; those can be thought of as "universal LEGO bricks" that the body uses for various purposes.
+The role of the proteins is largely determined by the 3D shape that they take (which in turn is determined by which amino acids repel and attract each
+other). Here are some examples for illustrative purposes:
 
-* keratin - long rod-like shape - important component of hair;
-* collagen - long triple helix shape - gives strength to bones, tendons, and ligaments;
-* hemoglobin (a protein that additionally contains iron) - a basket-like shape - transport oxygen into cells;
-* antibodies (immunoglobulin) - Y-shape - each antibody branches to a different target (e.g., a microbe or infected cell) so that immune system knows to attack 
-  that target.
+* keratin - *long rod-like shape* - important component of hair;
+* collagen - *long triple helix shape* - gives strength to bones, tendons, and ligaments;
+* hemoglobin (a protein that additionally contains iron) - *a basket-like shape* - transports oxygen into cells;
+* antibodies (immunoglobulin) - *Y-shape* - each antibody attaches to a different target (e.g., a microbe or an infected cell) so that the 
+  immune system knows to attack that target.
 
 .. image:: /images/part2/4proteins.png
    :alt: 4 proteins (keratin, collagen, hemoglobin, antibodies)
@@ -716,7 +717,7 @@ play very different roles (although they all consist *of the same 22 amino acids
 *Illustration: 3D structures of*
 `keratin <https://www.rcsb.org/structure/6EC0>`_, 
 `collagen <https://www.rcsb.org/structure/1CAG>`_, 
-`hemoglobin <https://www.rcsb.org/structure/2HHB>`_,
+`hemoglobin <https://www.rcsb.org/structure/2HHB>`_, and 
 `immunoglobulin <https://www.rcsb.org/structure/1IGT>`_.
 *Source: RCSB Protein Data Bank* 
 
