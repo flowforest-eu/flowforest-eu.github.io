@@ -11,7 +11,7 @@
 #footer_author {
     font-size: 0.92rem;
 }
-
+0
 #footer_nikola {
     font-size: 0.8125rem;
     color: #636057 !important;
@@ -280,4 +280,16 @@ p.byline.author {
 
 p.dateline::before {
     content: "" !important; 
+}
+
+details {
+    border: 2px dashed #888888;
+    border-radius: 8px;
+    margin-bottom: 1rem;    
+}
+
+summary {
+    padding-left: 0.6rem;
+    color: #666666;
+    font-style: italic;
 }

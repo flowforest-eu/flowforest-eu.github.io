@@ -1,12 +1,12 @@
 .. title: Where is AI heading - part 1/4
 .. slug: where-is-ai-heading-part1
 .. date: 2026-08-06 08:22:32 UTC+03:00
-.. tags: 
+.. tags: AI, AI-overview, AI-progress
 .. category: 
 .. link: 
 .. description: 
 .. type: text
-.. tags: AI, AI-progress
+
 
 .. raw:: html
 

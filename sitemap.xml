@@ -7,123 +7,135 @@
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <url>
   <loc>https://flowforest.eu/</loc>
-  <lastmod>2026-08-22T00:02:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/2026/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/archive.html</loc>
-  <lastmod>2026-08-21T23:15:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/categories/</loc>
-  <lastmod>2026-08-06T21:51:00Z</lastmod>
+  <lastmod>2026-11-01T10:24:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://flowforest.eu/categories/ai-overview/</loc>
+  <lastmod>2026-11-01T10:24:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/categories/ai-progress/</loc>
-  <lastmod>2026-08-06T21:51:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/categories/ai-safety/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/categories/ai/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/categories/intro/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/et/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/et/2026/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/et/archive.html</loc>
-  <lastmod>2026-08-21T23:15:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/et/categories/</loc>
-  <lastmod>2026-08-06T21:51:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/et/categories/ai-progress/</loc>
-  <lastmod>2026-08-06T21:51:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/et/categories/ai-turvalisus/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/et/categories/ai/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/et/categories/intro/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/et/pages/about/</loc>
-  <lastmod>2026-08-21T23:08:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://flowforest.eu/pages/about/" />
  </url>
  <url>
   <loc>https://flowforest.eu/et/pages/path-handlers/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://flowforest.eu/pages/path-handlers/" />
  </url>
  <url>
   <loc>https://flowforest.eu/et/pages/social_buttons/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://flowforest.eu/pages/social_buttons/" />
  </url>
  <url>
   <loc>https://flowforest.eu/et/pages/theming/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://flowforest.eu/pages/theming/" />
  </url>
  <url>
   <loc>https://flowforest.eu/et/posts/purpose-of-blog/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://flowforest.eu/posts/purpose-of-blog/" />
  </url>
  <url>
+  <loc>https://flowforest.eu/et/posts/where-is-ai-heading-part-2-4-narrow-ai/</loc>
+  <lastmod>2026-09-10T18:01:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://flowforest.eu/et/posts/where-is-ai-heading-part1/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="en" href="https://flowforest.eu/posts/where-is-ai-heading-part1/" />
  </url>
  <url>
   <loc>https://flowforest.eu/pages/about/</loc>
-  <lastmod>2026-08-21T23:08:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="et" href="https://flowforest.eu/et/pages/about/" />
  </url>
  <url>
   <loc>https://flowforest.eu/pages/path-handlers/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/pages/social_buttons/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/pages/theming/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
  </url>
  <url>
   <loc>https://flowforest.eu/posts/purpose-of-blog/</loc>
-  <lastmod>2026-08-06T21:42:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="et" href="https://flowforest.eu/et/posts/purpose-of-blog/" />
  </url>
  <url>
+  <loc>https://flowforest.eu/posts/where-is-ai-heading-part-2-4-narrow-ai/</loc>
+  <lastmod>2026-09-10T18:01:00Z</lastmod>
+ </url>
+ <url>
   <loc>https://flowforest.eu/posts/where-is-ai-heading-part1/</loc>
-  <lastmod>2026-08-06T21:51:00Z</lastmod>
+  <lastmod>2026-09-29T10:46:00Z</lastmod>
   <xhtml:link rel="alternate" hreflang="et" href="https://flowforest.eu/et/posts/where-is-ai-heading-part1/" />
  </url>
 </urlset>
