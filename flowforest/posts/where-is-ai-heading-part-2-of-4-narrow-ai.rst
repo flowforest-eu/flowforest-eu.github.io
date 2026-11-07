@@ -84,22 +84,19 @@ but in simplified mathematical form. Artificial neurons:
 
 The same basic structure for neurons powers the vast majority of neural networks used today (including LLMs). 
 The main difference is how the third step works: modern networks swap out the strict "all-or-nothing" threshold for 
-a bit more complicated threshold functions (*mathematically: 
-they use smooth activation functions, which scale smaller values down rather than setting them to 0*).
+a bit more complicated threshold functions.
 
-TODO: Improve this previous paragraph.
+A crucial feature of the perceptron was its ability to use a learning algorithm to adjust its weights based 
+on input data and target output, thus learning from its mistakes and improving its performance over time. 
 
-A crucial feature of the perceptron was its ability to adjust its weights based on input data and target output.
-The process of weight adjustment is achieved through a learning algorithm, often referred to as the *perceptron learning rule*.
-This algorithm updates the weights to reduce the difference between the predicted output and the desired output, 
-effectively allowing the perceptron to learn from its mistakes and improve its performance over time. In next sections,
-we will delve deeper into how learning process actually works.
+However, perceptrons also had their limitations. In the next sections, we will see what those were
+and how the science of neural networks has evolved over time.
 
 ============================
 Multi-layer networks 
 ============================
  
-A fundamental limitation of the perceptron model was that it was a single-layer network - meaning there were no intermediate ("hidden") 
+A fundamental limitation of the perceptron model was that it was a single-layer network - meaning there were no intermediate 
 layers of neurons between the inputs and the output. Contrast that with the 
 `human vision <https://pressbooks.atlanticoer-relatlantique.ca/openneuroscience/chapter/chapter-9-sensation-and-perception-the-visual-system/>`_, 
 where there are ~10 layers of neurons, from the cells receiving the light impulses to the neurons 
@@ -122,7 +119,7 @@ The raw image captured by those rods and cones is heavily compressed before it e
 For example, the retinal ganglion cells (drawn in blue color in the above image) act like a biological image compression algorithm.
 
 The optic nerve consists of ~1.2 million optic nerve fibers. You might think of it as an 1.2 megapixel camera cable.
-However, human vision seems much better than a picture taken by a 1.2 megapixel camera, and there are some 
+However, human vision feels much better than a picture taken by a 1.2 megapixel camera, and there are some 
 `absolutely fascinating reasons for this <https://clippingexpertasia.com/blog/human-eye-resolution-explained-megapixels-fps-vision>`_.
 
 After reaching the optic nerve, information is processed 
@@ -131,21 +128,22 @@ Each layer builds on the previous layer and represents increasingly complex feat
 
 1. layer: organizes **visual information** (*technically: "LGN layer"*);
 2. layer: detects **low-level features**: orientation, edges, and lines (*technically: "V1 layer"*);
-3. layer: combines simple edges into **basic shapes** and textures (*technically: "V2/V3 layer"*);
+3. layer: combines simple edges into **basic shapes** and textures (*technically: "V2 layer"*);
 4. layer: processes **complex shapes** and geometric forms (*technically: "V4 layer"*);
 5. layer: detects **whole objects**, faces, and abstract concepts, e.g., reckognizing a dog, a car, or a number (*technically, 1 or 2 layers: "IT cortex"*).
 
-For more detailed overview, `see here <https://en.wikipedia.org/wiki/Visual_system#System_overview>`_.
-
-TODO: Double-check this.
+For more detailed overview, see `here <https://people.csail.mit.edu/pulkitag/data/cnn_mimics_brain.pdf>`_
+and `here <https://en.wikipedia.org/wiki/Visual_system#System_overview>`_.
 
 .. raw:: html
 
     <embed>
         <p style="font-size: 0.8em;">Since I am not a neuroscientist, the above description may contain oversimplifications or errors. 
-        However, the general principle should still be still correct. The full description of the work principles of the visual cortex 
-        also involves looping effects, complicated time-dependent processes, and some layers fulfiling multiple functions. My description
-        is a simplification of a complex process.</p>
+        However, the general principle should still be correct and serves to illustrate the subsequent layers represent increasingly
+        complex patterns. The full description of how the visual cortex works
+        also involves looping effects, complex time-dependent processes, and some layers fulfilling multiple functions; my description
+        is a simplification of a complex process. I also glossed over layers of V3, V5, and V6, since they primarily handle motion and spatial
+        processing, whereas our focus here is on what happens when a person views static images.</p>
     </embed>
 
 The same principles applies for machine learning: the number of layers must be sufficient so that complex features or concepts can be 
@@ -161,7 +159,7 @@ Also, the research initially lacked a strong theoretical foundation.
 In 1969, a book called `Perceptrons <https://en.wikipedia.org/wiki/Perceptrons_(book)>`_ demonstrated that 
 *single-layer networks are fundamentally limited* 
 (`mathematical explanation <https://apxml.com/courses/introduction-to-deep-learning/chapter-1-neural-network-foundations/perceptron-limitations>`_), 
-and noted that there is no known efficient way to train multi-layer networks.
+and noted that there is no known *efficient* way to train multi-layer networks.
 
 After that, there were several periods when the interest in AI research was considerably reduced. Such time periods are now
 called "AI winters" (`see here <https://news.sparkfun.com/7896>`_ for more exact historical background).
@@ -191,8 +189,8 @@ contain millions of neurons or more.
 *A simplified illustration of a deep neural network. Source: KDNuggets*
 
 After some progress had been made in 1980s and 1990s, progress stalled again. 
-Looking back, it is clear that the computers used then just did not have sufficient computation capabilities to train
-practically useful models.
+Looking back, it is clear that one of the reasons was that the computers used then just did not have sufficient computational 
+capabilities to train practically useful models.
 AI researchers tended to focus on other types of systems, for example 
 carefully hand-crafted **expert systems** which require large amounts of hand-coded expert knowledge
 (`read more here <https://en.wikipedia.org/wiki/Expert_system>`_).
@@ -222,7 +220,7 @@ In 2012, `Alex Krizhevsky <https://en.wikipedia.org/wiki/Alex_Krizhevsky>`_,
 `Ilya Sutskever <https://en.wikipedia.org/wiki/Ilya_Sutskever>`_, 
 and Geoffrey Hinton won the ImageNet competition using an AI system **AlexNet**, which was an example of
 a Convolutional Neural Network (CNN) - a model architecture that had waited for its time for several decades. 
-It crushed the competition with an error rate of just *15%* 
+It crushed the competition with an error rate of just 15%
 (winners of 2010 and 2011 had error rates of 28% and 26%, correspondingly), while the training time dropped from months to days. 
 This event was a huge catalyst for the following boom in deep learning (and AI in general).
 
@@ -241,7 +239,7 @@ After successful training, a CNN model has a property that we already observed
 for human brains: 
 as information moves through subsequent layers, 
 `these layers start to represent increasingly complex concepts <https://arxiv.org/pdf/2108.00107>`_. 
-Lets look at how a CNN model processes an image of a clownfish:
+Consider how a CNN model processes an image of a clownfish:
 
 * earlier layers detect edges and colors (e.g., the edge of an orange stripe);
 * following layers start to combine them into texture-like feature groups (e.g., an orange-white striped pattern);
@@ -316,7 +314,7 @@ Bigger arrows correspond to larger weights (TODO).
 
 In neural nets, weights can also have a negative value (depicted with a dashed arrow - TODO). This has the effect of that neuron acting as a brake
 for the neuron in the next layer (the technical term is "**inhibition**"). 
-Lets consider a network trying to distinguish a cheetah from a leopard - both are big cats with four legs, a tail, 
+Consider a network trying to distinguish a cheetah from a leopard - both are big cats with four legs, a tail, 
 and spotted fur.
 The distinguish feature is the shape of the spots - cheetahs have solid, single black spots; leopards have complex, multi-colored rosettes.
 Lets assume that the blue neuron in the image stands for a network detecting cheetahs. x1 and x2 (TODO) would represent factors that are common
@@ -325,14 +323,15 @@ would be strongly negative, *inhibiting* the detection of the class "cheetah".
 
 TODO: add image of cheetah vs leopard.
 
-Human brains also make use of inhibitory signals in various contexts, including vision; if you are interested, click on the following box to expand it.
+Human brains also make use of inhibitory signals in various contexts, including vision; if you are interested, click on the following box to expand it
+and learn more.
 
 .. raw:: html
 
    <embed>
       <details>
-         <summary>Click here to read how inhibitory signals are used in the human brain for separating dark and bright areas,
-         and how this relates to some optical illusions</summary>
+         <summary>Click here to read how inhibitory signals are used in the human brain
+         and how this is related to some optical illusions</summary>
          <p>Imagine a dark tree next to a bright sky; focus on the edge where the two meet.
          When light from the sky hits the receptors in the eye, neurons fire strong active signals ("it is bright here") 
          and <em>also send</em> inhibitory 
@@ -342,7 +341,7 @@ Human brains also make use of inhibitory signals in various contexts, including 
          <a class="reference external" href="https://en.wikipedia.org/wiki/Lateral_inhibition#Visual_inhibition">visual lateral inhibition</a>
          is exactly the cause for 
          <a class="reference external" href="https://en.wikipedia.org/wiki/Grid_illusion">several optical illusions</a>
-         where we see dots appearing on white background.</p>
+         where the viewer sees dots appearing on white background.</p>
       </details>
    </embed>
 
@@ -351,7 +350,7 @@ it means that during the training process, some weights are strengthened and som
 The mathematical operations themselves connecting the previous layer with the next one do not change; only the weights do. 
 This begs the question: how does the training process select the weights to change to gradually produce a useful AI model such as the AlexNet?
 
-**Remark**. *Keep in mind that computers does not see "see" the image as we do. Instead, they see an image as a grid of pixels,
+**Remark**. *Keep in mind that computers does not "see" the image as humans do. Instead, they see an image as a grid of pixels,
 and each pixel is just 3 numbers for the AI model - corresponding to the amount of red, green, and blue in that pixel.
 In that sense, for AI an image is just a grid of numbers.*
 
@@ -396,8 +395,8 @@ The detection capability of the model will increase if it also starts making sur
 and alternate in color. For this to happen, some neurons in the later layers have to specialize to respond to the positional information of 
 those shapes (orange/white stripes) that were detected in the preceding layers.
 
-I recommend to make a small pause here. Think about some specific object in the world and think about how do you recognize 
-it from an image. Try to imagine the features that define it and try to think how the model might learn to detect it.
+I recommend to take a small pause and think about some specific object in the world and reflect on how do you recognize 
+it in an image. Try to think of the features that define it and how the model could learn to detect it.
 
 The crucial question is whether there is a sufficient amount of positive and negative examples in the data set: 
 the model may take "shortcuts" if the input data does not punish for it. There is a 
@@ -407,8 +406,12 @@ detecting animals (specific example: cows are usually photographed on grassy pas
 What has happened is that instead of learning the complex anatomical features of a cow (ears, muzzle, body shape), the model has learned a 
 simpler rule: "somewhat cow-like animal on a green pasture => cow". This is an example of what is called **shortcut learning**.
 
-To be completely honest, I think that humans would also do somewhat worse at detecting cows on beaches. To see what I mean, just look at
-the images on `page 2 of the PDF linked above <https://arxiv.org/pdf/1807.04975>`_. 
+.. raw:: html
+
+   <embed>
+      <p style="font-size: 0.8em;">To be completely honest, I think that humans would also do somewhat worse at detecting cows on beaches. To see what I mean, just look at
+      the images on <a class="reference external" href="https://arxiv.org/pdf/1807.04975">page 2 of the PDF linked above</a>.</p>
+   </embed>
 
 The solution is to enrich the dataset of images to have variation of contexts, backgrounds lighting, viewpoints and shapes. It is also useful
 to incorporate images taken by different photographers and camera types.
@@ -417,7 +420,7 @@ Finally, for something completely different - I would like to present a *visual 
 It is a webpage that runs a CNN model called "Tiny VGG" *directly in your browser*, allowing to upload your own image and 
 see the classification model crunching through it before your own eyes.
 However, this model only accepts tiny images (64x64 pixels) and sorts the images to one of 10 pre-defined classes.
-This is intentional; firstly, it enables the model to run smoothly in a web browser. Secondly (and even more importantly), 
+This is intentional; first, it enables the model to run smoothly in a web browser. Secondly (and more importantly), 
 this allows the model to be simple enough to visually illustrate what really happens at each step. Try clicking on different 
 steps to get an intuitive understanding of what happens at various steps and how the model "sees" the image.
 
@@ -460,7 +463,7 @@ How to look inside the model?
 
 Lets consider a seemingly simple question - "do we fully understand how those models work?"
 
-On the one hand, for a given local model, we fully know what is the model's architecture. 
+On the one hand, for a given local model, the model's architecture is fully known. 
 Also, at any point of training, all of the weights are known and can be inspected.
 But there are things which are harder to assess:
 
@@ -579,6 +582,11 @@ For me, the difference is mind-blowing: using an LLM for the same task uses **~3
          <li><p>Unlike lightweight traditional models, LLMs require power-hungry GPU clusters to process requests.</p></li>
          <li><p>The architecture of LLMs is vastly heavier - evaluating its billions of parameters requires far more layer-by-layer computation than a narrow AI system.</p></li>
          </ul>
+         <p style="font-size: 0.8em;">There are many estimates for LLM energy usage in different contexts, some lower and some significantly higher 
+         than the paper I cited above (which gave an estimate of ~200-300 joules). 
+         I chose this paper, since it looked at classification tasks specifically and it represented a middle ground between some of the more extreme 
+         estimates; the highest estimates reached 10000 joules.
+         Of course, as model sizes continue to grow, they will become even more energy-intensive.</p>
       </details>
    </embed>
 
