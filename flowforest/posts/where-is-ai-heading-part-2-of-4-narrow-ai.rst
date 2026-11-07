@@ -160,7 +160,7 @@ As mentioned above, those neural networks were primarily confined to single-laye
 Also, the research initially lacked a strong theoretical foundation.
 In 1969, a book called `Perceptrons <https://en.wikipedia.org/wiki/Perceptrons_(book)>`_ demonstrated that 
 *single-layer networks are fundamentally limited* 
-(`mathematical explanation <https://apxml.com/courses/introduction-to-deep-learning/chapter-1-neural-network-foundations/perceptron-limitations>`_ ++), 
+(`mathematical explanation <https://apxml.com/courses/introduction-to-deep-learning/chapter-1-neural-network-foundations/perceptron-limitations>`_), 
 and noted that there is no known efficient way to train multi-layer networks.
 
 After that, there were several periods when the interest in AI research was considerably reduced. Such time periods are now
@@ -172,8 +172,9 @@ A major breakthrough came in the 1980s when
 helped demonstrate how a technique called **backpropagation**
 could be used to efficiently train multi-layer networks. 
 `Yann LeCun <https://en.wikipedia.org/wiki/Yann_LeCun>`_
-then took this algorithm and applied it to the problem of recognizing handwritten digits
-(he used a type of neural net called **convolutional neural network (CNN)**.
+then took this algorithm and applied it to the problem of 
+`recognizing handwritten digits <https://en.wikipedia.org/wiki/LeNet>`_.
+For this, he used a type of neural net called **convolutional neural network (CNN)**.
 This practical application of multi-layer training established the paradigm that is nowadays known as **deep learning**.
 Remember those concepts - throughout this blog post, we will come back several times to models based on the *CNN architecture*,
 since CNN models work on visual data, which makes them great for providing intuitively understandable examples.
@@ -193,22 +194,25 @@ After some progress had been made in 1980s and 1990s, progress stalled again.
 Looking back, it is clear that the computers used then just did not have sufficient computation capabilities to train
 practically useful models.
 AI researchers tended to focus on other types of systems, for example 
-carefully hand-crafted **expert systems** which require large amounts of manual programming.
+carefully hand-crafted **expert systems** which require large amounts of hand-coded expert knowledge
+(`read more here <https://en.wikipedia.org/wiki/Expert_system>`_).
 However, there were three notable figures - 
 `Yoshua Bengio <https://en.wikipedia.org/wiki/Yoshua_Bengio>`_,
-Geoffrey Hinton and Yann LeCun, who kept the flame of curiousity alive 
-even when the funding sources disappeared. Over the decades, they collectively supervised 50+ PhD students.
+Geoffrey Hinton and Yann LeCun, who kept the flame of curiousity regarding deep learning alive 
+even when other researchers moved on. 
+Over the decades, they collectively supervised 50+ PhD students on various topics.
 
-Lets fast forward to 2008. AI research (++) was at a low; deep learning as such was seen by the industry mostly as a curious historical relic.
-A breakthrough came from an unexpected place. A researcher named `Fei-Fei Li <https://en.wikipedia.org/wiki/Fei-Fei_Li>`_ had
-`an intuition <https://arstechnica.com/ai/2024/11/how-a-stubborn-computer-scientist-accidentally-launched-the-deep-learning-boom/>`_ 
-from her previous experience (++ two sentences?)
-that progress on machine learning for image classification could be made if a more comprehensive high-quality training dataset would be created. 
+Lets fast forward to 2008. Deep learning was seen by the industry mostly as a curious historical relic.
+A breakthrough came from an unexpected place. A researcher named `Fei-Fei Li <https://en.wikipedia.org/wiki/Fei-Fei_Li>`_
+had been working on vision models for several years and had developed
+`an intuition <https://arstechnica.com/ai/2024/11/how-a-stubborn-computer-scientist-accidentally-launched-the-deep-learning-boom/>`_
+that for making progress,
+more comprehensive high-quality training dataset would be necessary.
 She was also inspired by an 
 `estimate <http://wexler.free.fr/library/files/biederman%20%281987%29%20recognition-by-components.%20a%20theory%20of%20human%20image%20understanding.pdf>`_ 
 by vision scientist Irving Biederman that the average person 
 recognizes roughly 30,000 different kinds of objects.    
-With just a few colleagues, limited funding, 2 years of hard work, and a lot of ingenuity, she managed to compile a dataset of 14 million images, 
+With just a few colleagues, limited funding, 2 years of hard work, and a lot of ingenuity, she managed to compile a dataset of *14 million images*, 
 carefully annotated into 22 000 categories, which she named **ImageNet**. She released it in 2009. To help to popularize it, she also launched an
 image classification competition for AI systems.
 
@@ -217,15 +221,16 @@ In 2010 and 2011, winners of the ImageNet competition used techniques that were 
 In 2012, `Alex Krizhevsky <https://en.wikipedia.org/wiki/Alex_Krizhevsky>`_, 
 `Ilya Sutskever <https://en.wikipedia.org/wiki/Ilya_Sutskever>`_, 
 and Geoffrey Hinton won the ImageNet competition using an AI system **AlexNet**, which was an example of
-a Convolutional Neural Network (CNN) - a model architecture that had waited for its time for .. years (++). It crushed the competition with an error rate of just 15% 
-(winners of 2011 and 2010 had error rates of 26% and 28%, correspondingly), while the training time dropped from months to days. 
+a Convolutional Neural Network (CNN) - a model architecture that had waited for its time for several decades. 
+It crushed the competition with an error rate of just *15%* 
+(winners of 2010 and 2011 had error rates of 28% and 26%, correspondingly), while the training time dropped from months to days. 
 This event was a huge catalyst for the following boom in deep learning (and AI in general).
 
-So, why had the time to shine now arrived for CNNs, 25 years after their invention?
+So, why had the time to shine now arrived for CNNs, several decades later?
 First of all, the computational capability of computers had improved enormously in that time.
 Secondly, the researchers behind AlexNet managed to use 
 `GPU chips <https://www.ingameloop.com/graphics-cards/learn/what-does-a-gpu-do-for-gaming/>`_
-to efficiently parallize the training process. 
+to efficiently parallelize the training process. 
 
 After the computation, many people wanted to know answers to questions such as:
 
@@ -262,19 +267,23 @@ But how does this learning happen?
 There are some similarities between learning in humans (especially babies) and how AI models are trained, and there are many 
 crucial differences. Before we dive into those similarities and differences, it is useful to think a bit about how babies learn.
 
-At birth, babies do not see colors - their vision is black and white. 
-Babies at about 1 month of age do not yet see the world clearly - their vision is 
+At birth, newborns don't see the world in full color - their vision is mostly limited to stark contrasts of light and dark,
+and they can only 
+`differentiate between strong, contrasting colors <https://www.healthline.com/health/baby/when-can-babies-see-color>`_.
+At one month of age, they still do not see the world clearly - their vision is 
 `blurry <https://www.nationwidechildrens.org/family-resources-education/health-wellness-and-safety-resources/helping-hands/infant-vision-birth-to-one-year>`_
-and they cannot see very far. (++)
+and near-sighted.
 Research from 2024 `has also shown <https://neurosciencenews.com/infant-vision-development-ai-27078>`_ that babies prefer to 
 look at simple, high-contrast patterns and edges found in everyday environments; furthermore, this is very important
 for the development of their visual skills. At later stages of child's development, they start to recognize and understand
 more complex visual aspects of their environment.
 
-What follows is that the development of visual system and the learning process occur in parallel - as babies' eyes develop to allow for 
-seeing more complex input (from black-and-white to color, from blurry and short-sighted to sharp and long-sighted ++), their brains learn
-to recognize and interpret increasingly complex patterns. Every time a kid learns something, it causes some neural connections to be strengthened 
-or new connections to be formed. At various stages of development, different layers in the brain are going through the most active stages of 
+What follows is that the development of the visual system and the learning process occur in parallel - 
+as the baby's visual system develops to allow for 
+seeing more complex input (from mostly black-and-white to color, from blurry and short-sighted to sharp and fully developed), the brain learns
+to recognize and interpret increasingly complex patterns. Every time a child learns something, it causes some neural connections to be strengthened 
+or new connections to be formed.
+At various phases of growth, different layers in the brain are undergoing their most active periods of 
 development. Finally, it is important to note that sleeping also 
 `plays a crucial role <https://www.quantamagazine.org/dueling-brain-waves-anchor-or-erase-learning-during-sleep-20191024/>`_
 in the learning process in the human brain.
@@ -289,7 +298,8 @@ between the existing neurons, unused connections being *pruned* (removed), and t
    <embed>
       <p style="font-size: 0.8em;">There is also an important process in brain development for making existing networks quicker - 
       <a class="reference external" href="https://www.zerotothree.org/resource/what-are-the-most-important-changes-in-the-brain-after-birth/">myelination</a>. 
-      Since it has no analogue for artificial neural networks, we will not focus on it.
+      Since it has no analogue for artificial neural networks, we will not focus on it; however, feel free to read about it if you are 
+      interested in how the brain matures.
       </p>
    </embed>
 
