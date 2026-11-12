@@ -112,7 +112,12 @@ the visual information to your brain for further processing.
 .. image:: /images/part2/eye-visual-system.png
    :alt: Neural layers in the eye
 
-*The five neural layers in the eye. Source: Open Neuroscience Initiative (with my modifications)*
+*The five neural layers in the eye. Source:*
+`Open Neuroscience Initiative <https://pressbooks.atlanticoer-relatlantique.ca/openneuroscience/chapter/chapter-9-sensation-and-perception-the-visual-system/>`_
+*(with my modifications)*
+
+..
+   License for previous image: Creative Commons Attribution-NonCommercial 4.0 International License.
 
 There are 120 million rods and 6 million cones in the human eye. 
 The raw image captured by those rods and cones is heavily compressed before it ever leaves the eye (via the optic nerve). 
@@ -310,7 +315,9 @@ Bigger arrows correspond to larger weights (TODO).
 .. image:: /images/part2/neuron_only.png
    :alt: Artificial neuron
 
-*Artificial neuron. Source: Towards Data Science (modified).*
+*Artificial neuron. Source:* 
+`Towards Data Science <https://towardsdatascience.com/the-concept-of-artificial-neurons-perceptrons-in-neural-networks-fab22249cbfc/>`_ 
+*(with my modifications FIXME).*
 
 In neural nets, weights can also have a negative value (depicted with a dashed arrow - TODO). This has the effect of that neuron acting as a brake
 for the neuron in the next layer (the technical term is "**inhibition**"). 
@@ -672,8 +679,8 @@ using a combination of machine learning and tree search techniques, combined wit
 both from human and computer play. It is fascinating that the models that they trained for playing Go were CNNs -
 the same architecture that AlexNet used. However, this time the inputs to the models were states of Go games, not images.
 
-Since I want to keep this post length reasonable, I leave the choice to the reader - feel free to read the technical details of how AlphaGo
-works at a technical level, or skip it.
+In order to not make this post any longer than strictly necessary, I leave the choice to you - 
+feel free to read the technical details of how AlphaGo works at a technical level; or skip it.
 
 .. raw:: html
 
