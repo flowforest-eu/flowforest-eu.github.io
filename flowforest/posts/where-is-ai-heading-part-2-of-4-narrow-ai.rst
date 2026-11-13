@@ -528,7 +528,7 @@ complicated concepts. For each layer, there are visualisations that maximally ex
 least excite that same group of neurons ("negative channel"). More explanations can be found `here <https://distill.pub/2017/feature-visualization/>`_.
 
 ===================================================
-The importance of choosing a good goal function
+The importance of a goal function
 ===================================================
 
 Above, we considered the steps in the process of obtaining a useful AI model. 
@@ -800,8 +800,9 @@ and how it is different from the preceding AI architectures.
       <div class="ai-disclaimer">
       <b>Disclaimer of AI usage</b>: 
       <ul><li>AI (Google Gemini) was used to find additional sources; 
-      all sources were manually verified before citing. AI was used to simplify some of the more complex & technical concepts.</li>
-      <li>AI was used in the final proof-reading process for pointing out improvement possibilities, but not for re-writing.</li></ul>
+      all sources were manually verified before citing.</li> 
+      <li>AI was used to simplify some of the more complex & technical concepts.</li>
+      <li>AI was used in the final proof-reading process for pointing out improvement possibilities, but not for re-writing text.</li></ul>
       Total contribution of AI in terms of contribution effort in the process: 5-10%
       </div>
    </embed>
