@@ -822,7 +822,7 @@ and how it is different from the preceding AI architectures.
       <b>Disclaimer of AI usage</b>: 
       <ul><li>AI (Google Gemini) was used to find additional sources; 
       all sources were manually verified before citing.</li> 
-      <li>AI was used to simplify some of the more complex & technical concepts (e.g. human vision).</li>
+      <li>AI was used to simplify some of the more complex & technical concepts (e.g. regarding human vision).</li>
       <li>AI was used in the final proof-reading process for pointing out improvement possibilities, but not for re-writing text.</li></ul>
       Total contribution of AI in terms of effort during the process: 5-10%
       </div>
