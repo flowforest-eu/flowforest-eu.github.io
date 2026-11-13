@@ -466,7 +466,7 @@ steps to get an intuitive understanding of what happens at various steps and how
 A word of warning, though - since my overview of the topic has been rather high-level, I have not given all of the necessary
 definitions for understanding CNNs. I have not explained concepts like *convolutional layers*, *kernel layers*, *ReLu activation*,
 and *max pooling* that are used in the visual explainer page. If you want to learn those definitions, open the collapsible accordion 
-box below. If not, just head directly to the `visual explainer page <https://poloclub.github.io/cnn-explainer/>`_.
+box below. If not, just head directly to the `visual explainer page <https://poloclub.github.io/cnn-explainer/>`_ and play with the model.
 
 .. raw:: html
 
