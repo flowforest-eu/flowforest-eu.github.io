@@ -141,7 +141,11 @@ Each layer builds on the previous layer and represents increasingly complex feat
 4. layer: processes **complex shapes** and geometric forms (*technically: "V4 layer"*);
 5. layer: detects **whole objects**, faces, and abstract concepts, e.g., reckognizing a dog, a car, or a number (*technically, 1 or 2 layers: "IT cortex"*).
 
-For more detailed overview, see `here <https://people.csail.mit.edu/pulkitag/data/cnn_mimics_brain.pdf>`_
+A similar principles also applies for machine learning: the number of layers must be sufficient so that complex features or concepts can be 
+represented. However, increasing the number of layers also increases the training time. (TODO)
+
+For more detailed overview of the various layers and their functions, see 
+`here <https://people.csail.mit.edu/pulkitag/data/cnn_mimics_brain.pdf>`_
 and `here <https://en.wikipedia.org/wiki/Visual_system#System_overview>`_.
 
 .. raw:: html
@@ -154,9 +158,6 @@ and `here <https://en.wikipedia.org/wiki/Visual_system#System_overview>`_.
         is a simplification of a complex process. I also glossed over layers of V3, V5, and V6, since they primarily handle motion and spatial
         processing, whereas our focus here is on what happens when a person views static images.</p>
     </embed>
-
-The same principles applies for machine learning: the number of layers must be sufficient so that complex features or concepts can be 
-represented. However, increasing the number of layers also increases the training time.
 
 ==========================
 Progress in AI research    
@@ -268,7 +269,7 @@ simpler relationships. In the next section we will have a look at how the learni
 | *Source: Aquarium of the Pacific*
 
 ======================================
-But how does this learning happen?
+How do babies learn?
 ======================================
 
 There are some similarities between learning in humans (especially babies) and how AI models are trained, and there are many 
@@ -310,8 +311,13 @@ between the existing neurons, unused connections being *pruned* (removed), and t
       </p>
    </embed>
 
-Lets now think about AI models, their training, and the similarities and differences compared to human learning.
-First, the analogue of a biological synapse (connection between neurons) is a **weight** in an AI model. 
+======================================
+What are the weights of an AI model?
+======================================
+
+Before we can discuss AI models and their training processes, we need to have a solid understanding about 
+the concept of a **weight** in an AI model.
+Roughly speaking, it is an artificial analogue of a biological synapse (recall that synapse is a connection between neurons). (TODO)
 Below, we repeat the image from above about the structure of an artificial neuron; this time we have added some values to it 
 for explanatory purposes (TODO).
 Bigger arrows correspond to larger weights (TODO). 
@@ -355,6 +361,10 @@ and learn more.
          where the viewer sees dots appearing on white background.</p>
       </details>
    </embed>
+
+======================================
+How does AI learn?
+======================================
 
 The word "learning" has a very specific meaning in machine learning:
 it means that during the training process, some weights are strengthened and some are weakened. 
@@ -427,10 +437,28 @@ simpler rule: "somewhat cow-like animal on a green pasture => cow". This is an e
 The solution is to enrich the dataset of images to have variation of contexts, backgrounds lighting, viewpoints and shapes. It is also useful
 to incorporate images taken by different photographers and camera types.
 
-Finally, for something completely different - I would like to present a *visual explainer* of a CNN model.
-It is a webpage that runs a CNN model called "Tiny VGG" *directly in your browser*, allowing to upload your own image and 
+In this section, we looked at the process that AI researchers follow for producing useful AI models like AlexNet.
+All of those steps can be shortly summarized in the following way: 
+
+* Collect sufficient **input data**, classified with sufficiently high accuracy.
+* Define the **goal function**.
+* Choose a **model architecture** (e.g., CNN).
+* Initialize the model with **random weights**.
+* Run the **training process**.
+
+===================================
+A visual explainer of a CNN model
+===================================
+
+An excellent way to understand something is to observe and tinker with how it works.
+In the case of AI systems, this is usually not something that is easy to do.
+Luckily, 
+`there is a webpage <https://poloclub.github.io/cnn-explainer/>`_
+that contains a *visual explainer* of a CNN model.
+This webpage runs a CNN model called "Tiny VGG" *directly in your browser*, allowing to upload your own image and 
 see the classification model crunching through it before your own eyes.
-However, this model only accepts tiny images (64x64 pixels) and sorts the images to one of 10 pre-defined classes.
+
+Notice that this CNN model is quite limited: it only accepts tiny images (64x64 pixels) and sorts them to one of the 10 pre-defined classes.
 This is intentional; first, it enables the model to run smoothly in a web browser. Secondly (and more importantly), 
 this allows the model to be simple enough to visually illustrate what really happens at each step. Try clicking on different 
 steps to get an intuitive understanding of what happens at various steps and how the model "sees" the image.
@@ -458,15 +486,6 @@ box below. If not, just head directly to the `visual explainer page <https://pol
          </ul>
       </details>
    </embed>
-
-In this section, we looked at the process that AI researchers follow for producing useful AI models like AlexNet.
-All of those steps can be shortly summarized in the following way: 
-
-* Collect sufficient **input data**, classified with sufficiently high accuracy.
-* Define the **goal function**.
-* Choose a **model architecture** (e.g., CNN).
-* Initialize the model with **random weights**.
-* Run the **training process**.
 
 ================================================
 How to see inside the model?
@@ -794,6 +813,8 @@ and how it is different from the preceding AI architectures.
       <p>&nbsp; conceptual and engineering breakthroughs that have made deep neural networks a critical component of computing.</p>      
    </blockquote>
 
+------------
+
 .. raw:: html
 
    <embed>
@@ -801,9 +822,9 @@ and how it is different from the preceding AI architectures.
       <b>Disclaimer of AI usage</b>: 
       <ul><li>AI (Google Gemini) was used to find additional sources; 
       all sources were manually verified before citing.</li> 
-      <li>AI was used to simplify some of the more complex & technical concepts.</li>
+      <li>AI was used to simplify some of the more complex & technical concepts (e.g. human vision).</li>
       <li>AI was used in the final proof-reading process for pointing out improvement possibilities, but not for re-writing text.</li></ul>
-      Total contribution of AI in terms of contribution effort in the process: 5-10%
+      Total contribution of AI in terms of effort during the process: 5-10%
       </div>
    </embed>
 

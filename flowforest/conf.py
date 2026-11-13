@@ -1337,6 +1337,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const tocLinks = sidebarSlot.querySelectorAll("a.reference.internal");
     if (tocLinks.length === 0) return;
 
+    tocLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElem = document.querySelector(targetId);
+            if (targetElem) {
+                // Smooth scroll to heading
+                targetElem.scrollIntoView({ behavior: "smooth", block: "start" });
+                
+                // Do not update URL hash.
+                // history.pushState(null, null, targetId);
+            }
+        });
+    });
+
     const targets = Array.from(tocLinks).map(link => {
         const targetId = link.getAttribute("href");
         return {
@@ -1347,7 +1362,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function updateActiveToc() {
         const scrollPos = window.scrollY + 125;
-        let activeIndex = 0;
+        let activeIndex = -1; // By default, no entry is selected
 
         for (let i = 0; i < targets.length; i++) {
             if (targets[i].heading.offsetTop <= scrollPos) {
