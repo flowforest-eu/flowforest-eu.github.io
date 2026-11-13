@@ -163,7 +163,7 @@ NAVIGATION_ALT_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "bootstrap4"
+THEME = "bootblog4"
 # THEME = "material-theme"
 
 # A theme color. In default themes, it might be displayed by some browsers as
@@ -192,8 +192,22 @@ THEME_CONFIG = {
         'featured_large_image_on_mobile': True,
         # Strip HTML from featured post text.
         'featured_strip_html': False,
-        # Contents of the sidebar, If empty, the sidebar is not displayed.
-        'sidebar': ''
+    },
+    "en": {
+        'sidebar': '''
+        <div id="sidebar-toc-container" class="sidebar-module mb-3" style="display: none;">
+            <h4>On this page</h4>
+            <div id="sidebar-toc-slot"></div>
+        </div>
+        '''
+    },
+    "et": {
+        'sidebar': '''
+        <div id="sidebar-toc-container" class="sidebar-module mb-3" style="display: none;">
+            <h4>Sisukord</h4>
+            <div id="sidebar-toc-slot"></div>
+        </div>
+        '''
     }
 }
 # Config for bootstrap4:
@@ -1303,7 +1317,56 @@ EXTRA_HEAD_DATA = """
 # Google Analytics or whatever else you use. Added to the bottom of <body>
 # in the default template (base.tmpl).
 # (translatable)
-# BODY_END = ""
+BODY_END = """
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Find the TOC generated natively by Python-Markdown inside the post
+    const generatedToc = document.getElementById("contents");
+    const sidebarContainer = document.getElementById("sidebar-toc-container");
+    const sidebarSlot = document.getElementById("sidebar-toc-slot");
+
+    // If all elements exist, move the TOC into the sidebar and show it
+    if (generatedToc && sidebarContainer && sidebarSlot) {
+        sidebarSlot.appendChild(generatedToc);
+        sidebarContainer.style.display = "block";
+    } else {
+        return;
+    }
+
+    // Scroll-tracking to highlight the active heading section
+    const tocLinks = sidebarSlot.querySelectorAll("a.reference.internal");
+    if (tocLinks.length === 0) return;
+
+    const targets = Array.from(tocLinks).map(link => {
+        const targetId = link.getAttribute("href");
+        return {
+            link: link,
+            heading: document.querySelector(targetId)
+        };
+    }).filter(item => item.heading !== null);
+
+    function updateActiveToc() {
+        const scrollPos = window.scrollY + 125;
+        let activeIndex = 0;
+
+        for (let i = 0; i < targets.length; i++) {
+            if (targets[i].heading.offsetTop <= scrollPos) {
+                activeIndex = i;
+            } else {
+                break;
+            }
+        }
+
+        tocLinks.forEach((link, idx) => {
+            link.classList.toggle("active", idx === activeIndex);
+        });
+    }
+
+    window.addEventListener("scroll", updateActiveToc, { passive: true });
+    updateActiveToc();
+});
+</script>
+"""
 
 # The possibility to extract metadata from the filename by using a
 # regular expression.

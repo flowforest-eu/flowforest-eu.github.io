@@ -18,7 +18,11 @@ In particular, we will focus in this post on image classification models. They a
 and they are also very illustrative for concepts that we will need later on. On the way, we will touch a bit on the history
 of the AI as a field. 
 
-The following timeline high-lights some of the key events in the history of AI:
+.. contents::
+   :depth: 1
+   :local:
+
+The following timeline high-lights some of the key events in the history of AI: TODO
 
 ..
    https://timeline.knightlab.com/
@@ -465,7 +469,7 @@ All of those steps can be shortly summarized in the following way:
 * Run the **training process**.
 
 ================================================
-How to look inside the model?
+How to see inside the model?
 ================================================
 
 Lets consider a seemingly simple question - "do we fully understand how those models work?"
@@ -608,7 +612,7 @@ we will have a look at three examples from Google DeepMind that predate the crea
 the last one of them may honestly be characterized as the greatest biological breakthrough ever achieved by an AI system.
 
 =========================================
-What else has deep learning given us?
+What has deep learning given us?
 =========================================
 
 After AlexNet was released in 2012, the field of deep learning experienced an avalanche of renewed interest. 
@@ -622,11 +626,9 @@ and `Mustafa Suleyman <https://en.wikipedia.org/wiki/Mustafa_Suleyman>`_;
 acquired by Google in 2014). 
 I would like to mention 3 areas where they successfully applied deep learning methods.
 
-.. raw:: html
-
-    <embed>
-         <h3>Playing 1980s computer games</h3>
-    </embed>
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Playing 1980s computer games
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When DeepMind was founded, Demis Hassabis looked for ways of expanding the technique of deep learning to a wider array of contexts.
 For this, computer games proved to be a useful medium.
@@ -634,7 +636,7 @@ For this, computer games proved to be a useful medium.
 In 2014, DeepMind 
 `published research <https://deepmind.google/blog/deep-reinforcement-learning/>`_
 about a model (**DQN** - "deep Q-learning") that could learn to play a wide range of classical 1980s computer games 
-(such as Pong, Breakout or Space Invaders) without given any description about how those games work.
+(such as Pong, Breakout or Space Invaders) without having any prior description about how those games work.
 Instead, they used deep learning methods, letting the model learn by trying to play the games -
 providing the game's screen as an input (and the game's score) to the model at every frame.
 Model could only interact with the game by choosing which keys to press.
@@ -656,11 +658,9 @@ were not aware of. Here is a video of how this happened in the game of Breakout 
 `nice strategy <https://www.youtube.com/watch?v=TmPfTpjtdgg>`_
 that the team in DeepMind had not been aware of.
 
-.. raw:: html
-
-    <embed>
-         <h3>AlphaGo</h3>
-    </embed>
+~~~~~~~~~~~~~~~~~~~~~~~~
+AlphaGo
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 After the 
 `dramatic chess matches <https://en.wikipedia.org/wiki/Deep_Blue_versus_Garry_Kasparov>`_
@@ -714,11 +714,9 @@ one of the best Go players in the world - and won 4:1.
 There is an `excellent movie <https://www.youtube.com/watch?v=WXuK6gekU1Y>`_ on YouTube which captures the dramatic events and how the world 
 of Go was ever changed through it. It also gives some nice visual explanations of the technology behind the breakthrough.
 
-.. raw:: html
-
-    <embed>
-         <h3>AlphaFold</h3>
-    </embed>
+~~~~~~~~~~~~~~~~~~~~~~~~
+AlphaFold
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 In recent years, leader of fronteir labs have talked a lot about how LLMs could cure cancer in the future. In a longer time span, this may be true;
 but in a shorter time span one has to keep in mind that while AI can help with suggesting new drug candidates or biological experiments,
@@ -799,9 +797,12 @@ and how it is different from the preceding AI architectures.
 .. raw:: html
 
    <embed>
-      <p class="ai-disclaimer"><b>Disclaimer of AI usage</b>: AI (Google Gemini) was used to find additional sources; 
-      all sources were manually verified before citing. AI was used to simplify some of the more complex & technical concepts. 
-      AI was used in the final proof-reading process for pointing out improvement possibilities, but not for re-writing. 
-      Total contribution of AI in terms of contribution effort in the process: 5-10%</p>
+      <div class="ai-disclaimer">
+      <b>Disclaimer of AI usage</b>: 
+      <ul><li>AI (Google Gemini) was used to find additional sources; 
+      all sources were manually verified before citing. AI was used to simplify some of the more complex & technical concepts.</li>
+      <li>AI was used in the final proof-reading process for pointing out improvement possibilities, but not for re-writing.</li></ul>
+      Total contribution of AI in terms of contribution effort in the process: 5-10%
+      </div>
    </embed>
 
