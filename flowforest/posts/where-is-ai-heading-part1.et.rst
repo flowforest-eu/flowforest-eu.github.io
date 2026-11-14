@@ -34,6 +34,10 @@ See on täpselt see, mida organisatsioon `METR <https://metr.org/>`_ (mittetulun
 
 .. TEASER_END
 
+.. contents::
+   :depth: 1
+   :local:
+
 =====================
 Arengu mõõtmine
 =====================
@@ -108,7 +112,7 @@ See trend on üks põhjustest, miks AI turvalisuse valdkonna spetsialistid hoiat
 valmis.
 
 =======================================
-Mis tegurid võivad kasvutrendi muuta?
+Mis tegurid mõjutavad kasvutrendi?
 =======================================
 
 On mitmeid tegureid, mis võivad olukorda drastiliselt muuta: teaduslikud läbimurded või piirangud, füüsilise maailmaga seotud pudelikaelad, finantsilised 

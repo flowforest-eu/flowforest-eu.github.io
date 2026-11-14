@@ -163,7 +163,7 @@ NAVIGATION_ALT_LINKS = {
 }
 
 # Name of the theme to use.
-THEME = "bootblog4"
+THEME = "bootstrap4"
 # THEME = "material-theme"
 
 # A theme color. In default themes, it might be displayed by some browsers as
@@ -192,22 +192,6 @@ THEME_CONFIG = {
         'featured_large_image_on_mobile': True,
         # Strip HTML from featured post text.
         'featured_strip_html': False,
-    },
-    "en": {
-        'sidebar': '''
-        <div id="sidebar-toc-container" class="sidebar-module mb-3" style="display: none;">
-            <h4>On this page</h4>
-            <div id="sidebar-toc-slot"></div>
-        </div>
-        '''
-    },
-    "et": {
-        'sidebar': '''
-        <div id="sidebar-toc-container" class="sidebar-module mb-3" style="display: none;">
-            <h4>Sisukord</h4>
-            <div id="sidebar-toc-slot"></div>
-        </div>
-        '''
     }
 }
 # Config for bootstrap4:
@@ -1344,7 +1328,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const targetElem = document.querySelector(targetId);
             if (targetElem) {
                 // Smooth scroll to heading
-                targetElem.scrollIntoView({ behavior: "smooth", block: "start" });
+                targetElem.scrollIntoView({ behavior: "instant", block: "start" });
                 
                 // Do not update URL hash.
                 // history.pushState(null, null, targetId);
@@ -1361,7 +1345,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }).filter(item => item.heading !== null);
 
     function updateActiveToc() {
-        const scrollPos = window.scrollY + 125;
+        const scrollPos = window.scrollY + 250;
         let activeIndex = -1; // By default, no entry is selected
 
         for (let i = 0; i < targets.length; i++) {
@@ -1533,7 +1517,12 @@ WARN_ABOUT_TAG_METADATA = False
 
 # Put in global_context things you want available on all your templates.
 # It can be anything, data, functions, modules, etc.
-GLOBAL_CONTEXT = {}
+GLOBAL_CONTEXT = {
+    "ON_THIS_PAGE": {
+        "en": "On this page",
+        "et": "Sisukord"
+    }
+}
 
 # Add functions here and they will be called with template
 # GLOBAL_CONTEXT as parameter when the template is about to be

@@ -312,7 +312,7 @@ between the existing neurons, unused connections being *pruned* (removed), and t
    </embed>
 
 ======================================
-What are the weights of an AI model?
+What is a weight of an AI model?
 ======================================
 
 Before we can discuss AI models and their training processes, we need to have a solid understanding about 

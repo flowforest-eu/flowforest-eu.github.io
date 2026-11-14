@@ -33,6 +33,10 @@ This is exactly what was done by `METR <https://metr.org/>`_ (a non-profit resea
 
 .. TEASER_END
 
+.. contents::
+   :depth: 1
+   :local:
+
 =====================
 Measuring progress
 =====================
