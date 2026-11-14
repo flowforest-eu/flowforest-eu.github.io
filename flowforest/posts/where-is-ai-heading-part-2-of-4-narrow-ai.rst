@@ -116,12 +116,10 @@ the visual information to your brain for further processing.
 .. image:: /images/part2/eye-visual-system.png
    :alt: Neural layers in the eye
 
-*The five neural layers in the eye. Source:*
-`Open Neuroscience Initiative <https://pressbooks.atlanticoer-relatlantique.ca/openneuroscience/chapter/chapter-9-sensation-and-perception-the-visual-system/>`_
-*(with my modifications)*
+*The five neural layers in the eye. Source: Open Neuroscience Initiative (modified)*
 
 ..
-   License for previous image: Creative Commons Attribution-NonCommercial 4.0 International License.
+   https://pressbooks.atlanticoer-relatlantique.ca/openneuroscience/chapter/chapter-9-sensation-and-perception-the-visual-system/
 
 There are 120 million rods and 6 million cones in the human eye. 
 The raw image captured by those rods and cones is heavily compressed before it ever leaves the eye (via the optic nerve). 
@@ -187,16 +185,19 @@ This practical application of multi-layer training established the paradigm that
 Remember those concepts - throughout this blog post, we will come back several times to models based on the *CNN architecture*,
 since CNN models work on visual data, which makes them great for providing intuitively understandable examples.
 
-The next diagram shows a toy example of a 4-layer neural network (the input layer is not counted).
-On the left (orange) is an input layer; it is followed by multiple layers of neurons (green columns);
+The next diagram shows a toy example of a 3-layer neural network (the input layer is not counted).
+On the left (red) is an input layer; it is followed by multiple hidden layers);
 the network concludes with an output layer, containing a single neuron in this example (red).
 Of course, this is just a toy example and neural networks nowadays used for practical applications 
 contain millions of neurons or more.
 
-.. image:: /images/part2/deep_neural_network.png
+.. image:: /images/part2/neural_net.png
    :alt: A simplified illustration of a deep neural network.
 
-*A simplified illustration of a deep neural network. Source: KDNuggets*
+*A simplified illustration of a deep neural network. Source: Terra Incognita (modified)*.
+
+..
+   https://blog.christianperone.com/tag/scikit-learn/
 
 After some progress had been made in 1980s and 1990s, progress stalled again. 
 Looking back, it is clear that one of the reasons was that the computers used then just did not have sufficient computational 
@@ -266,7 +267,10 @@ simpler relationships. In the next section we will have a look at how the learni
    :alt: A clownfish.
 
 | *A clownfish. CNNs like AlexNet proved to be efficient at classifying such complex images.*
-| *Source: Aquarium of the Pacific*
+| *Source: Mark Rosenstein / iNaturalist*
+
+..
+   https://fishesofaustralia.net.au/home/species/1275
 
 ======================================
 How do babies learn?
@@ -527,7 +531,10 @@ a paved road).
 .. image:: /images/part2/dog-saliency-map.jpg
    :alt: Example: A saliency map.
 
-*Example of a saliency map. Source:* `Jay Alammar <https://jalammar.github.io/explaining-transformers/>`_
+*Example of a saliency map. Source: Jay Alammar.*
+
+..
+   https://jalammar.github.io/explaining-transformers/
 
 There is also the technique of **feature visualization** for understanding what a given neuron (or a group of neurons) in the neural net reacts to.
 For this, an image with random noise is taken. After that, it is gradually modified so that it becomes an image that makes the *previously chosen
@@ -756,7 +763,7 @@ other). Here are some examples for illustrative purposes:
 .. image:: /images/part2/4proteins.png
    :alt: 4 proteins (keratin, collagen, hemoglobin, antibodies)
 
-*Illustration: 3D structures of*
+*3D structures of*
 `keratin <https://www.rcsb.org/structure/6EC0>`_, 
 `collagen <https://www.rcsb.org/structure/1CAG>`_, 
 `hemoglobin <https://www.rcsb.org/structure/2HHB>`_, and 
