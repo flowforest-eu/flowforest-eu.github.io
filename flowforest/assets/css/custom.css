@@ -325,6 +325,9 @@ summary {
     .col-md-4 h4 {
         margin-top: 2.5em;
         padding-left: 0.5em;
+        text-decoration: underline;
+        text-decoration-color: rgba(61, 105, 57, 0.3);
+        text-underline-offset: 3px;
     }
 
     /* sidebar navbar */
