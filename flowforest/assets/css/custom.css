@@ -323,7 +323,8 @@ summary {
     }
 
     .col-md-4 h4 {
-        margin-top: 2.5em
+        margin-top: 2.5em;
+        padding-left: 0.5em;
     }
 
     /* sidebar navbar */
@@ -345,12 +346,12 @@ summary {
         line-height: 22.25px;
         margin-top: 2px;
         margin-bottom: 2px;
+        display: inline-block;
     }
 
     #sidebar-toc-slot a.reference.internal.active {
         color: #007bff !important;
         border-left: 2px solid #007bff;
         border-right: 2px solid #007bff;
-        display: inline-block;
     }
 }
