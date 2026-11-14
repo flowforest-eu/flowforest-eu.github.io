@@ -299,10 +299,27 @@ summary {
     font-style: italic;
 }
 
+/* hack to target the div containing the navbar - bootblog4 theme does not give this div a proper ID, unfortunately */
+/* the goal is to have a full width navbar for the blog (although bootblog4 does not have it natively) */
+body > div.container:not(#content) {
+    display: flex !important;
+    width: 100%;
+    max-width: 100%;
+    padding: 0px;   
+}
+
+.blog-header, .navbar {
+    padding: 0px;
+}
+
 @media (min-width: 768px) {
     .col-md-8 {
         flex: 0 0 75% !important;
         max-width: 75% !important;
+    }
+
+    .col-md-8 {
+        border-right: 1px solid rgba(61, 105, 57, 0.2);
     }
 
     /* overwrite sidebar width from bootblog4 theme */
