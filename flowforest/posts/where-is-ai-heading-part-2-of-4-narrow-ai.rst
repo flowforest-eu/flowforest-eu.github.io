@@ -9,13 +9,15 @@
 .. has_math: true
 .. status: draft
 
-Initially I planned to use this second post to dive straight into Large Language Models (LLMs). 
-But when I thought about explaining the basic principles of LLMs, I realized that it makes much more sense to
-start by explaining the basic concepts of preceding AI systems; and only then do a deep dive into LLMs and transformer
-architecture in general.
+Initially I planned to use this second post to dive straight into Large Language Models (LLMs).
+However, I quickly realized that a better approach would be to start by explaining the foundation 
+and building blocks related to deep learning in general, and only then (in the next blog post) 
+to dive into LLMs and the transformer architecture.
 
-In particular, we will focus in this post on image classification models. They are relatively easy to intuitively grasp 
-and they are also very illustrative for concepts that we will need later on. On the way, we will touch a bit on the history
+In order to make the examples more visual, I will base this post on image classification models. 
+These models are relatively easy to intuitively grasp 
+and they are also very illustrative for concepts that we will need later on. 
+On the way, we will touch a bit on the history
 of the AI as a field. 
 
 .. contents::
@@ -30,7 +32,7 @@ The following timeline high-lights some of the key events in the history of AI: 
 ..
    ++ AlphaStar master StarCraft II.
 
-**Important note**: *if you scroll through this post, you will see some complex-looking images. Don't be put off by those!
+**Important note**: *if you first scroll through this post, you will see some complex-looking images. Don't be put off by those!
 Those are mostly provided for illustrative purposes - I will do my best to explain everything in simple and understandable terms.*
 
 =========================================

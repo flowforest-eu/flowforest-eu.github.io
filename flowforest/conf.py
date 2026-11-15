@@ -987,20 +987,25 @@ FEED_LINKS_APPEND_QUERY = False
 
 # A HTML fragment describing the license, for the sidebar.
 # (translatable)
-LICENSE = ""
 # I recommend using the Creative Commons' wizard:
 # https://creativecommons.org/choose/
-# LICENSE = """
-# <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-# <img alt="Creative Commons License BY-NC-SA"
-# style="border-width:0; margin-bottom:12px;"
-# src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>"""
+LICENSE = """
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA"
+style="border-width:0; margin-bottom:12px;"
+src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>"""
 
 # A small copyright notice for the page footer (in HTML).
 # (translatable)
 CONTENT_FOOTER = {
-    "en": '<span id="footer_author">Contents by <a href="mailto:{email}">{author}</a> –</span> <span id="footer_nikola">Powered by         <a href="https://getnikola.com" rel="nofollow">Nikola</a> blog engine</span>         {license}',
-    "et": '<span id="footer_author">Autor: <a href="mailto:{email}">{author}</a> –</span> <span id="footer_nikola">Jookseb         <a href="https://getnikola.com" rel="nofollow">Nikola</a> blogimootoril</span>         {license}',
+    "en": '<span id="footer_author">Contents by <a href="mailto:{email}">{author}</a> –</span> '
+          '<span id="footer_nikola">Powered by <a href="https://getnikola.com" rel="nofollow">Nikola</a> blog engine</span> '
+          '<br>'
+          '<span id="footer_license">Licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a> &nbsp; {license}</span>',
+    "et": '<span id="footer_author">Autor: <a href="mailto:{email}">{author}</a> –</span> '
+          '<span id="footer_nikola">Jookseb <a href="https://getnikola.com" rel="nofollow">Nikola</a> blogimootoril</span> '
+          '<br>'
+          '<span id="footer_license">Saadavaks tehtud litsentsi alusel: <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a> &nbsp; {license}</span>',
 }
 
 # Things that will be passed to CONTENT_FOOTER.format().  This is done
