@@ -193,7 +193,7 @@ the network concludes with an output layer, containing a single neuron in this e
 Of course, this is just a toy example and neural networks nowadays used for practical applications 
 contain millions of neurons or more.
 
-.. image:: /images/part2/neural_net.png
+.. image:: /images/part2/neural_net80.png
    :alt: A simplified illustration of a deep neural network.
 
 *A simplified illustration of a deep neural network. Source: Terra Incognita (modified)*.
@@ -265,7 +265,7 @@ simpler relationships. In the next section we will have a look at how the learni
 
 **Note**. *The AlexNet model has 8 layers and approximately 60 million parameters.*
 
-.. image:: /images/part2/clownfish.jpg
+.. image:: /images/part2/clownfish30.jpg
    :alt: A clownfish.
 
 | *A clownfish. CNNs like AlexNet proved to be efficient at classifying such complex images.*
@@ -762,7 +762,7 @@ other). Here are some examples for illustrative purposes:
 * antibodies (immunoglobulin) - *Y-shape* - each antibody attaches to a different target (e.g., a microbe or an infected cell) so that the 
   immune system knows to attack that target.
 
-.. image:: /images/part2/4proteins.png
+.. image:: /images/part2/4proteins70.png
    :alt: 4 proteins (keratin, collagen, hemoglobin, antibodies)
 
 *3D structures of*
