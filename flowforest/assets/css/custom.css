@@ -358,3 +358,22 @@ summary {
         border-right: 2px solid #007bff;
     }
 }
+
+.blue-text {
+    color: rgb(41, 129, 203);
+    font-weight: 700;
+}
+
+.green-text {
+    color: rgb(69, 178, 63);
+    font-weight: 700;
+}
+
+.cyan-text {
+    color: rgb(45, 196, 189);
+    font-weight: 700;
+}
+
+.just-bold {
+    font-weight: 700;
+}
