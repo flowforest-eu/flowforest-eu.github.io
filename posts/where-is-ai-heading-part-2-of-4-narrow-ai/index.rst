@@ -1,4 +1,4 @@
-.. title: Where is AI heading - part 2/4: History of AI
+.. title: Where is AI heading - part 2/4: Narrow AI & history of AI
 .. slug: where-is-ai-heading-part-2-of-4-narrow-ai
 .. date: 2026-09-10 20:17:59 UTC+03:00
 .. tags: AI, AI-overview, narrow-AI
