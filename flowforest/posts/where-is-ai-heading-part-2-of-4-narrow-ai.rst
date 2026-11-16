@@ -23,6 +23,8 @@ and they are also very illustrative for concepts that we will need later on.
 On the way, we will touch a bit on the history
 of the AI as a field. 
 
+**Reading time**: 30-60 minutes.
+
 .. contents::
    :depth: 1
    :local:
@@ -374,7 +376,7 @@ On the following image, bigger weights are drawn as bolder arrows.
 .. image:: /images/part2/artificial_neuron.png
    :alt: Artificial neuron
 
-*Artificial neuron with various weights.*
+*Artificial neuron with various weights (image by author).*
 
 In neural nets, weights can also have a negative value (depicted as a dashed arrow above). This negative value has 
 the effect of that neuron acting as a brake
