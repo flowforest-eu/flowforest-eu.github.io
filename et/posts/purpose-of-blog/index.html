@@ -80,7 +80,9 @@ bg-dark
         
         
         
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Sissejuhatus: milleks me peaksime valmistuma?</a></h1>
+<div class="row">
+    <div class="col-md-8">
+        <article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title" itemprop="headline name"><a href="." class="u-url">Sissejuhatus: milleks me peaksime valmistuma?</a></h1>
 
         <div class="metadata">
             <p class="byline author vcard p-author h-card"><span class="byline-name fn p-name" itemprop="author">
@@ -100,7 +102,7 @@ bg-dark
         </div>
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <p>AI on tohutu kiirusega arenev valdkond. Muutused viimase 10 aasta jooksul on olnud tohutud ja samas ka ootamatud.
+            <p>AI on tohutu kiirusega arenev valdkond. Muutused viimase 10 aasta jooksul on olnud tohutud ja samas ka ootamatud.
 Mõtle vaid sellele, mida inimesed oleksid vastanud aastal 2010, kui neilt oleks küsitud, millal luuakse AI mudel, mis suudab neid kahte asja:</p>
 <ul class="simple">
 <li><p>leida turvanõrkusi Linux tuumkoodis (<a class="reference external" href="https://cybersecuritynews.com/linux-patches-400-kernel-vulnerabilities/">näide</a>);</p></li>
@@ -131,8 +133,8 @@ Tsiteerin teda (minu tõlge):</p>
   <p>Me peame [..] tegema kindlaks, et kõik mõistavad neid riske. Me saame kõik panustada, et juhtida ühiskonda ohutule teele, kus me laste rõõmud
   ja püüdlused on kaitstud.</p>
 </blockquote>
-    </div>
-    <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
+            </div>
+            <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
 <li><a class="tag p-category" href="../../categories/ai/" rel="tag">AI</a></li>
             <li><a class="tag p-category" href="../../categories/ai-turvalisus/" rel="tag">AI-turvalisus</a></li>
             <li><a class="tag p-category" href="../../categories/intro/" rel="tag">Intro</a></li>
@@ -141,7 +143,24 @@ Tsiteerin teda (minu tõlge):</p>
 <li class="next">
                 <a href="../where-is-ai-heading-part1/" rel="next" title="Ülevaade AI arengusuundadest - osa 1/4">Järgmine postitus</a>
             </li>
-        </ul></nav></aside></article><!--End of body content--><footer id="footer"><span id="footer_author">Autor: <a href="mailto:rauni.lillemets@gmail.com">Rauni Lillemets</a> –</span> <span id="footer_nikola">Jookseb         <a href="https://getnikola.com" rel="nofollow">Nikola</a> blogimootoril</span>         
+        </ul></nav></aside></article>
+</div>
+    <aside class="col-md-4 blog-sidebar"><div id="sidebar-toc-container" class="sidebar-module mb-3" style="display: none;">
+            <h4>Sisukord</h4>
+            <div id="sidebar-toc-slot"></div>
+        </div>
+    </aside>
+</div>
+
+    
+
+
+
+        <!--End of body content-->
+
+        <footer id="footer"><span id="footer_author">Autor: <a href="mailto:rauni.lillemets@gmail.com">Rauni Lillemets</a> –</span> <span id="footer_nikola">Jookseb <a href="https://getnikola.com" rel="nofollow">Nikola</a> blogimootoril</span> <br><span id="footer_license">Saadavaks tehtud litsentsi alusel: <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>   
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></span>
             
             
         </footer>
@@ -153,6 +172,68 @@ Tsiteerin teda (minu tõlge):</p>
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
-    </script>
+    </script><script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Find the TOC generated natively by Python-Markdown inside the post
+    const generatedToc = document.getElementById("contents");
+    const sidebarContainer = document.getElementById("sidebar-toc-container");
+    const sidebarSlot = document.getElementById("sidebar-toc-slot");
+
+    // If all elements exist, move the TOC into the sidebar and show it
+    if (generatedToc && sidebarContainer && sidebarSlot) {
+        sidebarSlot.appendChild(generatedToc);
+        sidebarContainer.style.display = "block";
+    } else {
+        return;
+    }
+
+    // Scroll-tracking to highlight the active heading section
+    const tocLinks = sidebarSlot.querySelectorAll("a.reference.internal");
+    if (tocLinks.length === 0) return;
+
+    tocLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElem = document.querySelector(targetId);
+            if (targetElem) {
+                // Smooth scroll to heading
+                targetElem.scrollIntoView({ behavior: "instant", block: "start" });
+                
+                // Do not update URL hash.
+                // history.pushState(null, null, targetId);
+            }
+        });
+    });
+
+    const targets = Array.from(tocLinks).map(link => {
+        const targetId = link.getAttribute("href");
+        return {
+            link: link,
+            heading: document.querySelector(targetId)
+        };
+    }).filter(item => item.heading !== null);
+
+    function updateActiveToc() {
+        const scrollPos = window.scrollY + 250;
+        let activeIndex = -1; // By default, no entry is selected
+
+        for (let i = 0; i < targets.length; i++) {
+            if (targets[i].heading.offsetTop <= scrollPos) {
+                activeIndex = i;
+            } else {
+                break;
+            }
+        }
+
+        tocLinks.forEach((link, idx) => {
+            link.classList.toggle("active", idx === activeIndex);
+        });
+    }
+
+    window.addEventListener("scroll", updateActiveToc, { passive: true });
+    updateActiveToc();
+});
+</script>
 </body>
 </html>

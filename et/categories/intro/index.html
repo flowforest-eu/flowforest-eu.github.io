@@ -97,7 +97,9 @@ bg-dark
 <li>
 <time class="listdate" datetime="2026-08-03T01:00:00+03:00" title="2026-08-03">2026-08-03</time><a href="../../posts/purpose-of-blog/" class="listtitle">Sissejuhatus: milleks me peaksime valmistuma?</a><a></a>
 </li>
-        </ul></article><!--End of body content--><footer id="footer"><span id="footer_author">Autor: <a href="mailto:rauni.lillemets@gmail.com">Rauni Lillemets</a> –</span> <span id="footer_nikola">Jookseb         <a href="https://getnikola.com" rel="nofollow">Nikola</a> blogimootoril</span>         
+        </ul></article><!--End of body content--><footer id="footer"><span id="footer_author">Autor: <a href="mailto:rauni.lillemets@gmail.com">Rauni Lillemets</a> –</span> <span id="footer_nikola">Jookseb <a href="https://getnikola.com" rel="nofollow">Nikola</a> blogimootoril</span> <br><span id="footer_license">Saadavaks tehtud litsentsi alusel: <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a>   
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License BY-NC-SA" style="border-width:0; margin-bottom:12px;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a></span>
             
             
         </footer>
@@ -109,6 +111,68 @@ bg-dark
     baguetteBox.run('div#content', {
         ignoreClass: 'islink',
         captions: function(element){var i=element.getElementsByTagName('img')[0];return i===undefined?'':i.alt;}});
-    </script>
+    </script><script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Find the TOC generated natively by Python-Markdown inside the post
+    const generatedToc = document.getElementById("contents");
+    const sidebarContainer = document.getElementById("sidebar-toc-container");
+    const sidebarSlot = document.getElementById("sidebar-toc-slot");
+
+    // If all elements exist, move the TOC into the sidebar and show it
+    if (generatedToc && sidebarContainer && sidebarSlot) {
+        sidebarSlot.appendChild(generatedToc);
+        sidebarContainer.style.display = "block";
+    } else {
+        return;
+    }
+
+    // Scroll-tracking to highlight the active heading section
+    const tocLinks = sidebarSlot.querySelectorAll("a.reference.internal");
+    if (tocLinks.length === 0) return;
+
+    tocLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href");
+            const targetElem = document.querySelector(targetId);
+            if (targetElem) {
+                // Smooth scroll to heading
+                targetElem.scrollIntoView({ behavior: "instant", block: "start" });
+                
+                // Do not update URL hash.
+                // history.pushState(null, null, targetId);
+            }
+        });
+    });
+
+    const targets = Array.from(tocLinks).map(link => {
+        const targetId = link.getAttribute("href");
+        return {
+            link: link,
+            heading: document.querySelector(targetId)
+        };
+    }).filter(item => item.heading !== null);
+
+    function updateActiveToc() {
+        const scrollPos = window.scrollY + 250;
+        let activeIndex = -1; // By default, no entry is selected
+
+        for (let i = 0; i < targets.length; i++) {
+            if (targets[i].heading.offsetTop <= scrollPos) {
+                activeIndex = i;
+            } else {
+                break;
+            }
+        }
+
+        tocLinks.forEach((link, idx) => {
+            link.classList.toggle("active", idx === activeIndex);
+        });
+    }
+
+    window.addEventListener("scroll", updateActiveToc, { passive: true });
+    updateActiveToc();
+});
+</script>
 </body>
 </html>
