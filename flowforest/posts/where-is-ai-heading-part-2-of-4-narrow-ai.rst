@@ -1,6 +1,6 @@
 .. title: Where is AI heading - part 2/4: Narrow AI
 .. slug: where-is-ai-heading-part-2-of-4-narrow-ai
-.. date: 2026-09-10 20:17:59 UTC+03:00
+.. date: 2026-11-16 8:00:59 UTC+02:00
 .. tags: AI, AI-overview, narrow-AI
 .. category: 
 .. link: 
@@ -237,8 +237,8 @@ Remember those concepts (*backpropagation, deep learning, CNN*) - throughout thi
 since CNN models work on visual data, which makes them great for providing intuitively understandable examples.
 
 The next diagram shows a toy example of a 3-layer neural network (the input layer is not counted).
-On the left (red) is an input layer; it is followed by multiple hidden layers);
-the network concludes with an output layer, containing a single neuron in this example (red).
+On the left (red) is an input layer; it is followed by multiple hidden layers.
+The network concludes with an output layer, containing a single neuron in this example (green).
 Of course, this is just a toy example and neural networks nowadays used for practical applications 
 contain a lot more of neurons (typically millions, or more).
 
@@ -314,7 +314,7 @@ combination of
 simpler relationships. In the next section we will have a look at how the learning process actually works.
 Before that, we will once more have a look at how the same process occurs for humans.
 
-**A remark**. *The AlexNet model has 8 layers and approximately 60 million parameters.*
+**A remark**. *The AlexNet model has 8 layers and approximately 60 million neurons.*
 
 .. image:: /images/part2/clownfish30.jpg
    :alt: A clownfish.
@@ -434,9 +434,9 @@ it means that during the training process some weights are strengthened and some
 The mathematical operations themselves connecting the previous layer with the next one do not change; only the weights do. 
 This begs the question: how does the training process select the weights to change to gradually produce a useful AI model such as the AlexNet?
 
-**Remark**. *Keep in mind that computers does not "see" the image as humans do. Instead, they see an image as a grid of pixels,
+**Remark**. *Keep in mind that computers do not "see" the image the same way as humans do. Instead, they see an image as a grid of pixels,
 and each pixel is just 3 numbers for the AI model - corresponding to the amount of red, green, and blue in that pixel.
-In that sense, for AI an image is just a grid of numbers.*
+In that sense, for AI the whole image is just a grid of numbers.*
 
 As an initial step, a model is chosen with all of the weights being completely random in a given range.
 In the example of AlexNet, this means that the model will produce completely random outputs (e.g., classifying a image of random noise
@@ -454,7 +454,7 @@ model should learn to recognize features and classify images correctly and relia
 
 **Remark**. *Mathematically, the hard part is calculating how changing of each specific weight would have affected the resulting error rate,
 since each layer also affects each subsequent layer as well. Remember that a single image classification model will have tens or hundreds of 
-millions of parameters, so the efficiency of this calculation is crucial. This is the problem that the*
+millions of neurons, so the efficiency of this calculation is crucial. This is the problem that the*
 `technique of backpropagation solved <https://techhistorylab.com/history-of-backpropagation-deep-learning/>`_.
 *Recall from the historical overview above that backpropagation was invented only in 1980s after several decades of research into this area.*
 
@@ -474,7 +474,7 @@ Of course, this is just the easiest type of heuristic one can have. In order to 
 * to understand how simple edges combine into basic edges and textures;
 * to how complex shapes consist of simpler shapes and geometric forms.
 
-Take the the example of detecting a clownfish. Lets assume that model has learned that clownfishes have orange and white stripes on them.
+Take the the example of detecting a clownfish. Lets assume that model has learned that clownfish have orange and white stripes on them.
 The detection capability of the model will increase if it also starts making sure that those orange and white stripes are next to each other
 and alternate in color. For this to happen, some neurons in the later layers have to specialize to respond to the positional information of 
 those shapes (orange/white stripes) that were detected in the preceding layers.
@@ -545,8 +545,7 @@ box below. If not, just head directly to the `visual explainer page <https://pol
             the previous layer, e.g. those that correspond to the closest 3x3 pixels (the <em>kernel</em>).</li>
             <li><em>ReLU activation</em> - An activation function that maps negative values to 0, but keeps positive values intact. Basically,
             it blocks negative (inhibitory) signals from propagating further.</li>
-            <li><em>Max pooling</em> - A layer that applies the <em>softmax</em> operation, normalizing the sum of all signals in the preceding 
-            layer to be 1.</li>
+            <li><em>Max pooling</em> - A layer which reduces the image size by replacing each 2x2 block with the maximum value from that block.</li>
             <li><em>Hyperparameter</em> - Any parameter of the model that is not trained; the machine learning researchers have to 
             manually choose those instead based on their experience / intuition.</li>
          </ul>
@@ -679,7 +678,7 @@ For me, the difference is mind-blowing: using an LLM for the same task uses **~3
          the answer word by word (<em>token by token, to be more precise - more about that in the next blog post</em>), using up a considerable amount of energy for 
          producing each word.</p></li>
          <li><p>Unlike lightweight traditional models, LLMs require power-hungry GPU clusters to process requests.</p></li>
-         <li><p>The architecture of LLMs is vastly heavier - evaluating its billions of parameters requires far more layer-by-layer computation than a narrow AI system.</p></li>
+         <li><p>The architecture of LLMs is vastly heavier - evaluating its billions of neurons requires far more layer-by-layer computation than a narrow AI system.</p></li>
          </ul>
          <p style="font-size: 0.8em;">There are many estimates for LLM energy usage in different contexts, some lower and some significantly higher 
          than the paper I cited above (which gave an estimate of ~200-300 joules). 
@@ -700,8 +699,8 @@ In general, whenever there is a narrow AI model that solves a given task as well
 to use the narrow AI model.
 
 Crucially, narrow AI systems have produced (and continue to produce!) many impressive results. In the following section,
-we will have a look at three examples from Google DeepMind that predate the creation of modern chatbots. Looking back in 2026,
-the last one of them may honestly be characterized as the greatest biological breakthrough ever achieved by an AI system (as of today).
+we will have a look at three examples from Google DeepMind that predate the creation of modern chatbots; the last one of them may 
+be honestly be characterized as the greatest biological breakthrough ever achieved by an AI system (as of today, in 2026).
 
 =========================================
 What has deep learning given us?
@@ -803,14 +802,15 @@ feel free to read the technical details of how AlphaGo works at a technical leve
 In 2016, AlphaGo played a match against 
 `Lee Sedol <https://en.wikipedia.org/wiki/Lee_Sedol>`_, 
 one of the best Go players in the world - and won 4:1.
-There is an `excellent movie <https://www.youtube.com/watch?v=WXuK6gekU1Y>`_ on YouTube which captures the dramatic events and how the world 
-of Go was ever changed through it. It also gives some nice visual explanations of the technology behind the breakthrough.
+There is an `excellent movie <https://www.youtube.com/watch?v=WXuK6gekU1Y>`_ on YouTube which captures the dramatic events and the effect it
+had on how Go is played. 
+It also gives some nice visual explanations of the technology behind the breakthrough.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~
 AlphaFold
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-In recent years, leader of fronteir labs have talked a lot about how LLMs could cure cancer in the future. In a longer time span, this may be true;
+In recent years, leaders of frontier labs have talked a lot about how LLMs could cure cancer in the future. In a longer time span, this may be true;
 but in a shorter time span one has to keep in mind that while AI can help with suggesting new drug candidates or biological experiments,
 some of the steps can not be so easily side-stepped, like clinical testing and obtaining regulatory approval for drugs.
 
@@ -842,6 +842,8 @@ Previously, it could take a student their whole PhD study to determine the 3D st
 In 2018, DeepMind introduced a specialized deep learning model called 
 `AlphaFold <https://deepmind.google/blog/alphafold-using-ai-for-scientific-discovery/>`_
 for the protein folding problem, and it turned out to be hugely successful.
+AlphaFold predicts the 3D structure that the protein takes, which can then be verified both mathematically and by physical 
+observation. Throughout the years, the precision of their AI models continued to improve.
 By 2022, they had achieved a milestone - they had mapped the 3D shape of *200 million* proteins, virtually 
 `every protein known to exist in nature <https://deepmind.google/blog/alphafold-reveals-the-structure-of-the-protein-universe/>`_.
 They had taken what took people years and tens of thousands of dollars via experimental methods, 
