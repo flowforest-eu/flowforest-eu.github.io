@@ -12,6 +12,11 @@
 .. |nbsp| unicode:: 0xA0 
    :trim:
 
+.. role:: blue-text
+.. role:: green-text
+.. role:: cyan-text
+.. role:: small-text
+
 Initially I planned to use this second post to dive straight into Large Language Models (LLMs).
 However, I quickly realized that a better approach would be to start by explaining the foundation 
 and building blocks related to deep learning in general, and only then (in the next blog post) 
@@ -134,10 +139,6 @@ layers of neurons between the inputs and the output. Contrast that with the
 where there are ~10 layers of neurons, from the cells receiving the light impulses to the neurons 
 in the brain that correspond to a concept, like seeing a cat.
 
-.. role:: blue-text
-.. role:: green-text
-.. role:: cyan-text
-
 I think that thinking about human vision is an extremely useful way for getting an intuitive understanding of why neural networks are so
 powerful. Because of this, we will do a small de-tour into how the eye and brain work together. It is not necessary to remember all of the
 technical terms - rather, I recommend to focus on getting an intuitive understanding of what happens between those milliseconds where the light
@@ -226,15 +227,18 @@ However, there were dedicated researchers who regardless kept pushing the bounda
 
 A major breakthrough came in the 1980s when 
 `Geoffrey Hinton <https://en.wikipedia.org/wiki/Geoffrey_Hinton>`_ 
-helped demonstrate how a technique called **backpropagation**
+helped demonstrate how a technique called **backpropagation** (a clever mathematical way of applying corrective feedback 
+to the layers in reverse order)
 could be used to efficiently train multi-layer networks. 
+Nowadays, this approach to multi-layer training is known as **deep learning**.
 `Yann LeCun <https://en.wikipedia.org/wiki/Yann_LeCun>`_
-then took this algorithm and applied it to the task of 
+then took the backpropagation algorithm and applied it to the task of 
 `recognizing handwritten digits <https://en.wikipedia.org/wiki/LeNet>`_.
 For this, he used a type of neural net called **convolutional neural network (CNN)**.
-This practical application of multi-layer training established the paradigm that is nowadays known as **deep learning**.
-Remember those concepts (*backpropagation, deep learning, CNN*) - throughout this blog post, we will come back several times to models based on the *CNN architecture*,
-since CNN models work on visual data, which makes them great for providing intuitively understandable examples.
+
+Remember those concepts (*backpropagation, deep learning, CNN*) - throughout this blog post, we will come back several times 
+to models based on the *CNN architecture*,
+since CNN models apply to visual data, which makes them great for providing intuitively understandable examples.
 
 The next diagram shows a toy example of a 3-layer neural network (the input layer is not counted).
 On the left (red) is an input layer; it is followed by multiple hidden layers.
