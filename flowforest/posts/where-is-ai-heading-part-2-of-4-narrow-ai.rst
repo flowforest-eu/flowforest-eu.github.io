@@ -28,7 +28,7 @@ and they are also very illustrative for concepts that we will need later on.
 On the way, we will touch a bit on the history
 of the AI as a field. 
 
-**Reading time**: 30-60 minutes.
+**Reading time**: ~30 minutes.
 
 .. contents::
    :depth: 1
