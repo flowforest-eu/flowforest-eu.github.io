@@ -17,18 +17,76 @@
 .. role:: cyan-text
 .. role:: small-text
 
-Initially I planned to use this second post to dive straight into Large Language Models (LLMs).
-However, I quickly realized that a better approach would be to start by explaining the foundation 
-and building blocks related to deep learning in general, and only then (in the next blog post) 
-to dive into LLMs and the transformer architecture.
+**Reading time**: ~20 minutes (TODO: Goal).
 
-In order to make the examples more visual, I will base this post on image classification models. 
-These models are relatively easy to intuitively grasp 
-and they are also very illustrative for concepts that we will need later on. 
-On the way, we will touch a bit on the history
-of the AI as a field. 
+In a very broad sense, AI models can be divided into two categories:
 
-**Reading time**: ~30 minutes.
+* **narrow** AI models, which perform one (or a few) specific functions;
+* **general-purpose** AI models, which are intended to perform a variety of tasks.
+
+To give a concrete example, any modern chatbot (*Large Language Model*, or *LLM*) is a general-purpose system (regardless of how capable it is).
+An example of a narrow AI system would be an *image classifier model*, which has one purpose only - it takes images as input and classifies them
+based on what is present in the image.
+
+In this post, we will focus on narrow AI models. One may ask: if LLMs are everywhere nowadays, why should we care about narrow AI?  
+
+First of all, for many people the word "AI" has become synonymous with LLMs. I think that this is rather problematic and makes it extremely hard to have meaningful 
+public discourse about the risks and benefits of AI systems and their regulation. A lot of valid and difficult questions about LLMs (in particular about 
+their safety and alignment) are either non-issues or are much milder for more narrow AI systems.
+
+Energy efficiency is another major factor. To see why, let's compare how much energy (in 
+`joules <https://whateverconverter.com/glossary/joule/>`_)
+it takes to identify the contents of a single image:
+
+* For a typical **narrow** AI system, the energy usage falls in the range of 0.05-2 joules 
+  (`more details <https://arxiv.org/pdf/2412.09731>`_) - the equivalent of a household LED lightbulb shining for less than 0.1 seconds (essentially, one blink of an LED).
+* For an LLM, the same classification task could be ~200-300 joules (`more details <https://arxiv.org/abs/2311.16863>`_). 
+  If the answer is given by the LLM in conversational format, the answer can easily be more than 10 times longer, bringing the energy usage to over 3000 joules - 
+  the LED lightbulb shining for 4 minutes straight.
+
+The difference is mind-blowing: using an LLM for the same task uses **~3000** times more energy!
+
+.. raw:: html
+
+   <embed>
+      <details>
+         <summary>Click here for a deep dive - where does the 3000x energy difference come from?</summary>
+         <ul class="simple">
+         <li><p>A major factor is that the conversational answers take a lot more energy to produce - and LLMs <em>love</em> to be wordy.</p></li>
+         <li><p>Even if the classification result is provided without unnecessary clutter ("A golden retriever sitting on the grass at sunset"), LLMs still build up
+         the answer word by word, using up a considerable amount of energy to produce each word
+         (<em>to be more precise, the answer is built up using chunks of words, called tokens - more about that in the next blog post</em>).</p></li>
+         <li><p>Unlike lightweight traditional models, LLMs require power-hungry GPU clusters to process requests.</p></li>
+         <li><p>The architecture of LLMs is vastly heavier - evaluating their billions of parameters requires far more layer-by-layer 
+         computation than a narrow AI system.</p></li>
+         </ul>
+         <p style="font-size: 0.8em;">There are many estimates for LLM energy usage in different contexts, some lower and some significantly higher 
+         than the source I linked above (which gave an estimate of ~200-300 joules). 
+         I chose this source, since it looked at classification tasks specifically and it represented a middle ground between some of the more extreme 
+         (both low and high) estimates; the highest estimates reached 10000 joules.
+         Of course, as model sizes continue to grow, they will become even more energy-intensive.</p>
+      </details>
+   </embed>
+
+For those reasons, I think everyone should keep in mind that:  
+
+.. math::
+
+  AI \neq LLM.   
+
+In general, whenever there is a narrow AI model that solves a given task as well as a general-purpose AI model, I recommend
+using the narrow AI model.
+
+Crucially, narrow AI systems have produced (and continue to produce!) many impressive results. In the section `What has deep learning given us?`_
+we will look into several examples from Google DeepMind that predate the creation of modern chatbots. Those examples include:
+
+* An AI model that plays the game of Go, which was considered to be nearly impossible for computers to master, since it relies largely on intuition.
+* An AI model that can accurately predict the 3D structure of proteins, which was a major open area of research for 50 years.
+
+This last example may honestly be characterized as the greatest biological breakthrough ever achieved by an AI system (as of today, in 2026); 
+it earned its creators a Nobel Prize in Chemistry in October 2024.
+
+TODO: add an intro to the next section.
 
 .. contents::
    :depth: 1
@@ -42,9 +100,6 @@ of the AI as a field.
 
 ..
    ++ AlphaStar master StarCraft II.
-
-**Important note**: *if you first scroll through this post, you will see some complex-looking images. Don't be put off by those!
-Those are mostly provided for illustrative purposes - I will do my best to explain everything in simple and understandable terms.*
 
 =========================================
 Inspiration for AI - human brains
@@ -172,7 +227,7 @@ However, human vision feels much better than a picture taken by a 1.2 megapixel 
 Curiously, there are some 
 `absolutely fascinating reasons for this <https://clippingexpertasia.com/blog/human-eye-resolution-explained-megapixels-fps-vision>`_.
 
-Now, lets focus on what happens with the visual information after it arrives in the brain - this will be extremely useful in 
+Now, let's focus on what happens with the visual information after it arrives in the brain - this will be extremely useful in 
 understanding the operating principles of neural networks later on.
 
 In the brain, the information is processed via a series of neural layers (*no need to remember their exact names, those are just 
@@ -210,7 +265,7 @@ Similar principles also apply for AI systems:
 Progress in AI research    
 ==========================
 
-Now that we have gained a grain of intuition about how the neural networks can represent complex patterns and relations, lets travel back in 
+Now that we have gained a grain of intuition about how the neural networks can represent complex patterns and relations, let's travel back in 
 time and continue where we left off.
 
 Early research into neural networks (until 1960s) encountered significant challenges.
@@ -266,7 +321,7 @@ Geoffrey Hinton and Yann LeCun, who kept the flame of curiousity regarding deep 
 even when other researchers moved on. 
 Over the decades, they collectively supervised 50+ PhD students on various topics.
 
-Lets fast forward to 2008. Deep learning was seen by the industry mostly as a curious historical relic.
+Let's fast forward to 2008. Deep learning was seen by the industry mostly as a curious historical relic.
 A breakthrough came from an unexpected place. A researcher named `Fei-Fei Li <https://en.wikipedia.org/wiki/Fei-Fei_Li>`_
 had been working on vision models for several years and had developed
 `an intuition <https://arstechnica.com/ai/2024/11/how-a-stubborn-computer-scientist-accidentally-launched-the-deep-learning-boom/>`_
@@ -462,7 +517,7 @@ millions of neurons, so the efficiency of this calculation is crucial. This is t
 `technique of backpropagation solved <https://techhistorylab.com/history-of-backpropagation-deep-learning/>`_.
 *Recall from the historical overview above that backpropagation was invented only in 1980s after several decades of research into this area.*
 
-Lets walk through an example of how this training process could start. We are at the first step, where the model has been initialized randomly. 
+Let's walk through an example of how this training process could start. We are at the first step, where the model has been initialized randomly. 
 The image that we are given depicts a slightly cloudy sky and the image has been classified (by a human, before training) as "sky".
 In the network that has been initialized randomly, there will be neurons in the earlier layers which respond to the blue color; 
 and there will be neurons in the layer laters that eventually lead to the image class "sky" being activated. Since we have just started training,
@@ -478,7 +533,7 @@ Of course, this is just the easiest type of heuristic one can have. In order to 
 * to understand how simple edges combine into basic edges and textures;
 * to how complex shapes consist of simpler shapes and geometric forms.
 
-Take the the example of detecting a clownfish. Lets assume that model has learned that clownfish have orange and white stripes on them.
+Take the the example of detecting a clownfish. Let's assume that model has learned that clownfish have orange and white stripes on them.
 The detection capability of the model will increase if it also starts making sure that those orange and white stripes are next to each other
 and alternate in color. For this to happen, some neurons in the later layers have to specialize to respond to the positional information of 
 those shapes (orange/white stripes) that were detected in the preceding layers.
@@ -560,7 +615,7 @@ box below. If not, just head directly to the `visual explainer page <https://pol
 How to see inside the model?
 ================================================
 
-Lets consider a seemingly simple question - "do we fully understand how those models work?"
+Let's consider a seemingly simple question - "do we fully understand how those models work?"
 
 On the one hand, for a given local model, the model's architecture is fully known. 
 Also, at any point of training, all of the weights are known and can be inspected.
@@ -659,13 +714,13 @@ meaningful public discourse about risks and benefits of AI systems and their reg
 about LLMs (in particular about their safety and alignment) are either non-issues or much milder for more narrow AI systems.
 Of course, there are also issues that are relevant in both cases (e.g., bias).
 
-Consider also energy efficiency. For example, lets compare the energy usage (in 
+Consider also energy efficiency. For example, let's compare the energy usage (in 
 `joules <https://whateverconverter.com/glossary/joule/>`_)
 of taking a single image and detecting the content of the image (i.e., an image classification task):
 
 * For a typical **narrow** AI system, the energy usage falls in the range of 0.05-2 joules 
   (`more details <https://arxiv.org/pdf/2412.09731>`_) - the equivalent of a household LED lightbulb shining for less than 0.1 seconds (essentially, one blink of a LED).
-* For a LLM, the energy usage for the same classification task could take ~200-300 joules (`more details <https://arxiv.org/abs/2311.16863>`_). 
+* For an LLM, the energy usage for the same classification task could take ~200-300 joules (`more details <https://arxiv.org/abs/2311.16863>`_). 
   If the answer is given by the LLM in the conversational format, the answer can easily be more than 10 times longer, bringing the energy usage to over 3000 joules - 
   the LED lightbulb shining for 4 minutes straight.
 
@@ -902,7 +957,7 @@ and how it is different from the preceding AI architectures.
       <ul><li>AI (Google Gemini) was used to find additional sources for this post; 
       all sources were manually verified before citing.</li> 
       <li>AI was used to simplify some of the more complex & technical concepts (e.g. regarding human vision).</li>
-      <!--<li>AI was used in the final proof-reading process for pointing out improvement possibilities, but not for re-writing text.</li></ul>-->
+      <li>AI was used in the final proof-reading process for pointing out improvement possibilities, but not for re-writing text.</li></ul>
       Total contribution of AI in terms of effort during the process: 5-10%
       </div>
    </embed>
