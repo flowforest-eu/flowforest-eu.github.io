@@ -83,8 +83,8 @@ we will look into several examples from Google DeepMind that predate the creatio
 * An AI model that plays the game of Go, which was considered to be nearly impossible for computers to master, since it relies largely on intuition.
 * An AI model that can accurately predict the 3D structure of proteins, which was a major open area of research for 50 years.
 
-This last example may honestly be characterized as the greatest biological breakthrough ever achieved by an AI system (as of today, in 2026); 
-it earned its creators a Nobel Prize in Chemistry in October 2024.
+This last example may honestly be characterized (as of today, in 2026) as the greatest biological breakthrough ever achieved by an AI system.
+In 2024, it earned its creators a Nobel Prize in Chemistry.
 
 TODO: add an intro to the next section.
 
@@ -692,74 +692,6 @@ way to grade the quality of a machine-generated novel on the scale of 0% to 100%
 As we will see in the next blog post, this is one of the reasons that LLMs have made enormous progress in some of the fields 
 that where previously considered the hardest hills to conquer (e.g., mathematics), while the progress has been lagging a bit
 more behind in some other areas. However, over time, clever techniques have been developed to address this shortcoming.
-
-==================================================
-Narrow AI vs general-purpose AI
-==================================================
-
-In a very broad sense, AI systems can be divided into two:
-
-* **narrow** AI systems, which can perform one (or a few) specific functions (e.g., AlexNet);
-* **general-purpose** AI systems, which can perform a variety of tasks (e.g., any LLM).
-
-**NB!** The last definition should not be confused with "AGI" ("Artificial General Intelligence"), which is defined as "*an AI system that 
-that matches or surpasses human capabilities across virtually all cognitive tasks*". I would like to take the opportunity to point out that AGI is a vague term and people often interpret it differently, reducing its usefulness.
-
-On the other hand, the distinction between *narrow* and *general-purpose* AI systems 
-is much more clear-cut - the distinction focuses on the *applicability* of the model, not its capabilities. Even the earliest version of Chat-GPT
-were *general-purpose* (even though they were not very capable).
-
-For many people, the word "AI" has become synonymous to LLMs. I think that this is rather problematic and makes it extremely hard to have 
-meaningful public discourse about risks and benefits of AI systems and their regulation. A lot of valid and difficult questions 
-about LLMs (in particular about their safety and alignment) are either non-issues or much milder for more narrow AI systems.
-Of course, there are also issues that are relevant in both cases (e.g., bias).
-
-Consider also energy efficiency. For example, let's compare the energy usage (in 
-`joules <https://whateverconverter.com/glossary/joule/>`_)
-of taking a single image and detecting the content of the image (i.e., an image classification task):
-
-* For a typical **narrow** AI system, the energy usage falls in the range of 0.05-2 joules 
-  (`more details <https://arxiv.org/pdf/2412.09731>`_) - the equivalent of a household LED lightbulb shining for less than 0.1 seconds (essentially, one blink of a LED).
-* For an LLM, the energy usage for the same classification task could take ~200-300 joules (`more details <https://arxiv.org/abs/2311.16863>`_). 
-  If the answer is given by the LLM in the conversational format, the answer can easily be more than 10 times longer, bringing the energy usage to over 3000 joules - 
-  the LED lightbulb shining for 4 minutes straight.
-
-For me, the difference is mind-blowing: using an LLM for the same task uses **~3000** times more energy!
-
-.. raw:: html
-
-   <embed>
-      <details>
-         <summary>Click here for an explanation - where does the 3000x energy difference come from?</summary>
-         <ul class="simple">
-         <li><p>As already mentioned, large part of it is that conversational answers take a lot more energy to produce - and LLMs <em>love</em> to be wordy.</p></li>
-         <li><p>Even if the classification result is provided without unnecessary clutter ("A golden retriever sitting on a grass field at sunset"), LLMs still build up
-         the answer word by word (<em>token by token, to be more precise - more about that in the next blog post</em>), using up a considerable amount of energy for 
-         producing each word.</p></li>
-         <li><p>Unlike lightweight traditional models, LLMs require power-hungry GPU clusters to process requests.</p></li>
-         <li><p>The architecture of LLMs is vastly heavier - evaluating its billions of neurons requires far more layer-by-layer computation than a narrow AI system.</p></li>
-         </ul>
-         <p style="font-size: 0.8em;">There are many estimates for LLM energy usage in different contexts, some lower and some significantly higher 
-         than the paper I cited above (which gave an estimate of ~200-300 joules). 
-         I chose this paper, since it looked at classification tasks specifically and it represented a middle ground between some of the more extreme 
-         (both low and high) 
-         estimates; the highest estimates reached 10000 joules.
-         Of course, as model sizes continue to grow, they will become even more energy-intensive.</p>
-      </details>
-   </embed>
-
-For all of those reasons, I think that everyone should keep in mind that:  
-
-.. math::
-
-  AI \neq LLM.   
-
-In general, whenever there is a narrow AI model that solves a given task as well as a general-purpose AI model, I would recommend
-to use the narrow AI model.
-
-Crucially, narrow AI systems have produced (and continue to produce!) many impressive results. In the following section,
-we will have a look at three examples from Google DeepMind that predate the creation of modern chatbots; the last one of them may 
-be honestly be characterized as the greatest biological breakthrough ever achieved by an AI system (as of today, in 2026).
 
 =========================================
 What has deep learning given us?
