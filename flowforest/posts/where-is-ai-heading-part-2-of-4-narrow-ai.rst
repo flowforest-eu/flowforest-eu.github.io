@@ -172,7 +172,7 @@ The following image shows this mathematical model side by side with a biological
 **A technical remark**. *In modern neural networks, the step* |unicode3| |nbsp| *is usually done a bit differently than in the perceptron model.
 The exact method for doing 
 so (the activation function) differs between various AI models. 
-To learn more,*
+For more examples and mathematical details,*
 `consult here <https://www.geeksforgeeks.org/machine-learning/activation-functions-neural-networks/>`_.
 
 The same basic mathematical structure for neurons powers the vast majority of neural networks used today (including LLMs). 
@@ -193,80 +193,77 @@ layers of neurons between the inputs and the output. Contrast that with
 where there are ~10 layers of neurons, from the cells receiving the light impulses to the neurons 
 in the brain that correspond to a concept, like seeing a cat.
 
-There are 6 million cones (for daytime vision) and 120 million rods (for nighttime vision) in the human eye. 
-The raw image captured by those rods and cones is heavily compressed (~100x) before it ever leaves the eye. 
-Then, the visual information travels via the optic nerve to the brain. 
-The optic nerve consists of ~1.2 million optic nerve fibers - you might think of it as an 1.2 megapixel camera cable.
-However, human vision feels much better than a picture taken by a 1.2 megapixel camera. 
-(TODO improve wording) The main reason for this is that eye does micro-movements and brain clips this together. Because of this, human eye resolution
-is comparable to a `576 million megapixel camera <https://clippingexpertasia.com/blog/human-eye-resolution-explained-megapixels-fps-vision>`_.
+First, the light hits the cells in the eye; the raw image captured by those cells is heavily compressed (~100x) before it even leaves the eye.
 
-TODO move above to details.
+.. raw:: html
 
-TODO move below to details.
+   <embed>
+      <details>
+         <summary>Click here to read more about what happens in the eye before the information reaches the brain</summary>
+         <p>The image below shows the even the eye itself contains various neural layers,
+         where each layer fulfills a highly specific and crucial function.
+         The image should be read from bottom to top -
+         in the bottom, there are <span class="blue-text">rods</span> and <span class="green-text">cones</span>, which respond to incoming light.
+         Cones handle vision in bright daylight, while rods
+         take over in low light and at night.
+         After receiving the light, the signal passes through various layers of neurons (illustrated by the diagram),
+         until it reaches the <em>optic nerve</em> (in the top), which takes
+         the visual information to the brain for further processing.</p>
+         <img alt="Neural layers in the eye" src="../../images/part2/eye-visual-system.png"><p><em>The five neural layers in the eye. Source: Open Neuroscience Initiative (modified)</em></p>
+         <!-- https://pressbooks.atlanticoer-relatlantique.ca/openneuroscience/chapter/chapter-9-sensation-and-perception-the-visual-system/ -->
+         <p>There are 120 million rods and 6 million cones in the human eye.
+         The raw image captured by those rods and cones is heavily compressed before it ever leaves the eye.
+         For example, the <em>retinal ganglion cells</em> (<span class="cyan-text">cyan</span> in the above image) act like a biological image compression algorithm.</p>
+         <p>The visual information travels via the optic nerve to the brain.
+         The optic nerve consists of roughly 1.2 million nerve fibers - you can think of it as a 1.2 megapixel cable carrying data
+         from your eye to your brain.
+         Yet, human vision feels like a crisp, high-definition panorama rather than a blurry snapshot. How is that possible?
+         The secret is that your eyes are constantly making tiny, rapid micro-movements, and your brain seamlessly stitches  
+         those samples together.
+         Furthermore, your eye's sharpest focus is restricted to a tiny central spot; if your entire field of vision had that same high-density
+         packing of photoreceptors, your eye would effectively capture a 
+         <a class="reference external" href="https://clippingexpertasia.com/blog/human-eye-resolution-explained-megapixels-fps-vision">576 megapixel image</a>.</p>
+      </details>
+   </embed>
 
-The next image is intended to demonstrate that the human eye contains several neural layers, 
-where each layer fulfils a highly specific and crucial function. 
-The image should be read from bottom to top - 
-in the bottom, there are :blue-text:`rods` and :green-text:`cones`, which respond to incoming light. 
-Cones handle vision in bright daylight, while rods
-take over in low light and at night. 
-After receiving the light, the signal passes through various layers of neurons (illustrated by the diagram), 
-until it reaches the *optic nerve* (in the top), which takes 
-the visual information to the brain for further processing.
+After that, the information is sent via the optic nerve to the brain - where a chain 
+of neural layers gradually turns raw signals into meaning:
 
-.. image:: /images/part2/eye-visual-system.png
-   :alt: Neural layers in the eye
+* Layer 1: organizes **visual information**; 
+* Layer 2: detects **low-level features**: orientation, edges, and lines;
+* Layer 3: combines simple edges into **basic shapes** and textures;
+* Layer 4: processes **complex shapes** and geometric forms;
+* Layer 5: detects **whole objects**, faces, and abstract concepts, e.g., recognizing a dog, a car, or a number.
 
-*The five neural layers in the eye. Source: Open Neuroscience Initiative (modified)*
+.. raw:: html
 
-..
-   https://pressbooks.atlanticoer-relatlantique.ca/openneuroscience/chapter/chapter-9-sensation-and-perception-the-visual-system/
-
-There are 120 million rods and 6 million cones in the human eye. 
-The raw image captured by those rods and cones is heavily compressed before it ever leaves the eye. 
-For example, the *retinal ganglion cells* (:cyan-text:`cyan` in the above image) act like a biological image compression algorithm.
-
-The visual information travels via the optic nerve to the brain. 
-The optic nerve consists of ~1.2 million optic nerve fibers - you might think of it as an 1.2 megapixel camera cable.
-However, human vision feels much better than a picture taken by a 1.2 megapixel camera. 
-The main reason
-Curiously, there are some 
-`absolutely fascinating reasons for this <https://clippingexpertasia.com/blog/human-eye-resolution-explained-megapixels-fps-vision>`_.
-
-Now, let's focus on what happens with the visual information after it arrives in the brain - this will be extremely useful in 
-understanding the operating principles of neural networks later on.
-
-In the brain, the information is processed via a series of neural layers (*no need to remember their exact names, those are just 
-for background info*).
-What is crucial is that each layer **builds upon** the previous layer and **represents** increasingly complex features:
-
-1. layer: organizes **visual information** (*technically: "LGN layer"*);
-2. layer: detects **low-level features**: orientation, edges, and lines (*technically: "V1 layer"*);
-3. layer: combines simple edges into **basic shapes** and textures (*technically: "V2 layer"*);
-4. layer: processes **complex shapes** and geometric forms (*technically: "V4 layer"*);
-5. layer: detects **whole objects**, faces, and abstract concepts, e.g., reckognizing a dog, a car, or a number (*technically, 1 or 2 layers: "IT cortex"*).
-
-For more detailed overview of the various layers and their functions, see 
-`here <https://people.csail.mit.edu/pulkitag/data/cnn_mimics_brain.pdf>`_
-and `here <https://en.wikipedia.org/wiki/Visual_system#System_overview>`_.
+   <embed>
+      <details>
+         <summary>Click here for clarifications about those layers</summary>
+         <ul class="simple">
+         <li><p>Layer 1: <em>LGN layer</em></p></li>
+         <li><p>Layer 2: <em>V1 layer</em></p></li>
+         <li><p>Layer 3: <em>V2 layer</em></p></li>
+         <li><p>Layer 4: <em>V4 layer</em></p></li>
+         <li><p>Layer 5: <em>IT cortex</em> (this might technically be considered to be 2 layers)</p></li>
+         </ul>
+         <p>For more detailed overview of the various layers and their functions, see
+         <a class="reference external" href="https://people.csail.mit.edu/pulkitag/data/cnn_mimics_brain.pdf">here</a>
+         and <a class="reference external" href="https://en.wikipedia.org/wiki/Visual_system#System_overview">here</a>.</p>
+         <p style="font-size: 0.8em;">Disclaimer for biologists: since I am not a neuroscientist, the above description may contain oversimplifications or errors. 
+         However, the general principle should still be correct and serves to illustrate that subsequent layers represent increasingly
+         complex patterns. The full description of how the visual cortex works
+         also involves looping effects, complex time-dependent processes, and some layers fulfilling multiple functions; my description
+         is a simplification of a complex process. I also glossed over layers of V3, V5, and V6, since they primarily handle motion and spatial
+         processing, whereas our focus here is on what happens when a person views static images.</p>
+      </details>
+   </embed>
 
 Similar principles also apply for AI systems: 
 
 * As information passes through the layers of the neural network, the subsequent layers represent increasingly complex patterns.
 * The number of layers in an AI model must be sufficient so that complex features or concepts can be 
   represented. However, increasing the number of layers also increases the training time.
-
-.. raw:: html
-
-    <embed>
-        <p style="font-size: 0.8em;">Disclaimer for biologists: since I am not a neuroscientist, the above description may contain oversimplifications or errors. 
-        However, the general principle should still be correct and serves to illustrate the subsequent layers represent increasingly
-        complex patterns. The full description of how the visual cortex works
-        also involves looping effects, complex time-dependent processes, and some layers fulfilling multiple functions; my description
-        is a simplification of a complex process. I also glossed over layers of V3, V5, and V6, since they primarily handle motion and spatial
-        processing, whereas our focus here is on what happens when a person views static images.</p>
-    </embed>
 
 ==========================
 Progress in AI research    
@@ -380,7 +377,7 @@ combination of
 simpler relationships. In the next section we will have a look at how the learning process actually works.
 Before that, we will once more have a look at how the same process occurs for humans.
 
-**A remark**. *The AlexNet model has 8 layers and approximately 60 million neurons.*
+**A remark**. *The AlexNet model has 8 layers and approximately 60 million parameters (weights).*
 
 .. image:: /images/part2/clownfish30.jpg
    :alt: A clownfish.
