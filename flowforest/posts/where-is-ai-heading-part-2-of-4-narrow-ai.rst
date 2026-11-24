@@ -86,7 +86,8 @@ we will look into several examples from Google DeepMind that predate the creatio
 This last example may honestly be characterized (as of today, in 2026) as the greatest biological breakthrough ever achieved by an AI system.
 In 2024, it earned its creators a Nobel Prize in Chemistry.
 
-TODO: add an intro to the next section.
+To understand how such AI models work, we can follow in the footsteps of early AI researchers, who took inspiration from human brain 
+and how we see the world.
 
 .. contents::
    :depth: 1
@@ -105,28 +106,29 @@ TODO: add an intro to the next section.
 Inspiration for AI - human brains
 =========================================
 
-For a long time, humankind has been fascinated by questions as:
+For a long time, humankind has been fascinated by questions like:
 
 * What is intelligence?
 * How do our brains work?
-* Is it possible to artifically imitate the inner workings of the brain?
+* Is it possible to artificially imitate the inner workings of the brain?
 * What are the fundamental building blocks of the brain? 
 * How do these building blocks function together to give rise to such complex phenomena as vision, smell, or logic?
 
 Cells called **neurons** play an important role in answering all of the questions above. 
-In the brain, millions of neurons form complicated networks that encode memories, 
+In the brain, billions of neurons form complicated networks that encode memories, 
 shape personalities, drive decisions, and process the sensations of touch, taste, sight, smell, and sound 
-(for deeper overview of this topic, read more at 
+(for a deeper overview of this topic, read more at 
 `Khan Academy <https://www.khanacademy.org/science/biology/human-biology/neuron-nervous-system/a/overview-of-neuron-structure-and-function>`_).
 
 Some interesting facts about neurons in our brains and bodies:
 
 * An adult human brain contains approximately `80 billion neurons <https://academic.oup.com/brain/article/148/3/689/7909879?login=false>`_.
-* A single neuron may be connected to 1000-10000 other neurons.
-* The `longest neuron in human body <https://en.wikipedia.org/wiki/Sciatic_nerve>`_ can be over a meter long (from bottom of spine to toes). However, most neurons in brain are less than a millimeter in length.
+* A single neuron may be connected to 1'000-10'000 other neurons.
+* The `longest neuron in the human body <https://en.wikipedia.org/wiki/Sciatic_nerve>`_ can be over a meter long (from the bottom of the spine to toes). 
+  However, most neurons in the brain are less than a millimeter in length.
 
-Human vision is made possible by a large number of neurons working in unison.
-Although neural networks consisting of hundreds of millions neurons are hard to research,
+For example, human vision is made possible by a large number of neurons working together.
+Although neural networks consisting of hundreds of millions neurons are hard to study,
 each individual neuron by itself is (comparatively speaking) much simpler.
 
 .. |unicode1| image:: /images/unicode1.png
@@ -141,14 +143,15 @@ In simple terms, neurons work like this:
 | |unicode3| If the signal is strong enough, they fire an output signal.
 | |unicode4| The output signal reaches the next neuron (or neurons).
 
-The following image shows how a neuron actually looks under the microscope.
+The following diagram shows how a neuron actually looks like.
 
 .. image:: /images/part2/neuron.png
    :alt: A biological neuron
 
 *A biological neuron. Source: Clker-Free-Vector-Images via Pixabay (modified).*
 
-Scientists working in this field realized that an individual neuron is not that difficult to describe mathematically.
+Scientists soon realized that while a brain with billions of neurons is bafflingly complex,
+an individual neuron is surprisingly simple to describe mathematically.
 Building on that idea,
 `Frank Rosenblatt <https://en.wikipedia.org/wiki/Frank_Rosenblatt>`_
 came up in 1957 with the idea of a `perceptron <https://www.simplilearn.com/tutorials/deep-learning-tutorial/perceptron>`_,
@@ -168,17 +171,13 @@ The following image shows this mathematical model side by side with a biological
 
 **A technical remark**. *In modern neural networks, the step* |unicode3| |nbsp| *is usually done a bit differently than in the perceptron model.
 The exact method for doing 
-so (the activation function) differs between various AI models. We will provide just one example of an activation function, since it will become
-useful later. It is called* **ReLU**:
-
-* *If input is negative, output is "0"; otherwise, output is equal to the input.*
-
-*For many examples of activation functions used in modern neural networks,*
-`see here <https://www.geeksforgeeks.org/machine-learning/activation-functions-neural-networks/>`_.
+so (the activation function) differs between various AI models. 
+To learn more,*
+`consult here <https://www.geeksforgeeks.org/machine-learning/activation-functions-neural-networks/>`_.
 
 The same basic mathematical structure for neurons powers the vast majority of neural networks used today (including LLMs). 
 Taken individually, a neuron (either biological or artificial) is not particularly powerful; combine them into networks 
-consisting of millions, and surprising behaviours start to emerge if they are suitably trained (more about this below).
+consisting of millions, and surprising behaviors start to emerge if they are suitably trained (more about this below).
 
 When the perceptron was invented in 1957, it attracted considerable amount of research interest. 
 However, perceptrons also had their limitations. In the next sections, we will see what those were
@@ -189,15 +188,22 @@ Human vision as a neural network
 ==================================
  
 A fundamental limitation of the perceptron model was that it was a single-layer network - meaning there were no intermediate 
-layers of neurons between the inputs and the output. Contrast that with the 
+layers of neurons between the inputs and the output. Contrast that with 
 `human vision <https://pressbooks.atlanticoer-relatlantique.ca/openneuroscience/chapter/chapter-9-sensation-and-perception-the-visual-system/>`_, 
 where there are ~10 layers of neurons, from the cells receiving the light impulses to the neurons 
 in the brain that correspond to a concept, like seeing a cat.
 
-I think that thinking about human vision is an extremely useful way for getting an intuitive understanding of why neural networks are so
-powerful. Because of this, we will do a small de-tour into how the eye and brain work together. It is not necessary to remember all of the
-technical terms - rather, I recommend to focus on getting an intuitive understanding of what happens between those milliseconds where the light
-enters your eye and your brain recognizes *what do you see*.
+There are 6 million cones (for daytime vision) and 120 million rods (for nighttime vision) in the human eye. 
+The raw image captured by those rods and cones is heavily compressed (~100x) before it ever leaves the eye. 
+Then, the visual information travels via the optic nerve to the brain. 
+The optic nerve consists of ~1.2 million optic nerve fibers - you might think of it as an 1.2 megapixel camera cable.
+However, human vision feels much better than a picture taken by a 1.2 megapixel camera. 
+(TODO improve wording) The main reason for this is that eye does micro-movements and brain clips this together. Because of this, human eye resolution
+is comparable to a `576 million megapixel camera <https://clippingexpertasia.com/blog/human-eye-resolution-explained-megapixels-fps-vision>`_.
+
+TODO move above to details.
+
+TODO move below to details.
 
 The next image is intended to demonstrate that the human eye contains several neural layers, 
 where each layer fulfils a highly specific and crucial function. 
@@ -224,6 +230,7 @@ For example, the *retinal ganglion cells* (:cyan-text:`cyan` in the above image)
 The visual information travels via the optic nerve to the brain. 
 The optic nerve consists of ~1.2 million optic nerve fibers - you might think of it as an 1.2 megapixel camera cable.
 However, human vision feels much better than a picture taken by a 1.2 megapixel camera. 
+The main reason
 Curiously, there are some 
 `absolutely fascinating reasons for this <https://clippingexpertasia.com/blog/human-eye-resolution-explained-megapixels-fps-vision>`_.
 
@@ -610,6 +617,14 @@ box below. If not, just head directly to the `visual explainer page <https://pol
          </ul>
       </details>
    </embed>
+
+TODO:
+
+We will provide just one example of an activation function, since it will become
+useful later. It is called* **ReLU**:
+
+* *If input is negative, output is "0"; otherwise, output is equal to the input.*
+
 
 ================================================
 How to see inside the model?
