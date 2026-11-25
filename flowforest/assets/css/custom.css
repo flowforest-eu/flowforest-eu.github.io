@@ -377,3 +377,19 @@ summary {
 .just-bold {
     font-weight: 700;
 }
+
+p.golden_heading {
+    color: #eeb435; /* #e2b85c; */
+    text-align: center;
+    font-family: 'Lora', Georgia, serif;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: -0.02em;
+    font-size: 1.8em;
+}
+
+p.golden_heading > span {
+    border-top: 2px solid #e2b85c57;
+    border-bottom: 2px solid #e2b85c57;
+    text-shadow: 0px 0px 5px #e2b85c8c;
+}

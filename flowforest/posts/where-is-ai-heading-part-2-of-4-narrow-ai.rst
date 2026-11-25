@@ -63,7 +63,7 @@ The difference is mind-blowing: using an LLM for the same task uses **~3000** ti
          <p style="font-size: 0.8em;">There are many estimates for LLM energy usage in different contexts, some lower and some significantly higher 
          than the source I linked above (which gave an estimate of ~200-300 joules). 
          I chose this source, since it looked at classification tasks specifically and it represented a middle ground between some of the more extreme 
-         (both low and high) estimates; the highest estimates reached 10000 joules.
+         (both low and high) estimates; the highest estimates reached 10'000 joules.
          Of course, as model sizes continue to grow, they will become even more energy-intensive.</p>
       </details>
    </embed>
@@ -123,7 +123,7 @@ shape personalities, drive decisions, and process the sensations of touch, taste
 Some interesting facts about neurons in our brains and bodies:
 
 * An adult human brain contains approximately `80 billion neurons <https://academic.oup.com/brain/article/148/3/689/7909879?login=false>`_.
-* A single neuron may be connected to 1'000-10'000 other neurons.
+* A single neuron may be connected to 1000-10'000 other neurons.
 * The `longest neuron in the human body <https://en.wikipedia.org/wiki/Sciatic_nerve>`_ can be over a meter long (from the bottom of the spine to toes). 
   However, most neurons in the brain are less than a millimeter in length.
 
@@ -265,45 +265,11 @@ Similar principles also apply for AI systems:
 * The number of layers in an AI model must be sufficient so that complex features or concepts can be 
   represented. However, increasing the number of layers also increases the training time.
 
-==========================
-Progress in AI research    
-==========================
-
-Now that we have gained a grain of intuition about how the neural networks can represent complex patterns and relations, let's travel back in 
-time and continue where we left off.
-
-Early research into neural networks (until 1960s) encountered significant challenges.
-As mentioned above, those neural networks were primarily confined to single-layer architectures.
-Also, the research initially lacked a strong theoretical foundation.
-In 1969, a book called `Perceptrons <https://en.wikipedia.org/wiki/Perceptrons_(book)>`_ demonstrated that 
-*single-layer networks are fundamentally limited* 
-(`mathematical explanation <https://apxml.com/courses/introduction-to-deep-learning/chapter-1-neural-network-foundations/perceptron-limitations>`_), 
-and noted that there is *no known efficient way* to train multi-layer networks.
-
-After that, there were several periods when the interest in AI research waned considerably. Such time periods are now
-called "AI winters" (`see here <https://news.sparkfun.com/7896>`_ for more exact historical background).
-However, there were dedicated researchers who regardless kept pushing the boundaries.
-
-A major breakthrough came in the 1980s when 
-`Geoffrey Hinton <https://en.wikipedia.org/wiki/Geoffrey_Hinton>`_ 
-helped demonstrate how a technique called **backpropagation** (a clever mathematical way of applying corrective feedback 
-to the layers in reverse order)
-could be used to efficiently train multi-layer networks. 
-Nowadays, this approach to multi-layer training is known as **deep learning**.
-`Yann LeCun <https://en.wikipedia.org/wiki/Yann_LeCun>`_
-then took the backpropagation algorithm and applied it to the task of 
-`recognizing handwritten digits <https://en.wikipedia.org/wiki/LeNet>`_.
-For this, he used a type of neural net called **convolutional neural network (CNN)**.
-
-Remember those concepts (*backpropagation, deep learning, CNN*) - throughout this blog post, we will come back several times 
-to models based on the *CNN architecture*,
-since CNN models apply to visual data, which makes them great for providing intuitively understandable examples.
-
 The next diagram shows a toy example of a 3-layer neural network (the input layer is not counted).
 On the left (red) is an input layer; it is followed by multiple hidden layers.
 The network concludes with an output layer, containing a single neuron in this example (green).
 Of course, this is just a toy example and neural networks nowadays used for practical applications 
-contain a lot more of neurons (typically millions, or more).
+contain many more neurons (typically millions, or more).
 
 .. image:: /images/part2/neural_net80.png
    :alt: A simplified illustration of a deep neural network.
@@ -313,7 +279,49 @@ contain a lot more of neurons (typically millions, or more).
 ..
    https://blog.christianperone.com/tag/scikit-learn/
 
-After some progress had been made in 1980s and 1990s, progress stalled again. 
+==========================
+Progress in AI research    
+==========================
+
+Now that we have gained a grain of intuition about how the neural networks can represent complex patterns and relations, let's travel back in 
+time and continue where we left off.
+
+.. raw:: html   
+
+   <p class="golden_heading"><span>1960s</span></p>
+
+Early research into neural networks (until the 1960s) encountered significant challenges.
+As mentioned above, those neural networks were primarily confined to single-layer architectures.
+Also, the research initially lacked a strong theoretical foundation.
+In 1969, a book called `Perceptrons <https://en.wikipedia.org/wiki/Perceptrons_(book)>`_ demonstrated that 
+*single-layer networks are fundamentally limited* 
+(`mathematical explanation <https://apxml.com/courses/introduction-to-deep-learning/chapter-1-neural-network-foundations/perceptron-limitations>`_), 
+and noted that there is *no known efficient way* to train multi-layer networks.
+
+After that, there were several periods when the interest in AI research waned considerably. Such time periods are now
+called "AI winters" (`see here <https://news.sparkfun.com/7896>`_ for more exact historical background).
+However, there were dedicated researchers who kept pushing the boundaries.
+
+.. raw:: html   
+
+   <p class="golden_heading"><span>1980s</span></p>
+
+A major breakthrough came in the 1980s when 
+`Geoffrey Hinton <https://en.wikipedia.org/wiki/Geoffrey_Hinton>`_ 
+helped demonstrate how a technique called **backpropagation** (a clever mathematical way of applying corrective feedback 
+to the layers *in reverse order*)
+could be used to efficiently train multi-layer networks. 
+Nowadays, this approach to multi-layer training is known as **deep learning**.
+`Yann LeCun <https://en.wikipedia.org/wiki/Yann_LeCun>`_
+then took the backpropagation algorithm and applied it to the task of 
+`recognizing handwritten digits <https://en.wikipedia.org/wiki/LeNet>`_.
+For this, he used a type of neural net called a **convolutional neural network (CNN)**.
+
+Remember those concepts (*backpropagation, deep learning, CNN*) - throughout this blog post, we will come back several times 
+to models based on the *CNN architecture*,
+since CNN models apply to visual data, which makes them great for providing intuitively understandable examples.
+
+After some progress had been made in the 1980s and 1990s, progress stalled again. 
 Looking back, it is clear that one of the reasons was that the computers used then just did not have sufficient computational 
 capabilities to train practically useful models.
 AI researchers tended to focus on other types of systems, for example 
@@ -321,32 +329,35 @@ carefully hand-crafted **expert systems** which require large amounts of hand-co
 (`read more here <https://en.wikipedia.org/wiki/Expert_system>`_).
 However, there were three notable figures - 
 `Yoshua Bengio <https://en.wikipedia.org/wiki/Yoshua_Bengio>`_,
-Geoffrey Hinton and Yann LeCun, who kept the flame of curiousity regarding deep learning alive 
+Geoffrey Hinton and Yann LeCun, who kept the flame of curiosity regarding deep learning alive 
 even when other researchers moved on. 
 Over the decades, they collectively supervised 50+ PhD students on various topics.
 
-Let's fast forward to 2008. Deep learning was seen by the industry mostly as a curious historical relic.
+.. raw:: html   
+
+   <p class="golden_heading"><span>2010s</span></p>
+
+By the late 2000s, deep learning was seen by the industry mostly as a curious historical relic.
 A breakthrough came from an unexpected place. A researcher named `Fei-Fei Li <https://en.wikipedia.org/wiki/Fei-Fei_Li>`_
 had been working on vision models for several years and had developed
 `an intuition <https://arstechnica.com/ai/2024/11/how-a-stubborn-computer-scientist-accidentally-launched-the-deep-learning-boom/>`_
-that for making progress,
-more comprehensive high-quality training dataset would be necessary.
+that making progress would require a much larger, high-quality training dataset.
 She was also inspired by an 
 `estimate <http://wexler.free.fr/library/files/biederman%20%281987%29%20recognition-by-components.%20a%20theory%20of%20human%20image%20understanding.pdf>`_ 
 by vision scientist Irving Biederman - that the average person 
-recognizes roughly 30,000 different kinds of objects.    
+recognizes roughly 30'000 different kinds of objects.    
 With just a few colleagues, limited funding, 2 years of hard work, and a lot of ingenuity, she managed to compile a dataset of *14 million images*, 
-carefully annotated into 22 000 categories, which she named **ImageNet**. She released it in 2009. To help to popularize it, she also launched the 
+carefully annotated into 22'000 categories, which she named **ImageNet**. She released it in 2009. To help popularize it, she also launched the 
 ImageNet competition, where AI systems could compete with each other in the image classification task.
 
 In 2010 and 2011, winners of the ImageNet competition used techniques that were only slight improvements from the state of the art 
 (mostly expert systems).
 In 2012, `Alex Krizhevsky <https://en.wikipedia.org/wiki/Alex_Krizhevsky>`_, 
 `Ilya Sutskever <https://en.wikipedia.org/wiki/Ilya_Sutskever>`_, 
-and Geoffrey Hinton won the ImageNet competition using an AI system **AlexNet**, which was an example of
+and Geoffrey Hinton won the ImageNet competition using an AI system called **AlexNet**, which was an example of
 a Convolutional Neural Network (CNN) - a model architecture that had waited for its time for several decades. 
 It crushed the competition with an error rate of just *15%*
-(winners of 2010 and 2011 had demonstrated error rates almost twice as large - 28% and 26%, correspondingly).
+(winners of 2010 and 2011 had demonstrated error rates almost twice as large - 28% and 26%, respectively).
 At the same time, the training time for AlexNet was *mere days* (instead of months, which would have been expected at the time). 
 This event was a huge catalyst for the following boom in deep learning (and AI in general).
 
@@ -356,10 +367,10 @@ Secondly, the researchers behind AlexNet managed to use
 `GPU chips <https://www.ingameloop.com/graphics-cards/learn/what-does-a-gpu-do-for-gaming/>`_
 to efficiently parallelize the training process. 
 
-After the computation, many people wanted to know answers to questions such as:
+After the competition, many people wanted to know answers to questions such as:
 
 * How did AlexNet manage to beat the hand-crafted expert systems by such a large margin?
-* Furthermore, how can a model like CNN even succeed at such a complicated task like image classification?
+* Furthermore, how can a model like CNN even succeed at such a complicated task as image classification?
 
 The scientists showed that after successful training, a CNN model has a property that we already observed 
 for human brains: 
@@ -369,13 +380,11 @@ Consider how a CNN model processes an image of a clownfish (below):
 
 * earlier layers detect edges and colors (e.g., the edge of an orange stripe);
 * following layers start to combine them into texture-like feature groups (e.g., an orange-white striped pattern);
-* later layers assemble whole object parts (e.g., fin of a clownfish);
+* later layers assemble whole object parts (e.g., the fin of a clownfish);
 * final layers combine the parts and their position & orientation to detect the object class (a clownfish).
 
 Thus, the CNNs manage to utilize one of the central pillars of intelligence: representing complex relationships via a 
-combination of 
-simpler relationships. In the next section we will have a look at how the learning process actually works.
-Before that, we will once more have a look at how the same process occurs for humans.
+combination of simpler relationships.
 
 **A remark**. *The AlexNet model has 8 layers and approximately 60 million parameters (weights).*
 
@@ -387,6 +396,77 @@ Before that, we will once more have a look at how the same process occurs for hu
 
 ..
    https://fishesofaustralia.net.au/home/species/1275
+
+======================================
+What is a weight in an AI model?
+======================================
+
+.. role:: just-bold
+
+Before we can discuss AI models and their training processes, we need to have a solid understanding about 
+the concept of a **weight** in an AI model. A weight shows how strong is the connection between two neurons.
+
+Lets consider a network that classifies images based on the animal present on the image. The final layer (output layer)
+of that network contains one neuron for each of the animal classes it can detect; we will focus on a neuron for detecting
+*cheetahs*.
+
+As the neural net processes the image, it makes increasingly specific observations about the animal:
+
+* Big cat (feline) -> spotted big cat -> cheetah.
+
+From body shape alone, it is hard to distinguish cheetahs and leopards - 
+they are both big cats with slender body shape, a tail, and spotted fur.
+The distinguish feature is the *shape of the spots* (see below) - cheetahs have solid, single black spots; leopards have complex, 
+multi-colored rosettes.
+
+.. image:: /images/part2/cheetah_leopard.png
+   :alt: Cheetah vs leopard 
+
+*Cheetah (above) vs leopard (below). Source: Wikimedia Commons (cropped).*
+
+Because of this, the presence of black spots is a strong positive indicator for the cheetah classifier, while the presence of 
+multi-colored rosettes is a strong negative (**inhibiting**) indicator. 
+The following image describes the hypothetical cheetah-detecting neuron (:just-bold:`y`) in the output layer 
+and some of the neurons from the preceding layer that feed in into making that decision. Bigger weights are drawn as bolder arrows; dashed arrows 
+depict negative weights.
+
+.. image:: /images/part2/artificial_neuron.png
+   :alt: Artificial neuron
+
+*Artificial neuron with various weights (image by author).*
+
+This image should be read in the following way:
+
+* ...
+
+Human brains also make use of inhibitory signals in various contexts, including vision. If you are interested, click on the following box to expand it
+and learn more - it turns out that this inhibition mechanism is actually the cause for some common optical illusions!
+
+.. raw:: html
+
+   <embed>
+      <details>
+         <summary>Click here to read how inhibitory signals are used in the human brain.</summary>
+         <p>Imagine a dark tree next to a bright sky; focus on the edge where the two meet.
+         When light from the sky hits the receptors in the eye, neurons fire strong active signals ("it is bright here") 
+         and <em>also send</em> inhibitory 
+         (negative) signals to <em>their neighbor neurons</em>, causing the dark tree appear even darker than it actually is.
+         This causes the borders between dark and bright objects to have a lot of contrast and look crisp.</p>
+         <p>Curiously, this exact same process that increases the contrast between dark and light areas (called
+         <a class="reference external" href="https://en.wikipedia.org/wiki/Lateral_inhibition#Visual_inhibition">visual lateral inhibition</a>)
+         is exactly the cause for 
+         <a class="reference external" href="https://en.wikipedia.org/wiki/Grid_illusion">several optical illusions</a>
+         where the viewer may see black dots appearing on white background.</p>
+         <img alt="Grid illusion" src="../../images/part2/grid_illusion.png"><p><em>A grid illusion. Source: Wikimedia commons</em></p>
+         <!-- https://pressbooks.atlanticoer-relatlantique.ca/openneuroscience/chapter/chapter-9-sensation-and-perception-the-visual-system/ -->
+
+         .. image:: /images/part2/artificial_neuron.png
+   :alt: Artificial neuron
+
+*Artificial neuron with various weights (image by author).*
+
+      </details>
+   </embed>
 
 ======================================
 How do babies learn?
@@ -426,66 +506,6 @@ between the existing neurons, unused connections being *pruned* (removed), and t
       Since it has no analogue for artificial neural networks, we will not focus on it; however, feel free to read about it if you are 
       interested in how the brain matures.
       </p>
-   </embed>
-
-======================================
-What is a weight in an AI model?
-======================================
-
-Before we can discuss AI models and their training processes, we need to have a solid understanding about 
-the concept of a **weight** in an AI model. A weight shows how strong is the connection between two neurons.
-On the following image, bigger weights are drawn as bolder arrows.
-
-.. image:: /images/part2/artificial_neuron.png
-   :alt: Artificial neuron
-
-*Artificial neuron with various weights (image by author).*
-
-In neural nets, weights can also have a negative value (depicted as a dashed arrow above). This negative value has 
-the effect of that neuron acting as a brake
-for the neuron in the next layer (the technical term is "**inhibition**"). 
-Consider a network trying to distinguish a cheetah from a leopard - both are big cats with four legs, a tail, 
-and spotted fur.
-The distinguish feature is the *shape of the spots* (see below) - cheetahs have solid, single black spots; leopards have complex, 
-multi-colored rosettes.
-
-.. role:: just-bold
-
-In the above image of a neuron, we could have:
-
-* :just-bold:`y` - neuron for detecting cheetahs
-* :just-bold:`x`\ :sub:`3` - "has rosettes"
-
-The weight for :just-bold:`x`\ :sub:`3` is negative, since *cheetahs don't have rosettes*. This means that whenever in the previous layer 
-the neuron :just-bold:`x`\ :sub:`3` has detected rosettes, it will negatively affect the probability of detection of the image class "cheetah".
-
-**A remark**. Other neurons (:just-bold:`x`\ :sub:`1`\ , :just-bold:`x`\ :sub:`2`\ , and :just-bold:`x`\ :sub:`4`) can 
-represent positive patterns that help detecting *both* cheetahs and leopards, like "*cat-like animal*", "*has four legs*", or "*has a tail*".
-
-.. image:: /images/part2/cheetah_leopard.png
-   :alt: Cheetah vs leopard 
-
-*Cheetah (above) vs leopard (below). Source: Wikimedia Commons (cropped).*
-
-Human brains also make use of inhibitory signals in various contexts, including vision. If you are interested, click on the following box to expand it
-and learn more - it turns out that those effects also help to explain some optical illusions!
-
-.. raw:: html
-
-   <embed>
-      <details>
-         <summary>Click here to read how inhibitory signals are used in the human brain.</summary>
-         <p>Imagine a dark tree next to a bright sky; focus on the edge where the two meet.
-         When light from the sky hits the receptors in the eye, neurons fire strong active signals ("it is bright here") 
-         and <em>also send</em> inhibitory 
-         (negative) signals to <em>their neighbor neurons</em>, causing the dark tree appear even darker than it actually is.
-         This causes the borders between dark and bright objects to have a lot of contrast and look crisp.</p>
-         <p>Curiously, this exact same process that increases the contrast between dark and light areas (called
-         <a class="reference external" href="https://en.wikipedia.org/wiki/Lateral_inhibition#Visual_inhibition">visual lateral inhibition</a>)
-         is exactly the cause for 
-         <a class="reference external" href="https://en.wikipedia.org/wiki/Grid_illusion">several optical illusions</a>
-         where the viewer sees black dots appearing on white background.</p>
-      </details>
    </embed>
 
 ======================================
