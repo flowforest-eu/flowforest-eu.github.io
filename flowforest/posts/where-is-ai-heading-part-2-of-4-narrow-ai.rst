@@ -398,46 +398,48 @@ combination of simpler relationships.
    https://fishesofaustralia.net.au/home/species/1275
 
 ======================================
-What is a weight in an AI model?
+What is a weight?
 ======================================
 
 .. role:: just-bold
 
-Before we can discuss AI models and their training processes, we need to have a solid understanding about 
-the concept of a **weight** in an AI model. A weight shows how strong is the connection between two neurons.
+Before we can discuss AI models and their training processes, we need a solid understanding of 
+the concept of a **weight** in an AI model. A weight is a number (positive, negative, or 0) that shows the strength of 
+the connection between two neurons.
 
-Lets consider a network that classifies images based on the animal present on the image. The final layer (output layer)
-of that network contains one neuron for each of the animal classes it can detect; we will focus on a neuron for detecting
-*cheetahs*.
+Image classifiers like CNNs are excellent for illustrating such abstract concepts. Consider a model that analyzes an 
+image and identifies the animal species in it. To make things more interesting, we consider two animals 
+that are very similar in some ways, but rather different in another way: a cheetah and a leopard.
 
-As the neural net processes the image, it makes increasingly specific observations about the animal:
-
-* Big cat (feline) -> spotted big cat -> cheetah.
-
-From body shape alone, it is hard to distinguish cheetahs and leopards - 
-they are both big cats with slender body shape, a tail, and spotted fur.
-The distinguish feature is the *shape of the spots* (see below) - cheetahs have solid, single black spots; leopards have complex, 
-multi-colored rosettes.
+Judging by the body outline alone, the cheetah and leopard are remarkably similar. Both of them are big cats
+with a similar size and a feline silhouette. 
+The distinguishing factor is their coat – cheetahs have black spots on their fur and leopards have multi-colored rosettes.
 
 .. image:: /images/part2/cheetah_leopard.png
    :alt: Cheetah vs leopard 
 
 *Cheetah (above) vs leopard (below). Source: Wikimedia Commons (cropped).*
 
-Because of this, the presence of black spots is a strong positive indicator for the cheetah classifier, while the presence of 
-multi-colored rosettes is a strong negative (**inhibiting**) indicator. 
-The following image describes the hypothetical cheetah-detecting neuron (:just-bold:`y`) in the output layer 
-and some of the neurons from the preceding layer that feed in into making that decision. Bigger weights are drawn as bolder arrows; dashed arrows 
-depict negative weights.
+The last layer of the image classification model usually contains one neuron for each of the possible image classes (in this case, the animals).
+We concentrate on two neurons in that last layer that correspond to the classification results “cheetah” and “leopard”.
+It is then reasonable to expect that the preceding layer of the model will contain neurons that represent:
+
+* concepts that apply to both of those animals (e.g. “a big cat with slender body”);
+* concepts that distinguish those animals from each other (e.g. “black spots”, or “rosettes”).
+
+On the image below, weights (connections between neurons) are depicted as arrows. Bolder arrows correspond to strong associations
+(e.g. “black spots” :math:`\rightarrow` “cheetah”). Thinner arrows correspond to weaker associations (e.g. “has a tail” :math:`\rightarrow` “cheetah” is 
+a weaker association, since "has a tail" applies to many animals, not just cheetahs).
+Dashed arrows represent negative weights – that is, factors that block (**inhibit**) the next neuron from activating 
+(e.g. “multi-colored rosettes” :math:`\not\rightarrow` “cheetah”).
 
 .. image:: /images/part2/artificial_neuron.png
-   :alt: Artificial neuron
+   :alt: Decision neurons
 
-*Artificial neuron with various weights (image by author).*
+*Simplified decision neurons for detecting cheetahs and leopards (image by author).*
 
-This image should be read in the following way:
-
-* ...
+Of course, in actual neural networks, each individual decision of an image classification receives input signals from hundreds 
+or thousands of different neurons, each one playing a small part in the decision process.
 
 Human brains also make use of inhibitory signals in various contexts, including vision. If you are interested, click on the following box to expand it
 and learn more - it turns out that this inhibition mechanism is actually the cause for some common optical illusions!
@@ -450,21 +452,15 @@ and learn more - it turns out that this inhibition mechanism is actually the cau
          <p>Imagine a dark tree next to a bright sky; focus on the edge where the two meet.
          When light from the sky hits the receptors in the eye, neurons fire strong active signals ("it is bright here") 
          and <em>also send</em> inhibitory 
-         (negative) signals to <em>their neighbor neurons</em>, causing the dark tree appear even darker than it actually is.
+         (negative) signals to <em>their neighbor neurons</em>, causing the dark tree to appear even darker than it actually is.
          This causes the borders between dark and bright objects to have a lot of contrast and look crisp.</p>
          <p>Curiously, this exact same process that increases the contrast between dark and light areas (called
          <a class="reference external" href="https://en.wikipedia.org/wiki/Lateral_inhibition#Visual_inhibition">visual lateral inhibition</a>)
          is exactly the cause for 
          <a class="reference external" href="https://en.wikipedia.org/wiki/Grid_illusion">several optical illusions</a>
-         where the viewer may see black dots appearing on white background.</p>
+         where the viewer may see black dots appearing on a white background.</p>
          <img alt="Grid illusion" src="../../images/part2/grid_illusion.png"><p><em>A grid illusion. Source: Wikimedia commons</em></p>
          <!-- https://pressbooks.atlanticoer-relatlantique.ca/openneuroscience/chapter/chapter-9-sensation-and-perception-the-visual-system/ -->
-
-         .. image:: /images/part2/artificial_neuron.png
-   :alt: Artificial neuron
-
-*Artificial neuron with various weights (image by author).*
-
       </details>
    </embed>
 
