@@ -18,11 +18,13 @@
 <meta property="og:site_name" content="FlowForest">
 <meta property="og:title" content="Where is AI heading - part 2/4: Narrow AI">
 <meta property="og:url" content="https://flowforest.eu/posts/where-is-ai-heading-part-2-of-4-narrow-ai/">
-<meta property="og:description" content="Initially I planned to use this second post to dive straight into Large Language Models (LLMs).
-However, I quickly realized that a better approach would be to start by explaining the foundation
-and bu">
+<meta property="og:description" content="Reading time: ~25 minutes.
+In a very broad sense, AI models can be divided into two categories:
+
+narrow AI models, which perform one (or a few) specific functions;
+general-purpose AI models, which are">
 <meta property="og:type" content="article">
-<meta property="article:published_time" content="2026-09-10T20:17:59+03:00">
+<meta property="article:published_time" content="2026-11-16T08:00:59+02:00">
 <meta property="article:tag" content="AI">
 <meta property="article:tag" content="AI-overview">
 <meta property="article:tag" content="narrow-AI">
@@ -91,7 +93,7 @@ bg-dark
             </span></p>
             <p class="dateline">
             <a href="." rel="bookmark">
-            <time class="published dt-published" datetime="2026-09-10T20:17:59+03:00" itemprop="datePublished" title="2026-09-10">2026-09-10</time></a>
+            <time class="published dt-published" datetime="2026-11-16T08:00:59+02:00" itemprop="datePublished" title="2026-11-16">2026-11-16</time></a>
             </p>
             
 
@@ -99,68 +101,112 @@ bg-dark
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-            <p>Initially I planned to use this second post to dive straight into Large Language Models (LLMs).
-However, I quickly realized that a better approach would be to start by explaining the foundation
-and building blocks related to deep learning in general, and only then (in the next blog post)
-to dive into LLMs and the transformer architecture.</p>
-<p>In order to make the examples more visual, I will base this post on image classification models.
-These models are relatively easy to intuitively grasp
-and they are also very illustrative for concepts that we will need later on.
-On the way, we will touch a bit on the history
-of the AI as a field.</p>
-<p><strong>Reading time</strong>: 30-60 minutes.</p>
+            <p><strong>Reading time</strong>: ~25 minutes.</p>
+<p>In a very broad sense, AI models can be divided into two categories:</p>
+<ul class="simple">
+<li><p><strong>narrow</strong> AI models, which perform one (or a few) specific functions;</p></li>
+<li><p><strong>general-purpose</strong> AI models, which are intended to perform a variety of tasks.</p></li>
+</ul>
+<p>To give a concrete example, any modern chatbot (<em>Large Language Model</em>, or <em>LLM</em>) is a general-purpose system (regardless of how capable it is).
+An example of a narrow AI system would be an <em>image classifier model</em>, which has one purpose only - it takes images as input and classifies them
+based on what is present in the image.</p>
+<p>In this post, we will focus on narrow AI models. One may ask: if LLMs are everywhere nowadays, why should we care about narrow AI?</p>
+<p>First of all, for many people the word “AI” has become synonymous with LLMs. I think that this is rather problematic and makes it extremely hard to have meaningful
+public discourse about the risks and benefits of AI systems and their regulation. A lot of valid and difficult questions about LLMs (in particular about
+their safety and alignment) are either non-issues or are much milder for more narrow AI systems.</p>
+<p>Energy efficiency is another major factor. To see why, let's compare how much energy (in
+<a class="reference external" href="https://whateverconverter.com/glossary/joule/">joules</a>)
+it takes to identify the contents of a single image:</p>
+<ul class="simple">
+<li><p>For a typical <strong>narrow</strong> AI system, the energy usage falls in the range of 0.05-2 joules
+(<a class="reference external" href="https://arxiv.org/pdf/2412.09731">more details</a>) - the equivalent of a household LED lightbulb shining for less than 0.1 seconds (essentially, one blink of an LED).</p></li>
+<li><p>For an LLM, the same classification task could be ~200-300 joules (<a class="reference external" href="https://arxiv.org/abs/2311.16863">more details</a>).
+If the answer is given by the LLM in conversational format, the answer can easily be more than 10 times longer, bringing the energy usage to over 3000 joules -
+the LED lightbulb shining for 4 minutes straight.</p></li>
+</ul>
+<p>The difference is mind-blowing: using an LLM for the same task uses <strong>~3000</strong> times more energy!</p>
+<embed><details><summary>Click here for a deep dive - where does the 3000x energy difference come from?</summary><ul class="simple">
+<li><p>A major factor is that the conversational answers take a lot more energy to produce - and LLMs <em>love</em> to be wordy.</p></li>
+      <li><p>Even if the classification result is provided without unnecessary clutter (“A golden retriever sitting on the grass at sunset”), LLMs still build up
+      the answer word by word, using up a considerable amount of energy to produce each word
+      (<em>to be more precise, the answer is built up using chunks of words, called tokens - more about that in the next blog post</em>).</p></li>
+      <li><p>Unlike lightweight traditional models, LLMs require power-hungry GPU clusters to process requests.</p></li>
+      <li><p>The architecture of LLMs is vastly heavier - evaluating their billions of parameters requires far more layer-by-layer
+      computation than a narrow AI system.</p></li>
+      </ul>
+<p style="font-size: 0.8em;">There are many estimates for LLM energy usage in different contexts, some lower and some significantly higher
+      than the source I linked above (which gave an estimate of ~200-300 joules).
+      I chose this source, since it looked at classification tasks specifically and it represented a middle ground between some of the more extreme
+      (both low and high) estimates; the highest estimates reached 10'000 joules.
+      Of course, as model sizes continue to grow, they will become even more energy-intensive.</p>
+   </details></embed><p>For those reasons, I think everyone should keep in mind that:</p>
+<div class="math">
+\begin{equation*}
+AI \neq LLM.
+\end{equation*}
+</div>
+<p>In general, whenever there is a narrow AI model that solves a given task as well as a general-purpose AI model, I recommend
+using the narrow AI model.</p>
+<p>Crucially, narrow AI systems have produced (and continue to produce!) many impressive results. In the section <a class="reference internal" href="#what-has-deep-learning-given-us">What has deep learning given us?</a>
+we will look into several examples from Google DeepMind that predate the creation of modern chatbots. Those examples include:</p>
+<ul class="simple">
+<li><p>An AI model that plays the game of Go, which was considered to be nearly impossible for computers to master, since it relies largely on intuition.</p></li>
+<li><p>An AI model that can accurately predict the 3D structure of proteins, which was a major open area of research for 50 years.</p></li>
+</ul>
+<p>This last example may honestly be characterized (as of today, in 2026) as the greatest biological breakthrough ever achieved by an AI system.
+In 2024, it earned its creators a Nobel Prize in Chemistry.</p>
+<p>To understand how such AI models work, we can follow in the footsteps of early AI researchers, who took inspiration from human brain
+and how we see the world.</p>
 <nav class="contents local" id="contents" role="doc-toc"><ul class="simple">
 <li><p><a class="reference internal" href="#inspiration-for-ai-human-brains" id="toc-entry-1">Inspiration for AI - human brains</a></p></li>
 <li><p><a class="reference internal" href="#human-vision-as-a-neural-network" id="toc-entry-2">Human vision as a neural network</a></p></li>
 <li><p><a class="reference internal" href="#progress-in-ai-research" id="toc-entry-3">Progress in AI research</a></p></li>
-<li><p><a class="reference internal" href="#how-do-babies-learn" id="toc-entry-4">How do babies learn?</a></p></li>
-<li><p><a class="reference internal" href="#what-is-a-weight-in-an-ai-model" id="toc-entry-5">What is a weight in an AI model?</a></p></li>
-<li><p><a class="reference internal" href="#how-does-ai-learn" id="toc-entry-6">How does AI learn?</a></p></li>
-<li><p><a class="reference internal" href="#a-visual-explainer-of-a-cnn-model" id="toc-entry-7">A visual explainer of a CNN model</a></p></li>
-<li><p><a class="reference internal" href="#how-to-see-inside-the-model" id="toc-entry-8">How to see inside the model?</a></p></li>
-<li><p><a class="reference internal" href="#the-importance-of-a-goal-function" id="toc-entry-9">The importance of a goal function</a></p></li>
-<li><p><a class="reference internal" href="#narrow-ai-vs-general-purpose-ai" id="toc-entry-10">Narrow AI vs general-purpose AI</a></p></li>
-<li><p><a class="reference internal" href="#what-has-deep-learning-given-us" id="toc-entry-11">What has deep learning given us?</a></p></li>
-<li><p><a class="reference internal" href="#conclusion" id="toc-entry-12">Conclusion</a></p></li>
-</ul></nav><!-- The following timeline high-lights some of the key events in the history of AI: TODO --><!-- https://timeline.knightlab.com/ --><!-- ++ AlphaStar master StarCraft II. --><p><strong>Important note</strong>: <em>if you first scroll through this post, you will see some complex-looking images. Don't be put off by those!
-Those are mostly provided for illustrative purposes - I will do my best to explain everything in simple and understandable terms.</em></p>
-<section id="inspiration-for-ai-human-brains"><h2><a class="toc-backref" href="#toc-entry-1" role="doc-backlink">Inspiration for AI - human brains</a></h2>
-<p>For a long time, humankind has been fascinated by questions as:</p>
+<li><p><a class="reference internal" href="#what-is-a-weight" id="toc-entry-4">What is a weight?</a></p></li>
+<li><p><a class="reference internal" href="#the-process-of-learning" id="toc-entry-5">The process of learning</a></p></li>
+<li><p><a class="reference internal" href="#a-visual-explainer-of-a-cnn-model" id="toc-entry-6">A visual explainer of a CNN model</a></p></li>
+<li><p><a class="reference internal" href="#how-to-see-inside-the-model" id="toc-entry-7">How to see inside the model?</a></p></li>
+<li><p><a class="reference internal" href="#the-importance-of-a-goal-function" id="toc-entry-8">The importance of a goal function</a></p></li>
+<li><p><a class="reference internal" href="#what-has-deep-learning-given-us" id="toc-entry-9">What has deep learning given us?</a></p></li>
+<li><p><a class="reference internal" href="#conclusion" id="toc-entry-10">Conclusion</a></p></li>
+</ul></nav><section id="inspiration-for-ai-human-brains"><h2><a class="toc-backref" href="#toc-entry-1" role="doc-backlink">Inspiration for AI - human brains</a></h2>
+<p>For a long time, humankind has been fascinated by questions like:</p>
 <ul class="simple">
 <li><p>What is intelligence?</p></li>
 <li><p>How do our brains work?</p></li>
-<li><p>Is it possible to artifically imitate the inner workings of the brain?</p></li>
+<li><p>Is it possible to artificially imitate the inner workings of the brain?</p></li>
 <li><p>What are the fundamental building blocks of the brain?</p></li>
 <li><p>How do these building blocks function together to give rise to such complex phenomena as vision, smell, or logic?</p></li>
 </ul>
 <p>Cells called <strong>neurons</strong> play an important role in answering all of the questions above.
-In the brain, millions of neurons form complicated networks that encode memories,
+In the brain, billions of neurons form complicated networks that encode memories,
 shape personalities, drive decisions, and process the sensations of touch, taste, sight, smell, and sound
-(for deeper overview of this topic, read more at
+(for a deeper overview of this topic, read more at
 <a class="reference external" href="https://www.khanacademy.org/science/biology/human-biology/neuron-nervous-system/a/overview-of-neuron-structure-and-function">Khan Academy</a>).</p>
 <p>Some interesting facts about neurons in our brains and bodies:</p>
 <ul class="simple">
 <li><p>An adult human brain contains approximately <a class="reference external" href="https://academic.oup.com/brain/article/148/3/689/7909879?login=false">80 billion neurons</a>.</p></li>
-<li><p>A single neuron may be connected to 1000-10000 other neurons.</p></li>
-<li><p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Sciatic_nerve">longest neuron in human body</a> can be over a meter long (from bottom of spine to toes). However, most neurons in brain are less than a millimeter in length.</p></li>
+<li><p>A single neuron may be connected to 1000-10'000 other neurons.</p></li>
+<li><p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Sciatic_nerve">longest neuron in the human body</a> can be over a meter long (from the bottom of the spine to toes).
+However, most neurons in the brain are less than a millimeter in length.</p></li>
 </ul>
-<p>Human vision is made possible by a large number of neurons working in unison.
-Although neural networks consisting of hundreds of millions neurons are hard to research,
+<p>For example, human vision is made possible by a large number of neurons working together.
+Although neural networks consisting of hundreds of millions neurons are hard to study,
 each individual neuron by itself is (comparatively speaking) much simpler.</p>
 <p>In simple terms, neurons work like this:</p>
 <div class="line-block">
 <div class="line">
 <img alt="unicode1" src="../../images/unicode1.png"> They receive inputs (chemical and electrical) from multiple sources.</div>
 <div class="line">
-<img alt="unicode2" src="../../images/unicode2.png"> They combine those inputs into a single signal.</div>
+<img alt="unicode2" src="../../images/unicode2.png"> Those inputs are combine into a single signal.</div>
 <div class="line">
-<img alt="unicode3" src="../../images/unicode3.png"> If the signal is strong enough, they fire an output signal.</div>
+<img alt="unicode3" src="../../images/unicode3.png"> If the input signals are strong enough, an output signal is fired.</div>
 <div class="line">
 <img alt="unicode4" src="../../images/unicode4.png"> The output signal reaches the next neuron (or neurons).</div>
 </div>
-<p>The following image shows how a neuron actually looks under the microscope.</p>
+<p>The following diagram shows how a neuron actually looks like.</p>
 <img alt="A biological neuron" src="../../images/part2/neuron.png"><p><em>A biological neuron. Source: Clker-Free-Vector-Images via Pixabay (modified).</em></p>
-<p>Scientists working in this field realized that an individual neuron is not that difficult to describe mathematically.
+<p>Scientists soon realized that while a brain with billions of neurons is bafflingly complex,
+an individual neuron is surprisingly simple to describe mathematically.
 Building on that idea,
 <a class="reference external" href="https://en.wikipedia.org/wiki/Frank_Rosenblatt">Frank Rosenblatt</a>
 came up in 1957 with the idea of a <a class="reference external" href="https://www.simplilearn.com/tutorials/deep-learning-tutorial/perceptron">perceptron</a>,
@@ -171,87 +217,96 @@ a simplified mathematical model of a neuron:</p>
 <div class="line">
 <img alt="unicode2" src="../../images/unicode2.png"> It combines those values using specific weights (this will be explained more later).</div>
 <div class="line">
-<img alt="unicode3" src="../../images/unicode3.png"> It produces "1" if the combined value is positive; otherwise, the output is "0".</div>
+<img alt="unicode3" src="../../images/unicode3.png"> It produces “1” if the combined value is positive; otherwise, the output is “0”.</div>
 <div class="line">
 <img alt="unicode4" src="../../images/unicode4.png"> The output value becomes an input for the next neuron (or neurons).</div>
 </div>
 <p>The following image shows this mathematical model side by side with a biological neuron.</p>
-<img alt="Biological neuron vs artificial neuron" src="../../images/part2/neuron_comparison.png"><p><em>Biological neuron vs artificial neuron. Source: same as the previous image (modified)</em></p>
+<img alt="Biological neuron vs artificial neuron" src="../../images/part2/neuron_comparison.png"><p><em>Biological neuron vs artificial neuron. Source: left - same as the previous image (modified); right - by author.</em></p>
 <p><strong>A technical remark</strong>. <em>In modern neural networks, the step</em> <img alt="unicode3" src="../../images/unicode3.png"> <em>is usually done a bit differently than in the perceptron model.
 The exact method for doing
-so (the activation function) differs between various AI models. We will provide just one example of an activation function, since it will become
-useful later. It is called</em> <strong>ReLU</strong>:</p>
-<ul class="simple">
-<li><p><em>If input is negative, output is "0"; otherwise, output is equal to the input.</em></p></li>
-</ul>
-<p><em>For many examples of activation functions used in modern neural networks,</em>
-<a class="reference external" href="https://www.geeksforgeeks.org/machine-learning/activation-functions-neural-networks/">see here</a>.</p>
+so (the activation function) differs between various AI models.
+For more examples and mathematical details,</em>
+<a class="reference external" href="https://www.geeksforgeeks.org/machine-learning/activation-functions-neural-networks/">consult here</a>.</p>
 <p>The same basic mathematical structure for neurons powers the vast majority of neural networks used today (including LLMs).
 Taken individually, a neuron (either biological or artificial) is not particularly powerful; combine them into networks
-consisting of millions, and surprising behaviours start to emerge if they are suitably trained (more about this below).</p>
+consisting of millions, and surprising behaviors start to emerge if they are suitably trained (more about this below).</p>
 <p>When the perceptron was invented in 1957, it attracted considerable amount of research interest.
 However, perceptrons also had their limitations. In the next sections, we will see what those were
 and how the science of neural networks has evolved over time.</p>
 </section><section id="human-vision-as-a-neural-network"><h2><a class="toc-backref" href="#toc-entry-2" role="doc-backlink">Human vision as a neural network</a></h2>
 <p>A fundamental limitation of the perceptron model was that it was a single-layer network - meaning there were no intermediate
-layers of neurons between the inputs and the output. Contrast that with the
+layers of neurons between the inputs and the output. Contrast that with
 <a class="reference external" href="https://pressbooks.atlanticoer-relatlantique.ca/openneuroscience/chapter/chapter-9-sensation-and-perception-the-visual-system/">human vision</a>,
 where there are ~10 layers of neurons, from the cells receiving the light impulses to the neurons
 in the brain that correspond to a concept, like seeing a cat.</p>
-<p>I think that thinking about human vision is an extremely useful way for getting an intuitive understanding of why neural networks are so
-powerful. Because of this, we will do a small de-tour into how the eye and brain work together. It is not necessary to remember all of the
-technical terms - rather, I recommend to focus on getting an intuitive understanding of what happens between those milliseconds where the light
-enters your eye and your brain recognizes <em>what do you see</em>.</p>
-<p>The next image is intended to demonstrate that the human eye contains several neural layers,
-where each layer fulfils a highly specific and crucial function.
-The image should be read from bottom to top -
-in the bottom, there are <span class="blue-text">rods</span> and <span class="green-text">cones</span>, which respond to incoming light.
-Cones handle vision in bright daylight, while rods
-take over in low light and at night.
-After receiving the light, the signal passes through various layers of neurons (illustrated by the diagram),
-until it reaches the <em>optic nerve</em> (in the top), which takes
-the visual information to the brain for further processing.</p>
-<img alt="Neural layers in the eye" src="../../images/part2/eye-visual-system.png"><p><em>The five neural layers in the eye. Source: Open Neuroscience Initiative (modified)</em></p>
-<!-- https://pressbooks.atlanticoer-relatlantique.ca/openneuroscience/chapter/chapter-9-sensation-and-perception-the-visual-system/ -->
-<p>There are 120 million rods and 6 million cones in the human eye.
-The raw image captured by those rods and cones is heavily compressed before it ever leaves the eye.
-For example, the <em>retinal ganglion cells</em> (<span class="cyan-text">cyan</span> in the above image) act like a biological image compression algorithm.</p>
-<p>The visual information travels via the optic nerve to the brain.
-The optic nerve consists of ~1.2 million optic nerve fibers - you might think of it as an 1.2 megapixel camera cable.
-However, human vision feels much better than a picture taken by a 1.2 megapixel camera.
-Curiously, there are some
-<a class="reference external" href="https://clippingexpertasia.com/blog/human-eye-resolution-explained-megapixels-fps-vision">absolutely fascinating reasons for this</a>.</p>
-<p>Now, lets focus on what happens with the visual information after it arrives in the brain - this will be extremely useful in
-understanding the operating principles of neural networks later on.</p>
-<p>In the brain, the information is processed via a series of neural layers (<em>no need to remember their exact names, those are just
-for background info</em>).
-What is crucial is that each layer <strong>builds upon</strong> the previous layer and <strong>represents</strong> increasingly complex features:</p>
-<ol class="arabic simple">
-<li><p>layer: organizes <strong>visual information</strong> (<em>technically: "LGN layer"</em>);</p></li>
-<li><p>layer: detects <strong>low-level features</strong>: orientation, edges, and lines (<em>technically: "V1 layer"</em>);</p></li>
-<li><p>layer: combines simple edges into <strong>basic shapes</strong> and textures (<em>technically: "V2 layer"</em>);</p></li>
-<li><p>layer: processes <strong>complex shapes</strong> and geometric forms (<em>technically: "V4 layer"</em>);</p></li>
-<li><p>layer: detects <strong>whole objects</strong>, faces, and abstract concepts, e.g., reckognizing a dog, a car, or a number (<em>technically, 1 or 2 layers: "IT cortex"</em>).</p></li>
-</ol>
+<p>First, the light hits the cells in the eye; the raw image captured by those cells is heavily compressed (~100x) before it even leaves the eye.</p>
+<embed><details><summary>Click here to read more about what happens in the eye before the information reaches the brain</summary><p>The image below shows the even the eye itself contains various neural layers,
+      where each layer fulfills a highly specific and crucial function.
+      The image should be read from bottom to top -
+      in the bottom, there are <span class="blue-text">rods</span> and <span class="green-text">cones</span>, which respond to incoming light.
+      Cones handle vision in bright daylight, while rods
+      take over in low light and at night.
+      After receiving the light, the signal passes through various layers of neurons (illustrated by the diagram),
+      until it reaches the <em>optic nerve</em> (in the top), which takes
+      the visual information to the brain for further processing.</p>
+      <img alt="Neural layers in the eye" src="../../images/part2/eye-visual-system.png"><p><em>The five neural layers in the eye. Source: Open Neuroscience Initiative (modified)</em></p>
+      <!-- https://pressbooks.atlanticoer-relatlantique.ca/openneuroscience/chapter/chapter-9-sensation-and-perception-the-visual-system/ -->
+      <p>There are 120 million rods and 6 million cones in the human eye.
+      The raw image captured by those rods and cones is heavily compressed before it ever leaves the eye.
+      For example, the <em>retinal ganglion cells</em> (<span class="cyan-text">cyan</span> in the above image) act like a biological image compression algorithm.</p>
+      <p>The visual information travels via the optic nerve to the brain.
+      The optic nerve consists of roughly 1.2 million nerve fibers - you can think of it as a 1.2 megapixel cable carrying data
+      from your eye to your brain.
+      Yet, human vision feels like a crisp, high-definition panorama rather than a blurry snapshot. How is that possible?
+      The secret is that your eyes are constantly making tiny, rapid micro-movements, and your brain seamlessly stitches
+      those samples together.
+      Furthermore, your eye's sharpest focus is restricted to a tiny central spot; if your entire field of vision had that same high-density
+      packing of photoreceptors, your eye would effectively capture a
+      <a class="reference external" href="https://clippingexpertasia.com/blog/human-eye-resolution-explained-megapixels-fps-vision">576 megapixel image</a>.</p>
+   </details></embed><p>After that, the information is sent via the optic nerve to the brain - where a chain
+of neural layers gradually turns raw signals into meaning:</p>
+<ul class="simple">
+<li><p>Layer 1: organizes <strong>visual information</strong>;</p></li>
+<li><p>Layer 2: detects <strong>low-level features</strong>: orientation, edges, and lines;</p></li>
+<li><p>Layer 3: combines simple edges into <strong>basic shapes</strong> and textures;</p></li>
+<li><p>Layer 4: processes <strong>complex shapes</strong> and geometric forms;</p></li>
+<li><p>Layer 5: detects <strong>whole objects</strong>, faces, and abstract concepts, e.g., recognizing a dog, a car, or a number.</p></li>
+</ul>
+<embed><details><summary>Click here for clarifications about those layers</summary><ul class="simple">
+<li><p>Layer 1: <em>LGN layer</em></p></li>
+      <li><p>Layer 2: <em>V1 layer</em></p></li>
+      <li><p>Layer 3: <em>V2 layer</em></p></li>
+      <li><p>Layer 4: <em>V4 layer</em></p></li>
+      <li><p>Layer 5: <em>IT cortex</em> (this might technically be considered to be 2 layers)</p></li>
+      </ul>
 <p>For more detailed overview of the various layers and their functions, see
-<a class="reference external" href="https://people.csail.mit.edu/pulkitag/data/cnn_mimics_brain.pdf">here</a>
-and <a class="reference external" href="https://en.wikipedia.org/wiki/Visual_system#System_overview">here</a>.</p>
-<p>Similar principles also apply for AI systems:</p>
+      <a class="reference external" href="https://people.csail.mit.edu/pulkitag/data/cnn_mimics_brain.pdf">here</a>
+      and <a class="reference external" href="https://en.wikipedia.org/wiki/Visual_system#System_overview">here</a>.</p>
+      <p style="font-size: 0.8em;">Disclaimer for biologists: since I am not a neuroscientist, the above description may contain oversimplifications or errors.
+      However, the general principle should still be correct and serves to illustrate that subsequent layers represent increasingly
+      complex patterns. The full description of how the visual cortex works
+      also involves looping effects, complex time-dependent processes, and some layers fulfilling multiple functions; my description
+      is a simplification of a complex process. I also glossed over layers of V3, V5, and V6, since they primarily handle motion and spatial
+      processing, whereas our focus here is on what happens when a person views static images.</p>
+   </details></embed><p>Similar principles also apply for AI systems:</p>
 <ul class="simple">
 <li><p>As information passes through the layers of the neural network, the subsequent layers represent increasingly complex patterns.</p></li>
 <li><p>The number of layers in an AI model must be sufficient so that complex features or concepts can be
 represented. However, increasing the number of layers also increases the training time.</p></li>
 </ul>
-<embed><p style="font-size: 0.8em;">Disclaimer for biologists: since I am not a neuroscientist, the above description may contain oversimplifications or errors.
-    However, the general principle should still be correct and serves to illustrate the subsequent layers represent increasingly
-    complex patterns. The full description of how the visual cortex works
-    also involves looping effects, complex time-dependent processes, and some layers fulfilling multiple functions; my description
-    is a simplification of a complex process. I also glossed over layers of V3, V5, and V6, since they primarily handle motion and spatial
-    processing, whereas our focus here is on what happens when a person views static images.</p>
-</embed></section><section id="progress-in-ai-research"><h2><a class="toc-backref" href="#toc-entry-3" role="doc-backlink">Progress in AI research</a></h2>
-<p>Now that we have gained a grain of intuition about how the neural networks can represent complex patterns and relations, lets travel back in
+<p>The next diagram shows a toy example of a 3-layer neural network (the input layer is not counted).
+On the left (red) is an input layer; it is followed by multiple hidden layers.
+The network concludes with an output layer, containing a single neuron in this example (green).
+Of course, this is just a toy example and neural networks nowadays used for practical applications
+contain more layers and a lot more neurons (typically millions of neurons, or more).</p>
+<img alt="A simplified illustration of a deep neural network." src="../../images/part2/neural_net80.png"><p><em>A simplified illustration of a deep neural network. Source: Terra Incognita (modified)</em>.</p>
+<!-- https://blog.christianperone.com/tag/scikit-learn/ -->
+</section><section id="progress-in-ai-research"><h2><a class="toc-backref" href="#toc-entry-3" role="doc-backlink">Progress in AI research</a></h2>
+<p>Now that we have gained a grain of intuition about how the neural networks can represent complex patterns and relations, let's travel back in
 time and continue where we left off.</p>
-<p>Early research into neural networks (until 1960s) encountered significant challenges.
+<p class="golden_heading"><span>1960s</span></p>
+<p>Early research into neural networks (until the 1960s) encountered significant challenges.
 As mentioned above, those neural networks were primarily confined to single-layer architectures.
 Also, the research initially lacked a strong theoretical foundation.
 In 1969, a book called <a class="reference external" href="https://en.wikipedia.org/wiki/Perceptrons_(book)">Perceptrons</a> demonstrated that
@@ -259,27 +314,23 @@ In 1969, a book called <a class="reference external" href="https://en.wikipedia.
 (<a class="reference external" href="https://apxml.com/courses/introduction-to-deep-learning/chapter-1-neural-network-foundations/perceptron-limitations">mathematical explanation</a>),
 and noted that there is <em>no known efficient way</em> to train multi-layer networks.</p>
 <p>After that, there were several periods when the interest in AI research waned considerably. Such time periods are now
-called "AI winters" (<a class="reference external" href="https://news.sparkfun.com/7896">see here</a> for more exact historical background).
-However, there were dedicated researchers who regardless kept pushing the boundaries.</p>
+called “AI winters” (<a class="reference external" href="https://news.sparkfun.com/7896">see here</a> for more exact historical background).
+However, there were dedicated researchers who kept pushing the boundaries.</p>
+<p class="golden_heading"><span>1980s</span></p>
 <p>A major breakthrough came in the 1980s when
 <a class="reference external" href="https://en.wikipedia.org/wiki/Geoffrey_Hinton">Geoffrey Hinton</a>
-helped demonstrate how a technique called <strong>backpropagation</strong>
+helped demonstrate how a technique called <strong>backpropagation</strong> (a clever mathematical way of applying corrective feedback
+to the layers <em>in reverse order</em>)
 could be used to efficiently train multi-layer networks.
+Nowadays, this approach to multi-layer training is known as <strong>deep learning</strong>.
 <a class="reference external" href="https://en.wikipedia.org/wiki/Yann_LeCun">Yann LeCun</a>
-then took this algorithm and applied it to the task of
+then took the backpropagation algorithm and applied it to the task of
 <a class="reference external" href="https://en.wikipedia.org/wiki/LeNet">recognizing handwritten digits</a>.
-For this, he used a type of neural net called <strong>convolutional neural network (CNN)</strong>.
-This practical application of multi-layer training established the paradigm that is nowadays known as <strong>deep learning</strong>.
-Remember those concepts (<em>backpropagation, deep learning, CNN</em>) - throughout this blog post, we will come back several times to models based on the <em>CNN architecture</em>,
-since CNN models work on visual data, which makes them great for providing intuitively understandable examples.</p>
-<p>The next diagram shows a toy example of a 3-layer neural network (the input layer is not counted).
-On the left (red) is an input layer; it is followed by multiple hidden layers);
-the network concludes with an output layer, containing a single neuron in this example (red).
-Of course, this is just a toy example and neural networks nowadays used for practical applications
-contain a lot more of neurons (typically millions, or more).</p>
-<img alt="A simplified illustration of a deep neural network." src="../../images/part2/neural_net80.png"><p><em>A simplified illustration of a deep neural network. Source: Terra Incognita (modified)</em>.</p>
-<!-- https://blog.christianperone.com/tag/scikit-learn/ -->
-<p>After some progress had been made in 1980s and 1990s, progress stalled again.
+For this, he used a type of neural net called a <strong>convolutional neural network (CNN)</strong>.</p>
+<p>Remember those concepts (<em>backpropagation, deep learning, CNN</em>) - throughout this blog post, we will come back several times
+to models based on the <em>CNN architecture</em>,
+since CNN models apply to visual data, which makes them great for providing intuitively understandable examples.</p>
+<p>After some progress had been made in the 1980s and 1990s, progress stalled again.
 Looking back, it is clear that one of the reasons was that the computers used then just did not have sufficient computational
 capabilities to train practically useful models.
 AI researchers tended to focus on other types of systems, for example
@@ -287,30 +338,30 @@ carefully hand-crafted <strong>expert systems</strong> which require large amoun
 (<a class="reference external" href="https://en.wikipedia.org/wiki/Expert_system">read more here</a>).
 However, there were three notable figures -
 <a class="reference external" href="https://en.wikipedia.org/wiki/Yoshua_Bengio">Yoshua Bengio</a>,
-Geoffrey Hinton and Yann LeCun, who kept the flame of curiousity regarding deep learning alive
+Geoffrey Hinton and Yann LeCun, who kept the flame of curiosity regarding deep learning alive
 even when other researchers moved on.
 Over the decades, they collectively supervised 50+ PhD students on various topics.</p>
-<p>Lets fast forward to 2008. Deep learning was seen by the industry mostly as a curious historical relic.
+<p class="golden_heading"><span>2010s</span></p>
+<p>By the late 2000s, deep learning was seen by the industry mostly as a curious historical relic.
 A breakthrough came from an unexpected place. A researcher named <a class="reference external" href="https://en.wikipedia.org/wiki/Fei-Fei_Li">Fei-Fei Li</a>
 had been working on vision models for several years and had developed
 <a class="reference external" href="https://arstechnica.com/ai/2024/11/how-a-stubborn-computer-scientist-accidentally-launched-the-deep-learning-boom/">an intuition</a>
-that for making progress,
-more comprehensive high-quality training dataset would be necessary.
+that making progress would require a much larger, high-quality training dataset.
 She was also inspired by an
 <a class="reference external" href="http://wexler.free.fr/library/files/biederman%20%281987%29%20recognition-by-components.%20a%20theory%20of%20human%20image%20understanding.pdf">estimate</a>
 by vision scientist Irving Biederman - that the average person
-recognizes roughly 30,000 different kinds of objects.
+recognizes roughly 30'000 different kinds of objects.
 With just a few colleagues, limited funding, 2 years of hard work, and a lot of ingenuity, she managed to compile a dataset of <em>14 million images</em>,
-carefully annotated into 22 000 categories, which she named <strong>ImageNet</strong>. She released it in 2009. To help to popularize it, she also launched the
+carefully annotated into 22'000 categories, which she named <strong>ImageNet</strong>. She released it in 2009. To help popularize it, she also launched the
 ImageNet competition, where AI systems could compete with each other in the image classification task.</p>
 <p>In 2010 and 2011, winners of the ImageNet competition used techniques that were only slight improvements from the state of the art
 (mostly expert systems).
 In 2012, <a class="reference external" href="https://en.wikipedia.org/wiki/Alex_Krizhevsky">Alex Krizhevsky</a>,
 <a class="reference external" href="https://en.wikipedia.org/wiki/Ilya_Sutskever">Ilya Sutskever</a>,
-and Geoffrey Hinton won the ImageNet competition using an AI system <strong>AlexNet</strong>, which was an example of
+and Geoffrey Hinton won the ImageNet competition using an AI system called <strong>AlexNet</strong>, which was an example of
 a Convolutional Neural Network (CNN) - a model architecture that had waited for its time for several decades.
-It crushed the competition with an error rate of just <em>15%</em>
-(winners of 2010 and 2011 had demonstrated error rates almost twice as large - 28% and 26%, correspondingly).
+It crushed the competition with an error rate of just 15%
+(winners of 2010 and 2011 had demonstrated error rates almost twice as large).
 At the same time, the training time for AlexNet was <em>mere days</em> (instead of months, which would have been expected at the time).
 This event was a huge catalyst for the following boom in deep learning (and AI in general).</p>
 <p>So, why had the time to shine now arrived for CNNs, several decades later?
@@ -318,10 +369,10 @@ First of all, the computational capability of computers had improved enormously 
 Secondly, the researchers behind AlexNet managed to use
 <a class="reference external" href="https://www.ingameloop.com/graphics-cards/learn/what-does-a-gpu-do-for-gaming/">GPU chips</a>
 to efficiently parallelize the training process.</p>
-<p>After the computation, many people wanted to know answers to questions such as:</p>
+<p>After the competition, many people wanted to know answers to questions such as:</p>
 <ul class="simple">
 <li><p>How did AlexNet manage to beat the hand-crafted expert systems by such a large margin?</p></li>
-<li><p>Furthermore, how can a model like CNN even succeed at such a complicated task like image classification?</p></li>
+<li><p>Furthermore, how can a model like CNN even succeed at such a complicated task as image classification?</p></li>
 </ul>
 <p>The scientists showed that after successful training, a CNN model has a property that we already observed
 for human brains:
@@ -331,116 +382,125 @@ Consider how a CNN model processes an image of a clownfish (below):</p>
 <ul class="simple">
 <li><p>earlier layers detect edges and colors (e.g., the edge of an orange stripe);</p></li>
 <li><p>following layers start to combine them into texture-like feature groups (e.g., an orange-white striped pattern);</p></li>
-<li><p>later layers assemble whole object parts (e.g., fin of a clownfish);</p></li>
+<li><p>later layers assemble whole object parts (e.g., the fin of a clownfish);</p></li>
 <li><p>final layers combine the parts and their position &amp; orientation to detect the object class (a clownfish).</p></li>
 </ul>
 <p>Thus, the CNNs manage to utilize one of the central pillars of intelligence: representing complex relationships via a
-combination of
-simpler relationships. In the next section we will have a look at how the learning process actually works.
-Before that, we will once more have a look at how the same process occurs for humans.</p>
-<p><strong>A remark</strong>. <em>The AlexNet model has 8 layers and approximately 60 million parameters.</em></p>
+combination of simpler relationships.</p>
+<p><strong>A remark</strong>. <em>The AlexNet model has 8 layers and approximately 60 million parameters (weights).</em></p>
 <img alt="A clownfish." src="../../images/part2/clownfish30.jpg"><div class="line-block">
 <div class="line"><em>A clownfish. CNNs like AlexNet proved to be efficient at classifying such complex images.</em></div>
 <div class="line"><em>Source: Mark Rosenstein / iNaturalist</em></div>
 </div>
 <!-- https://fishesofaustralia.net.au/home/species/1275 -->
-</section><section id="how-do-babies-learn"><h2><a class="toc-backref" href="#toc-entry-4" role="doc-backlink">How do babies learn?</a></h2>
-<p>At birth, newborns don't see the world in full color - their vision is mostly limited to stark contrasts of light and dark,
-and they can only
-<a class="reference external" href="https://www.healthline.com/health/baby/when-can-babies-see-color">differentiate between strong, contrasting colors</a>.
-At one month of age, they still do not see the world clearly - their vision is
-<a class="reference external" href="https://www.nationwidechildrens.org/family-resources-education/health-wellness-and-safety-resources/helping-hands/infant-vision-birth-to-one-year">blurry</a>
-and near-sighted.
-Research from 2024 <a class="reference external" href="https://neurosciencenews.com/infant-vision-development-ai-27078">has also shown</a> that babies prefer to
-look at simple, high-contrast patterns and edges found in everyday environments; furthermore, this is very important
-for the development of their visual skills. At later stages of child's development, they start to recognize and understand
-more complex visual aspects of their environment.</p>
-<p>What follows is that the development of the visual system and the learning process occur in parallel -
-as the baby's visual system develops to allow for
-seeing more complex input (from mostly black-and-white to color, from blurry and short-sighted to sharp and fully developed), the brain learns
-to recognize and interpret increasingly complex patterns. Every time a child learns something, it causes some neural connections to be strengthened
-or new connections to be formed.
-At various phases of growth, different layers in the brain are undergoing their most active periods of
-development. Finally, it is important to note that sleeping also
-<a class="reference external" href="https://www.quantamagazine.org/dueling-brain-waves-anchor-or-erase-learning-during-sleep-20191024/">plays a crucial role</a>
-in the learning process in the human brain.</p>
-<p>Curiously, at the moment of birth a baby already has almost
-<a class="reference external" href="https://scienceinsights.org/how-developed-is-a-babys-brain-at-birth/">all of the neurons</a> that the adult will have.
-The learning process is not about <em>producing new neurons</em>, it is about the process of new connections (<strong>synapses</strong>) <em>forming</em>
-between the existing neurons, unused connections being <em>pruned</em> (removed), and the strengths of connections <em>changing</em>.</p>
-<embed><p style="font-size: 0.8em;">There is also an important process in brain development for making existing networks quicker -
-   <a class="reference external" href="https://www.zerotothree.org/resource/what-are-the-most-important-changes-in-the-brain-after-birth/">myelination</a>.
-   Since it has no analogue for artificial neural networks, we will not focus on it; however, feel free to read about it if you are
-   interested in how the brain matures.
-   </p>
-</embed></section><section id="what-is-a-weight-in-an-ai-model"><h2><a class="toc-backref" href="#toc-entry-5" role="doc-backlink">What is a weight in an AI model?</a></h2>
-<p>Before we can discuss AI models and their training processes, we need to have a solid understanding about
-the concept of a <strong>weight</strong> in an AI model. A weight shows how strong is the connection between two neurons.
-On the following image, bigger weights are drawn as bolder arrows.</p>
-<img alt="Artificial neuron" src="../../images/part2/artificial_neuron.png"><p><em>Artificial neuron with various weights (image by author).</em></p>
-<p>In neural nets, weights can also have a negative value (depicted as a dashed arrow above). This negative value has
-the effect of that neuron acting as a brake
-for the neuron in the next layer (the technical term is "<strong>inhibition</strong>").
-Consider a network trying to distinguish a cheetah from a leopard - both are big cats with four legs, a tail,
-and spotted fur.
-The distinguish feature is the <em>shape of the spots</em> (see below) - cheetahs have solid, single black spots; leopards have complex,
-multi-colored rosettes.</p>
-<p>In the above image of a neuron, we could have:</p>
-<ul class="simple">
-<li><p><span class="just-bold">y</span> - neuron for detecting cheetahs</p></li>
-<li><p><span class="just-bold">x</span><sub>3</sub> - "has rosettes"</p></li>
-</ul>
-<p>The weight for <span class="just-bold">x</span><sub>3</sub> is negative, since <em>cheetahs don't have rosettes</em>. This means that whenever in the previous layer
-the neuron <span class="just-bold">x</span><sub>3</sub> has detected rosettes, it will negatively affect the probability of detection of the image class "cheetah".</p>
-<p><strong>A remark</strong>. Other neurons (<span class="just-bold">x</span><sub>1</sub>, <span class="just-bold">x</span><sub>2</sub>, and <span class="just-bold">x</span><sub>4</sub>) can
-represent positive patterns that help detecting <em>both</em> cheetahs and leopards, like "<em>cat-like animal</em>", "<em>has four legs</em>", or "<em>has a tail</em>".</p>
+</section><section id="what-is-a-weight"><h2><a class="toc-backref" href="#toc-entry-4" role="doc-backlink">What is a weight?</a></h2>
+<p>Before we can discuss AI models and their training processes, we need a solid understanding of
+the concept of a <strong>weight</strong> in an AI model. A weight is a number (positive, negative, or 0) that shows the strength of
+the connection between two neurons.</p>
+<p>Image classifiers like CNNs are excellent for illustrating such abstract concepts. Consider a model that analyzes an
+image and identifies the animal species in it. To make things more interesting, we consider two animals
+that are very similar in some ways, but rather different in another way: a cheetah and a leopard.</p>
+<p>Judging by the body outline alone, the cheetah and leopard are remarkably similar. Both of them are big cats
+with a similar size and a feline silhouette.
+The distinguishing factor is their coat – cheetahs have black spots on their fur and leopards have multi-colored rosettes.</p>
 <img alt="Cheetah vs leopard" src="../../images/part2/cheetah_leopard.png"><p><em>Cheetah (above) vs leopard (below). Source: Wikimedia Commons (cropped).</em></p>
+<p>The last layer of the image classification model usually contains one neuron for each of the possible image classes (in this case, the animals).
+We concentrate on two neurons in that last layer that correspond to the classification results “cheetah” and “leopard”.
+It is then reasonable to expect that the preceding layer of the model will contain neurons that represent:</p>
+<ul class="simple">
+<li><p>concepts that apply to both of those animals (e.g. “large feline”);</p></li>
+<li><p>concepts that distinguish those animals from each other (e.g. “black spots”, or “multi-colored rosettes”).</p></li>
+</ul>
+<p>On the image below, weights (connections between neurons) are depicted as arrows. Bolder arrows correspond to strong associations
+(e.g. “has black spots” <span class="math">\(\rightarrow\)</span> “cheetah”). Thinner arrows correspond to somewhat weaker associations
+(e.g. “large feline” <span class="math">\(\rightarrow\)</span> “cheetah”).
+Dashed arrows represent negative weights – that is, factors that block (<strong>inhibit</strong>) the next neuron from activating
+(e.g. “multi-colored rosettes” <span class="math">\(\not\rightarrow\)</span> “cheetah”).
+The numerical values of weights are written above the arrows.</p>
+<img alt="Decision neurons" src="../../images/part2/artificial_neuron.png"><p><em>Simplified diagram of neurons for detecting cheetahs and leopards (image by author).</em></p>
+<p>Of course, this is just a toy example - in actual neural networks, each individual classification decision
+receives input signals from hundreds
+or thousands of different neurons in the preceding layer, each of them playing a small part in the decision process.</p>
 <p>Human brains also make use of inhibitory signals in various contexts, including vision. If you are interested, click on the following box to expand it
-and learn more - it turns out that those effects also help to explain some optical illusions!</p>
+and learn more - it turns out that this inhibition mechanism is actually the cause for some common optical illusions!</p>
 <embed><details><summary>Click here to read how inhibitory signals are used in the human brain.</summary><p>Imagine a dark tree next to a bright sky; focus on the edge where the two meet.
-      When light from the sky hits the receptors in the eye, neurons fire strong active signals ("it is bright here")
+      When light from the sky hits the receptors in the eye, neurons fire strong active signals (“it is bright here”)
       and <em>also send</em> inhibitory
-      (negative) signals to <em>their neighbor neurons</em>, causing the dark tree appear even darker than it actually is.
+      (negative) signals to <em>their neighbor neurons</em>, causing the dark tree to appear even darker than it actually is.
       This causes the borders between dark and bright objects to have a lot of contrast and look crisp.</p>
       <p>Curiously, this exact same process that increases the contrast between dark and light areas (called
       <a class="reference external" href="https://en.wikipedia.org/wiki/Lateral_inhibition#Visual_inhibition">visual lateral inhibition</a>)
       is exactly the cause for
       <a class="reference external" href="https://en.wikipedia.org/wiki/Grid_illusion">several optical illusions</a>
-      where the viewer sees black dots appearing on white background.</p>
-   </details></embed></section><section id="how-does-ai-learn"><h2><a class="toc-backref" href="#toc-entry-6" role="doc-backlink">How does AI learn?</a></h2>
-<p>The word "learning" has a very specific meaning in machine learning:
+      where the viewer may see black dots appearing on a white background.</p>
+      <img alt="Grid illusion" src="../../images/part2/grid_illusion.png"><p><em>A grid illusion. Source: Wikimedia commons</em></p>
+      <!-- https://pressbooks.atlanticoer-relatlantique.ca/openneuroscience/chapter/chapter-9-sensation-and-perception-the-visual-system/ -->
+   </details></embed></section><section id="the-process-of-learning"><h2><a class="toc-backref" href="#toc-entry-5" role="doc-backlink">The process of learning</a></h2>
+<p>At the moment of birth, a baby already has almost
+<a class="reference external" href="https://scienceinsights.org/how-developed-is-a-babys-brain-at-birth/">all of the neurons</a> that an adult will have.
+Learning is not about <em>producing new neurons</em>; rather, it happens as new connections (<strong>synapses</strong>) <em>form</em>
+between existing neurons, unused ones are <em>pruned</em> away (removed), and the strengths of those connections <em>change</em>.</p>
+<p>An analogous mechanism drives learning in AI.</p>
+<embed><details><summary>Click here to read more about the development of a child's brain and the visual system.</summary><p>At birth, newborns don't see the world in full color - their vision is mostly limited to stark contrasts of light and dark,
+      and they can only
+      <a class="reference external" href="https://www.healthline.com/health/baby/when-can-babies-see-color">differentiate between strong, contrasting colors</a>.
+      At one month of age, they still do not see the world clearly - their vision is
+      <a class="reference external" href="https://www.nationwidechildrens.org/family-resources-education/health-wellness-and-safety-resources/helping-hands/infant-vision-birth-to-one-year">blurry</a>
+      and near-sighted.
+      Research from 2024 <a class="reference external" href="https://neurosciencenews.com/infant-vision-development-ai-27078">has also shown</a> that babies prefer to
+      look at simple, high-contrast patterns and edges found in everyday environments; furthermore, this is very important
+      for the development of their visual skills. At later stages of child's development, they start to recognize and understand
+      more complex visual aspects of their environment.</p>
+      <p>What follows is that the development of the visual system and the learning process occur in parallel -
+      as the baby's visual system develops to allow for
+      seeing more complex input (from mostly black-and-white to color, from blurry and short-sighted to sharp and fully developed), the brain learns
+      to recognize and interpret increasingly complex patterns. Every time a child learns something, it causes some neural connections to be strengthened
+      or new connections to be formed.
+      At various phases of growth, different layers in the brain are undergoing their most active periods of
+      development. Finally, it is important to note that sleeping also
+      <a class="reference external" href="https://www.quantamagazine.org/dueling-brain-waves-anchor-or-erase-learning-during-sleep-20191024/">plays a crucial role</a>
+      in the learning process in the human brain.</p>
+      <p style="font-size: 0.8em;">There is also an important process in brain development for making existing networks quicker -
+      <a class="reference external" href="https://www.zerotothree.org/resource/what-are-the-most-important-changes-in-the-brain-after-birth/">myelination</a>.
+      Since it has no analogue for artificial neural networks, we will not focus on it; however, feel free to read about it if you are
+      interested in how the brain matures.
+      </p>
+   </details></embed><p>The word “learning” has a very specific meaning in machine learning:
 it means that during the training process some weights are strengthened and some are weakened.
 The mathematical operations themselves connecting the previous layer with the next one do not change; only the weights do.
-This begs the question: how does the training process select the weights to change to gradually produce a useful AI model such as the AlexNet?</p>
-<p><strong>Remark</strong>. <em>Keep in mind that computers does not "see" the image as humans do. Instead, they see an image as a grid of pixels,
+This begs the question: how does the training process select the weights to change to gradually produce a useful AI model such as AlexNet?</p>
+<p><strong>Remark</strong>. <em>Keep in mind that computers do not “see” the image the same way as humans do. Instead, they see an image as a grid of pixels,
 and each pixel is just 3 numbers for the AI model - corresponding to the amount of red, green, and blue in that pixel.
-In that sense, for AI an image is just a grid of numbers.</em></p>
-<p>As an initial step, a model is chosen with all of the weights being completely random in a given range.
-In the example of AlexNet, this means that the model will produce completely random outputs (e.g., classifying a image of random noise
+In that sense, for AI the whole image is just a grid of numbers.</em></p>
+<p>As an initial step, a model is chosen with all of the weights being <em>completely random</em> in a given range.
+In the example of AlexNet, this means that the model will produce completely random outputs (e.g., classifying an image of random noise
 as an elephant). Now, at each step, the following happens:</p>
 <ul class="simple">
-<li><p>A small batch of images (e.g., 128 images in case of AlexNet) is chosen randomly.</p></li>
-<li><p>For each of the images in that batch, the error rate is calculated (how good or bad the prediction was).</p></li>
+<li><p>A small batch of images (e.g., 128 images in the case of AlexNet) is chosen randomly.</p></li>
+<li><p>For each of the images in that batch, prediction error is calculated (based on whether the predictions agree with the labels assigned by human digitizers).</p></li>
 <li><p>Using clever mathematical techniques (such as <a class="reference external" href="https://www.3blue1brown.com/lessons/backpropagation/">backpropagation and chain rule</a>),
 it is calculated for <em>each weight</em> how much changing that specific weight in a
-positive/negative direction would have affected the error rates of the model.</p></li>
-<li><p>Each weight is changed by a tiny amount in the direction (calculated in the previous step) that most improves the error rates.</p></li>
+positive/negative direction would have affected the prediction error of the model.</p></li>
+<li><p>Each weight is changed by a tiny amount in the direction (calculated in the previous step) that most improves the predictions.</p></li>
 </ul>
-<p>This process is then repeated millions of times; if everything goes as expected, the error rates should start to fall and the
+<p>This process is then repeated millions of times; if everything goes as expected, the prediction errors should start to fall and the
 model should learn to recognize features and classify images correctly and reliably.</p>
-<p><strong>Remark</strong>. <em>Mathematically, the hard part is calculating how changing of each specific weight would have affected the resulting error rate,
+<p><strong>Remark</strong>. <em>Mathematically, the hard part is calculating how changing each specific weight would have affected the resulting prediction error,
 since each layer also affects each subsequent layer as well. Remember that a single image classification model will have tens or hundreds of
-millions of parameters, so the efficiency of this calculation is crucial. This is the problem that the</em>
+millions of neurons, so the efficiency of this calculation is crucial. This is the problem that the</em>
 <a class="reference external" href="https://techhistorylab.com/history-of-backpropagation-deep-learning/">technique of backpropagation solved</a>.
-<em>Recall from the historical overview above that backpropagation was invented only in 1980s after several decades of research into this area.</em></p>
-<p>Lets walk through an example of how this training process could start. We are at the first step, where the model has been initialized randomly.
-The image that we are given depicts a slightly cloudy sky and the image has been classified (by a human, before training) as "sky".
-In the network that has been initialized randomly, there will be neurons in the earlier layers which respond to the blue color;
-and there will be neurons in the layer laters that eventually lead to the image class "sky" being activated. Since we have just started training,
-the image is as likely to be classified as the "sky" as a "strawberry". Since the number of neurons is large, there will be (just by chance)
-some neurons that react to the color blue and eventually affect the result being classified as the sky. So if the given batch contains
-images of sky, those weights that support this relationship ("lot of blue =&gt; image could depict the sky") are strengthened. At the same time,
-weights representing alternative potential relationships (e.g., "lot of blue =&gt; image could depict a strawberry") are weakened.</p>
+<em>Recall from the historical overview above that backpropagation was invented only in the 1980s after several decades of research into this area.</em></p>
+<p>Let's walk through an example of how this training process could start. The training process considers the first image of the first batch,
+which happens to depict a slightly cloudy sky.
+Since the network has been initialized randomly, there will be neurons in the earlier layers which respond to blue pixels;
+and there will be neurons in the later layers that eventually lead to the image class “sky” being activated. Since we have just started training,
+the image is equally likely to be classified as “sky” or “strawberry”. Since the number of neurons is large, there will be (just by chance)
+some neurons that react to the color blue and push the classification toward “sky”. So if the given batch contains
+images of the sky, those weights that support this relationship (“blue pixels” <span class="math">\(\rightarrow\)</span> “image could depict the sky”)
+are slightly strengthened. At the same time,
+weights representing alternative potential relationships (e.g., “blue pixels” <span class="math">\(\rightarrow\)</span> “image could depict a strawberry”)
+are slightly weakened.
+Over thousands of iterations, such relationships take form and become functional.</p>
 <p>Of course, this is just the easiest type of heuristic one can have. In order to become truly effective at classifying images
 (e.g., images of the sky), the model has to learn (i.e., find corresponding weights):</p>
 <ul class="simple">
@@ -448,7 +508,7 @@ weights representing alternative potential relationships (e.g., "lot of blue =&g
 <li><p>to understand how simple edges combine into basic edges and textures;</p></li>
 <li><p>to how complex shapes consist of simpler shapes and geometric forms.</p></li>
 </ul>
-<p>Take the the example of detecting a clownfish. Lets assume that model has learned that clownfishes have orange and white stripes on them.
+<p>Take the the example of detecting a clownfish. Let's assume that model has learned that clownfish have orange and white stripes on them.
 The detection capability of the model will increase if it also starts making sure that those orange and white stripes are next to each other
 and alternate in color. For this to happen, some neurons in the later layers have to specialize to respond to the positional information of
 those shapes (orange/white stripes) that were detected in the preceding layers.</p>
@@ -457,12 +517,12 @@ it in an image. Try to think of the features that define it and how the model <e
 improvement steps.</p>
 <hr class="docutils">
 <p>The crucial question is whether there is a sufficient amount of positive and negative examples in the data set:
-the model may take "shortcuts" if the input data does not punish for it. There is a
+the model may take “shortcuts” if the input data does not punish for it. There is a
 <a class="reference external" href="https://arxiv.org/abs/1807.04975">famous study</a> that showed that image detection models often rely extensively on the environmental context for
 detecting animals (concrete example: cows are usually photographed on grassy pastures). If there is an image of a cow in a new context
 (e.g., cow on a paved road, or cow on a beach), the model will fail to classify it as a cow.
 What has happened is that instead of learning the complex anatomical features of a cow (ears, muzzle, body shape), the model has learned a
-simpler rule: "somewhat cow-like animal on a green pasture =&gt; cow". This is an example of what is called <strong>shortcut learning</strong>.</p>
+simpler rule: “somewhat cow-like animal on a green pasture <span class="math">\(\rightarrow\)</span> cow”. This is an example of what is called <strong>shortcut learning</strong>.</p>
 <embed><p style="font-size: 0.8em;">To be completely honest, I think that humans would also do somewhat worse at detecting cows on beaches. To see what I mean, just look at
    the images on <a class="reference external" href="https://arxiv.org/pdf/1807.04975">page 2 of the PDF linked above</a>.</p>
 </embed><p>The solution is to enrich the dataset of images to have variation of contexts, backgrounds lighting, viewpoints and shapes. It is also useful
@@ -475,20 +535,20 @@ All of those steps can be shortly summarized in the following way:</p>
 <li><p>Choose a <strong>model architecture</strong> (e.g., CNN).</p></li>
 <li><p>Initialize the model with <strong>random weights</strong>.</p></li>
 <li><p>Run the <strong>training process</strong>.</p></li>
-</ul></section><section id="a-visual-explainer-of-a-cnn-model"><h2><a class="toc-backref" href="#toc-entry-7" role="doc-backlink">A visual explainer of a CNN model</a></h2>
+</ul></section><section id="a-visual-explainer-of-a-cnn-model"><h2><a class="toc-backref" href="#toc-entry-6" role="doc-backlink">A visual explainer of a CNN model</a></h2>
 <p>An excellent way to understand something is to observe and tinker with how it works.
 In the case of AI systems, this is usually not something that is easy to do.
 Luckily,
 <a class="reference external" href="https://poloclub.github.io/cnn-explainer/">there is a webpage</a>
 that contains a <em>visual explainer</em> of a CNN model.
-This webpage runs a CNN model called "Tiny VGG" <em>directly in your browser</em>, allowing to upload your own image and
+This webpage runs a CNN model called “Tiny VGG” <em>directly in your browser</em>, allowing to upload your own image and
 see the classification model crunching through it before your own eyes.</p>
 <p>Notice that this CNN model is quite limited: it only accepts tiny images (64x64 pixels) and sorts them to one of the 10 pre-defined classes.
 This is intentional; first, it enables the model to run smoothly in a web browser. Secondly (and more importantly),
 this allows the model to be simple enough to visually illustrate what really happens at each step. Try clicking on different
-steps to get an intuitive understanding of what happens at various steps and how the model "sees" the image.</p>
+steps to get an intuitive understanding of what happens at various steps and how the model “sees” the image.</p>
 <p>A word of warning, though - since my overview of the topic has been rather high-level, I have not given all of the necessary
-definitions for understanding CNNs. I have not explained concepts like <em>convolutional layers</em>, <em>kernel layers</em>,
+definitions for understanding CNNs. I have not explained concepts like <em>convolutional layers</em>, <em>kernel layers</em>, <em>ReLU activations</em>,
 and <em>max pooling</em> that are used in the visual explainer page. If you want to learn those definitions, open the collapsible accordion
 box below. If not, just head directly to the <a class="reference external" href="https://poloclub.github.io/cnn-explainer/">visual explainer page</a> and play with the model.</p>
 <embed><details><summary>Click here to learn the technical terms about CNNs used in the visual explainer page</summary><ul>
@@ -501,13 +561,12 @@ box below. If not, just head directly to the <a class="reference external" href=
 <em>ReLU activation</em> - An activation function that maps negative values to 0, but keeps positive values intact. Basically,
          it blocks negative (inhibitory) signals from propagating further.</li>
          <li>
-<em>Max pooling</em> - A layer that applies the <em>softmax</em> operation, normalizing the sum of all signals in the preceding
-         layer to be 1.</li>
+<em>Max pooling</em> - A layer which reduces the image size by replacing each 2x2 block with the maximum value from that block.</li>
          <li>
 <em>Hyperparameter</em> - Any parameter of the model that is not trained; the machine learning researchers have to
          manually choose those instead based on their experience / intuition.</li>
-      </ul></details></embed></section><section id="how-to-see-inside-the-model"><h2><a class="toc-backref" href="#toc-entry-8" role="doc-backlink">How to see inside the model?</a></h2>
-<p>Lets consider a seemingly simple question - "do we fully understand how those models work?"</p>
+      </ul></details></embed></section><section id="how-to-see-inside-the-model"><h2><a class="toc-backref" href="#toc-entry-7" role="doc-backlink">How to see inside the model?</a></h2>
+<p>Let's consider a seemingly simple question - “do we fully understand how those models work?”</p>
 <p>On the one hand, for a given local model, the model's architecture is fully known.
 Also, at any point of training, all of the weights are known and can be inspected.
 But there are things which are harder to assess:</p>
@@ -522,14 +581,14 @@ the patterns? Which ones separated the cat from the background, recognized its f
 Or even deeper - which neurons caused the viewer to feel an emotion based on how the cat seemed to be feeling?</p>
 <p>Of course, both neuroscientists and AI researchers have developed techniques to overcome those issues. However, since a large part of
 human cognition and model capabilities are complex and emergent properties, it is not often easy to give simple and intuitive answers to such
-questions. For example, in the early days of modern brain research, scientists tended to make absolute statements like "each specific brain
-region controls just one distinct mental task". Modern neuroscience shows that high-level intelligence emerges from interconnected, dynamic
+questions. For example, in the early days of modern brain research, scientists tended to make absolute statements like “each specific brain
+region controls just one distinct mental task”. Modern neuroscience shows that high-level intelligence emerges from interconnected, dynamic
 networks rather than isolated single components. In the context of AI research, this is especially a problem for investigating general-purpose
 models like LLMs.</p>
 <p>In the context of image recognition models, researchers have found clever ways to visually represent the inner workings of the AI models.
 One of those techniques is a <strong>saliency map</strong>.
 It is used to high-light the pixels in the input image that were most strongly used in the
-process of assigning the category label - e.g., "chair" or "cow"
+process of assigning the category label - e.g., “chair” or “cow”
 (<a class="reference external" href="https://www.geeksforgeeks.org/machine-learning/what-is-saliency-map/">read more here</a>).
 Recall the earlier example where detection of cows relied on detection of
 grass by an extensive amount. In that case, the saliency map would strongly high-light the pixels containing grass, which would inform the
@@ -546,9 +605,9 @@ In the next image, we can see a <em>feature visualisation</em> for a group of ne
 <img alt="Example of a feature visualisation." src="../../images/part2/feature_visualisation_dog.png"><p><em>Example of a feature visualisation (dog eyes). Source: Distill</em></p>
 <p>This page allows to <a class="reference external" href="https://distill.pub/2017/feature-visualization/appendix/">navigate through feature visualisations</a> of a CNN model
 called GoogLeNet. Notice that initial layers (3a and 3b) correspond to simple textures, whereas later layers correspond to more
-complicated concepts. For each layer, there are visualisations that maximally excite a group of neurons ("positive channel") and visualisations that
-least excite that same group of neurons ("negative channel"). More explanations can be found <a class="reference external" href="https://distill.pub/2017/feature-visualization/">here</a>.</p>
-</section><section id="the-importance-of-a-goal-function"><h2><a class="toc-backref" href="#toc-entry-9" role="doc-backlink">The importance of a goal function</a></h2>
+complicated concepts. For each layer, there are visualisations that maximally excite a group of neurons (“positive channel”) and visualisations that
+least excite that same group of neurons (“negative channel”). More explanations can be found <a class="reference external" href="https://distill.pub/2017/feature-visualization/">here</a>.</p>
+</section><section id="the-importance-of-a-goal-function"><h2><a class="toc-backref" href="#toc-entry-8" role="doc-backlink">The importance of a goal function</a></h2>
 <p>Above, we considered the steps in the process of obtaining a useful AI model.
 I would like to now focus on the step of choosing an appropriate goal function, since this step is actually rather critical
 for success.</p>
@@ -561,58 +620,7 @@ way to grade the quality of a machine-generated novel on the scale of 0% to 100%
 <p>As we will see in the next blog post, this is one of the reasons that LLMs have made enormous progress in some of the fields
 that where previously considered the hardest hills to conquer (e.g., mathematics), while the progress has been lagging a bit
 more behind in some other areas. However, over time, clever techniques have been developed to address this shortcoming.</p>
-</section><section id="narrow-ai-vs-general-purpose-ai"><h2><a class="toc-backref" href="#toc-entry-10" role="doc-backlink">Narrow AI vs general-purpose AI</a></h2>
-<p>In a very broad sense, AI systems can be divided into two:</p>
-<ul class="simple">
-<li><p><strong>narrow</strong> AI systems, which can perform one (or a few) specific functions (e.g., AlexNet);</p></li>
-<li><p><strong>general-purpose</strong> AI systems, which can perform a variety of tasks (e.g., any LLM).</p></li>
-</ul>
-<p><strong>NB!</strong> The last definition should not be confused with "AGI" ("Artificial General Intelligence"), which is defined as "<em>an AI system that
-that matches or surpasses human capabilities across virtually all cognitive tasks</em>". I would like to take the opportunity to point out that AGI is a vague term and people often interpret it differently, reducing its usefulness.</p>
-<p>On the other hand, the distinction between <em>narrow</em> and <em>general-purpose</em> AI systems
-is much more clear-cut - the distinction focuses on the <em>applicability</em> of the model, not its capabilities. Even the earliest version of Chat-GPT
-were <em>general-purpose</em> (even though they were not very capable).</p>
-<p>For many people, the word "AI" has become synonymous to LLMs. I think that this is rather problematic and makes it extremely hard to have
-meaningful public discourse about risks and benefits of AI systems and their regulation. A lot of valid and difficult questions
-about LLMs (in particular about their safety and alignment) are either non-issues or much milder for more narrow AI systems.
-Of course, there are also issues that are relevant in both cases (e.g., bias).</p>
-<p>Consider also energy efficiency. For example, lets compare the energy usage (in
-<a class="reference external" href="https://whateverconverter.com/glossary/joule/">joules</a>)
-of taking a single image and detecting the content of the image (i.e., an image classification task):</p>
-<ul class="simple">
-<li><p>For a typical <strong>narrow</strong> AI system, the energy usage falls in the range of 0.05-2 joules
-(<a class="reference external" href="https://arxiv.org/pdf/2412.09731">more details</a>) - the equivalent of a household LED lightbulb shining for less than 0.1 seconds (essentially, one blink of a LED).</p></li>
-<li><p>For a LLM, the energy usage for the same classification task could take ~200-300 joules (<a class="reference external" href="https://arxiv.org/abs/2311.16863">more details</a>).
-If the answer is given by the LLM in the conversational format, the answer can easily be more than 10 times longer, bringing the energy usage to over 3000 joules -
-the LED lightbulb shining for 4 minutes straight.</p></li>
-</ul>
-<p>For me, the difference is mind-blowing: using an LLM for the same task uses <strong>~3000</strong> times more energy!</p>
-<embed><details><summary>Click here for an explanation - where does the 3000x energy difference come from?</summary><ul class="simple">
-<li><p>As already mentioned, large part of it is that conversational answers take a lot more energy to produce - and LLMs <em>love</em> to be wordy.</p></li>
-      <li><p>Even if the classification result is provided without unnecessary clutter ("A golden retriever sitting on a grass field at sunset"), LLMs still build up
-      the answer word by word (<em>token by token, to be more precise - more about that in the next blog post</em>), using up a considerable amount of energy for
-      producing each word.</p></li>
-      <li><p>Unlike lightweight traditional models, LLMs require power-hungry GPU clusters to process requests.</p></li>
-      <li><p>The architecture of LLMs is vastly heavier - evaluating its billions of parameters requires far more layer-by-layer computation than a narrow AI system.</p></li>
-      </ul>
-<p style="font-size: 0.8em;">There are many estimates for LLM energy usage in different contexts, some lower and some significantly higher
-      than the paper I cited above (which gave an estimate of ~200-300 joules).
-      I chose this paper, since it looked at classification tasks specifically and it represented a middle ground between some of the more extreme
-      (both low and high)
-      estimates; the highest estimates reached 10000 joules.
-      Of course, as model sizes continue to grow, they will become even more energy-intensive.</p>
-   </details></embed><p>For all of those reasons, I think that everyone should keep in mind that:</p>
-<div class="math">
-\begin{equation*}
-AI \neq LLM.
-\end{equation*}
-</div>
-<p>In general, whenever there is a narrow AI model that solves a given task as well as a general-purpose AI model, I would recommend
-to use the narrow AI model.</p>
-<p>Crucially, narrow AI systems have produced (and continue to produce!) many impressive results. In the following section,
-we will have a look at three examples from Google DeepMind that predate the creation of modern chatbots. Looking back in 2026,
-the last one of them may honestly be characterized as the greatest biological breakthrough ever achieved by an AI system (as of today).</p>
-</section><section id="what-has-deep-learning-given-us"><h2><a class="toc-backref" href="#toc-entry-11" role="doc-backlink">What has deep learning given us?</a></h2>
+</section><section id="what-has-deep-learning-given-us"><h2><a class="toc-backref" href="#toc-entry-9" role="doc-backlink">What has deep learning given us?</a></h2>
 <p>After AlexNet was released in 2012, the field of deep learning experienced an avalanche of renewed interest.
 Progress was made (using various deep learning techniques) in areas such as speech recognition, image generation,
 image classification, and machine translation.</p>
@@ -627,12 +635,12 @@ I would like to mention 3 areas where they successfully applied deep learning me
 For this, computer games proved to be a useful medium.</p>
 <p>In 2014, DeepMind
 <a class="reference external" href="https://deepmind.google/blog/deep-reinforcement-learning/">published research</a>
-about a model (<strong>DQN</strong> - "deep Q-learning") that could learn to play a wide range of classical 1980s computer games
+about a model (<strong>DQN</strong> - “deep Q-learning”) that could learn to play a wide range of classical 1980s computer games
 (such as Pong, Breakout or Space Invaders) without having any prior description about how those games work.
 Instead, they used deep learning methods, letting the model learn by trying to play the games -
 providing the game's screen as an input (and the game's score) to the model at every frame.
 Model could only interact with the game by choosing which keys to press.</p>
-<p>Initially, the model starts out by "pressing" random keys at times. Throughout the training, models
+<p>Initially, the model starts out by “pressing” random keys at times. Throughout the training, models
 accidentally stumble on tactics which increase the chances of achieving a high score and the corresponding weights in the network
 get <strong>reinforced</strong>.
 In machine learning, this is called <strong>reinforcement learning</strong> - the network takes actions and is scored based on the result
@@ -685,15 +693,16 @@ feel free to read the technical details of how AlphaGo works at a technical leve
    </details></embed><p>In 2016, AlphaGo played a match against
 <a class="reference external" href="https://en.wikipedia.org/wiki/Lee_Sedol">Lee Sedol</a>,
 one of the best Go players in the world - and won 4:1.
-There is an <a class="reference external" href="https://www.youtube.com/watch?v=WXuK6gekU1Y">excellent movie</a> on YouTube which captures the dramatic events and how the world
-of Go was ever changed through it. It also gives some nice visual explanations of the technology behind the breakthrough.</p>
+There is an <a class="reference external" href="https://www.youtube.com/watch?v=WXuK6gekU1Y">excellent movie</a> on YouTube which captures the dramatic events and the effect it
+had on how Go is played.
+It also gives some nice visual explanations of the technology behind the breakthrough.</p>
 </section><section id="alphafold"><h3>AlphaFold</h3>
-<p>In recent years, leader of fronteir labs have talked a lot about how LLMs could cure cancer in the future. In a longer time span, this may be true;
+<p>In recent years, leaders of frontier labs have talked a lot about how LLMs could cure cancer in the future. In a longer time span, this may be true;
 but in a shorter time span one has to keep in mind that while AI can help with suggesting new drug candidates or biological experiments,
 some of the steps can not be so easily side-stepped, like clinical testing and obtaining regulatory approval for drugs.</p>
 <p>At the same time, we already have one incredible biological breakthrough in an area that had seen only limited progress in 50 years - protein folding.
 The problem's statement sounds innocent enough: given a protein, what 3D shape does this protein molecule take?
-Proteins consist of 22 different amino acids; those can be thought of as "universal LEGO bricks" that the body uses for various purposes.
+Proteins consist of 22 different amino acids; those can be thought of as “universal LEGO bricks” that the body uses for various purposes.
 The role of the proteins is largely determined by the 3D shape that they take (which in turn is determined by which amino acids repel and attract each
 other). Here are some examples for illustrative purposes:</p>
 <ul class="simple">
@@ -715,6 +724,8 @@ Previously, it could take a student their whole PhD study to determine the 3D st
 In 2018, DeepMind introduced a specialized deep learning model called
 <a class="reference external" href="https://deepmind.google/blog/alphafold-using-ai-for-scientific-discovery/">AlphaFold</a>
 for the protein folding problem, and it turned out to be hugely successful.
+AlphaFold predicts the 3D structure that the protein takes, which can then be verified both mathematically and by physical
+observation. Throughout the years, the precision of their AI models continued to improve.
 By 2022, they had achieved a milestone - they had mapped the 3D shape of <em>200 million</em> proteins, virtually
 <a class="reference external" href="https://deepmind.google/blog/alphafold-reveals-the-structure-of-the-protein-universe/">every protein known to exist in nature</a>.
 They had taken what took people years and tens of thousands of dollars via experimental methods,
@@ -726,7 +737,7 @@ were awarded the
 <p>There is an excellent <a class="reference external" href="https://www.youtube.com/watch?v=P_fHJIYENdI">video overview from Veritaserium channel</a> about AlphaFold.
 Alternatively, one can read technical details from
 <a class="reference external" href="https://deepmind.google/blog/alphafold-using-ai-for-scientific-discovery/">DeepMind blog</a>.</p>
-</section></section><section id="conclusion"><h2><a class="toc-backref" href="#toc-entry-12" role="doc-backlink">Conclusion</a></h2>
+</section></section><section id="conclusion"><h2><a class="toc-backref" href="#toc-entry-10" role="doc-backlink">Conclusion</a></h2>
 <p>The main takeaways I want to leave to you, the reader:</p>
 <ul class="simple">
 <li><p>Although AI systems have been originally been built on ideas borrowed from human brains, they are still very much different. And it is not
@@ -755,10 +766,10 @@ for:</p>
 <li>AI (Google Gemini) was used to find additional sources for this post;
    all sources were manually verified before citing.</li>
    <li>AI was used to simplify some of the more complex &amp; technical concepts (e.g. regarding human vision).</li>
-   <!--<li>AI was used in the final proof-reading process for pointing out improvement possibilities, but not for re-writing text.</li></ul>-->
+   <li>AI was used in the final proof-reading process for pointing out improvement possibilities, but not for re-writing text.</li>
+</ul>
    Total contribution of AI in terms of effort during the process: 5-10%
-   </ul>
-</div>
+   </div>
 </embed></section>
 </div>
             <aside class="postpromonav"><nav><ul itemprop="keywords" class="tags">
