@@ -318,7 +318,10 @@ summary {
         position: -webkit-sticky;
         position: sticky;
         top: 0rem; /* Distance from the top of the viewport when scrolling */
+        max-height: 100vh; /* Fallback for older browsers */
+        max-height: 100dvh; /* Constrains height to mobile viewport so overflow-y triggers */
         overflow-y: auto; /* Adds a scrollbar inside the sidebar if the TOC is too long */
+        overscroll-behavior: contain; /* Prevents the main page from scrolling when you hit the bottom of the TOC */
         align-self: flex-start;
     }
 

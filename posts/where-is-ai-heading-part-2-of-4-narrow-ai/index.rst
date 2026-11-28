@@ -16,8 +16,8 @@
 
 In a very broad sense, AI models can be divided into two categories:
 
-* **narrow** AI models, which perform one (or a few) specific functions;
-* **general-purpose** AI models, which are intended to perform a variety of tasks.
+* **Narrow** AI models, which perform one (or a few) specific functions.
+* **General-purpose** AI models, which are intended to perform a variety of tasks.
 
 To give a concrete example, any modern chatbot (*Large Language Model*, or *LLM*) is a general-purpose system (regardless of how capable it is).
 An example of a narrow AI system would be an *image classifier model*, which has one purpose only - it takes images as input and classifies them
